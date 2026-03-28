@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Description -->
+    <meta
+      name="description"
+      content="Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, CSS Art, Three js, React/TypeScript projects, and creative coding journey"
+    />
+
+    <meta
+      name="keywords"
+      content="Frontend Developer, React, TypeScript, GSAP, Three js, Creative Coding, Portfolio, Web Development"
+    />
+
+    <meta name="author" content="Jozef Kudrna - Web.Animations.And.Effects" />
+    <!-- End of Description -->
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Jozef Kudrna Portfolio | Frontend Developer & Creative Coding"
+    />
+    <meta
+      property="og:description"
+      content="Explore Jozef Kudrna's portfolio featuring React/TypeScript projects, Three js, GSAP animations, CSS Art, and creative coding journey"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://jojo25011990.github.io/single-page-portfolio-ak/"
+    />
+    <meta
+      property="og:image"
+      content="https://jojo25011990.github.io/single-page-portfolio-ak/social-preview.png"
+    />
+    <!-- End of Open Graph -->
+
+    <!-- Favicon -->
+    <!-- Sem dam potom svoj favicong, asi spravil svoju fotku alebo tak ... -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <!-- End of Favicon -->
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/3749010148.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- End of Font Awesome Icons -->
+
+    <!-- Google Font: Space Grotesk  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- End of Google Font: Space Grotesk  -->
+
+    <title>
+      Jozef Kudrna Portfolio V1 | Frontend Developer & Creative Coding & CSS Art
+    </title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jozef Kudrna",
+        "url": "https://jojo25011990.github.io/single-page-portfolio-ak/",
+        "sameAs": [
+          "https://www.linkedin.com/in/jojo25011990/",
+          "https://github.com/jojo25011990"
+        ],
+        "jobTitle": "Frontend Developer",
+        "description": "Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, CSS Art, React/TypeScript projects, and creative coding journey."
+      }
+    </script>
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__wrapper">
+          <!-- Navigation -->
+          <nav class="header__navigation" aria-label="Main navigation">
+            <a href="#" class="header__logo">JozefKudrna</a>
+
+            <ul class="header__menu">
+              <li class="header__item">
+                <a
+                  href="https://github.com/jojo25011990"
+                  aria-label="Github profile - Jozef Kudrna"
+                  class="header__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="header__item">
+                <a
+                  href="https://www.instagram.com/web.animations.and.effects/"
+                  aria-label="Instagram profile - Jozef Kudrna"
+                  class="header__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="header__item">
+                <a
+                  href="https://www.linkedin.com/in/jozef-kudrna-28b580295/"
+                  aria-label="Linkedin profile - Jozef Kudrna"
+                  class="header__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="header__item">
+                <a
+                  href="https://www.tiktok.com/@web.anim.and.effects"
+                  aria-label="Tiktok profile - Jozef Kudrna"
+                  class="header__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-tiktok" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="header__item">
+                <a
+                  href="https://www.youtube.com/@web.animations.and.effects"
+                  aria-label="Youtube profile - Jozef Kudrna"
+                  class="header__link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-youtube" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Navigation -->
+
+          <!-- Content -->
+          <div class="header__content">
+            <h1 class="header__heading">
+              Nice to meet you! I'm
+              <span class="header__heading-author">Jozef Kudrna</span>
+            </h1>
+            <p class="header__description">
+              I specialize in frontend development, crafting interactive web
+              experiences through animations, creative coding, Three.js scenes,
+              and CSS Art
+            </p>
+            <a class="header__button" href="#contact" role="button"
+              >Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- End of Content -->
+
+          <!-- Ring Image - Decoration -->
+          <img
+            src="./src/assets/images/pattern-rings.svg"
+            alt=""
+            aria-hidden="true"
+            class="header__ring"
+          />
+          <!-- End of Ring Image - Decoration -->
+
+          <!-- Circle Image - Decoration -->
+          <img
+            src="./src/assets/images/pattern-circle.svg"
+            alt=""
+            aria-hidden="true"
+            class="header__circle"
+          />
+          <!-- End of Circle Image - Decoration -->
+
+          <!-- Jozef Kudrna -->
+          <img
+            src="./src/assets/images/jojo.jpg"
+            alt="Jozef Kudrna - Frontend Developer"
+            class="header__author"
+          />
+          <!-- End of Jozef Kudrna -->
+        </div>
+
+        <!-- Lightbox -->
+        <div class="header__lightbox hidden" role="dialog" aria-modal="true">
+          <img
+            src="./src/assets/images/jojo.jpg"
+            alt="Jozef Kudrna - Frontend Developer"
+            class="header__lightbox-author"
+          />
+          <p class="header__lightbox-description">
+            Click everywhere to close the lightbox
+          </p>
+        </div>
+        <!-- End of Lightbox -->
+      </header>
+      <!-- End of Header -->
+
+      <!-- Main -->
+      <main>
+        <!-- Skills -->
+        <section class="skills">
+          <h2 class="skills__heading" aria-hidden="true">
+            <span>s</span><span>k</span><span>i</span><span>l</span
+            ><span>l</span><span>s</span>
+          </h2>
+
+          <!-- Skill Menu -->
+          <ul class="skills__menu">
+            <li class="skills__menu-item" style="--i: 1">
+              <h3 class="skills__menu-heading">HTML</h3>
+              <p class="skills__menu-description">SEO, Accessibility</p>
+            </li>
+            <li class="skills__menu-item" style="--i: 2">
+              <h3 class="skills__menu-heading">CSS</h3>
+              <p class="skills__menu-description">Sass, Tailwind, Bootstrap</p>
+            </li>
+            <li class="skills__menu-item" style="--i: 3">
+              <h3 class="skills__menu-heading">JavaScript</h3>
+              <p class="skills__menu-description">
+                React, TypeScript, GSAP, Three.js
+              </p>
+            </li>
+            <li class="skills__menu-item" style="--i: 4">
+              <h3 class="skills__menu-heading">Figma</h3>
+              <p class="skills__menu-description">Design, Prototyping, UI</p>
+            </li>
+            <li class="skills__menu-item" style="--i: 5">
+              <h3 class="skills__menu-heading">Git / Github</h3>
+              <p class="skills__menu-description">
+                Version control, Collaboration
+              </p>
+            </li>
+            <li class="skills__menu-item" style="--i: 6">
+              <h3 class="skills__menu-heading">Tools</h3>
+              <p class="skills__menu-description">
+                Vite, Lightbox, Typed.js, Swiper...
+              </p>
+            </li>
+          </ul>
+          <!-- End of Skill Menu -->
+
+          <!-- Ring Image - Decoration -->
+          <img
+            src="./src/assets/images/pattern-rings.svg"
+            alt=""
+            aria-hidden="true"
+            class="skills__ring"
+          />
+          <!-- End of Ring Image - Decoration -->
+        </section>
+        <!-- End of Skills -->
+
+        <!-- Projects -->
+        <section class="projects">
+          <div class="projects__wrapper">
+            <h2 class="projects__title">Projects</h2>
+            <a class="projects__button" href="#contact" role="button"
+              >Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <p class="projects__description"></p>
+
+          <!-- Projects Menu -->
+          <ul class="projects__menu">
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/space tourism V1.png"
+                      alt="Space Tourism V1 - Frontend Mentor Challenge"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/space-tourism-v1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/space-tourism-v1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Space Tourism V1 - Clean</h4>
+                <p class="projects__item-description">
+                  <span>React</span><span>TypeScript</span
+                  ><span>TailwindCSS</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/space tourism V1.png"
+                      alt="Space Tourism V1 - Frontend Mentor Challenge"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/space-tourism-v1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/space-tourism-v1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">
+                  Space Tourism V2 - Creative
+                </h4>
+                <p class="projects__item-description">
+                  <span>html</span><span>sass</span><span>JS</span
+                  ><span>TypeScript</span><span>GSASP</span>
+                  <span>Three js</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/My Hope.png"
+                      alt="My Hope"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/My-Hope---Ultimate-App/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/My-Hope---Ultimate-App"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">My Hope</h4>
+                <p class="projects__item-description">
+                  <span>html</span><span>sass</span><span>javascript</span
+                  ><span>GSASP</span>
+                  <span>Threejs</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/Web App CV.png"
+                      alt="Web App CV"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/Web-App---Gis-Services/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/Web-App---Gis-Services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Web App CV</h4>
+                <p class="projects__item-description">
+                  <span>html</span><span>sass</span><span>javascript</span
+                  ><span>GSASP</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/CSS Art Gallery.png"
+                      alt="CSS Art Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/css-art-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/css-art-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">CSS Art Gallery</h4>
+                <p class="projects__item-description">
+                  <span>react</span><span>typescript</span
+                  ><span>tailwindcss</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/landing page gallery.png"
+                      alt="Landing Page Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/landing-page-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/landing-page-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Landing Page Gallery</h4>
+                <p class="projects__item-description">
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindCSS</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/Creative Mini Projects Gallery.png"
+                      alt="Creative Mini Projects Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/creative-mini-projects-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/creative-mini-projects-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">
+                  Creative Mini Projects Gallery
+                </h4>
+                <p class="projects__item-description">
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindCSS</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/mini  projects gallery.png"
+                      alt="Mini Projects Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/mini-projects-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/mini-projects-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Mini Projects Gallery</h4>
+                <p class="projects__item-description">
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindCSS</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/Mini CSS Art and Animations Gallery.png"
+                      alt="Mini CSS Arts & Anim Projects Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/mini-css-art-animations-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/mini-css-art-animations-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">
+                  Mini CSS Arts & Anim Projects Gallery
+                </h4>
+                <p class="projects__item-description">
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindCSS</span>
+                </p>
+              </article>
+            </li>
+
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/Mix Projects Gallery.png"
+                      alt="Mix Projects Gallery"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/mix-projects-gallery/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view project <span></span>
+                    </a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/mix-projects-gallery"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                    >
+                      view code <span></span>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Mix Projects Gallery</h4>
+                <p class="projects__item-description">
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindCSS</span>
+                </p>
+              </article>
+            </li>
+          </ul>
+          <!-- End of Projects Menu -->
+        </section>
+        <!-- End of Projects -->
+
+        <!-- My Story -->
+        <section class="my-story"></section>
+        <!-- End of My Story -->
+      </main>
+      <!-- End of Main -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <section class="footer__contact" id="contact"></section>
+      </footer>
+      <!-- End of Footer -->
+
+      <!-- Back to top button -->
+      <a href="#"></a>
+      <!-- End of Back to top button -->
+    </div>
+    <!-- End of Container -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

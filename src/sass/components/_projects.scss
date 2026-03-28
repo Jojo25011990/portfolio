@@ -1,0 +1,124 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './header' as *;
+
+// *** Projects ***
+.projects {
+  margin-top: 140px;
+
+  @include dimension-settings(100%);
+  @include flex-settings(center, center, column, 80px);
+
+  // *** Wrapper ***
+  &__wrapper {
+    @include dimension-settings(100%, 1100px);
+    @include flex-settings(space-between, null, $gap: 40px);
+  }
+  // *** End of Wrapper ***
+
+  // *** Title ***
+  &__title {
+    @include font-settings(88px, 700, 88px, -2.5px);
+  }
+  // *** End of Title ***
+
+  // *** Description ***
+  &__description {
+    color: $grey-primary;
+
+    text-align: center;
+
+    @include dimension-settings(100%, 760px, 56px);
+    @include font-settings(18px, normal, 28px);
+  }
+
+  // *** End of Description ***
+
+  // *** Button ***
+  &__button {
+    align-self: center;
+    @extend .header__button;
+  }
+  // *** End of Button ***
+
+  // *** Menu | Item ***
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 69px;
+  }
+
+  &__item {
+    text-transform: uppercase;
+
+    //  *** Heading | Description ***
+    &-heading {
+      margin-top: 20px;
+
+      @include font-settings(24px, 700, 32px);
+    }
+
+    &-description {
+      @include flex-settings(null, null, $gap: 12px);
+      @include font-settings(18px, 500, 28px);
+    }
+    //  *** End of Heading | Description ***
+  }
+  // *** End of Menu | Item ***
+
+  // *** Box ***
+  &__box {
+    cursor: pointer;
+
+    overflow: hidden;
+
+    @include position-settings($position: relative);
+
+    // *** Img Wrapper | Image ***
+    &-wrapper {
+      max-height: 100%;
+      @include dimension-settings(100%, 535px, 396px);
+      @include position-settings($position: relative);
+    }
+
+    &-img {
+      object-fit: cover;
+
+      @include dimension-settings(100%, null, 100%);
+    }
+    // *** End of Img Wrapper | Image ***
+
+    // *** Overlay ***
+    &-overlay {
+      background-color: $dark-overlay;
+
+      transform: translateY(-100%);
+
+      opacity: 0;
+
+      transition:
+        transform 0.3s linear,
+        opacity 0.3s linear;
+
+      @include position-settings(0, 0, $zIndex: 100);
+      @include dimension-settings(100%, $height: 100%);
+      @include flex-settings(center, center, column, 48px);
+    }
+    // *** End of Overlay ***
+
+    &:hover .projects__box-overlay,
+    &:active .projects__box-overlay {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    // *** Overlay - Links ***
+    &-button {
+      @extend .header__button;
+    }
+    // *** End of Overlay - Links ***
+  }
+  // *** End of Box ***
+}
+// *** End of Projects ***

@@ -1,0 +1,216 @@
+@use '../abstract' as *;
+@use '../base' as *;
+// *** Header ***
+.header {
+  padding-inline: 20px;
+
+  @include dimension-settings(100%);
+  @include position-settings($position: relative);
+  @include flex-settings(center, null);
+
+  // *** Wrapper ***
+  &__wrapper {
+    @include dimension-settings(100%, 1100px, 720px);
+    @include position-settings($position: relative);
+  }
+  // *** End of Wrapper ***
+
+  // *** Navigation ***
+  &__navigation {
+    padding: 40px 20px 0 0;
+
+    @include dimension-settings(100%, null, 80px);
+    @include position-settings($zIndex: 20, $position: relative);
+    @include flex-settings(space-between, null, null, 40px);
+  }
+  // *** End of Navigation ***
+
+  // *** Logo ***
+  &__logo {
+    &:link,
+    &:visited {
+      color: inherit;
+
+      clip-path: inset(0 100% 0 0);
+
+      animation: author-animate 1s 1s ease forwards;
+
+      @include font-settings(32px, 700, 32px, -0.44px);
+    }
+  }
+  // *** End of Logo ***
+
+  // *** Menu ***
+  &__menu {
+    @include dimension-settings(100%, 200px);
+    @include flex-settings(space-between, $gap: 10px);
+  }
+  // *** End of Menu ***
+
+  // *** Social Media Links ***
+  &__link {
+    &:link,
+    &:visited {
+      color: inherit;
+
+      transition: color 0.3s;
+
+      @include font-settings(24px);
+    }
+
+    &:hover,
+    &:active {
+      color: $success-primary;
+    }
+  }
+  // *** End of Social Media Links ***
+
+  // *** Content | Heading | Description | Button ***
+  &__content {
+    @include position-settings(160px, 0, null, null, 20, relative);
+    @include dimension-settings(100%, 706px, 100%, 407px);
+  }
+
+  &__heading {
+    margin-bottom: 46px;
+
+    @include font-settings(88px, 700, 88px, -2.5px);
+
+    &-author {
+      @include position-settings($position: relative);
+
+      &::before {
+        content: '';
+
+        background-color: $success-primary;
+
+        transform: scaleX(0);
+        transform-origin: left;
+
+        animation: author-line 0.6s 1.5s forwards linear;
+
+        @include position-settings($left: 0, $bottom: 5px, $zIndex: -1);
+        @include dimension-settings(100%, $height: 6px);
+      }
+    }
+  }
+  &__description {
+    color: $grey-primary;
+
+    margin-bottom: 66px;
+
+    @include font-settings(18px, 500, 28px, 0px);
+    @include dimension-settings(100%, 445px);
+  }
+
+  &__button {
+    color: inherit;
+
+    padding-bottom: 10px;
+
+    transition: color 0.35s 0.4s linear;
+
+    cursor: pointer;
+
+    @include position-settings($position: relative);
+    @include font-settings(16px, 700, 26px, 2.29px);
+
+    & span {
+      background-color: $color-white;
+
+      @include position-settings($bottom: 0, $left: 0);
+      @include dimension-settings(100%, null, 2px);
+
+      &::before {
+        content: '';
+
+        background-color: $success-primary;
+
+        transform: scale(0);
+        transform-origin: left;
+
+        transition: transform 0.35s linear;
+
+        @include position-settings($bottom: 0, $left: 0, $zIndex: 100);
+        @include dimension-settings(100%, null, 100%);
+      }
+    }
+
+    &:hover,
+    &:active {
+      color: $success-primary;
+    }
+
+    &:hover span::before,
+    &:active span::before {
+      transform: scale(1);
+    }
+  }
+  // *** End of Content | Heading | Description | Button ***
+
+  // *** Img - Ring | Circle | Jozef Kudrna ***
+  &__ring {
+    @include position-settings(180px, -272px);
+  }
+  &__circle {
+    @include position-settings(521px, $right: 382.5px, $zIndex: 20);
+  }
+
+  &__author {
+    cursor: pointer;
+
+    object-fit: cover;
+
+    filter: blur(20px) grayscale(0.5) contrast(1.5) opacity(0.6) saturate(2.5);
+
+    animation: author-image 0.4s linear 2.5s forwards;
+
+    min-width: 445px;
+    @include dimension-settings($height: 100%);
+    @include position-settings(0, $right: 0, $zIndex: 10);
+  }
+  // *** End of Img - Ring | Circle | Jozef Kudrna ***
+
+  // *** Lightbox ***
+  &__lightbox {
+    background-color: rgba($color: $color-black, $alpha: 0.8);
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    @include position-settings(0, 0, $zIndex: 50, $position: fixed);
+    @include dimension-settings(100%, $height: 100%);
+    @include flex-settings(center, center, column, 15px);
+
+    &.show,
+    &.hidden {
+      transition: opacity 0.25s linear;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+
+    &.hidden {
+      opacity: 0;
+      @include position-settings($position: fixed, $zIndex: -999);
+    }
+
+    &-author {
+      border: 5px solid $color-white;
+
+      max-height: 80vh;
+      @include dimension-settings($height: auto);
+    }
+
+    &-description {
+      text-align: center;
+      @include font-settings(16px, 700);
+    }
+  }
+  // *** End of Lightbox ***
+}
+// *** End of Header ***

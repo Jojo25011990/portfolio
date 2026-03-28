@@ -1,0 +1,107 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** Skills ***
+.skills {
+  @include position-settings($position: relative);
+  @include dimension-settings(100%);
+  @include flex-settings(center, null);
+
+  // *** Skills Heading ***
+  &__heading {
+    transform: translate(-50%, -50%);
+
+    @include position-settings(50%, 50%);
+    @include font-settings(68px, 700, 88px, 2.5px);
+
+    & span {
+      display: inline-block;
+
+      @include position-settings($position: relative);
+    }
+
+    &.is-active span:nth-child(1) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-01 0.35s 1s forwards;
+    }
+    &.is-active span:nth-child(2) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-02 0.35s 1.5s forwards;
+    }
+    &.is-active span:nth-child(3) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-03 0.35s 2s forwards;
+    }
+    &.is-active span:nth-child(4) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-04 0.35s 2.5s forwards;
+    }
+    &.is-active span:nth-child(5) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-05 0.35s 3s forwards;
+    }
+    &.is-active span:nth-child(6) {
+      opacity: 1;
+      transform: translate(0, 0);
+      animation: span-animate-06 0.35s 3.5s forwards;
+    }
+  }
+  // *** End of Skills Heading ***
+
+  // *** Skills Menu ***
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 58px;
+
+    border-top: 1px solid $color-white;
+
+    padding-top: 72px;
+
+    @include dimension-settings(100%, 1100px);
+
+    &.is-active .skills__menu-item {
+      animation: skills-box 0.35s forwards;
+      animation-delay: calc(var(--i) * 0.6s + 1s);
+    }
+
+    &-item {
+      opacity: 0;
+
+      transform: scale(0);
+
+      will-change: transform, opacity;
+
+      //   &.is-active {
+      //     animation: skills-box 0.35s forwards;
+      //     animation-delay: calc(var(--i) * 0.6s + 1s);
+      //   }
+    }
+
+    &-heading {
+      color: $color-white;
+
+      @include font-settings(48px, 700, 56px, -1.5px);
+    }
+
+    &-description {
+      color: $grey-primary;
+
+      @include font-settings(18px, 500, 28px);
+    }
+  }
+  // *** End of Skills Menu ***
+
+  // *** Img - Ring ***
+  &__ring {
+    @include position-settings($bottom: -60px, $right: -244px);
+  }
+  // *** End of Img - Ring ***
+}
+// *** End of Skills ***

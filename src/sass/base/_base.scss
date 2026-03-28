@@ -1,0 +1,43 @@
+@use '../abstract' as *;
+
+// *** Html | Body | Container ***
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $color-white;
+  background-color: $body-bg-color;
+
+  padding: 20px;
+
+  font-family: $font-primary;
+
+  overflow-x: hidden;
+
+  @include dimension-settings(100vw, null, auto);
+  @include flex-settings(center, null);
+  @include position-settings($position: relative);
+}
+
+.container {
+  background-color: $dark-primary;
+
+  //   overflow-x: hidden;
+
+  @include dimension-settings(100%, 1440px);
+  @include position-settings($position: relative);
+}
+// *** End of Html | Body | Container ***
+
+// *** Main | Section ***
+main {
+  margin-top: 104px;
+
+  @include dimension-settings(100%);
+}
+
+section {
+  padding-inline: 20px;
+}
+// *** End of Main | Section ***
