@@ -4,5 +4,38 @@
 // *** My Story ***
 .my-story {
   margin-top: 140px;
+
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(#151515d2, $dark-primary),
+    url('../../assets/images/cover-5.jpg') no-repeat;
+  background-size: cover;
+
+  height: 90vh;
+  @include dimension-settings(100%);
+  @include position-settings($position: relative);
+  @include flex-settings;
+
+  // *** Dragon ***
+  &__dragon {
+    background: {
+      image: url('../../assets/images/red-dragon.png');
+      repeat: no-repeat;
+      size: cover;
+    }
+
+    filter: drop-shadow(0 0 2px $color-black);
+
+    transform: translateX(100%);
+
+    @include position-settings(0, $right: 0, $zIndex: 1);
+    @include dimension-settings(100%, 600px, 600px);
+
+    &.active {
+      animation: dragon-flight 8s ease-in forwards;
+    }
+  }
+  // *** End of Dragon ***
 }
 // *** End of My Story ***

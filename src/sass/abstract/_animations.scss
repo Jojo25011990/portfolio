@@ -138,3 +138,15 @@
   }
 }
 // *** End of Skills ***
+
+// *** My Story ***
+@keyframes dragon-flight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-240%);
+  }
+}
+// *** End of My Story ***
