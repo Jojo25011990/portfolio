@@ -1,0 +1,123 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+
+// *** Features ***
+.features {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+
+  // *** Title ***
+  &__title {
+    @extend .projects__title;
+  }
+  // *** End of Title ***
+
+  // *** Description ***
+
+  &__description {
+    @extend .projects__description;
+    text-align: center;
+    // margin-bottom: 60px;
+  }
+  // *** End of Description ***
+
+  // *** Button ***
+  &__button {
+    align-self: center;
+    @extend .projects__button;
+  }
+  // *** End of Button ***
+
+  // *** Menu | Item ***
+  &__menu {
+    column-gap: 40px;
+    row-gap: 40px;
+
+    @extend .projects__menu;
+  }
+
+  &__item {
+    //  *** Box ***
+    &-box {
+      padding: 25px;
+
+      text-align: center;
+
+      border-radius: 5px;
+
+      box-shadow:
+        1px 2px 5px $dark-overlay,
+        inset 2px 2px 5px $success-primary;
+
+      transition: all 0.3s ease-out;
+
+      @include dimension-settings(100%, 480px);
+      @include flex-settings(null, center, $gap: 10px);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    //  *** End of Box ***
+
+    // *** Icon ***
+    &-icon {
+      color: $color-white;
+
+      padding: 20px;
+
+      border-radius: 5px;
+
+      box-shadow: inset 1px 1px 5px $success-primary;
+
+      @include font-settings(30px);
+      @include dimension-settings(100%, 70px);
+      @include flex-settings;
+    }
+    // *** End of Icon ***
+
+    &-description {
+      text-align: left;
+
+      @include font-settings(15px, 500, 28px);
+    }
+    //  *** End of Heading | Description ***
+  }
+
+  &__fact-button {
+    color: $success-primary;
+
+    background-color: transparent;
+
+    padding: 16px 28px;
+
+    border: 1.6px solid $success-primary;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+
+    text-transform: uppercase;
+    @include font-settings(24px, 700, null, 1px);
+
+    &:hover,
+    &:active {
+      color: $color-white;
+      background-color: $success-secondary;
+
+      border: 1.6px solid transparent;
+
+      box-shadow:
+        0 0 8px $success-primary,
+        0 0 24px $success-primary,
+        0 0 48px $success-primary;
+    }
+  }
+}
+// *** End of Features ***

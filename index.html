@@ -79,7 +79,7 @@
     </script>
     <link rel="stylesheet" href="/src/sass/main.scss" />
   </head>
-  <body>
+  <body id="body">
     <!-- Container -->
     <div class="container">
       <!-- Header -->
@@ -87,7 +87,9 @@
         <div class="header__wrapper">
           <!-- Navigation -->
           <nav class="header__navigation" aria-label="Main navigation">
-            <a href="#" class="header__logo">JozefKudrna</a>
+            <a href="#top" class="header__logo" aria-label="Back to top"
+              >JozefKudrna</a
+            >
 
             <ul class="header__menu">
               <li class="header__item">
@@ -735,6 +737,182 @@
         </section>
         <!-- End of Projects -->
 
+        <!-- Services -->
+        <section class="services">
+          <div class="services__wrapper">
+            <h2 class="services__title">Services</h2>
+            <a class="services__button" href="#contact" role="button">
+              Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <p
+            class="services__description"
+            aria-label="Exploring, building, and animating digital experiences that tell a story."
+          >
+            Exploring, building, and animating digital experiences that tell a
+            story.
+          </p>
+
+          <!-- Services Menu -->
+          <ul class="services__menu">
+            <li class="services__item">
+              <article class="services__item-box">
+                <i class="fa-solid fa-anchor services__item-icon"></i>
+                <h3 class="services__item-heading">Anchored Technologies</h3>
+                <p class="services__item-description">
+                  Every project starts with a solid foundation - clean code,
+                  well-structured animations, and flexible components ready to
+                  scale.
+                </p>
+              </article>
+            </li>
+
+            <li class="services__item">
+              <article class="services__item-box">
+                <i class="fa-solid fa-paint-brush services__item-icon"></i>
+                <h3 class="services__item-heading">Creative Design</h3>
+                <p class="services__item-description">
+                  Visuals and interactions always have a purpose. I experiment
+                  with CSS art, GSAP, and Three.js to make every project unique
+                  and engaging.
+                </p>
+              </article>
+            </li>
+
+            <li class="services__item">
+              <article class="services__item-box">
+                <i class="fa-solid fa-brain services__item-icon"></i>
+                <h3 class="services__item-heading">Efficient Thinking</h3>
+                <p class="services__item-description">
+                  I prioritize efficiency and thoughtful solutions. Code,
+                  animations, and visuals are optimized so the project runs
+                  smoothly and logically.
+                </p>
+              </article>
+            </li>
+
+            <li class="services__item">
+              <article class="services__item-box">
+                <i class="fa-solid fa-hands-helping services__item-icon"></i>
+                <h3 class="services__item-heading">
+                  Storytelling & Interaction
+                </h3>
+                <p class="services__item-description">
+                  My projects tell a story - through animations, interactions,
+                  or visual effects. Every detail contributes to the overall
+                  experience.
+                </p>
+              </article>
+            </li>
+          </ul>
+          <!-- End of Services Menu -->
+        </section>
+        <!-- End of Services -->
+
+        <!-- Features -->
+        <section class="features">
+          <div class="features__wrapper">
+            <h2 class="features__title">Features</h2>
+            <a class="features__button" href="#contact" role="button">
+              Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <p class="features__description">
+            Small details that make every project engaging, interactive, and
+            memorable.
+          </p>
+
+          <!-- Features Menu -->
+          <ul class="features__menu">
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-laptop features__item-icon"></i>
+                <p class="features__item-description">
+                  Responsive design that adapts to any screen, optimized for
+                  smooth interactions.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-lightbulb-o features__item-icon"></i>
+                <p class="features__item-description">
+                  Creative coding experiments that add playful and innovative
+                  elements.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-palette features__item-icon"></i>
+                <p class="features__item-description">
+                  Color, shapes, and visuals crafted to create memorable
+                  experiences.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-cogs features__item-icon"></i>
+                <p class="features__item-description">
+                  Interactive features and subtle animations to enhance
+                  engagement.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-rocket features__item-icon"></i>
+                <p class="features__item-description">
+                  Quick prototypes and ideas to test creative directions
+                  rapidly.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-search features__item-icon"></i>
+                <p class="features__item-description">
+                  Attention to detail ensures polished visuals and clean code.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-tasks features__item-icon"></i>
+                <p class="features__item-description">
+                  Efficient workflows and structured code for scalability.
+                </p>
+              </article>
+            </li>
+
+            <li class="features__item">
+              <article class="features__item-box">
+                <i class="fa fa-heart features__item-icon"></i>
+                <p class="features__item-description">
+                  Passion for storytelling through interactive digital
+                  experiences.
+                </p>
+              </article>
+            </li>
+          </ul>
+          <!-- End of Features Menu -->
+
+          <!-- Fun Fact Button -->
+          <button type="button" class="features__fact-button">Fun Fact</button>
+          <!-- End of Fun Fact Button -->
+        </section>
+        <!-- End of Features -->
+
         <!-- My Story -->
         <section class="my-story"></section>
         <!-- End of My Story -->
@@ -803,7 +981,7 @@
             <!-- End of Email -->
 
             <!-- Message -->
-            <div class="footer__form-wrapper">
+            <div class="footer__form-wrapper footer__form-wrapper--textarea">
               <label for="message" class="footer__form-label">Message</label>
               <textarea
                 id="message"
@@ -818,13 +996,28 @@
               </p>
             </div>
             <!-- End of Message -->
+
+            <!-- Submit Button -->
+            <div class="footer__form-wrapper footer__form-wrapper--btn">
+              <button
+                type="submit"
+                aria-label="send message"
+                class="footer__form-btn"
+              >
+                Send message
+                <span></span>
+              </button>
+            </div>
+            <!-- End of Submit Button -->
           </form>
           <!-- End of Form -->
         </section>
 
         <!-- Navigation -->
         <nav class="footer__navigation" aria-label="Main navigation">
-          <a href="#" class="footer__logo">JozefKudrna</a>
+          <a href="#top" class="footer__logo" aria-label="Back to top"
+            >JozefKudrna</a
+          >
 
           <ul class="footer__menu">
             <li class="footer__item">

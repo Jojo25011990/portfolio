@@ -2,6 +2,7 @@
 @use '../base' as *;
 @use './projects' as *;
 @use './header' as *;
+
 // *** Footer ***
 .footer {
   background-color: $dark-secondary;
@@ -51,11 +52,20 @@
     @include dimension-settings(100%, 445px);
     @include flex-settings(null, null, column, 10px);
 
-    // *** Wrapper ***
+    // *** Wrapper | Wrapper Textarea | Button ***
     &-wrapper {
       @include dimension-settings(100%);
+
+      &--textarea {
+        max-height: 100px;
+        @include dimension-settings(100%, $height: 100%);
+      }
+
+      &--btn {
+        text-align: right;
+      }
     }
-    // *** End of Wrapper ***
+    // *** End of Wrapper | Wrapper Textarea | Button ***
 
     // *** Label - Sr Only ***
     &-label {
@@ -66,12 +76,12 @@
 
       overflow: hidden;
 
-      clip-path: rect(0, 0, 0);
+      clip-path: inset(50%);
 
       white-space: nowrap;
 
       @include position-settings;
-      @include dimension-settings(1px, $height: 1);
+      @include dimension-settings(1px, $height: 1px);
     }
     // *** End of Label - Sr Only ***
 
@@ -118,8 +128,10 @@
 
       transition: border-color 0.3s;
 
+      resize: vertical;
+
       max-height: 90px;
-      @include dimension-settings(100%, $height: 100%);
+      @include dimension-settings(100%, 100%, 100%);
       @include font-settings(18px, 700);
     }
     // *** End of Textarea ***
@@ -138,16 +150,31 @@
 
         opacity: 0;
 
-        transform: translate(-150px, -50px) rotate(-180deg) scale(3);
+        transform: translate(-200px, -50px) rotate(-180deg) scale(3);
 
         transition:
           transform 0.3s,
           opacity 0.3s;
 
         @include position-settings($position: relative);
+        @include font-settings(12px);
       }
     }
     // *** End of Error Message ***
+
+    // *** Button ***
+    &-btn {
+      padding-bottom: 10px;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      @include font-settings(16px, 700, 26px, 2.29px);
+
+      @extend .header__button;
+    }
+    // *** End of Button ***
   }
   // *** End of Form ***
 
