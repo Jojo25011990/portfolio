@@ -1,13 +1,15 @@
+// *** General ***
+@keyframes line {
+  to {
+    transform: scaleX(1);
+  }
+}
+// *** End of General ***
+
 // *** Header ****
 @keyframes author-animate {
   to {
     clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes author-line {
-  to {
-    transform: scaleX(1);
   }
 }
 
@@ -17,6 +19,12 @@
   }
   to {
     filter: blur(0) grayscale(0.5) contrast(1.5) opacity(0.6) saturate(2.5);
+  }
+}
+
+@keyframes circle {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 // *** End of Header ****

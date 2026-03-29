@@ -176,14 +176,25 @@
           />
           <!-- End of Ring Image - Decoration -->
 
-          <!-- Circle Image - Decoration -->
-          <img
-            src="./src/assets/images/pattern-circle.svg"
-            alt=""
-            aria-hidden="true"
-            class="header__circle"
-          />
-          <!-- End of Circle Image - Decoration -->
+          <!-- Circle SVG - Decoration -->
+          <svg
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+            width="129"
+            height="129"
+            class="header__svg"
+          >
+            <circle
+              class="header__svg-circle"
+              cx="50"
+              cy="50"
+              r="49"
+              stroke="white"
+              stroke-width="1"
+              fill="none"
+            />
+          </svg>
+          <!-- End of Circle SVG - Decoration -->
 
           <!-- Jozef Kudrna -->
           <img
@@ -224,26 +235,31 @@
               <h3 class="skills__menu-heading">HTML</h3>
               <p class="skills__menu-description">SEO, Accessibility</p>
             </li>
+
             <li class="skills__menu-item" style="--i: 2">
               <h3 class="skills__menu-heading">CSS</h3>
               <p class="skills__menu-description">Sass, Tailwind, Bootstrap</p>
             </li>
+
             <li class="skills__menu-item" style="--i: 3">
               <h3 class="skills__menu-heading">JavaScript</h3>
               <p class="skills__menu-description">
                 React, TypeScript, GSAP, Three.js
               </p>
             </li>
+
             <li class="skills__menu-item" style="--i: 4">
               <h3 class="skills__menu-heading">Figma</h3>
               <p class="skills__menu-description">Design, Prototyping, UI</p>
             </li>
+
             <li class="skills__menu-item" style="--i: 5">
               <h3 class="skills__menu-heading">Git / Github</h3>
               <p class="skills__menu-description">
                 Version control, Collaboration
               </p>
             </li>
+
             <li class="skills__menu-item" style="--i: 6">
               <h3 class="skills__menu-heading">Tools</h3>
               <p class="skills__menu-description">
@@ -274,48 +290,14 @@
             </a>
           </div>
 
-          <p class="projects__description"></p>
+          <p
+            class="projects__description"
+            aria-label="From over 150 completed projects, this is a refined selection of 10 that reflect my growth, technical range, and creative direction."
+          ></p>
 
           <!-- Projects Menu -->
           <ul class="projects__menu">
-            <li class="projects__item">
-              <article>
-                <div class="projects__box">
-                  <div class="projects__box-wrapper">
-                    <img
-                      src="./src/assets/images/space tourism V1.png"
-                      alt="Space Tourism V1 - Frontend Mentor Challenge"
-                      class="projects__box-img"
-                    />
-                  </div>
-
-                  <div class="projects__box-overlay">
-                    <a
-                      href="https://jojo25011990.github.io/space-tourism-v1/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="projects__box-button"
-                      >view project <span></span
-                    ></a>
-
-                    <a
-                      href="https://github.com/Jojo25011990/space-tourism-v1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="projects__box-button"
-                      >view code <span></span
-                    ></a>
-                  </div>
-                </div>
-
-                <h4 class="projects__item-heading">Space Tourism V1 - Clean</h4>
-                <p class="projects__item-description">
-                  <span>React</span><span>TypeScript</span
-                  ><span>TailwindCSS</span>
-                </p>
-              </article>
-            </li>
-
+            <!-- Space Tourism V2 - Creative -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -350,13 +332,59 @@
                   Space Tourism V2 - Creative
                 </h4>
                 <p class="projects__item-description">
-                  <span>html</span><span>sass</span><span>JS</span
-                  ><span>TypeScript</span><span>GSASP</span>
+                  <span>html</span>
+                  <span>sass</span>
+                  <span>JS</span>
+                  <span>TypeScript</span>
+                  <span>GSASP</span>
                   <span>Three js</span>
                 </p>
               </article>
             </li>
+            <!-- End of Space Tourism V2 - Creative -->
 
+            <!-- Space Tourism V1 - Clean -->
+            <li class="projects__item">
+              <article>
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/space tourism V1.png"
+                      alt="Space Tourism V1 - Frontend Mentor Challenge"
+                      class="projects__box-img"
+                    />
+                  </div>
+
+                  <div class="projects__box-overlay">
+                    <a
+                      href="https://jojo25011990.github.io/space-tourism-v1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/space-tourism-v1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                </div>
+
+                <h4 class="projects__item-heading">Space Tourism V1 - Clean</h4>
+                <p class="projects__item-description">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>TailwindCSS</span>
+                </p>
+              </article>
+            </li>
+            <!-- End of Space Tourism V1 - Clean -->
+
+            <!-- My Hope -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -389,13 +417,17 @@
 
                 <h4 class="projects__item-heading">My Hope</h4>
                 <p class="projects__item-description">
-                  <span>html</span><span>sass</span><span>javascript</span
-                  ><span>GSASP</span>
+                  <span>html</span>
+                  <span>sass</span>
+                  <span>javascript</span>
+                  <span>GSASP</span>
                   <span>Threejs</span>
                 </p>
               </article>
             </li>
+            <!-- End of My Hope -->
 
+            <!-- Web App CV -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -428,12 +460,16 @@
 
                 <h4 class="projects__item-heading">Web App CV</h4>
                 <p class="projects__item-description">
-                  <span>html</span><span>sass</span><span>javascript</span
-                  ><span>GSASP</span>
+                  <span>html</span>
+                  <span>sass</span>
+                  <span>javascript</span>
+                  <span>GSASP</span>
                 </p>
               </article>
             </li>
+            <!-- End of Web App CV -->
 
+            <!-- CSS Art Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -468,12 +504,15 @@
 
                 <h4 class="projects__item-heading">CSS Art Gallery</h4>
                 <p class="projects__item-description">
-                  <span>react</span><span>typescript</span
-                  ><span>tailwindcss</span>
+                  <span>react</span>
+                  <span>typescript</span>
+                  <span>tailwindcss</span>
                 </p>
               </article>
             </li>
+            <!-- End of CSS Art Gallery -->
 
+            <!-- Landing Page Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -514,7 +553,9 @@
                 </p>
               </article>
             </li>
+            <!-- End of Landing Page Gallery -->
 
+            <!-- Creative Mini Projects Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -557,7 +598,9 @@
                 </p>
               </article>
             </li>
+            <!-- End of Creative Mini Projects Gallery -->
 
+            <!-- Mini Projects Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -598,7 +641,9 @@
                 </p>
               </article>
             </li>
+            <!-- End of Mini Projects Gallery -->
 
+            <!-- Mini CSS Arts & Animations Projects Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -641,7 +686,9 @@
                 </p>
               </article>
             </li>
+            <!-- End of Mini CSS Arts & Animations Projects Gallery -->
 
+            <!-- Mix Projects Gallery -->
             <li class="projects__item">
               <article>
                 <div class="projects__box">
@@ -682,6 +729,7 @@
                 </p>
               </article>
             </li>
+            <!-- End of Mix Projects Gallery -->
           </ul>
           <!-- End of Projects Menu -->
         </section>
@@ -695,12 +743,155 @@
 
       <!-- Footer -->
       <footer class="footer">
-        <section class="footer__contact" id="contact"></section>
+        <section class="footer__contact" id="contact">
+          <!-- Content -->
+          <div class="footer__container">
+            <h2 class="footer__title">Contact</h2>
+            <p class="footer__description">
+              Open to collaborations, freelance work, and creative challenges. I
+              care about structure, detail, and meaningful interaction. Let's
+              takl..
+            </p>
+          </div>
+          <!-- End of Content -->
+
+          <!-- Ring Image - Decoration -->
+          <img
+            src="./src/assets/images/pattern-rings.svg"
+            alt=""
+            aria-hidden="true"
+            class="footer__ring"
+          />
+          <!-- End of Ring Image - Decoration -->
+
+          <!-- Form -->
+          <form novalidate autocomplete="off" class="footer__form">
+            <!-- Name -->
+            <div class="footer__form-wrapper">
+              <label for="name" class="footer__form-label">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="name"
+                class="footer__form-input"
+              />
+              <p class="footer__form-message">
+                <span style="--i: 1">Please</span>
+                <span style="--i: 2">enter</span>
+                <span style="--i: 3">your</span>
+                <span style="--i: 4">name.</span>
+              </p>
+            </div>
+            <!-- End of Name -->
+
+            <!-- Email -->
+            <div class="footer__form-wrapper">
+              <label for="email" class="footer__form-label">Email</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="email"
+                class="footer__form-input"
+              />
+              <p class="footer__form-message">
+                <span style="--i: 1">Please</span>
+                <span style="--i: 2">check</span>
+                <span style="--i: 3">your</span>
+                <span style="--i: 4">email.</span>
+              </p>
+            </div>
+            <!-- End of Email -->
+
+            <!-- Message -->
+            <div class="footer__form-wrapper">
+              <label for="message" class="footer__form-label">Message</label>
+              <textarea
+                id="message"
+                placeholder="message"
+                class="footer__form-textarea"
+              ></textarea>
+              <p class="footer__form-message">
+                <span style="--i: 1">Please</span>
+                <span style="--i: 2">check</span>
+                <span style="--i: 3">your</span>
+                <span style="--i: 4">email.</span>
+              </p>
+            </div>
+            <!-- End of Message -->
+          </form>
+          <!-- End of Form -->
+        </section>
+
+        <!-- Navigation -->
+        <nav class="footer__navigation" aria-label="Main navigation">
+          <a href="#" class="footer__logo">JozefKudrna</a>
+
+          <ul class="footer__menu">
+            <li class="footer__item">
+              <a
+                href="https://github.com/jojo25011990"
+                aria-label="Github profile - Jozef Kudrna"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="https://www.instagram.com/web.animations.and.effects/"
+                aria-label="Instagram profile - Jozef Kudrna"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="https://www.linkedin.com/in/jozef-kudrna-28b580295/"
+                aria-label="Linkedin profile - Jozef Kudrna"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="https://www.tiktok.com/@web.anim.and.effects"
+                aria-label="Tiktok profile - Jozef Kudrna"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="https://www.youtube.com/@web.animations.and.effects"
+                aria-label="Youtube profile - Jozef Kudrna"
+                class="footer__link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Navigation -->
       </footer>
       <!-- End of Footer -->
 
       <!-- Back to top button -->
-      <a href="#"></a>
+      <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
       <!-- End of Back to top button -->
     </div>
     <!-- End of Container -->

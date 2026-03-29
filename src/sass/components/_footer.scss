@@ -1,4 +1,181 @@
 @use '../abstract' as *;
 @use '../base' as *;
+@use './projects' as *;
+@use './header' as *;
 // *** Footer ***
+.footer {
+  background-color: $dark-secondary;
+
+  padding: 87.5px 20px;
+
+  @include dimension-settings(100%, $min-height: 675px);
+  @include flex-settings($direction: column, $gap: 92px);
+
+  // *** Contact ***
+  &__contact {
+    @include dimension-settings(100%, 1100px, null, 327px);
+    @include flex-settings(space-between, null, $gap: 40px);
+    @include position-settings($position: relative);
+  }
+  // *** End of Contact ***
+
+  // *** Container ***
+  &__container {
+    @include dimension-settings(100%, 412px);
+    @include flex-settings(null, null, column, 37px);
+  }
+  // *** End of Container ***
+
+  // *** Title | Description ***
+  &__title {
+    @extend .projects__title;
+  }
+  &__description {
+    text-align: left;
+
+    @include dimension-settings($height: unset);
+    @extend .projects__description;
+  }
+  // *** End of Title | Description ***
+
+  // *** Ring - Decoration ***
+  &__ring {
+    @include position-settings($bottom: -60px, $left: -384px);
+  }
+  // *** End of Ring - Decoration ***
+
+  // *** Form ***
+  &__form {
+    color: $color-white;
+
+    @include dimension-settings(100%, 445px);
+    @include flex-settings(null, null, column, 10px);
+
+    // *** Wrapper ***
+    &-wrapper {
+      @include dimension-settings(100%);
+    }
+    // *** End of Wrapper ***
+
+    // *** Label - Sr Only ***
+    &-label {
+      margin: -1px;
+      padding: 0;
+
+      border: 0;
+
+      overflow: hidden;
+
+      clip-path: rect(0, 0, 0);
+
+      white-space: nowrap;
+
+      @include position-settings;
+      @include dimension-settings(1px, $height: 1);
+    }
+    // *** End of Label - Sr Only ***
+
+    // *** Input ***
+    &-input {
+      background-color: transparent;
+
+      border: 0;
+      outline: 0;
+
+      border-bottom: 2px solid $grey-primary;
+
+      padding-block: 10px;
+      padding-left: 10px;
+
+      text-transform: uppercase;
+
+      transition: border-color 0.3s;
+
+      @include dimension-settings(100%);
+      @include font-settings(18px, 700);
+
+      &:focus {
+        border-color: $blue-primary;
+      }
+    }
+    // *** End of Input ***
+
+    // *** Textarea ***
+    &-textarea {
+      background-color: transparent;
+
+      border: 0;
+      outline: 0;
+
+      border-bottom: 2px solid $grey-primary;
+
+      padding-block: 10px;
+      padding-left: 10px;
+
+      margin-bottom: 0;
+
+      text-transform: uppercase;
+
+      transition: border-color 0.3s;
+
+      max-height: 90px;
+      @include dimension-settings(100%, $height: 100%);
+      @include font-settings(18px, 700);
+    }
+    // *** End of Textarea ***
+
+    // *** Error Message ***
+    &-message {
+      color: $danger-primary;
+
+      margin-top: 4px;
+      padding-left: 10px;
+
+      @include position-settings($position: relative);
+
+      & span {
+        display: inline-block;
+
+        opacity: 0;
+
+        transform: translate(-150px, -50px) rotate(-180deg) scale(3);
+
+        transition:
+          transform 0.3s,
+          opacity 0.3s;
+
+        @include position-settings($position: relative);
+      }
+    }
+    // *** End of Error Message ***
+  }
+  // *** End of Form ***
+
+  // *** Navigation ***
+  &__navigation {
+    padding-top: 47px;
+    // nezabudni zmenit a z animovat ako projects line
+    border-top: 1px solid white;
+
+    @include dimension-settings(100%, 1100px, 80px);
+    @include flex-settings(space-between, null, null, 40px);
+  }
+  // *** End of Navigation ***
+
+  // *** Logo ***
+  &__logo {
+    @extend .header__logo;
+  }
+  // *** End of Logo ***
+
+  // *** Menu | Social Media Links ***
+  &__menu {
+    @extend .header__menu;
+  }
+
+  &__link {
+    @extend .header__link;
+  }
+  // *** End of Menu | Social Media Links ***
+}
 // *** End of Footer ***
