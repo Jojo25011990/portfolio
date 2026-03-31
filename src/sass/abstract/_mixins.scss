@@ -92,3 +92,13 @@
   }
 }
 // *** End of Dimension Settings ***
+
+// *** Responsive Settings ***
+@mixin responsive-settings($breakpoint) {
+  @if $breakpoint == desktop {
+    @media (max-width: 1150px) {
+      @content;
+    }
+  }
+}
+// *** End of Responsive Settings ***

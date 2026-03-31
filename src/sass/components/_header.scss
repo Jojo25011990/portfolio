@@ -2,26 +2,32 @@
 @use '../base' as *;
 // *** Header ***
 .header {
-  padding-inline: 20px;
+  padding-inline: 2rem;
 
   @include dimension-settings(100%);
   @include position-settings($position: relative);
   @include flex-settings(center, null);
 
+  // *** Responsive Design ***
+  @include responsive-settings(desktop) {
+    padding-right: 0;
+  }
+  // *** End of Responsive Design ***
+
   // *** Wrapper ***
   &__wrapper {
-    @include dimension-settings(100%, 1100px, 720px);
+    @include dimension-settings(100%, 110rem, 72rem);
     @include position-settings($position: relative);
   }
   // *** End of Wrapper ***
 
   // *** Navigation ***
   &__navigation {
-    padding: 40px 20px 0 0;
+    padding: 4rem 2rem 0 0;
 
-    @include dimension-settings(100%, null, 80px);
+    @include dimension-settings(100%, null, 8rem);
     @include position-settings($zIndex: 20, $position: relative);
-    @include flex-settings(space-between, null, null, 40px);
+    @include flex-settings(space-between, null, null, 4rem);
   }
   // *** End of Navigation ***
 
@@ -35,15 +41,15 @@
 
       animation: author-animate 1s 1s ease forwards;
 
-      @include font-settings(32px, 700, 32px, -0.44px);
+      @include font-settings(3.2rem, 700, 3.2rem, -0.044rem);
     }
   }
   // *** End of Logo ***
 
   // *** Menu ***
   &__menu {
-    @include dimension-settings(100%, 200px);
-    @include flex-settings(space-between, $gap: 10px);
+    @include dimension-settings(100%, 20rem);
+    @include flex-settings(space-between, $gap: 1rem);
   }
   // *** End of Menu ***
 
@@ -55,7 +61,7 @@
 
       transition: color 0.3s;
 
-      @include font-settings(24px);
+      @include font-settings(2.4rem);
     }
 
     &:hover,
@@ -67,14 +73,20 @@
 
   // *** Content | Heading | Description | Button ***
   &__content {
-    @include position-settings(160px, 0, null, null, 20, relative);
-    @include dimension-settings(100%, 706px, 100%, 407px);
+    @include position-settings(16rem, 0, null, null, 20, relative);
+    @include dimension-settings(100%, 70.6rem, 100%, 40.7rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      @include dimension-settings(100%, 56rem, 100%, 40.7rem);
+    }
+    // *** End of Responsive Design ***
   }
 
   &__heading {
-    margin-bottom: 46px;
+    margin-bottom: 4.6rem;
 
-    @include font-settings(88px, 700, 88px, -2.5px);
+    @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
 
     &-author {
       @include position-settings($position: relative);
@@ -89,37 +101,43 @@
 
         animation: line 0.6s 1.5s forwards linear;
 
-        @include position-settings($left: 0, $bottom: 5px, $zIndex: -1);
-        @include dimension-settings(100%, $height: 6px);
+        @include position-settings($left: 0, $bottom: 0.5rem, $zIndex: -1);
+        @include dimension-settings(100%, $height: 0.6rem);
       }
     }
   }
   &__description {
     color: $grey-primary;
 
-    margin-bottom: 66px;
+    margin-bottom: 6.6rem;
 
-    @include font-settings(18px, 500, 28px, 0px);
-    @include dimension-settings(100%, 445px);
+    @include font-settings(1.8rem, 500, 2.8rem, 0);
+    @include dimension-settings(100%, 44.5rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      margin-bottom: 5rem;
+    }
+    // *** End of Responsive Design ***
   }
 
   &__button {
     color: inherit;
 
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 
     transition: color 0.35s 0.4s linear;
 
     cursor: pointer;
 
     @include position-settings($position: relative);
-    @include font-settings(16px, 700, 26px, 2.29px);
+    @include font-settings(1.6rem, 700, 2.6rem, 0.229rem);
 
     & span {
       background-color: $color-white;
 
       @include position-settings($bottom: 0, $left: 0);
-      @include dimension-settings(100%, null, 2px);
+      @include dimension-settings(100%, null, 0.2rem);
 
       &::before {
         content: '';
@@ -150,10 +168,10 @@
 
   // *** Img - Ring | Circle | Jozef Kudrna ***
   &__ring {
-    @include position-settings(180px, -272px);
+    @include position-settings(18rem, -27.2rem);
   }
   &__svg {
-    @include position-settings(521px, $right: 382.5px, $zIndex: 20);
+    @include position-settings(52.1rem, $right: 38.25rem, $zIndex: 20);
 
     &-circle {
       stroke-dasharray: 500;
@@ -170,11 +188,11 @@
 
     object-fit: cover;
 
-    filter: blur(20px) grayscale(0.5) contrast(1.5) opacity(0.6) saturate(2.5);
+    filter: blur(2rem) grayscale(0.5) contrast(1.5) opacity(0.6) saturate(2.5);
 
     animation: author-image 0.4s linear 2s forwards;
 
-    min-width: 445px;
+    min-width: 44.5rem;
     @include dimension-settings($height: 100%);
     @include position-settings(0, $right: 0, $zIndex: 10);
   }
@@ -184,15 +202,15 @@
   &__lightbox {
     background-color: rgba($color: $color-black, $alpha: 0.8);
 
-    padding: 10px;
+    padding: 1rem;
 
     cursor: pointer;
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(0.8rem);
 
     @include position-settings(0, 0, $zIndex: 50, $position: fixed);
     @include dimension-settings(100%, $height: 100%);
-    @include flex-settings(center, center, column, 15px);
+    @include flex-settings(center, center, column, 1.5rem);
 
     &.show,
     &.hidden {
@@ -209,7 +227,7 @@
     }
 
     &-author {
-      border: 5px solid $color-white;
+      border: 0.5rem solid $color-white;
 
       max-height: 80vh;
       @include dimension-settings($height: auto);
@@ -217,7 +235,7 @@
 
     &-description {
       text-align: center;
-      @include font-settings(16px, 700);
+      @include font-settings(1.6rem, 700);
     }
   }
   // *** End of Lightbox ***

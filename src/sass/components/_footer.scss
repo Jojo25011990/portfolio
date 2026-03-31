@@ -7,23 +7,23 @@
 .footer {
   background-color: $dark-secondary;
 
-  padding: 87.5px 20px;
+  padding: 8.75rem 2rem;
 
-  @include dimension-settings(100%, $min-height: 675px);
-  @include flex-settings($direction: column, $gap: 92px);
+  @include dimension-settings(100%, $min-height: 67.5rem);
+  @include flex-settings($direction: column, $gap: 9.2rem);
 
   // *** Contact ***
   &__contact {
-    @include dimension-settings(100%, 1100px, null, 327px);
-    @include flex-settings(space-between, null, $gap: 40px);
+    @include dimension-settings(100%, 110rem, null, 32.7rem);
+    @include flex-settings(space-between, null, $gap: 4rem);
     @include position-settings($position: relative);
   }
   // *** End of Contact ***
 
   // *** Container ***
   &__container {
-    @include dimension-settings(100%, 412px);
-    @include flex-settings(null, null, column, 37px);
+    @include dimension-settings(100%, 41.2rem);
+    @include flex-settings(null, null, column, 3.7rem);
   }
   // *** End of Container ***
 
@@ -41,7 +41,7 @@
 
   // *** Ring - Decoration ***
   &__ring {
-    @include position-settings($bottom: -60px, $left: -384px);
+    @include position-settings($bottom: -6rem, $left: -38.4rem);
   }
   // *** End of Ring - Decoration ***
 
@@ -49,8 +49,8 @@
   &__form {
     color: $color-white;
 
-    @include dimension-settings(100%, 445px);
-    @include flex-settings(null, null, column, 10px);
+    @include dimension-settings(100%, 44.5rem);
+    @include flex-settings(null, null, column, 1rem);
 
     // *** Wrapper | Wrapper Textarea | Button ***
     &-wrapper {
@@ -69,7 +69,7 @@
 
     // *** Label - Sr Only ***
     &-label {
-      margin: -1px;
+      margin: -0.1rem;
       padding: 0;
 
       border: 0;
@@ -81,7 +81,7 @@
       white-space: nowrap;
 
       @include position-settings;
-      @include dimension-settings(1px, $height: 1px);
+      @include dimension-settings(0.1rem, $height: 0.1rem);
     }
     // *** End of Label - Sr Only ***
 
@@ -92,17 +92,17 @@
       border: 0;
       outline: 0;
 
-      border-bottom: 2px solid $grey-primary;
+      border-bottom: 0.2rem solid $grey-primary;
 
-      padding-block: 10px;
-      padding-left: 10px;
+      padding-block: 1rem;
+      padding-left: 1rem;
 
       text-transform: uppercase;
 
       transition: border-color 0.3s;
 
       @include dimension-settings(100%);
-      @include font-settings(18px, 700);
+      @include font-settings(1.8rem, 700);
 
       &:focus {
         border-color: $blue-primary;
@@ -117,10 +117,10 @@
       border: 0;
       outline: 0;
 
-      border-bottom: 2px solid $grey-primary;
+      border-bottom: 0.2rem solid $grey-primary;
 
-      padding-block: 10px;
-      padding-left: 10px;
+      padding-block: 1rem;
+      padding-left: 1rem;
 
       margin-bottom: 0;
 
@@ -130,9 +130,9 @@
 
       resize: vertical;
 
-      max-height: 90px;
+      max-height: 9rem;
       @include dimension-settings(100%, 100%, 100%);
-      @include font-settings(18px, 700);
+      @include font-settings(1.8rem, 700);
     }
     // *** End of Textarea ***
 
@@ -140,8 +140,8 @@
     &-message {
       color: $danger-primary;
 
-      margin-top: 4px;
-      padding-left: 10px;
+      margin-top: 0.4rem;
+      padding-left: 1rem;
 
       @include position-settings($position: relative);
 
@@ -157,20 +157,20 @@
           opacity 0.3s;
 
         @include position-settings($position: relative);
-        @include font-settings(12px);
+        @include font-settings(1.2rem);
       }
     }
     // *** End of Error Message ***
 
     // *** Button ***
     &-btn {
-      padding-bottom: 10px;
+      padding-bottom: 1rem;
 
       cursor: pointer;
 
       text-transform: uppercase;
 
-      @include font-settings(16px, 700, 26px, 2.29px);
+      @include font-settings(1.6rem, 700, 2.6rem, 0.229rem);
 
       @extend .header__button;
     }
@@ -180,12 +180,12 @@
 
   // *** Navigation ***
   &__navigation {
-    padding-top: 47px;
+    padding-top: 4.7rem;
     // nezabudni zmenit a z animovat ako projects line
-    border-top: 1px solid white;
+    border-top: 0.1rem solid white;
 
-    @include dimension-settings(100%, 1100px, 80px);
-    @include flex-settings(space-between, null, null, 40px);
+    @include dimension-settings(100%, 110rem, 8rem);
+    @include flex-settings(space-between, null, null, 4rem);
   }
   // *** End of Navigation ***
 

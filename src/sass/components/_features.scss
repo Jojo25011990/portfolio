@@ -36,8 +36,8 @@
 
   // *** Menu | Item ***
   &__menu {
-    column-gap: 40px;
-    row-gap: 40px;
+    column-gap: 4rem;
+    row-gap: 4rem;
 
     @extend .projects__menu;
   }
@@ -45,20 +45,20 @@
   &__item {
     //  *** Box ***
     &-box {
-      padding: 25px;
+      padding: 2.5rem;
 
       text-align: center;
 
-      border-radius: 5px;
+      border-radius: 0.5rem;
 
       box-shadow:
-        1px 2px 5px $dark-overlay,
-        inset 2px 2px 5px $success-primary;
+        0.1rem 0.2rem 0.5rem $dark-overlay,
+        inset 0.2rem 0.2rem 0.5rem $success-primary;
 
       transition: all 0.3s ease-out;
 
-      @include dimension-settings(100%, 480px);
-      @include flex-settings(null, center, $gap: 10px);
+      @include dimension-settings(100%, 48rem);
+      @include flex-settings(null, center, $gap: 1rem);
 
       &:hover {
         transform: scale(1.05);
@@ -70,14 +70,14 @@
     &-icon {
       color: $color-white;
 
-      padding: 20px;
+      padding: 2rem;
 
-      border-radius: 5px;
+      border-radius: 0.5rem;
 
-      box-shadow: inset 1px 1px 5px $success-primary;
+      box-shadow: inset 0.1rem 0.1rem 0.5rem $success-primary;
 
-      @include font-settings(30px);
-      @include dimension-settings(100%, 70px);
+      @include font-settings(3rem);
+      @include dimension-settings(100%, 7rem);
       @include flex-settings;
     }
     // *** End of Icon ***
@@ -85,7 +85,7 @@
     &-description {
       text-align: left;
 
-      @include font-settings(15px, 500, 28px);
+      @include font-settings(1.5rem, 500, 2.8rem);
     }
     //  *** End of Heading | Description ***
   }
@@ -95,28 +95,28 @@
 
     background-color: transparent;
 
-    padding: 16px 28px;
+    padding: 1.6rem 2.8rem;
 
-    border: 1.6px solid $success-primary;
+    border: 0.16rem solid $success-primary;
 
     cursor: pointer;
 
     transition: all 0.3s;
 
     text-transform: uppercase;
-    @include font-settings(24px, 700, null, 1px);
+    @include font-settings(2.4rem, 700, null, 0.1rem);
 
     &:hover,
     &:active {
       color: $color-white;
       background-color: $success-secondary;
 
-      border: 1.6px solid transparent;
+      border-color: transparent;
 
       box-shadow:
-        0 0 8px $success-primary,
-        0 0 24px $success-primary,
-        0 0 48px $success-primary;
+        0 0 0.8rem $success-primary,
+        0 0 2.4rem $success-primary,
+        0 0 4.8rem $success-primary;
     }
   }
 }

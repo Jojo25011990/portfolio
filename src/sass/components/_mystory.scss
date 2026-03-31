@@ -17,6 +17,29 @@
   @include position-settings($position: relative);
   @include flex-settings;
 
+  &:hover {
+    animation: shake 0.3s linear 3;
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(-4px);
+    }
+
+    25% {
+      transform: translateX(4px);
+    }
+
+    50% {
+      transform: translateX(-4px);
+    }
+
+    75% {
+      transform: translateX(4px);
+    }
+  }
+
   // *** Dragon ***
   &__dragon {
     background: {
