@@ -12,7 +12,7 @@
     transform: translate(-50%, -50%);
 
     @include position-settings(50%, 50%);
-    @include font-settings(68px, 700, 88px, 2.5px);
+    @include font-settings(6.8rem, 700, 8.8rem, 0.25rem);
 
     & span {
       display: inline-block;
@@ -57,12 +57,12 @@
   &__menu {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 58px;
+    column-gap: 3rem;
+    row-gap: 5.8rem;
 
-    padding-top: 72px;
+    padding-top: 7.2rem;
 
-    @include dimension-settings(100%, 1100px);
+    @include dimension-settings(100%, 110rem);
     position: relative;
 
     &::before {
@@ -74,7 +74,7 @@
       transform-origin: left;
 
       width: 100%;
-      height: 1px;
+      height: 0.1rem;
 
       background-color: $color-white;
 
@@ -97,20 +97,20 @@
     &-heading {
       color: $color-white;
 
-      @include font-settings(48px, 700, 56px, -1.5px);
+      @include font-settings(4.8rem, 700, 5.6rem, -0.15rem);
     }
 
     &-description {
       color: $grey-primary;
 
-      @include font-settings(18px, 500, 28px);
+      @include font-settings(1.8rem, 500, 2.8rem);
     }
   }
   // *** End of Skills Menu ***
 
   // *** Img - Ring ***
   &__ring {
-    @include position-settings($bottom: -60px, $right: -244px);
+    @include position-settings($bottom: -6rem, $right: -24.4rem);
   }
   // *** End of Img - Ring ***
 }

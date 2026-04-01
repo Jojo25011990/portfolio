@@ -3,7 +3,7 @@
 
 // *** My Story ***
 .my-story {
-  margin-top: 140px;
+  margin-top: 14rem;
 
   overflow-x: hidden;
 
@@ -24,19 +24,19 @@
   @keyframes shake {
     0%,
     100% {
-      transform: translateX(-4px);
+      transform: translateX(-0.4rem);
     }
 
     25% {
-      transform: translateX(4px);
+      transform: translateX(0.4rem);
     }
 
     50% {
-      transform: translateX(-4px);
+      transform: translateX(-0.4rem);
     }
 
     75% {
-      transform: translateX(4px);
+      transform: translateX(0.4rem);
     }
   }
 
@@ -48,12 +48,12 @@
       size: cover;
     }
 
-    filter: drop-shadow(0 0 2px $color-black);
+    filter: drop-shadow(0 0 0.2rem $color-black);
 
     transform: translateX(100%);
 
     @include position-settings(0, $right: 0, $zIndex: 1);
-    @include dimension-settings(100%, 600px, 600px);
+    @include dimension-settings(100%, 60rem, 60rem);
 
     &.active {
       animation: dragon-flight 8s ease-in forwards;

@@ -4,21 +4,21 @@
 
 // *** Projects ***
 .projects {
-  margin-top: 140px;
+  margin-top: 14rem;
 
   @include dimension-settings(100%);
-  @include flex-settings(center, center, column, 80px);
+  @include flex-settings(center, center, column, 8rem);
 
   // *** Wrapper ***
   &__wrapper {
-    @include dimension-settings(100%, 1100px);
-    @include flex-settings(space-between, null, $gap: 40px);
+    @include dimension-settings(100%, 110rem);
+    @include flex-settings(space-between, null, $gap: 4rem);
   }
   // *** End of Wrapper ***
 
   // *** Title ***
   &__title {
-    @include font-settings(88px, 700, 88px, -2.5px);
+    @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
   }
   // *** End of Title ***
 
@@ -28,8 +28,8 @@
 
     text-align: center;
 
-    @include dimension-settings(100%, 760px, 56px);
-    @include font-settings(18px, normal, 28px);
+    @include dimension-settings(100%, 76rem, 5.6rem);
+    @include font-settings(1.8rem, normal, 2.8rem);
   }
 
   // *** End of Description ***
@@ -45,8 +45,8 @@
   &__menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 30px;
-    row-gap: 69px;
+    column-gap: 3rem;
+    row-gap: 6.9rem;
   }
 
   &__item {
@@ -54,14 +54,14 @@
 
     //  *** Heading | Description ***
     &-heading {
-      margin-top: 20px;
+      margin-top: 2rem;
 
-      @include font-settings(24px, 700, 32px);
+      @include font-settings(2.4rem, 700, 3.2rem);
     }
 
     &-description {
-      @include flex-settings(null, null, $gap: 12px);
-      @include font-settings(18px, 500, 28px);
+      @include flex-settings(null, null, $gap: 1.2rem);
+      @include font-settings(1.8rem, 500, 2.8rem);
     }
     //  *** End of Heading | Description ***
   }
@@ -78,7 +78,7 @@
     // *** Img Wrapper | Image ***
     &-wrapper {
       max-height: 100%;
-      @include dimension-settings(100%, 535px, 396px);
+      @include dimension-settings(100%, 53.5rem, 39.6rem);
       @include position-settings($position: relative);
     }
 
@@ -103,7 +103,7 @@
 
       @include position-settings(0, 0, $zIndex: 100);
       @include dimension-settings(100%, $height: 100%);
-      @include flex-settings(center, center, column, 48px);
+      @include flex-settings(center, center, column, 4.8rem);
     }
     // *** End of Overlay ***
 
