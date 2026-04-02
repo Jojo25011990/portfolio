@@ -59,10 +59,6 @@
 
       @include dimension-settings(100%, 48rem);
       @include flex-settings(null, center, $gap: 1rem);
-
-      &:hover {
-        transform: scale(1.05);
-      }
     }
     //  *** End of Box ***
 
@@ -79,6 +75,12 @@
       @include font-settings(3rem);
       @include dimension-settings(100%, 7rem);
       @include flex-settings;
+
+      transition: background-color 0.5s;
+
+      &.random-active {
+        background-color: $success-primary;
+      }
     }
     // *** End of Icon ***
 
