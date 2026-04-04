@@ -1,0 +1,47 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** General ***
+.header__navigation,
+.footer__navigation {
+  @include flex-settings(space-between, null, null, 4rem);
+}
+// *** End of General ***
+
+// *** Header ***
+.header__navigation {
+  padding: 4rem 2rem 0 0;
+
+  @include dimension-settings(100%, null, 8rem);
+  @include position-settings($position: relative, $zIndex: 20);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet) {
+    padding-left: 2rem;
+  }
+
+  @include responsive-settings(mobile) {
+    @include dimension-settings($height: unset);
+    @include flex-settings(center, center, column, $gap: 2rem);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Header ***
+
+// *** Footer ***
+.footer__navigation {
+  padding-top: 4.7rem;
+  // nezabudni zmenit a z animovat ako projects line
+  border-top: 0.1rem solid white;
+
+  @include dimension-settings(100%, 110rem, 8rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    min-height: 8rem;
+    @include dimension-settings($height: 100%);
+    @include flex-settings(center, center, column);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Footer ***

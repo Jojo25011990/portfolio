@@ -17,6 +17,12 @@
     @include dimension-settings(100%, 110rem, null, 32.7rem);
     @include flex-settings(space-between, null, $gap: 4rem);
     @include position-settings($position: relative);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet-large) {
+      @include flex-settings(space-between, center, column);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Contact ***
 
@@ -27,170 +33,16 @@
   }
   // *** End of Container ***
 
-  // *** Title | Description ***
-  &__title {
-    @extend .projects__title;
-  }
-  &__description {
-    text-align: left;
-
-    @include dimension-settings($height: unset);
-    @extend .projects__description;
-  }
-  // *** End of Title | Description ***
-
   // *** Ring - Decoration ***
   &__ring {
     @include position-settings($bottom: -6rem, $left: -38.4rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile) {
+      @include position-settings($bottom: -6.4rem, $left: -24rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Ring - Decoration ***
-
-  // *** Form ***
-  &__form {
-    color: $color-white;
-
-    @include dimension-settings(100%, 44.5rem);
-    @include flex-settings(null, null, column, 1rem);
-
-    // *** Wrapper | Wrapper Textarea | Button ***
-    &-wrapper {
-      @include dimension-settings(100%);
-
-      &--textarea {
-        max-height: 100px;
-        @include dimension-settings(100%, $height: 100%);
-      }
-
-      &--btn {
-        text-align: right;
-      }
-    }
-    // *** End of Wrapper | Wrapper Textarea | Button ***
-
-    // *** Label - Sr Only ***
-    &-label {
-      @extend %sr-only;
-    }
-    // *** End of Label - Sr Only ***
-
-    // *** Input ***
-    &-input {
-      background-color: transparent;
-
-      border: 0;
-      outline: 0;
-
-      border-bottom: 0.2rem solid $grey-primary;
-
-      padding-block: 1rem;
-      padding-left: 1rem;
-
-      text-transform: uppercase;
-
-      transition: border-color 0.3s;
-
-      @include dimension-settings(100%);
-      @include font-settings(1.8rem, 700);
-
-      &:focus {
-        border-color: $blue-primary;
-      }
-    }
-    // *** End of Input ***
-
-    // *** Textarea ***
-    &-textarea {
-      background-color: transparent;
-
-      border: 0;
-      outline: 0;
-
-      border-bottom: 0.2rem solid $grey-primary;
-
-      padding-block: 1rem;
-      padding-left: 1rem;
-
-      margin-bottom: 0;
-
-      text-transform: uppercase;
-
-      transition: border-color 0.3s;
-
-      resize: vertical;
-
-      max-height: 9rem;
-      @include dimension-settings(100%, 100%, 100%);
-      @include font-settings(1.8rem, 700);
-    }
-    // *** End of Textarea ***
-
-    // *** Error Message ***
-    &-message {
-      color: $danger-primary;
-
-      margin-top: 0.4rem;
-      padding-left: 1rem;
-
-      @include position-settings($position: relative);
-
-      & span {
-        display: inline-block;
-
-        opacity: 0;
-
-        transform: translate(-200px, -50px) rotate(-180deg) scale(3);
-
-        transition:
-          transform 0.3s,
-          opacity 0.3s;
-
-        @include position-settings($position: relative);
-        @include font-settings(1.2rem);
-      }
-    }
-    // *** End of Error Message ***
-
-    // *** Button ***
-    &-btn {
-      padding-bottom: 1rem;
-
-      cursor: pointer;
-
-      text-transform: uppercase;
-
-      @include font-settings(1.6rem, 700, 2.6rem, 0.229rem);
-
-      @extend .header__button;
-    }
-    // *** End of Button ***
-  }
-  // *** End of Form ***
-
-  // *** Navigation ***
-  &__navigation {
-    padding-top: 4.7rem;
-    // nezabudni zmenit a z animovat ako projects line
-    border-top: 0.1rem solid white;
-
-    @include dimension-settings(100%, 110rem, 8rem);
-    @include flex-settings(space-between, null, null, 4rem);
-  }
-  // *** End of Navigation ***
-
-  // *** Logo ***
-  &__logo {
-    @extend .header__logo;
-  }
-  // *** End of Logo ***
-
-  // *** Menu | Social Media Links ***
-  &__menu {
-    @extend .header__menu;
-  }
-
-  &__link {
-    @extend .header__link;
-  }
-  // *** End of Menu | Social Media Links ***
 }
 // *** End of Footer ***

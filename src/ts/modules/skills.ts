@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function skillsHeading() {
   const skillsSection = document.querySelector<HTMLElement>('.skills');
   const skillsHeading =
-    document.querySelector<HTMLHeadingElement>('.skills__heading');
+    document.querySelector<HTMLHeadingElement>('.skills__title');
   const skillsMenu = document.querySelector<HTMLUListElement>('.skills__menu');
 
   // *** Version 01 ***

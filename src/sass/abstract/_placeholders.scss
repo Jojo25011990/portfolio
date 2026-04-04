@@ -1,4 +1,6 @@
+@use './variables' as *;
 @use './mixins' as *;
+
 // *** Sr Only ***
 %sr-only {
   margin: -0.1rem;
@@ -16,3 +18,49 @@
   @include dimension-settings(0.1rem, $height: 0.1rem);
 }
 // *** End of Sr Only ***
+
+// *** CTA - Button ***
+%cta-btn {
+  color: inherit;
+
+  padding-bottom: 1rem;
+
+  transition: color 0.35s 0.4s linear;
+
+  cursor: pointer;
+
+  @include position-settings($position: relative, $zIndex: 50);
+  @include font-settings(1.6rem, 700, 2.6rem, 0.229rem);
+
+  & span {
+    background-color: $color-white;
+
+    @include position-settings($bottom: 0, $left: 0);
+    @include dimension-settings(100%, null, 0.2rem);
+
+    &::before {
+      content: '';
+
+      background-color: $success-primary;
+
+      transform: scale(0);
+      transform-origin: left;
+
+      transition: transform 0.35s linear;
+
+      @include position-settings($bottom: 0, $left: 0, $zIndex: 100);
+      @include dimension-settings(100%, null, 100%);
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: $success-primary;
+  }
+
+  &:hover span::before,
+  &:active span::before {
+    transform: scale(1);
+  }
+}
+// *** End of CTA - Button ***

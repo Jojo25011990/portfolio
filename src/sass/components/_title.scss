@@ -1,0 +1,150 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** General ***
+.header__title,
+.projects__title,
+.services__title,
+.features__title,
+.footer__title {
+  @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
+
+  @include responsive-settings(tablet-small) {
+    @include font-settings(7.2rem, 700, 7.2rem, -0.25rem);
+  }
+
+  @include responsive-settings(mobile) {
+    @include font-settings(4rem, 700, 4rem, -0.25rem);
+  }
+}
+
+.projects__item-heading,
+.services__item-heading {
+  margin-top: 2rem;
+
+  @include font-settings(2.4rem, 700, 3.2rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    text-align: center;
+
+    @include font-settings(2rem, 700, 3.2rem);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of General ***
+
+// *** Footer - H2 ***
+.footer__title {
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    text-align: center;
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Footer - H2 ***
+
+// *** Header - H1 ***
+.header__title {
+  margin-bottom: 4.6rem;
+
+  // *** Responsive Design ***
+  @include responsive-settings(desktop) {
+    @include font-settings(7rem, $line-height: 7rem);
+  }
+
+  @include responsive-settings(desktop-small) {
+    @include font-settings(6rem, $line-height: 6rem);
+  }
+
+  @include responsive-settings(mobile-small) {
+    @include font-settings(4.5rem, $line-height: 5.5rem);
+  }
+  // *** End of Responsive Design ***
+
+  &-author {
+    @include position-settings($position: relative);
+
+    &::before {
+      content: '';
+
+      background-color: $success-primary;
+
+      transform: scaleX(0);
+      transform-origin: left;
+
+      animation: line 0.6s 1.5s forwards linear;
+
+      @include position-settings($left: 0, $bottom: 0.5rem, $zIndex: -1);
+      @include dimension-settings(100%, $height: 0.6rem);
+    }
+  }
+}
+// *** End of Header - H1 ***
+
+// *** Skills ***
+.skills__title {
+  transform: translate(-50%, -50%);
+
+  @include position-settings(50%, 50%);
+  @include font-settings(6.8rem, 700, 8.8rem, 0.25rem);
+
+  & span {
+    display: inline-block;
+
+    @include position-settings($position: relative);
+  }
+
+  &.is-active span:nth-child(1) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-01 0.35s 1s forwards;
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop-small) {
+      @keyframes span-animate-01 {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        70% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+
+          transform: translate(-304px, -50px);
+        }
+      }
+    }
+    // *** End of Responsive Design ***
+  }
+  &.is-active span:nth-child(2) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-02 0.35s 1.5s forwards;
+  }
+  &.is-active span:nth-child(3) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-03 0.35s 2s forwards;
+  }
+  &.is-active span:nth-child(4) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-04 0.35s 2.5s forwards;
+  }
+  &.is-active span:nth-child(5) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-05 0.35s 3s forwards;
+  }
+  &.is-active span:nth-child(6) {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: span-animate-06 0.35s 3.5s forwards;
+  }
+}
+// *** End of Skills ***

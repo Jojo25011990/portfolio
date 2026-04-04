@@ -1,0 +1,109 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** Form ***
+.footer__form {
+  color: $color-white;
+
+  @include dimension-settings(100%, 44.5rem);
+  @include flex-settings(null, null, column, 1rem);
+
+  // *** Wrapper | Wrapper Textarea | Button ***
+  &-wrapper {
+    @include dimension-settings(100%);
+
+    &--textarea {
+      max-height: 100px;
+      @include dimension-settings(100%, $height: 100%);
+    }
+
+    &--btn {
+      text-align: right;
+    }
+  }
+  // *** End of Wrapper | Wrapper Textarea | Button ***
+
+  // *** Label - Sr Only ***
+  &-label {
+    @extend %sr-only;
+  }
+  // *** End of Label - Sr Only ***
+
+  // *** Input ***
+  &-input {
+    background-color: transparent;
+
+    border: 0;
+    outline: 0;
+
+    border-bottom: 0.2rem solid $grey-primary;
+
+    padding-block: 1rem;
+    padding-left: 1rem;
+
+    transition: border-color 0.3s;
+
+    @include dimension-settings(100%);
+    @include font-settings(1.8rem, 700);
+
+    &:focus {
+      border-color: $blue-primary;
+    }
+  }
+  // *** End of Input ***
+
+  // *** Textarea ***
+  &-textarea {
+    background-color: transparent;
+
+    border: 0;
+    outline: 0;
+
+    border-bottom: 0.2rem solid $grey-primary;
+
+    padding-block: 1rem;
+    padding-left: 1rem;
+
+    margin-bottom: 0;
+
+    transition: border-color 0.3s;
+
+    resize: vertical;
+
+    max-height: 9rem;
+    @include dimension-settings(100%, 100%, 100%);
+    @include font-settings(1.8rem, 700);
+
+    &:focus {
+      border-color: $blue-primary;
+    }
+  }
+  // *** End of Textarea ***
+
+  // *** Error Message ***
+  &-message {
+    color: $danger-primary;
+
+    margin-top: 0.4rem;
+    padding-left: 1rem;
+
+    @include position-settings($position: relative);
+
+    & span {
+      display: inline-block;
+
+      opacity: 0;
+
+      transform: translate(-200px, -50px) rotate(-180deg) scale(3);
+
+      transition:
+        transform 0.3s,
+        opacity 0.3s;
+
+      @include position-settings($position: relative);
+      @include font-settings(1.2rem);
+    }
+  }
+  // *** End of Error Message ***
+}
+// *** End of Form ***

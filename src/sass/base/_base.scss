@@ -19,6 +19,7 @@ body {
   @include dimension-settings(100vw, null, auto);
   @include flex-settings(center, null);
   @include position-settings($position: relative);
+  @include font-settings(1.8rem, 500, 2.8rem, 0);
 
   // *** Responsive Design ***
   @include responsive-settings(mobile) {
@@ -44,10 +45,22 @@ main {
   overflow: hidden;
 
   @include dimension-settings(100%);
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-small) {
+    margin-top: 0;
+  }
+  // *** End of Responsive Design ***
 }
 
 section {
   padding-inline: 2rem;
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-small) {
+    padding-inline: 1.25rem;
+  }
+  // *** End of Responsive Design ***
 }
 // *** End of Main | Section ***
 
@@ -60,6 +73,8 @@ section {
 
   transform: scale(0);
   opacity: 0;
+
+  transform-origin: center;
 
   transition: all 0.5s;
 
@@ -79,6 +94,14 @@ section {
   &.active {
     transform: scale(1);
     opacity: 1;
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile) {
+      transform: scale(1) translateX(-50%);
+
+      @include position-settings($left: 50%, $right: 0);
+    }
+    // *** End of Responsive Design ***
   }
 }
 // *** End of Back to top - Button ***

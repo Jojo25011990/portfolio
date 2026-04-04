@@ -16,31 +16,6 @@
   }
   // *** End of Wrapper ***
 
-  // *** Title ***
-  &__title {
-    @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
-  }
-  // *** End of Title ***
-
-  // *** Description ***
-  &__description {
-    color: $grey-primary;
-
-    text-align: center;
-
-    @include dimension-settings(100%, 76rem, 5.6rem);
-    @include font-settings(1.8rem, normal, 2.8rem);
-  }
-
-  // *** End of Description ***
-
-  // *** Button ***
-  &__button {
-    align-self: center;
-    @extend .header__button;
-  }
-  // *** End of Button ***
-
   // *** Menu | Item ***
   &__menu {
     display: grid;
@@ -60,34 +35,6 @@
 
   &__item {
     text-transform: uppercase;
-
-    //  *** Heading | Description ***
-    &-heading {
-      margin-top: 2rem;
-
-      @include font-settings(2.4rem, 700, 3.2rem);
-
-      // *** Responsive Design ***
-      @include responsive-settings(tablet-large) {
-        text-align: center;
-
-        @include font-settings(2rem, 700, 3.2rem);
-      }
-      // *** End of Responsive Design ***
-    }
-
-    &-description {
-      @include flex-settings(null, null, $gap: 1.2rem);
-      @include font-settings(1.8rem, 500, 2.8rem);
-
-      // *** Responsive Design ***
-      @include responsive-settings(tablet-large) {
-        @include flex-settings;
-        @include font-settings(1.6rem, 500, 2.8rem);
-      }
-      // *** End of Responsive Design ***
-    }
-    //  *** End of Heading | Description ***
   }
   // *** End of Menu | Item ***
 
@@ -142,12 +89,6 @@
       transform: translateY(0);
       opacity: 1;
     }
-
-    // *** Overlay - Links ***
-    &-button {
-      @extend .header__button;
-    }
-    // *** End of Overlay - Links ***
   }
   // *** End of Box ***
 }

@@ -7,52 +7,6 @@
   @include dimension-settings(100%);
   @include flex-settings(center, null);
 
-  // *** Skills Heading ***
-  &__heading {
-    transform: translate(-50%, -50%);
-
-    @include position-settings(50%, 50%);
-    @include font-settings(6.8rem, 700, 8.8rem, 0.25rem);
-
-    & span {
-      display: inline-block;
-
-      @include position-settings($position: relative);
-    }
-
-    &.is-active span:nth-child(1) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-01 0.35s 1s forwards;
-    }
-    &.is-active span:nth-child(2) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-02 0.35s 1.5s forwards;
-    }
-    &.is-active span:nth-child(3) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-03 0.35s 2s forwards;
-    }
-    &.is-active span:nth-child(4) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-04 0.35s 2.5s forwards;
-    }
-    &.is-active span:nth-child(5) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-05 0.35s 3s forwards;
-    }
-    &.is-active span:nth-child(6) {
-      opacity: 1;
-      transform: translate(0, 0);
-      animation: span-animate-06 0.35s 3.5s forwards;
-    }
-  }
-  // *** End of Skills Heading ***
-
   // *** Skills Menu ***
   &__menu {
     display: grid;
@@ -64,6 +18,13 @@
 
     @include dimension-settings(100%, 110rem);
     position: relative;
+
+    // *** Responsive Design ***
+    // tablet-large
+    @include responsive-settings(desktop-small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    // *** End of Responsive Design ***
 
     &::before {
       content: '';

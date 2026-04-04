@@ -35,7 +35,7 @@ export default function myStory() {
   const [myStoryManBubbles01, myStoryManBubbles02] = myStoryManBubbles;
   const [myStoryWomanBubbles01, myStoryWomanBubbles02] = myStoryWomanBubbles;
 
-  console.log(myStoryWomanBubbles);
+  let dragonRoarFixed: boolean = false;
 
   const dragonTimeline = gsap.timeline({
     scrollTrigger: {
@@ -45,11 +45,29 @@ export default function myStory() {
     },
   });
 
+  const dragonRoarReady = () => {
+    dragonRoarFixed = true;
+
+    window.removeEventListener('scroll', dragonRoarReady);
+    window.removeEventListener('click', dragonRoarReady);
+  };
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      window.addEventListener('pointerdown', e => {
+        if (e.button === 1) dragonRoarReady();
+      });
+    },
+    { once: true },
+  );
+  window.addEventListener('click', dragonRoarReady, { once: true });
+
   dragonTimeline.to(myStoryDragonRoar, {
     delay: 3,
 
     onStart: () => {
-      myStoryDragonRoar?.play();
+      if (dragonRoarFixed) myStoryDragonRoar?.play();
     },
   });
 

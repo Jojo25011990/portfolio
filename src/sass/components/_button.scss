@@ -1,0 +1,23 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** General - Placeholder -> %cta-btn ***
+.header__button,
+.projects__button,
+.services__button,
+.features__button,
+.projects__box-button,
+.footer__form-btn {
+  @extend %cta-btn;
+}
+
+.projects__button,
+.services__button,
+.features__button {
+  align-self: center;
+}
+
+.footer__form-btn {
+  text-transform: uppercase;
+}
+// *** End of General - Placeholder -> %cta-btn ***

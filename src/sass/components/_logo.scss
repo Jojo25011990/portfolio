@@ -1,0 +1,18 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** General ***
+.header__logo,
+.footer__logo {
+  &:link,
+  &:visited {
+    color: inherit;
+
+    clip-path: inset(0 100% 0 0);
+
+    animation: author-animate 1s 1s ease forwards;
+
+    @include font-settings(3.2rem, 700, 3.2rem, -0.044rem);
+  }
+}
+// *** End of General ***

@@ -12,25 +12,6 @@
   }
   // **** End of Wrapper ***
 
-  // *** Title ***
-  &__title {
-    @extend .projects__title;
-  }
-  // *** End of Title ***
-
-  // *** Description ***
-  &__description {
-    @extend .projects__description;
-  }
-  // *** End of Description ***
-
-  // *** Button ***
-  &__button {
-    align-self: center;
-    @extend .projects__button;
-  }
-  // *** End of Button ***
-
   // *** Menu | Item ***
   &__menu {
     column-gap: 4rem;
@@ -41,11 +22,11 @@
 
   &__item {
     //  *** Box ***
-    // filter: drop-shadow(1px 0px 1px white);
+
     &-box {
       transform: scale(1);
 
-      padding: 2.5rem;
+      padding: 4rem 2.5rem;
 
       text-align: center;
 
@@ -64,7 +45,16 @@
         //destop
         transform: scale(1.05);
         // tablet a dole asi
-        // transform: scale(1.03);
+
+        // *** Responsive Design ***
+        @include responsive-settings(tablet-small) {
+          transform: scale(1.03);
+        }
+
+        @include responsive-settings(mobile) {
+          transform: none;
+        }
+        // *** End of Responsive Design ***
       }
     }
 
@@ -82,25 +72,17 @@
       box-shadow: 0.2rem 0.4rem 0.1rem $body-bg-color;
 
       @include font-settings(40px);
+      @include flex-settings;
+      @include dimension-settings(8.5rem, $height: 8.5rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(mobile) {
+        padding: 1rem;
+        @include dimension-settings(6.5rem, $height: 6.5rem);
+      }
+      // *** End of Responsive Design ***
     }
     // *** End of Icon ***
-
-    //  *** Heading | Description ***
-    &-heading {
-      //   color: $dark-secondary;
-
-      margin-top: 2rem;
-
-      @include font-settings(2.4rem, 700, 3.2rem);
-    }
-
-    &-description {
-      //   color: $dark-secondary;
-
-      @include flex-settings(null, null, $gap: 1.2rem);
-      @include font-settings(1.8rem, 500, 2.8rem);
-    }
-    //  *** End of Heading | Description ***
   }
   // *** End of Menu | Item ***
 }

@@ -1,0 +1,105 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+//  *** here are all headings without "fun facts component" ***
+
+// *** General ***
+p {
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    @include font-settings(1.6rem !important, 500, 2.8rem, 0);
+  }
+
+  @include responsive-settings(mobile-small) {
+    @include font-settings(1.4rem !important, 500, 2.8rem, 0);
+  }
+  // *** End of Responsive Design ***
+}
+
+p:not(li p, .header__lightbox-description) {
+  color: $grey-primary;
+}
+
+.projects__description,
+.services__description,
+.features__description {
+  text-align: center;
+  @include dimension-settings(100%, 76rem, 5.6rem);
+}
+
+.features__item-description {
+  text-align: left;
+
+  @include font-settings(1.5rem, 500, 2.8rem);
+}
+
+.projects__item-description,
+.services__item-description {
+  @include flex-settings(null, null, $gap: 1.2rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    @include flex-settings;
+    @include font-settings(1.6rem, 500, 2.8rem, 0);
+  }
+  // *** End of Responsive Design ***
+}
+
+.projects__item-description,
+.services__item-description,
+.features__item-description {
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    @include font-settings(1.4rem !important, 500, 2.8rem, 0);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of General ***
+
+// *** Header ***
+.header__description {
+  margin-bottom: 6.6rem;
+  @include dimension-settings(100%, 44.5rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(desktop) {
+    margin-bottom: 5rem;
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Header ***
+
+// *** Projects ***
+.projects__description {
+  //   @include dimension-settings(100%, 76rem, 5.6rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-small) {
+    @include dimension-settings(100%, 76rem, 8.4rem);
+  }
+
+  @include responsive-settings(mobile-small) {
+    @include dimension-settings(100%, 76rem, 11.2rem);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Projects ***
+
+// *** Footer ***
+.footer__description {
+  text-align: left;
+
+  @include dimension-settings($height: unset);
+  @extend .projects__description;
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    text-align: center;
+  }
+
+  @include responsive-settings(mobile) {
+    @include font-settings(1.6rem, 500, 2.8rem, 0);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Footer ***

@@ -1,0 +1,27 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** General - Menu | Links ***
+.header__menu,
+.footer__menu {
+  @include dimension-settings(100%, 20rem);
+  @include flex-settings(space-between, $gap: 1rem);
+}
+
+.header__link,
+.footer__link {
+  &:link,
+  &:visited {
+    color: inherit;
+
+    transition: color 0.3s;
+
+    @include font-settings(2.4rem);
+  }
+
+  &:hover,
+  &:active {
+    color: $success-primary;
+  }
+}
+// *** End of General - Menu | Links ***
