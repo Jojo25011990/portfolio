@@ -100,5 +100,47 @@
       @content;
     }
   }
+
+  @if $breakpoint == desktop-small {
+    @media (max-width: 950px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-large {
+    @media (max-width: 850px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media (max-width: 775px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet-small {
+    @media (max-width: 675px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-large {
+    @media (max-width: 560px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile-small {
+    @media (max-width: 380px) {
+      @content;
+    }
+  }
 }
 // *** End of Responsive Settings ***

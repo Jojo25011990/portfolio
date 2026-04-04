@@ -9,6 +9,8 @@ export default function features() {
     '.features__description',
   );
 
+  const featuresMenu =
+    document.querySelector<HTMLUListElement>('.features__menu');
   const featuresItems =
     document.querySelectorAll<HTMLLIElement>('.features__item');
 
@@ -20,6 +22,14 @@ export default function features() {
   const randomSpeed = 2000;
   let previousItemIndex: number | null = null;
 
+  const featuresFunFacts = document.querySelector<HTMLElement>(
+    '.features__fun-facts',
+  );
+  const featuresFunFactsButton = document.querySelector<HTMLButtonElement>(
+    '.features__fun-facts-button',
+  );
+
+  // *** Main Description - Paragraph Tag ***
   if (featuresDescription) {
     gsap.to(featuresDescription, {
       scrollTrigger: {
@@ -32,7 +42,9 @@ export default function features() {
       ease: 'none',
     });
   }
+  // *** End of Main Description - Paragraph Tag ***
 
+  // *** Features Eight Mini blocks ***
   if (featuresItems) {
     featuresItems.forEach((featuresItem, index: number) => {
       gsap.from(featuresItem, {
@@ -40,7 +52,7 @@ export default function features() {
         y: 100,
         autoAlpha: 0,
         duration: 0.6,
-        ease: 'back.out',
+        ease: 'power2.out',
 
         scrollTrigger: {
           trigger: featuresItem,
@@ -50,6 +62,24 @@ export default function features() {
       });
     });
   }
+
+  // *** Version 02 ***
+  //   if (featuresItems.length) {
+  //     gsap.from(featuresItems, {
+  //       scrollTrigger: {
+  //         trigger: featuresItems[0],
+  //         start: 'top 80%',
+  //         toggleActions: 'play none none none',
+  //       },
+
+  //       stagger: 0.3,
+  //       autoAlpha: 0,
+  //       y: 100,
+  //       duration: 1.5,
+  //       ease: 'power2.out',
+  //     });
+  //   }
+  // *** End of Version 02 ***
 
   setInterval(() => {
     let randomItemIndex: number;
@@ -69,4 +99,14 @@ export default function features() {
       previousItemIndex = randomItemIndex;
     }
   }, randomSpeed);
+  // *** End of Features Eight Mini blocks ***
+
+  // *** Fun Facts ***
+  const funFactsSlideBox = () => featuresFunFacts?.classList.toggle('active');
+  const funFactsContainer = () => featuresMenu?.classList.toggle('active');
+
+  featuresFunFactsButton?.addEventListener('click', funFactsSlideBox);
+  featuresFunFactsButton?.addEventListener('click', funFactsContainer);
+
+  // *** End of Fun Facts ***
 }

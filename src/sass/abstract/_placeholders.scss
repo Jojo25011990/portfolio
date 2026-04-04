@@ -1,0 +1,18 @@
+@use './mixins' as *;
+// *** Sr Only ***
+%sr-only {
+  margin: -0.1rem;
+  padding: 0;
+
+  border: 0;
+
+  overflow: hidden;
+
+  clip-path: inset(50%);
+
+  white-space: nowrap;
+
+  @include position-settings;
+  @include dimension-settings(0.1rem, $height: 0.1rem);
+}
+// *** End of Sr Only ***

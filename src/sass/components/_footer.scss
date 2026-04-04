@@ -69,19 +69,7 @@
 
     // *** Label - Sr Only ***
     &-label {
-      margin: -0.1rem;
-      padding: 0;
-
-      border: 0;
-
-      overflow: hidden;
-
-      clip-path: inset(50%);
-
-      white-space: nowrap;
-
-      @include position-settings;
-      @include dimension-settings(0.1rem, $height: 0.1rem);
+      @extend %sr-only;
     }
     // *** End of Label - Sr Only ***
 

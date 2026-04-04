@@ -47,6 +47,15 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 3rem;
     row-gap: 6.9rem;
+
+    @include dimension-settings(100%, 110rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop-small) {
+      place-items: center;
+      grid-template-columns: 1fr;
+    }
+    // *** End of Responsive Design ***
   }
 
   &__item {
@@ -57,11 +66,26 @@
       margin-top: 2rem;
 
       @include font-settings(2.4rem, 700, 3.2rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        text-align: center;
+
+        @include font-settings(2rem, 700, 3.2rem);
+      }
+      // *** End of Responsive Design ***
     }
 
     &-description {
       @include flex-settings(null, null, $gap: 1.2rem);
       @include font-settings(1.8rem, 500, 2.8rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        @include flex-settings;
+        @include font-settings(1.6rem, 500, 2.8rem);
+      }
+      // *** End of Responsive Design ***
     }
     //  *** End of Heading | Description ***
   }
@@ -80,6 +104,12 @@
       max-height: 100%;
       @include dimension-settings(100%, 53.5rem, 39.6rem);
       @include position-settings($position: relative);
+
+      // *** Responsive Design ***
+      @include responsive-settings(desktop-small) {
+        @include dimension-settings(100%, 66rem, 39.6rem);
+      }
+      // *** End of Responsive Design ***
     }
 
     &-img {

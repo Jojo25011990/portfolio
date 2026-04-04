@@ -34,12 +34,22 @@
   }
   // *** End of Button ***
 
+  &__container {
+    @include position-settings($position: relative);
+  }
+
   // *** Menu | Item ***
   &__menu {
     column-gap: 4rem;
     row-gap: 4rem;
 
+    transition: filter 0.3s ease-out;
+
     @extend .projects__menu;
+
+    &.active {
+      filter: blur(1rem);
+    }
   }
 
   &__item {
@@ -92,7 +102,78 @@
     //  *** End of Heading | Description ***
   }
 
-  &__fact-button {
+  // *** Fun Facts ***
+
+  &__fun-facts {
+    transform: translateY(-50%) translateX(-150%);
+
+    text-align: center;
+
+    padding: 2.5rem;
+
+    border-radius: 0.5rem;
+    box-shadow:
+      0.1rem 0.2rem 0.5rem $dark-overlay,
+      inset 0.2rem 0.2rem 0.5rem $success-primary;
+
+    background: $dark-primary;
+
+    backdrop-filter: blur(1rem);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.3s ease-out;
+
+    @include dimension-settings(100%, 50rem);
+    @include position-settings(50%, 50%, $zIndex: 100);
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    // *** Sr Only ***
+    &-heading {
+      @extend %sr-only;
+    }
+    // *** End of Sr Only ***
+
+    // *** Menu ***
+    &-menu {
+      @include flex-settings(space-around, $direction: column, $gap: 3rem);
+    }
+    // *** End of Menu ***
+
+    // *** Item ***
+    &-item {
+      @include flex-settings(space-around, $direction: column, $gap: 1rem);
+    }
+    // *** End of Item ***
+
+    // *** Title ***
+    &-title {
+      color: $success-primary;
+
+      text-transform: uppercase;
+      @include font-settings(2rem);
+    }
+    // *** End of Title ***
+
+    // *** Description ***
+    &-description {
+      @include font-settings(1.6rem, null, 1.4);
+
+      &--strong {
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+    }
+    // *** End of Description ***
+  }
+
+  &__fun-facts-button {
     color: $success-primary;
 
     background-color: transparent;
@@ -121,5 +202,6 @@
         0 0 4.8rem $success-primary;
     }
   }
+  // *** End of Fun Facts ***
 }
 // *** End of Features ***

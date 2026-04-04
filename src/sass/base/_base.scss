@@ -3,6 +3,7 @@
 // *** Html | Body | Container ***
 html {
   scroll-behavior: smooth;
+  scrollbar-color: $success-primary $dark-secondary;
 }
 
 body {
@@ -18,10 +19,18 @@ body {
   @include dimension-settings(100vw, null, auto);
   @include flex-settings(center, null);
   @include position-settings($position: relative);
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    padding: 0;
+  }
+  // *** End of Responsive Design ***
 }
 
 .container {
   background-color: $dark-primary;
+
+  overflow: hidden;
 
   @include dimension-settings(100%, 144rem);
   @include position-settings($position: relative);
@@ -73,3 +82,10 @@ section {
   }
 }
 // *** End of Back to top - Button ***
+
+.big-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: $success-secondary;
+}

@@ -7,17 +7,30 @@
 
   overflow-x: hidden;
 
-  background:
-    linear-gradient(#151515d2, $dark-primary),
-    url('../../assets/images/my\ story\ bg.jpg') no-repeat;
-  background-size: cover;
+  //   background:
+  //     linear-gradient(#151515d2, $dark-primary),
+  //     url('../../assets/images/my\ story\ bg.jpg') no-repeat;
+  //   background-size: cover;
 
   height: 90vh;
   @include dimension-settings(100%);
   @include position-settings($position: relative);
   @include flex-settings;
 
-  &:hover {
+  &__container {
+    @include position-settings(0, 0);
+    @include flex-settings;
+    @include dimension-settings(100%, $height: 100%);
+
+    background:
+      linear-gradient(#151515d2, $dark-primary),
+      url('../../assets/images/my\ story\ bg.jpg') no-repeat;
+    background-size: cover;
+    &:hover {
+      animation: shake 0.3s linear 3;
+    }
+  }
+  &.active {
     animation: shake 0.3s linear 3;
   }
 
@@ -84,27 +97,37 @@
 
       opacity: 0.75;
 
-      transition: opacity 0.3s ease-in;
+      transition: opacity 0.3s linear;
 
       @include position-settings($position: static);
 
-      &:hover,
-      &:active {
+      &.active {
         opacity: 1;
       }
     }
 
     &-title-box {
-      @include position-settings(
-        $left: 6.2rem,
-        $bottom: 0.6rem,
-        $position: relative
-      );
+      @include position-settings($left: 6.2rem, $bottom: 1rem);
     }
 
     &-title {
       text-transform: uppercase;
       @include font-settings(1.6rem, $weight: 700);
+    }
+
+    &-description-box {
+      margin-top: 4rem;
+      margin-left: -4rem;
+
+      @include dimension-settings(100%, 65rem);
+    }
+
+    &-description {
+      color: $grey-primary;
+
+      // margin-bottom: 6.6rem;
+
+      @include font-settings(1.8rem, 500, 2.8rem, 0);
     }
 
     &-bubble-box {
@@ -139,13 +162,28 @@
         @include position-settings(3rem, $right: 0.06rem);
       }
     }
+
+    &-bubble-message {
+      color: $grey-secondary;
+
+      @include font-settings(1.4rem, 700);
+    }
+
+    &-bubble-woman,
+    &-bubble-man {
+      opacity: 0;
+
+      transition: opacity 0.3s linear;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+    // *** Character 01 - Women Anabel Leban ***
+    // *** End of Character 01 - Women Anabel Leban ***
+    // *** Character 02 - Man Diogo Alvago ***
+    // *** End of Character 02 - Man Diogo Alvago ***
   }
-
-  // *** Character 01 - Women Anabel Leban ***
-
-  // *** End of Character 01 - Women Anabel Leban ***
-  // *** Character 02 - Man Diogo Alvago ***
-  // *** End of Character 02 - Man Diogo Alvago ***
 
   // *** End of Characters ****
 }

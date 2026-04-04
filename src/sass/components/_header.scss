@@ -12,12 +12,23 @@
   @include responsive-settings(desktop) {
     padding-right: 0;
   }
+
+  @include responsive-settings(tablet) {
+    padding-left: 0;
+  }
   // *** End of Responsive Design ***
 
   // *** Wrapper ***
   &__wrapper {
     @include dimension-settings(100%, 110rem, 72rem);
     @include position-settings($position: relative);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet) {
+      @include dimension-settings($height: unset);
+      @include flex-settings(center, center, column, 4rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Wrapper ***
 
@@ -28,6 +39,17 @@
     @include dimension-settings(100%, null, 8rem);
     @include position-settings($zIndex: 20, $position: relative);
     @include flex-settings(space-between, null, null, 4rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet) {
+      padding-left: 2rem;
+    }
+
+    @include responsive-settings(mobile) {
+      @include dimension-settings($height: unset);
+      @include flex-settings(center, center, column, $gap: 2rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Navigation ***
 
@@ -80,6 +102,18 @@
     @include responsive-settings(desktop) {
       @include dimension-settings(100%, 56rem, 100%, 40.7rem);
     }
+
+    @include responsive-settings(desktop-small) {
+      @include dimension-settings(100%, 36.6rem, 100%, 40.7rem);
+    }
+
+    @include responsive-settings(tablet) {
+      text-align: center;
+
+      order: 2;
+
+      @include position-settings($position: static);
+    }
     // *** End of Responsive Design ***
   }
 
@@ -87,6 +121,20 @@
     margin-bottom: 4.6rem;
 
     @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      @include font-settings(7rem, $line-height: 7rem);
+    }
+
+    @include responsive-settings(desktop-small) {
+      @include font-settings(6rem, $line-height: 6rem);
+    }
+
+    @include responsive-settings(mobile-small) {
+      @include font-settings(4.5rem, $line-height: 5.5rem);
+    }
+    // *** End of Responsive Design ***
 
     &-author {
       @include position-settings($position: relative);
@@ -166,12 +214,33 @@
   }
   // *** End of Content | Heading | Description | Button ***
 
-  // *** Img - Ring | Circle | Jozef Kudrna ***
+  // *** Img - Ring | Circle | Author ***
   &__ring {
     @include position-settings(18rem, -27.2rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop-small) {
+      @include position-settings(16.6rem, -34.5rem);
+    }
+
+    @include responsive-settings(mobile) {
+      @include position-settings(12.6rem, -33rem);
+    }
+
+    @include responsive-settings(mobile-small) {
+      @include position-settings(18.1rem, calc(24.4rem * -1));
+    }
+    // *** End of Responsive Design ***
   }
   &__svg {
     @include position-settings(52.1rem, $right: 38.25rem, $zIndex: 20);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      @include position-settings($right: -6.4rem);
+    }
+
+    // *** End of Responsive Design ***
 
     &-circle {
       stroke-dasharray: 500;
@@ -195,8 +264,14 @@
     min-width: 44.5rem;
     @include dimension-settings($height: 100%);
     @include position-settings(0, $right: 0, $zIndex: 10);
+
+    @include responsive-settings(tablet) {
+      min-width: 34rem;
+      @include dimension-settings($height: 55rem);
+      @include position-settings(0, $position: relative);
+    }
   }
-  // *** End of Img - Ring | Circle | Jozef Kudrna ***
+  // *** End of Img - Ring | Circle | Author ***
 
   // *** Lightbox ***
   &__lightbox {
