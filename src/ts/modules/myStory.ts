@@ -14,6 +14,9 @@ export default function myStory() {
 
   const myStoryDragon =
     document.querySelector<HTMLDivElement>('.my-story__dragon');
+  const myStoryDragonRoar = document.querySelector<HTMLAudioElement>(
+    '.my-story__dragon-roar',
+  );
 
   const myStoryWoman = document.querySelector<HTMLDivElement>(
     '.my-story__character-img-woman',
@@ -34,114 +37,69 @@ export default function myStory() {
 
   console.log(myStoryWomanBubbles);
 
-  const gsapDragon = gsap.timeline();
-  const gsapBeforeDragon = gsap.timeline();
-  const gsapAfterDragon = gsap.timeline();
+  const dragonTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: myStory,
+      start: 'top center',
+      toggleActions: 'play none none none',
+    },
+  });
 
-  gsapDragon
-    .to(myStory, {
-      scrollTrigger: {
-        trigger: myStory,
-        start: 'top 10%',
-        toggleActions: 'play none none none',
-        markers: true,
-      },
+  dragonTimeline.to(myStoryDragonRoar, {
+    delay: 3,
 
-      //   duration: 1,
-      //   ease: 'power3',
-      //   repeat: 2,
+    onStart: () => {
+      myStoryDragonRoar?.play();
+    },
+  });
 
-      //   keyframes: [
-      //     { x: '-7px' },
-      //     { x: '7px' },
-      //     { x: '-7px' },
-      //     { x: '7px' },
-      //     { x: '-7px' },
-      //   ],
+  dragonTimeline.to(myStoryContainer, {
+    delay: 2,
+    x: '+=7',
+    repeat: 7,
+    yoyo: true,
+    duration: 0.06,
+  });
 
-      //   onStart: () => {
+  dragonTimeline.add(() => myStoryDragon?.classList.add('active'));
 
-      //     gsapBeforeDragon.add(() => {
-      //       myStory?.classList.add('active');
-      //       console.log('ide to');
-      //     }, '-=3');
-      //   },
-
-      //   duration: 0.1,
-      //   repeat: 5,
-      //   yoyo: true,
-      //   x: 7,
-
-      //   onComplete: () => {
-      //     myStoryDragon?.classList.add('active');
-
-      //     myStoryDragon?.addEventListener('animationstart', () => {
-      //       gsapBeforeDragon
-      //         .add(() => {
-      //           myStoryManBubbles01.classList.add('active');
-      //           myStoryMan?.classList.add('active');
-      //         }, '+=.8')
-      //         .add(() => {
-      //           myStoryManBubbles01.classList.remove('active');
-      //           myStoryMan?.classList.remove('active');
-      //         }, '+=1.2')
-      //         .add(() => {
-      //           myStoryWomanBubbles01.classList.add('active');
-      //           myStoryWoman?.classList.add('active');
-      //         })
-      //         .add(() => {
-      //           myStoryWomanBubbles01.classList.remove('active');
-      //           myStoryWoman?.classList.remove('active');
-      //         }, '+=1.2');
-      //     });
-      //   },
+  dragonTimeline
+    .add(() => {
+      myStoryManBubbles01.classList.add('active');
+      myStoryMan?.classList.add('active');
+    }, '+=0.4')
+    .add(() => {
+      myStoryManBubbles01.classList.remove('active');
+      myStoryMan?.classList.remove('active');
+    }, '+=1.2')
+    .add(() => {
+      myStoryWomanBubbles01.classList.add('active');
+      myStoryWoman?.classList.add('active');
     })
     .add(() => {
-      myStoryContainer?.classList.add('active');
-    })
-    .add(() => {
-      myStoryDragon?.classList.add('active');
-      myStoryDragon?.addEventListener('animationstart', () => {
-        gsapBeforeDragon
-          .add(() => {
-            myStoryManBubbles01.classList.add('active');
-            myStoryMan?.classList.add('active');
-          }, '+=.8')
-          .add(() => {
-            myStoryManBubbles01.classList.remove('active');
-            myStoryMan?.classList.remove('active');
-          }, '+=1.2')
-          .add(() => {
-            myStoryWomanBubbles01.classList.add('active');
-            myStoryWoman?.classList.add('active');
-          })
-          .add(() => {
-            myStoryWomanBubbles01.classList.remove('active');
-            myStoryWoman?.classList.remove('active');
-          }, '+=1.2');
-      });
-    })
-    .add(() => {
-      myStoryDragon?.addEventListener('animationend', () => {
-        console.log('uz si skoncil?');
-        gsapAfterDragon
-          .add(() => {
-            myStoryManBubbles02.classList.add('active');
-            myStoryMan?.classList.add('active');
-          }, '+=0.5')
-          .add(() => {
-            myStoryManBubbles02.classList.remove('active');
-            myStoryMan?.classList.remove('active');
-          }, '+=1.2')
+      myStoryWomanBubbles01.classList.remove('active');
+      myStoryWoman?.classList.remove('active');
+    }, '+=1.2');
 
-          .add(() => {
-            myStoryWomanBubbles02.classList.add('active');
-            myStoryMan?.classList.add('active');
-          })
-          .add(() => {
-            myStoryWomanBubbles02.classList.remove('active');
-            myStoryMan?.classList.remove('active');
-          }, '+=1.2');
-      });
+  dragonTimeline.add(() => {
+    myStoryDragon?.addEventListener('animationend', () => {
+      dragonTimeline
+        .add(() => {
+          myStoryManBubbles02.classList.add('active');
+          myStoryMan?.classList.add('active');
+        }, '+=0.5')
+        .add(() => {
+          myStoryManBubbles02.classList.remove('active');
+          myStoryMan?.classList.remove('active');
+        }, '+=1.2')
+        .add(() => {
+          myStoryWomanBubbles02.classList.add('active');
+          myStoryWoman?.classList.add('active');
+        })
+        .add(() => {
+          myStoryWomanBubbles02.classList.remove('active');
+          myStoryWoman?.classList.remove('active');
+        }, '+=1.2');
     });
+  });
 }

@@ -6,7 +6,6 @@
   margin-top: 14rem;
 
   overflow-x: hidden;
-
   //   background:
   //     linear-gradient(#151515d2, $dark-primary),
   //     url('../../assets/images/my\ story\ bg.jpg') no-repeat;
@@ -18,17 +17,19 @@
   @include flex-settings;
 
   &__container {
-    @include position-settings(0, 0);
+    @include position-settings(0, 0, $zIndex: 1);
     @include flex-settings;
     @include dimension-settings(100%, $height: 100%);
+    flex-direction: column;
+    gap: 40px;
 
     background:
       linear-gradient(#151515d2, $dark-primary),
       url('../../assets/images/my\ story\ bg.jpg') no-repeat;
     background-size: cover;
-    &:hover {
-      animation: shake 0.3s linear 3;
-    }
+    // &:hover {
+    //   animation: shake 0.3s linear 3;
+    // }
   }
   &.active {
     animation: shake 0.3s linear 3;
@@ -53,6 +54,16 @@
     }
   }
 
+  // *** Overlay ***
+  &__overlay {
+    background-color: $dark-overlay;
+
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0, $zIndex: 99999);
+    @include flex-settings;
+  }
+  // *** End of Overlay ***
+
   // *** Dragon ***
   &__dragon {
     background: {
@@ -65,7 +76,7 @@
 
     transform: translateX(100%);
 
-    @include position-settings(0, $right: 0, $zIndex: 1);
+    @include position-settings(0, $right: 0, $zIndex: 2);
     @include dimension-settings(100%, 60rem, 60rem);
 
     &.active {
