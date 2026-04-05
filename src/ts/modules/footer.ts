@@ -1,6 +1,5 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import backToTop from './backToTop';
 
 gsap.registerPlugin(ScrollTrigger);
 export default function footer() {
@@ -45,7 +44,145 @@ export default function footer() {
     });
   }
 
-  // *** Back to top - Button ***
-  backToTop();
-  // *** End of Back to top - Button ***
+  // *** Form ***
+
+  // *** Version 02 - Typing instead querySelector<HTMLInputElement> ***
+
+  // *** Form | Inputs | Textarea ***
+  const form = document.getElementById('form') as HTMLFormElement | null;
+
+  const formInputName = document.getElementById(
+    'name',
+  ) as HTMLInputElement | null;
+  const formInputEmail = document.getElementById(
+    'email',
+  ) as HTMLInputElement | null;
+  const formTextarea = document.getElementById(
+    'message',
+  ) as HTMLTextAreaElement | null;
+  // *** End of Form | Inputs | Textarea ***
+
+  // *** Error Message && Error Lines | Success Lines***
+  const formErrorMessages =
+    document.querySelectorAll<HTMLParagraphElement>('.error-message');
+  const formErrorMessageLines = document.querySelectorAll<HTMLSpanElement>(
+    '.footer__form-message-line--error',
+  );
+
+  const formSuccessMessageLines = document.querySelectorAll<HTMLSpanElement>(
+    '.footer__form-message-line--success',
+  );
+  // *** End of Error Message && Error Lines | Success Lines***
+
+  formInputName?.value;
+
+  if (form) {
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+
+      checkInputValues([formInputName, formInputEmail, formTextarea]);
+
+      console.log(event);
+    });
+  }
+
+  function checkInputValues(
+    inputArray: (HTMLInputElement | HTMLTextAreaElement | null)[],
+  ) {
+    inputArray.forEach((oneInput, index) => {
+      // *** Guard - Prevented non-existent inputs ***
+      if (!oneInput) return;
+      const inputElementValue = oneInput.value.trim().toLowerCase();
+      // *** End of Guard - Prevented non-existent inputs ***
+
+      // *** Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
+
+      //   const inputElement = oneInput!.value.trim().toLowerCase();
+
+      // *** End of Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
+
+      //  *** Error Messages | Lines ***
+      const addErrorMessages = function (index: number) {
+        formErrorMessages[index].classList.add('active');
+        formErrorMessageLines[index].classList.add('active');
+      };
+
+      const removeErrorMessages = function (index: number) {
+        formErrorMessages[index].classList.remove('active');
+        formErrorMessageLines[index].classList.remove('active');
+      };
+      //  *** End of Error Messages | Lines ***
+
+      //  *** Success Lines | Delay ***
+      const addSuccesLines = (index: number) =>
+        formSuccessMessageLines[index].classList.add('active');
+
+      const removeSuccesLines = (index: number) =>
+        formSuccessMessageLines[index].classList.remove('active');
+
+      const removeSuccessDelay = 1500;
+      //  *** End of Success Lines | Delay ***
+
+      const inputElementEmailRegex =
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\\.,;:\s@\"]+\.)+[^<>()[\]\\.,;:\s@\"]{2,})$/i;
+
+      if (index === 0) {
+        // *** Full Name ***
+        if (inputElementValue === '') addErrorMessages(index);
+        else {
+          removeErrorMessages(index);
+
+          addSuccesLines(index);
+
+          setTimeout(() => {
+            removeSuccesLines(index);
+          }, removeSuccessDelay);
+
+          setTimeout(() => {
+            oneInput.focus();
+          }, removeSuccessDelay + 250);
+        }
+        // *** End of Full Name ***
+      } else if (index === 1) {
+        // *** Email ***
+        if (
+          inputElementValue === '' ||
+          !inputElementEmailRegex.test(inputElementValue)
+        ) {
+          addErrorMessages(index);
+        } else {
+          removeErrorMessages(index);
+
+          addSuccesLines(index);
+
+          setTimeout(() => {
+            removeSuccesLines(index);
+          }, removeSuccessDelay);
+
+          setTimeout(() => {
+            oneInput.focus();
+          }, removeSuccessDelay + 250);
+        }
+        // *** End of Email ***
+      } else if (index === 2) {
+        //  *** Textarea ***
+        if (inputElementValue === '') addErrorMessages(index);
+        else {
+          removeErrorMessages(index);
+          addSuccesLines(index);
+
+          setTimeout(() => {
+            removeSuccesLines(index);
+          }, removeSuccessDelay);
+
+          setTimeout(() => {
+            oneInput.focus();
+          }, removeSuccessDelay + 250);
+        }
+        //  *** End of Textarea ***
+      }
+    });
+  }
+
+  // *** End of Form ***
 }

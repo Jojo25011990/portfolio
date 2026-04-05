@@ -6,6 +6,7 @@ import features from './modules/features';
 import myStory from './modules/myStory';
 import footer from './modules/footer';
 import header from './modules/header';
+import backToTop from './modules/backToTop';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -20,4 +21,5 @@ function init() {
   myStory();
   footer();
   header();
+  backToTop();
 }

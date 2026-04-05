@@ -16,7 +16,7 @@ p {
   // *** End of Responsive Design ***
 }
 
-p:not(li p, .header__lightbox-description) {
+p:not(li p, .header__lightbox-description, .footer__form-message) {
   color: $grey-primary;
 }
 
