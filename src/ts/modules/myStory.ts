@@ -32,6 +32,13 @@ export default function myStory() {
     '.my-story__character-bubble-man',
   );
 
+  const myStoryManRock = document.querySelector<HTMLImageElement>(
+    '.my-story__character-img-rock-man',
+  );
+  const myStoryWomanRock = document.querySelector<HTMLImageElement>(
+    '.my-story__character-img-rock-woman',
+  );
+
   const [myStoryManBubbles01, myStoryManBubbles02] = myStoryManBubbles;
   const [myStoryWomanBubbles01, myStoryWomanBubbles02] = myStoryWomanBubbles;
 
@@ -97,15 +104,31 @@ export default function myStory() {
     .add(() => {
       myStoryWomanBubbles01.classList.remove('active');
       myStoryWoman?.classList.remove('active');
-    }, '+=1.2');
+    }, '+=1.2')
+    .add(() => {
+      myStoryMan?.classList.add('hide');
+      myStoryWoman?.classList.add('hide');
+    }, '+=0.5')
+    .add(() => {
+      myStoryManRock?.classList.add('active');
+      myStoryWomanRock?.classList.add('active');
+    }, '+=0.1');
 
   dragonTimeline.add(() => {
     myStoryDragon?.addEventListener('animationend', () => {
       dragonTimeline
         .add(() => {
+          myStoryManRock?.classList.remove('active');
+          myStoryWomanRock?.classList.remove('active');
+        })
+        .add(() => {
+          myStoryMan?.classList.remove('hide');
+          myStoryWoman?.classList.remove('hide');
+        }, '+=0.5')
+        .add(() => {
           myStoryManBubbles02.classList.add('active');
           myStoryMan?.classList.add('active');
-        }, '+=0.5')
+        }, '+=0.6')
         .add(() => {
           myStoryManBubbles02.classList.remove('active');
           myStoryMan?.classList.remove('active');

@@ -20,6 +20,12 @@ p:not(li p, .header__lightbox-description, .footer__form-message) {
   color: $grey-primary;
 }
 
+.footer__envelope-letter p {
+  color: $dark-overlay;
+
+  @include font-settings(1rem !important, 500, 1.7rem);
+}
+
 .projects__description,
 .services__description,
 .features__description {

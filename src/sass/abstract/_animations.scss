@@ -146,7 +146,68 @@
   }
 
   to {
-    transform: translateX(-240%);
+    transform: translateX(-280%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-0.4rem);
+  }
+
+  25% {
+    transform: translateX(0.4rem);
+  }
+
+  50% {
+    transform: translateX(-0.4rem);
+  }
+
+  75% {
+    transform: translateX(0.4rem);
   }
 }
 // *** End of My Story ***
+
+// *** Footer ***
+@keyframes flap-open {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    z-index: 3;
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes envelope-letter {
+  0% {
+    top: 0;
+    transform: translateX(-50%) scale(1) scaleY(1);
+    z-index: 3;
+  }
+  50% {
+    top: -150%;
+    transform: translateX(-50%) scale(1) scaleY(1);
+    z-index: 3;
+  }
+  60% {
+    top: -150%;
+    transform: translateX(-50%) scale(1) scaleY(1.15);
+    z-index: 999;
+  }
+  100% {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(1.25) scaleY(1.5);
+    z-index: 999;
+  }
+}
+
+@keyframes envelope-heart {
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(2);
+  }
+}
+// *** End of Footer ***

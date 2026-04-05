@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+import envelope from './envelope';
+
 gsap.registerPlugin(ScrollTrigger);
 export default function footer() {
   const footer = document.querySelector<HTMLElement>('.footer');
@@ -16,6 +18,8 @@ export default function footer() {
   );
 
   const footerLogo = document.querySelector<HTMLAnchorElement>('.footer__logo');
+
+  const overlay = document.querySelector<HTMLDivElement>('.footer__overlay');
 
   if (footerTitle) {
     gsap.to(footerTitle, {
@@ -46,7 +50,7 @@ export default function footer() {
 
   // *** Form ***
 
-  // *** Version 02 - Typing instead querySelector<HTMLInputElement> ***
+  // *** Version - Typing instead querySelector<HTMLInputElement> ***
 
   // *** Form | Inputs | Textarea ***
   const form = document.getElementById('form') as HTMLFormElement | null;
@@ -80,7 +84,18 @@ export default function footer() {
     form.addEventListener('submit', event => {
       event.preventDefault();
 
-      checkInputValues([formInputName, formInputEmail, formTextarea]);
+      const isInputsValid = checkInputValues([
+        formInputName,
+        formInputEmail,
+        formTextarea,
+      ]);
+
+      if (isInputsValid) {
+        setTimeout(() => {
+          overlay?.classList.add('active');
+          envelope();
+        }, 1000);
+      }
 
       console.log(event);
     });
@@ -89,11 +104,15 @@ export default function footer() {
   function checkInputValues(
     inputArray: (HTMLInputElement | HTMLTextAreaElement | null)[],
   ) {
+    let isInputValid: boolean = true;
+
     inputArray.forEach((oneInput, index) => {
       // *** Guard - Prevented non-existent inputs ***
       if (!oneInput) return;
       const inputElementValue = oneInput.value.trim().toLowerCase();
       // *** End of Guard - Prevented non-existent inputs ***
+
+      console.log(index, oneInput.id);
 
       // *** Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
 
@@ -128,8 +147,10 @@ export default function footer() {
 
       if (index === 0) {
         // *** Full Name ***
-        if (inputElementValue === '') addErrorMessages(index);
-        else {
+        if (inputElementValue === '') {
+          isInputValid = false;
+          addErrorMessages(index);
+        } else {
           removeErrorMessages(index);
 
           addSuccesLines(index);
@@ -149,6 +170,7 @@ export default function footer() {
           inputElementValue === '' ||
           !inputElementEmailRegex.test(inputElementValue)
         ) {
+          isInputValid = false;
           addErrorMessages(index);
         } else {
           removeErrorMessages(index);
@@ -166,8 +188,10 @@ export default function footer() {
         // *** End of Email ***
       } else if (index === 2) {
         //  *** Textarea ***
-        if (inputElementValue === '') addErrorMessages(index);
-        else {
+        if (inputElementValue === '') {
+          isInputValid = false;
+          addErrorMessages(index);
+        } else {
           removeErrorMessages(index);
           addSuccesLines(index);
 
@@ -182,6 +206,7 @@ export default function footer() {
         //  *** End of Textarea ***
       }
     });
+    return isInputValid;
   }
 
   // *** End of Form ***

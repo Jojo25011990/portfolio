@@ -44,5 +44,32 @@
     // *** End of Responsive Design ***
   }
   // *** End of Ring - Decoration ***
+
+  // *** Overlay ***
+  &__overlay {
+    transform: scale(0);
+
+    background-color: $dark-overlay;
+    backdrop-filter: blur(1rem);
+
+    transition: transform 0.5s ease-out;
+
+    @include dimension-settings(100%, $height: 100%);
+    @include flex-settings();
+    @include position-settings(0, 0, $zIndex: 500, $position: fixed);
+
+    &-description {
+      text-align: center;
+
+      transform: translate(-50%, -75%);
+
+      @include position-settings(75%, 50%);
+    }
+
+    &.active {
+      transform: scale(1);
+    }
+  }
+  // *** End of Overlay ***
 }
 // *** End of Footer ***

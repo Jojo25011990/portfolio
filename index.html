@@ -995,6 +995,12 @@
                     alt="My finction women character - Anabel Leban"
                     class="my-story__character-img my-story__character-img-woman"
                   />
+
+                  <img
+                    src="./src/assets/images/rock.png"
+                    alt="Cartoon rock"
+                    class="my-story__character-img my-story__character-img-rock-woman"
+                  />
                   <figcaption class="my-story__character-title-box">
                     <h4 class="my-story__character-title">Anabel Leban</h4>
                   </figcaption>
@@ -1037,6 +1043,12 @@
                     src="./src/assets/images/character2.png"
                     alt="My finction man character - Diogo Alvago"
                     class="my-story__character-img my-story__character-img-man"
+                  />
+
+                  <img
+                    src="./src/assets/images/rock.png"
+                    alt="Cartoon rock"
+                    class="my-story__character-img my-story__character-img-rock-man"
                   />
                   <figcaption class="my-story__character-title-box">
                     <h4 class="my-story__character-title">Diogo Alvago</h4>
@@ -1296,7 +1308,56 @@
         <!-- End of Navigation -->
 
         <!-- CSS Art - Envelope & Letter ( Popup Message ) -->
-        <div class="footer__envelope"></div>
+        <div class="footer__overlay">
+          <!-- Evenlope with heart -->
+          <div class="footer__envelope">
+            <div class="footer__envelope-top-side"></div>
+            <div class="footer__envelope-left-side"></div>
+            <div class="footer__envelope-right-side"></div>
+            <div class="footer__envelope-bottom-side"></div>
+
+            <!-- Letter - Popup message -->
+            <article class="footer__envelope-letter">
+              <h5 class="footer__envelope-letter-title">Message Delivered!</h5>
+
+              <p class="footer__envelope-letter-message">
+                <strong class="footer__envelope-letter-strong"
+                  >Thank you!</strong
+                >
+                Your message has been successfully sent. I'll get back to you as
+                soon as possible.
+              </p>
+
+              <h6 class="footer__envelope-letter-nickname">
+                Web.Animations.And.Effects
+              </h6>
+
+              <div class="footer__envelope-letter-lines">
+                <div class="footer__envelope-letter-line-01">
+                  <p>Click everywhere</p>
+                </div>
+                <div class="footer__envelope-letter-line-02">
+                  <p>close nearby</p>
+                </div>
+                <div class="footer__envelope-letter-line-03">
+                  <p>popup</p>
+                </div>
+              </div>
+            </article>
+            <!-- End of Letter - Popup message -->
+
+            <!-- Heart -->
+            <button type="button" class="footer__envelope-button">
+              <div class="footer__envelope-heart"></div>
+            </button>
+            <!-- End of Heart -->
+          </div>
+          <!-- End of Evenlope with heart -->
+
+          <p class="footer__overlay-description">
+            Click the heart to open the envelope.
+          </p>
+        </div>
         <!-- End of CSS Art - Envelope & Letter ( Popup Message ) -->
       </footer>
       <!-- End of Footer -->

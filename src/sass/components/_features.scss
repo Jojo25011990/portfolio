@@ -49,6 +49,16 @@
 
       &:hover {
         transform: scale(1.05);
+
+        // *** Responsive Design ***
+        @include responsive-settings(tablet-small) {
+          transform: scale(1.03);
+        }
+
+        @include responsive-settings(mobile) {
+          transform: none;
+        }
+        // *** End of Responsive Design ***
       }
     }
     //  *** End of Box ***

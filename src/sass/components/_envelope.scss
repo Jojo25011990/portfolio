@@ -2,4 +2,203 @@
 @use '../base' as *;
 
 // *** Envelope ***
+.footer__envelope {
+  background-color: $success-primary;
+
+  filter: drop-shadow(0 0 0.2rem $success-primary);
+
+  @include position-settings($position: relative);
+  @include dimension-settings(30rem, $height: 20rem);
+
+  // *** Top side ***
+  &-top-side {
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+
+    transition: transform 0.8s ease;
+    transition-delay: 0.6s;
+
+    border-left: 15rem solid transparent;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid $success-primary;
+
+    filter: drop-shadow(0 0 0.2rem $success-primary);
+
+    @include position-settings(-15rem, $zIndex: 10, $position: relative);
+  }
+  // *** End of Top side ***
+
+  // *** Bottom side ***
+  &-bottom-side {
+    border-left: 15rem solid transparent;
+    border-right: 15rem solid transparent;
+    border-bottom: 15rem solid $success-tertiary;
+
+    filter: drop-shadow(0 0 0.2rem $success-tertiary);
+
+    @include position-settings($bottom: 0, $zIndex: 5);
+  }
+  // *** End of Bottom side ***
+
+  // *** Left side ***
+  &-left-side {
+    border-left: 12.5rem solid $success-secondary;
+    border-top: 10rem solid transparent;
+    border-bottom: 10rem solid transparent;
+
+    filter: drop-shadow(0 0 0.2rem $success-secondary);
+
+    @include position-settings(0, 0, $zIndex: 5);
+  }
+  // *** End of Left side ***
+
+  // *** Right side ***
+  &-right-side {
+    border-right: 12.5rem solid $success-secondary;
+    border-top: 10rem solid transparent;
+    border-bottom: 10rem solid transparent;
+
+    filter: drop-shadow(0 0 0.2rem $success-secondary);
+
+    @include position-settings(0, $right: 0, $zIndex: 5);
+  }
+  // *** End of Right side ***
+
+  // *** Heart ***
+  &-button {
+    cursor: pointer;
+  }
+
+  &-heart {
+    transform: translateX(-50%) scale(1);
+
+    @include position-settings($left: 50%, $bottom: 4rem, $zIndex: 2000);
+    @include dimension-settings(5rem, $height: 5rem);
+
+    &::before {
+      content: '';
+      transform: rotate(55deg);
+
+      background-color: $danger-secondary;
+
+      border-radius: 50% 50% 0 0;
+
+      transition: all 0.5s;
+
+      @include position-settings(0, 1.2rem);
+      @include dimension-settings(80%, $height: 100%);
+    }
+
+    &::after {
+      content: '';
+
+      background-color: $danger-secondary;
+
+      border-radius: 50% 50% 0 0;
+
+      transition: all 0.5s;
+
+      transform: rotate(-55deg);
+
+      @include position-settings(0, $right: 1.5rem);
+      @include dimension-settings(80%, $height: 100%);
+    }
+
+    &:hover::before,
+    &:active::before,
+    &:hover::after,
+    &:active::after {
+      box-shadow:
+        0 0 0.2rem $danger-secondary,
+        0 0 0.4rem $danger-secondary,
+        0 0 0.6rem $danger-secondary;
+    }
+  }
+  // *** End of Heart ***
+
+  // *** Letter ***
+  &-letter {
+    color: $dark-primary;
+    color: $dark-overlay;
+    background-color: $color-white;
+
+    transform: translateX(-50%);
+
+    padding: 1rem;
+
+    transition: all 0.8s ease;
+
+    box-shadow: 0 0 0.1rem $dark-primary;
+
+    @include dimension-settings(90%, $height: 90%);
+    @include position-settings(0, 50%, $zIndex: 3);
+
+    &-title {
+      margin-bottom: 0.4rem;
+      @include font-settings(1.6rem, 400, 2rem);
+    }
+
+    &-message {
+      font-style: italic;
+    }
+
+    &-strong {
+      color: $color-black;
+      @include font-settings(null, $weight: 700);
+    }
+
+    &-nickname {
+      color: $dark-primary;
+
+      display: inline-block;
+      margin-top: 0.4rem;
+
+      @include position-settings($position: relative);
+      @include font-settings(1.4rem, 900, $line-height: 2rem);
+
+      &::before {
+        content: '';
+        transform: scaleX(1);
+
+        background-color: $success-primary;
+
+        @include position-settings($left: 0, $bottom: 0);
+        @include dimension-settings(100%, $height: 0.2rem);
+      }
+    }
+
+    &-lines {
+      margin-top: 1rem;
+    }
+    &-line-01,
+    &-line-02,
+    &-line-03 {
+      border-bottom: 0.2rem solid $grey-primary;
+
+      @include position-settings(0, $position: relative);
+    }
+
+    &-line-01 {
+      @include dimension-settings(80%);
+    }
+    &-line-02 {
+      @include dimension-settings(60%);
+    }
+    &-line-03 {
+      @include dimension-settings(40%);
+    }
+  }
+  // *** End of Letter ***
+
+  & .footer__envelope-top-side.is-open {
+    animation: flap-open 0.8s forwards ease 0.6s;
+  }
+
+  & .footer__envelope-letter.is-open {
+    animation: envelope-letter 3s 1.6s forwards;
+  }
+  & .footer__envelope-heart.is-open {
+    animation: envelope-heart 1s forwards;
+  }
+}
 // *** End of Envelope ***

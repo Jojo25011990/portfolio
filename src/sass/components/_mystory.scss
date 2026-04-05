@@ -17,9 +17,6 @@
   @include flex-settings;
 
   &__container {
-    @include position-settings(0, 0, $zIndex: 1);
-    @include flex-settings;
-    @include dimension-settings(100%, $height: 100%);
     flex-direction: column;
     gap: 40px;
 
@@ -27,31 +24,13 @@
       linear-gradient(#151515d2, $dark-primary),
       url('../../assets/images/my\ story\ bg.jpg') no-repeat;
     background-size: cover;
-    // &:hover {
-    //   animation: shake 0.3s linear 3;
-    // }
+
+    @include position-settings(0, 0, $zIndex: 1);
+    @include flex-settings;
+    @include dimension-settings(100%, $height: 100%);
   }
   &.active {
     animation: shake 0.3s linear 3;
-  }
-
-  @keyframes shake {
-    0%,
-    100% {
-      transform: translateX(-0.4rem);
-    }
-
-    25% {
-      transform: translateX(0.4rem);
-    }
-
-    50% {
-      transform: translateX(-0.4rem);
-    }
-
-    75% {
-      transform: translateX(0.4rem);
-    }
   }
 
   // *** Overlay ***
@@ -80,7 +59,8 @@
     @include dimension-settings(100%, 60rem, 60rem);
 
     &.active {
-      animation: dragon-flight 8s ease-in forwards;
+      //   animation: dragon-flight 8s ease-in forwards;
+      animation: dragon-flight 10s ease-in forwards;
     }
   }
   // *** End of Dragon ***
@@ -105,16 +85,43 @@
 
     &-img {
       object-fit: cover;
-
-      opacity: 0.75;
-
-      transition: opacity 0.3s linear;
+      transition:
+        transform 0.3s linear,
+        opacity 0.3s linear;
 
       @include position-settings($position: static);
+    }
+
+    &-img-man,
+    &-img-woman {
+      opacity: 0.75;
+
+      &.hide {
+        transform: scale(0);
+      }
 
       &.active {
         opacity: 1;
       }
+    }
+
+    &-img-woman {
+      transition-delay: 0.3s;
+    }
+
+    &-img-rock-man,
+    &-img-rock-woman {
+      transform: scale(0);
+
+      @include position-settings(0, -1.5rem);
+
+      &.active {
+        transform: scale(1);
+      }
+    }
+
+    &-img-rock-woman {
+      transition-delay: 0.3s;
     }
 
     &-title-box {
