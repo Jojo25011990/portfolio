@@ -10,9 +10,22 @@
 
     clip-path: inset(0 100% 0 0);
 
-    animation: author-animate 1s 1s ease forwards;
-
     @include font-settings(3.2rem, 700, 3.2rem, -0.044rem);
   }
 }
+
+.header__logo {
+  &:link,
+  &:visited {
+    animation: author-animate 1s 1s ease forwards;
+  }
+}
+
+.footer__logo.active {
+  &:link,
+  &:visited {
+    animation: author-animate 1s 1s ease forwards;
+  }
+}
+
 // *** End of General ***

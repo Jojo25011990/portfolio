@@ -13,8 +13,34 @@
     @include font-settings(7.2rem, 700, 7.2rem, -0.25rem);
   }
 
-  @include responsive-settings(mobile) {
+  @include responsive-settings(mobile-large) {
     @include font-settings(4rem, 700, 4rem, -0.25rem);
+  }
+}
+
+.projects__title,
+.services__title,
+.features__title,
+.footer__title {
+  position: relative;
+
+  color: #444;
+
+  &-span {
+    color: $color-white;
+
+    overflow: hidden;
+
+    transition: width 0.5s;
+
+    will-change: width;
+
+    @include dimension-settings(0%);
+    @include position-settings(0, 0);
+
+    &.active {
+      @include dimension-settings(100%);
+    }
   }
 }
 

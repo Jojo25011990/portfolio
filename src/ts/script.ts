@@ -5,6 +5,7 @@ import services from './modules/services';
 import features from './modules/features';
 import myStory from './modules/myStory';
 import footer from './modules/footer';
+import header from './modules/header';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -18,4 +19,5 @@ function init() {
   features();
   myStory();
   footer();
+  header();
 }

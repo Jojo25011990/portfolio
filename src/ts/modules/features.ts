@@ -29,6 +29,25 @@ export default function features() {
     '.features__fun-facts-button',
   );
 
+  const featuresTitle =
+    document.querySelector<HTMLHeadingElement>('.features__title');
+  const featuresTitleSpan = document.querySelector<HTMLSpanElement>(
+    '.features__title-span',
+  );
+
+  if (featuresTitle) {
+    gsap.to(featuresTitle, {
+      scrollTrigger: {
+        trigger: featuresTitle,
+        start: 'top center',
+      },
+
+      onStart: () => {
+        featuresTitleSpan?.classList.add('active');
+      },
+    });
+  }
+
   // *** Main Description - Paragraph Tag ***
   if (featuresDescription) {
     gsap.to(featuresDescription, {

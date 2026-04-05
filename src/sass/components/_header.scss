@@ -93,6 +93,10 @@
       animation: circle 1s 2.25s linear forwards;
 
       transition: stroke 0.3s;
+
+      &.active {
+        stroke-dashoffset: 500;
+      }
     }
   }
 
