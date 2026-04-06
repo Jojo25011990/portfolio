@@ -7,6 +7,7 @@ import myStory from './modules/myStory';
 import footer from './modules/footer';
 import header from './modules/header';
 import backToTop from './modules/backToTop';
+import myStoryOverlay from './modules/myStoryOverlay';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -22,4 +23,5 @@ function init() {
   footer();
   header();
   backToTop();
+  myStoryOverlay();
 }

@@ -115,32 +115,36 @@ export default function myStory() {
     }, '+=0.1');
 
   dragonTimeline.add(() => {
-    myStoryDragon?.addEventListener('animationend', () => {
-      dragonTimeline
-        .add(() => {
-          myStoryManRock?.classList.remove('active');
-          myStoryWomanRock?.classList.remove('active');
-        })
-        .add(() => {
-          myStoryMan?.classList.remove('hide');
-          myStoryWoman?.classList.remove('hide');
-        }, '+=0.5')
-        .add(() => {
-          myStoryManBubbles02.classList.add('active');
-          myStoryMan?.classList.add('active');
-        }, '+=0.6')
-        .add(() => {
-          myStoryManBubbles02.classList.remove('active');
-          myStoryMan?.classList.remove('active');
-        }, '+=1.2')
-        .add(() => {
-          myStoryWomanBubbles02.classList.add('active');
-          myStoryWoman?.classList.add('active');
-        })
-        .add(() => {
-          myStoryWomanBubbles02.classList.remove('active');
-          myStoryWoman?.classList.remove('active');
-        }, '+=1.2');
-    });
+    myStoryDragon?.addEventListener(
+      'animationend',
+      () => {
+        dragonTimeline
+          .add(() => {
+            myStoryManRock?.classList.remove('active');
+            myStoryWomanRock?.classList.remove('active');
+          })
+          .add(() => {
+            myStoryMan?.classList.remove('hide');
+            myStoryWoman?.classList.remove('hide');
+          }, '+=0.5')
+          .add(() => {
+            myStoryManBubbles02.classList.add('active');
+            myStoryMan?.classList.add('active');
+          }, '+=0.6')
+          .add(() => {
+            myStoryManBubbles02.classList.remove('active');
+            myStoryMan?.classList.remove('active');
+          }, '+=1.2')
+          .add(() => {
+            myStoryWomanBubbles02.classList.add('active');
+            myStoryWoman?.classList.add('active');
+          })
+          .add(() => {
+            myStoryWomanBubbles02.classList.remove('active');
+            myStoryWoman?.classList.remove('active');
+          }, '+=1.2');
+      },
+      { once: true },
+    );
   });
 }
