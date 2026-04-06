@@ -77,12 +77,13 @@
     @include position-settings($left: 50%, $bottom: 4rem, $zIndex: 50);
     @include dimension-settings(5rem, $height: 5rem);
 
-    &.show {
+    //
+    &.initial-state {
       transform: translateX(-50%) scale(0);
     }
 
     &.active {
-      animation: scale-heart 0.7s ease-out forwards;
+      animation: show-heart 0.7s ease-out forwards;
       animation-delay: 1s;
     }
 

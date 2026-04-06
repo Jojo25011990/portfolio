@@ -26,7 +26,7 @@ export default function envelope() {
   };
 
   footerEnvelopeButton?.addEventListener('click', () => {
-    footerEnvelopeHeart?.classList.remove('show');
+    footerEnvelopeHeart?.classList.remove('initial-state');
 
     addClasses();
   });

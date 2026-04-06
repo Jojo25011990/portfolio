@@ -97,7 +97,7 @@ export default function footer() {
       if (isInputsValid) {
         setTimeout(() => {
           overlay?.classList.add('active');
-          footerEnvelopeHeart?.classList.add('show');
+          footerEnvelopeHeart?.classList.add('initial-state');
           envelope();
 
           setTimeout(() => {
