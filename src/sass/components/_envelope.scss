@@ -70,10 +70,21 @@
   }
 
   &-heart {
-    transform: translateX(-50%) scale(1);
+    transform: translateX(-50%);
 
-    @include position-settings($left: 50%, $bottom: 4rem, $zIndex: 2000);
+    // transition: all 1s;
+
+    @include position-settings($left: 50%, $bottom: 4rem, $zIndex: 50);
     @include dimension-settings(5rem, $height: 5rem);
+
+    &.show {
+      transform: translateX(-50%) scale(0);
+    }
+
+    &.active {
+      animation: scale-heart 0.7s ease-out forwards;
+      animation-delay: 1s;
+    }
 
     &::before {
       content: '';
@@ -199,6 +210,7 @@
   }
   & .footer__envelope-heart.is-open {
     animation: envelope-heart 1s forwards;
+    // transform: translateX(-50%) scale(0);
   }
 }
 // *** End of Envelope ***

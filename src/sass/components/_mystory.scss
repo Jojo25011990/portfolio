@@ -3,43 +3,9 @@
 
 // *** My Story ***
 .my-story {
-  margin-top: 14rem;
-
-  //   overflow-x: hidden;
-  overflow: hidden;
-  //   background:
-  //     linear-gradient(#151515d2, $dark-primary),
-  //     url('../../assets/images/my\ story\ bg.jpg') no-repeat;
-  //   background-size: cover;
-
-  height: 90vh;
-  @include dimension-settings(100%);
-  @include position-settings($position: relative);
+  @include dimension-settings(100%, $height: 100%);
+  @include position-settings(0, 0);
   @include flex-settings;
-
-  &__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 90px;
-    z-index: 99999999;
-  }
-
-  .overlay-button {
-    position: absolute;
-    z-index: 3000;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1em 2em;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-  }
 
   &__container {
     flex-direction: column;
@@ -58,34 +24,6 @@
     animation: shake 0.3s linear 3;
   }
 
-  // *** Overlay ***
-  &__overlay {
-    background-color: #111;
-
-    transition: all 1s;
-
-    @include dimension-settings(100%, $height: 100%);
-    @include position-settings(0, 0, $zIndex: 2000);
-    @include flex-settings;
-
-    // *** Description ***
-    &-description {
-      position: absolute;
-      z-index: 3000;
-      bottom: 150px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 1em 2em;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-    // *** End of Description ***
-  }
-  // *** End of Overlay ***
-
   // *** Dragon ***
   &__dragon {
     background: {
@@ -103,7 +41,8 @@
 
     &.active {
       //   animation: dragon-flight 8s ease-in forwards;
-      animation: dragon-flight 10s ease-in forwards;
+      animation: dragon-flight 9s ease-in forwards;
+      //   animation: dragon-flight 10s ease-in forwards;
     }
   }
   // *** End of Dragon ***

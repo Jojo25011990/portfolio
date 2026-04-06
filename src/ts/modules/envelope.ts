@@ -22,9 +22,12 @@ export default function envelope() {
     footerEnvelopeHeart?.classList.remove('is-open');
     footerEnvelopeLetter?.classList.remove('is-open');
     footerEnvelopeTopSide?.classList.remove('is-open');
+    footerEnvelopeHeart?.classList.remove('active');
   };
 
   footerEnvelopeButton?.addEventListener('click', () => {
+    footerEnvelopeHeart?.classList.remove('show');
+
     addClasses();
   });
 

@@ -21,6 +21,10 @@ export default function footer() {
 
   const overlay = document.querySelector<HTMLDivElement>('.footer__overlay');
 
+  const footerEnvelopeHeart = document.querySelector<HTMLDivElement>(
+    '.footer__envelope-heart',
+  );
+
   if (footerTitle) {
     gsap.to(footerTitle, {
       scrollTrigger: {
@@ -93,7 +97,12 @@ export default function footer() {
       if (isInputsValid) {
         setTimeout(() => {
           overlay?.classList.add('active');
+          footerEnvelopeHeart?.classList.add('show');
           envelope();
+
+          setTimeout(() => {
+            footerEnvelopeHeart?.classList.add('active');
+          }, 250);
         }, 1000);
       }
 

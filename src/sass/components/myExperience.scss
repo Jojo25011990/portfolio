@@ -1,0 +1,15 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** My Experience ***
+.my-experience {
+  margin-top: 14rem;
+
+  overflow: hidden;
+
+  height: 90vh;
+  @include dimension-settings(100%);
+  @include position-settings($position: relative);
+  @include flex-settings;
+}
+// *** End of My Experience ***

@@ -968,128 +968,136 @@
         </section>
         <!-- Creativna Sekcia -->
 
-        <!-- My Story -->
-        <section class="my-story">
-          <div class="my-story__container">
-            <!-- Overlay -->
-            <canvas class="my-story__overlay"> </canvas>
-            <!-- <h2 class="my-story__title">My Story</h2> -->
-            <!-- <p class="my-story__overlay-description">
-              Best experienced with sound on. Headphones recommended.
-            </p> -->
-            <!-- End of Overlay -->
+        <!-- My Experience - Overlay | Story | Behind the scene -->
+        <section class="my-experience">
+          <!-- My Overlay -->
+          <section class="my-overlay">
+            <canvas class="my-overlay__canvas"></canvas>
 
-            <!-- Dragon -->
-            <div class="my-story__dragon"></div>
-            <audio
-              src="./src/assets/audio/dragon-roar.mp3"
-              class="my-story__dragon-roar"
-            ></audio>
-            <!-- End of Dragon -->
+            <!-- <button>HALO</button> -->
+          </section>
+          <!-- End of My Overlay -->
 
-            <!-- Characters -->
-            <div class="my-story__characters">
-              <!-- Character 01 - Women -->
-              <div class="my-story__character">
-                <figure class="my-story__character-img-box">
-                  <img
-                    src="./src/assets/images/character1.png"
-                    alt="My finction women character - Anabel Leban"
-                    class="my-story__character-img my-story__character-img-woman"
-                  />
+          <!-- My Story -->
+          <section class="my-story">
+            <div class="my-story__container">
+              <!-- Dragon -->
+              <div class="my-story__dragon"></div>
+              <audio
+                src="./src/assets/audio/dragon-roar.mp3"
+                class="my-story__dragon-roar"
+              ></audio>
+              <!-- End of Dragon -->
 
-                  <img
-                    src="./src/assets/images/rock.png"
-                    alt="Cartoon rock"
-                    class="my-story__character-img my-story__character-img-rock-woman"
-                  />
-                  <figcaption class="my-story__character-title-box">
-                    <h4 class="my-story__character-title">Anabel Leban</h4>
-                  </figcaption>
+              <!-- Characters -->
+              <div class="my-story__characters">
+                <!-- Character 01 - Women -->
+                <div class="my-story__character">
+                  <figure class="my-story__character-img-box">
+                    <img
+                      src="./src/assets/images/character1.png"
+                      alt="My finction women character - Anabel Leban"
+                      class="my-story__character-img my-story__character-img-woman"
+                    />
 
-                  <div
-                    class="my-story__character-bubble-box my-story__character-bubble-woman"
-                  >
-                    <p class="my-story__character-bubble-message">
-                      Shh, don't move!
+                    <img
+                      src="./src/assets/images/rock.png"
+                      alt="Cartoon rock"
+                      class="my-story__character-img my-story__character-img-rock-woman"
+                    />
+                    <figcaption class="my-story__character-title-box">
+                      <h4 class="my-story__character-title">Anabel Leban</h4>
+                    </figcaption>
+
+                    <div
+                      class="my-story__character-bubble-box my-story__character-bubble-woman"
+                    >
+                      <p class="my-story__character-bubble-message">
+                        Shh, don't move!
+                      </p>
+                    </div>
+
+                    <div
+                      class="my-story__character-bubble-box my-story__character-bubble-woman"
+                    >
+                      <p class="my-story__character-bubble-message">
+                        Quiet, please!
+                      </p>
+                    </div>
+                  </figure>
+
+                  <blockquote class="my-story__character-description-box">
+                    <p class="my-story__character-description">
+                      <em>
+                        He's a self-taught frontend developer mastering creative
+                        coding for almost three years. He combines CSS art,
+                        animations, GSAP and Three.js effects in his projects
+                        while focusing on storytelling and unique interactive
+                        experiences.
+                      </em>
                     </p>
-                  </div>
+                  </blockquote>
+                </div>
+                <!-- End of Character 01 - Women -->
 
-                  <div
-                    class="my-story__character-bubble-box my-story__character-bubble-woman"
-                  >
-                    <p class="my-story__character-bubble-message">
-                      Quiet, please!
+                <!-- Character 02 - Man -->
+                <div class="my-story__character">
+                  <figure class="my-story__character-img-box">
+                    <img
+                      src="./src/assets/images/character2.png"
+                      alt="My finction man character - Diogo Alvago"
+                      class="my-story__character-img my-story__character-img-man"
+                    />
+
+                    <img
+                      src="./src/assets/images/rock.png"
+                      alt="Cartoon rock"
+                      class="my-story__character-img my-story__character-img-rock-man"
+                    />
+                    <figcaption class="my-story__character-title-box">
+                      <h4 class="my-story__character-title">Diogo Alvago</h4>
+                    </figcaption>
+
+                    <div
+                      class="my-story__character-bubble-box my-story__character-bubble-man"
+                    >
+                      <p class="my-story__character-bubble-message">
+                        Watch out, dragon!
+                      </p>
+                    </div>
+
+                    <div
+                      class="my-story__character-bubble-box my-story__character-bubble-man"
+                    >
+                      <p class="my-story__character-bubble-message">
+                        Phew, it's gone!
+                      </p>
+                    </div>
+                  </figure>
+
+                  <blockquote class="my-story__character-description-box">
+                    <p class="my-story__character-description">
+                      <em>
+                        He loves tackling complex projects and pushing the
+                        limits of frontend design. His focus is raw custom
+                        solutions — low-level coding instead of copy-paste
+                        components, learning and experimenting every day.
+                      </em>
                     </p>
-                  </div>
-                </figure>
-
-                <blockquote class="my-story__character-description-box">
-                  <p class="my-story__character-description">
-                    <em>
-                      He's a self-taught frontend developer mastering creative
-                      coding for almost three years. He combines CSS art,
-                      animations, GSAP and Three.js effects in his projects
-                      while focusing on storytelling and unique interactive
-                      experiences.
-                    </em>
-                  </p>
-                </blockquote>
+                  </blockquote>
+                </div>
+                <!-- End of Character 02 - Man -->
               </div>
-              <!-- End of Character 01 - Women -->
-
-              <!-- Character 02 - Man -->
-              <div class="my-story__character">
-                <figure class="my-story__character-img-box">
-                  <img
-                    src="./src/assets/images/character2.png"
-                    alt="My finction man character - Diogo Alvago"
-                    class="my-story__character-img my-story__character-img-man"
-                  />
-
-                  <img
-                    src="./src/assets/images/rock.png"
-                    alt="Cartoon rock"
-                    class="my-story__character-img my-story__character-img-rock-man"
-                  />
-                  <figcaption class="my-story__character-title-box">
-                    <h4 class="my-story__character-title">Diogo Alvago</h4>
-                  </figcaption>
-
-                  <div
-                    class="my-story__character-bubble-box my-story__character-bubble-man"
-                  >
-                    <p class="my-story__character-bubble-message">
-                      Watch out, dragon!
-                    </p>
-                  </div>
-
-                  <div
-                    class="my-story__character-bubble-box my-story__character-bubble-man"
-                  >
-                    <p class="my-story__character-bubble-message">
-                      Phew, it's gone!
-                    </p>
-                  </div>
-                </figure>
-
-                <blockquote class="my-story__character-description-box">
-                  <p class="my-story__character-description">
-                    <em>
-                      He loves tackling complex projects and pushing the limits
-                      of frontend design. His focus is raw custom solutions —
-                      low-level coding instead of copy-paste components,
-                      learning and experimenting every day.
-                    </em>
-                  </p>
-                </blockquote>
-              </div>
-              <!-- End of Character 02 - Man -->
+              <!-- End of Characters -->
             </div>
-            <!-- End of Characters -->
-          </div>
+          </section>
+          <!-- End of My Story -->
+
+          <!-- My Behind the scene -->
+          <section class="my-bonus"></section>
+          <!-- End of My Behind the scene -->
         </section>
-        <!-- End of My Story -->
+        <!-- End of My Experience - Overlay | Story | Behind the scene -->
       </main>
       <!-- End of Main -->
 

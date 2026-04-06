@@ -204,10 +204,17 @@
   }
 }
 
+@keyframes scale-heart {
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
 @keyframes envelope-heart {
   to {
     opacity: 0;
     transform: translateX(-50%) scale(2);
+    // transform: translateX(-50%) scale(1);
   }
 }
 // *** End of Footer ***

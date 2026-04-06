@@ -4,25 +4,27 @@ import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 
 export default function myStoryOverlay() {
   // --- Select elements ---
-  const myStory = document.querySelector<HTMLElement>('.my-story');
-  const canvas =
-    document.querySelector<HTMLCanvasElement>('.my-story__overlay');
+  const myOverlay = document.querySelector<HTMLElement>('.my-overlay');
+
+  const canvas = document.querySelector<HTMLCanvasElement>(
+    '.my-overlay__canvas',
+  );
 
   // --- Create overlay button ---
   const overlayButton = document.createElement('button');
   overlayButton.textContent = 'Enter Story';
-  overlayButton.className = 'overlay-button';
-  myStory!.appendChild(overlayButton);
+  overlayButton.className = 'my-overlay__button';
+  myOverlay!.appendChild(overlayButton);
 
   const overlayParagraph = document.createElement('p');
   overlayParagraph.textContent =
     'Best experienced with sound on. Headphones recommended.';
-  overlayParagraph.className = 'my-story__overlay-description';
-  myStory!.appendChild(overlayParagraph);
+  overlayParagraph.className = 'my-overlay__description';
+  myOverlay!.appendChild(overlayParagraph);
 
   // --- Scene & Camera ---
-  const width = myStory!.clientWidth;
-  const height = myStory!.clientHeight;
+  const width = myOverlay!.clientWidth;
+  const height = myOverlay!.clientHeight;
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#111');
@@ -83,8 +85,8 @@ export default function myStoryOverlay() {
 
   // --- Resize listener ---
   window.addEventListener('resize', () => {
-    const w = myStory!.clientWidth;
-    const h = myStory!.clientHeight;
+    const w = myOverlay!.clientWidth;
+    const h = myOverlay!.clientHeight;
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h);
@@ -92,7 +94,7 @@ export default function myStoryOverlay() {
 
   // --- Button to hide overlay ---
   overlayButton.addEventListener('click', () => {
-    canvas!.style.transform = 'translateY(-100%)';
+    myOverlay!.style.transform = 'translateY(-100%)';
     overlayButton.style.display = 'none';
     overlayParagraph.style.display = 'none';
     // sem môžeš spustiť svoj dragon storytelling anim
