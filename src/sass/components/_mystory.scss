@@ -107,7 +107,7 @@
     }
 
     &-title-box {
-      @include position-settings($left: 6.2rem, $bottom: 1rem);
+      @include position-settings($left: 6.2rem, $bottom: 0.4rem);
     }
 
     &-title {

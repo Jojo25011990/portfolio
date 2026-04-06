@@ -72,8 +72,6 @@
   &-heart {
     transform: translateX(-50%);
 
-    // transition: all 1s;
-
     @include position-settings($left: 50%, $bottom: 4rem, $zIndex: 50);
     @include dimension-settings(5rem, $height: 5rem);
 

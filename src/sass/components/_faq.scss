@@ -1,0 +1,102 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+@use './funFacts' as *;
+
+// *** Faq ***
+.faq {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+
+  // *** Menu | Item ***
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 4rem;
+
+    border-radius: 0.5rem;
+
+    backdrop-filter: blur(1rem);
+
+    transition: all 0.3s ease-out;
+
+    @include dimension-settings(100%, 70rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet-small) {
+      padding-inline: 0;
+    }
+    // *** End of Responsive Design ***
+  }
+
+  &__item {
+    padding: 2.2rem;
+
+    border-radius: 0.8rem;
+
+    background-color: $dark-tertiary;
+
+    backdrop-filter: blur(1rem);
+
+    box-shadow: 0 0 0.2rem 0.1rem $dark-primary;
+
+    transition:
+      box-shadow 0.35s linear,
+      max-height 0.35s linear;
+
+    max-height: 7rem;
+    overflow: hidden;
+
+    &:hover,
+    &:active {
+      box-shadow: 0 0 0.2rem 0.1rem $success-primary;
+    }
+
+    &.active {
+      max-height: 17rem;
+    }
+
+    // *** Responsive Design ***
+
+    @include responsive-settings(mobile-small) {
+      padding: 1.8rem;
+    }
+    // *** End of Responsive Design ***
+
+    // *** Title | Description ***
+    &-question {
+      display: inline-block;
+      color: $color-white;
+
+      transition: color 0.35s;
+
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: $success-primary;
+      }
+    }
+
+    &-answer {
+      margin-top: 2rem;
+      @include font-settings(1.6rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(mobile) {
+        margin-top: 1.5rem;
+      }
+      // *** End of Responsive Design ***
+    }
+    // *** End of Title | Description ***
+  }
+  // *** End of Menu | Item ***
+}
+// *** End of Faq ***

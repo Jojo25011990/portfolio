@@ -8,6 +8,7 @@ import footer from './modules/footer';
 import header from './modules/header';
 import backToTop from './modules/backToTop';
 import myStoryOverlay from './modules/myStoryOverlay';
+import faq from './modules/faq';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -24,4 +25,5 @@ function init() {
   header();
   backToTop();
   myStoryOverlay();
+  faq();
 }

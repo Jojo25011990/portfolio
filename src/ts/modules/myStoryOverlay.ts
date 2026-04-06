@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import gsap from 'gsap';
 
 export default function myStoryOverlay() {
   // --- Select elements ---
@@ -10,27 +11,15 @@ export default function myStoryOverlay() {
     '.my-overlay__canvas',
   );
 
-  // --- Create overlay button ---
-  const overlayButton = document.createElement('button');
-  overlayButton.textContent = 'Enter Story';
-  overlayButton.className = 'my-overlay__button';
-  myOverlay!.appendChild(overlayButton);
-
-  const overlayParagraph = document.createElement('p');
-  overlayParagraph.textContent =
-    'Best experienced with sound on. Headphones recommended.';
-  overlayParagraph.className = 'my-overlay__description';
-  myOverlay!.appendChild(overlayParagraph);
-
   // --- Scene & Camera ---
   const width = myOverlay!.clientWidth;
   const height = myOverlay!.clientHeight;
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color('#111');
+  scene.background = new THREE.Color('#070707');
 
   const camera = new THREE.PerspectiveCamera(70, width / height, 0.1, 100);
-  camera.position.set(0, 0, 15);
+  camera.position.z = 13;
 
   // --- Renderer ---
   const renderer = new THREE.WebGLRenderer({
@@ -45,6 +34,9 @@ export default function myStoryOverlay() {
   const dirLight = new THREE.DirectionalLight(0xffffff, 1);
   //   dirLight.position.set(10, 10, 10);
   dirLight.position.set(0, 10, 10);
+  //   ambientLight.position.set(50, 500, 30);
+  //   scene.add(dirLight);
+  //   scene.add(ambientLight);
   scene.add(ambientLight, dirLight);
 
   // --- Responsive text size ---
@@ -64,15 +56,24 @@ export default function myStoryOverlay() {
       curveSegments: 20,
       bevelEnabled: true,
       bevelThickness: 0.1,
-      //   bevelSize: 0.05,
       bevelSize: 0.05,
     });
     textGeometry.center();
-    // textGeometry.rotateZ;
 
-    const material = new THREE.MeshPhongMaterial({ color: '#4ee1a0' });
+    const material = new THREE.MeshPhongMaterial({
+      color: 0x4ee1a0,
+    });
     const textMesh = new THREE.Mesh(textGeometry, material);
     scene.add(textMesh);
+
+    gsap.from(textMesh.scale, {
+      x: 0,
+      y: 0,
+      z: 0,
+      duration: 1,
+      delay: 1,
+      ease: 'power2',
+    });
 
     animate();
   });
@@ -82,21 +83,4 @@ export default function myStoryOverlay() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
   }
-
-  // --- Resize listener ---
-  window.addEventListener('resize', () => {
-    const w = myOverlay!.clientWidth;
-    const h = myOverlay!.clientHeight;
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-  });
-
-  // --- Button to hide overlay ---
-  overlayButton.addEventListener('click', () => {
-    myOverlay!.style.transform = 'translateY(-100%)';
-    overlayButton.style.display = 'none';
-    overlayParagraph.style.display = 'none';
-    // sem môžeš spustiť svoj dragon storytelling anim
-  });
 }

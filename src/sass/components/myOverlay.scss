@@ -1,5 +1,6 @@
 @use '../abstract' as *;
 @use '../base' as *;
+@use './funFacts' as *;
 
 // *** My Overlay ***
 .my-overlay {
@@ -11,43 +12,36 @@
   @include position-settings(0, 0, $zIndex: 2000);
   @include flex-settings;
 
+  &__canvas {
+    @include position-settings(0, 0);
+  }
+
+  &__wrapper {
+    background-color: transparent;
+
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0);
+    @include flex-settings(center, end);
+  }
+
+  // ***  Box ***
+  &__box {
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    @include dimension-settings(100%, 55rem, 18rem);
+    @include flex-settings(space-around, center, column);
+  }
+  // *** End of  Box ***
+
   // *** Description ***
   &__description {
-    position: absolute;
-    z-index: 3000;
-    bottom: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1em 2em;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: white;
-    border: none;
-    border-radius: 5px;
   }
   // *** End of Description ***
 
   &__button {
-    position: absolute;
-    z-index: 3000;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1em 2em;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background-color: $success-primary;
-    border: none;
-    border-radius: 5px;
-
-    transition: background-color 0.3s linear;
-
-    text-transform: uppercase;
-
-    &:hover,
-    &:active {
-      background-color: $success-tertiary;
-    }
+    @extend .features__fun-facts-button;
   }
 }
 

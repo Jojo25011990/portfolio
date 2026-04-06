@@ -81,6 +81,7 @@ export default function features() {
       });
     });
   }
+  // *** End of Features Eight Mini blocks ***
 
   // *** Version 02 ***
   //   if (featuresItems.length) {

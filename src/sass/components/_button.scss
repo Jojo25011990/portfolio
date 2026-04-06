@@ -7,13 +7,15 @@
 .services__button,
 .features__button,
 .projects__box-button,
+.faq__button,
 .footer__form-btn {
   @extend %cta-btn;
 }
 
 .projects__button,
 .services__button,
-.features__button {
+.features__button,
+.faq__button {
   align-self: center;
 }
 

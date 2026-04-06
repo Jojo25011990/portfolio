@@ -16,7 +16,12 @@ p {
   // *** End of Responsive Design ***
 }
 
-p:not(li p, .header__lightbox-description, .footer__form-message) {
+p:not(
+  li p,
+  .header__lightbox-description,
+  .footer__form-message,
+  .my-story__character-bubble-message
+) {
   color: $grey-primary;
 }
 
@@ -53,7 +58,8 @@ p:not(li p, .header__lightbox-description, .footer__form-message) {
 
 .projects__item-description,
 .services__item-description,
-.features__item-description {
+.features__item-description,
+.faq__item-answer {
   // *** Responsive Design ***
   @include responsive-settings(mobile) {
     @include font-settings(1.4rem !important, 500, 2.8rem, 0);
