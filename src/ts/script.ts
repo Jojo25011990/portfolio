@@ -9,6 +9,7 @@ import header from './modules/header';
 import backToTop from './modules/backToTop';
 import myStoryOverlay from './modules/myStoryOverlay';
 import faq from './modules/faq';
+import future from './modules/future';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -26,4 +27,5 @@ function init() {
   backToTop();
   myStoryOverlay();
   faq();
+  future();
 }

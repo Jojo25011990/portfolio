@@ -1,5 +1,124 @@
 @use '../abstract' as *;
 @use '../base' as *;
+@use './projects' as *;
 
 // *** Future ***
+.future {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+
+  // *** Box ***
+  &__box {
+    margin-top: 4rem;
+    background-color: $dark-tertiary;
+
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0.8s ease-out;
+
+    max-height: 100%;
+    @include position-settings($position: relative);
+    @include dimension-settings(100%, 80rem, 50rem);
+
+    // &.active {
+    //   clip-path: circle(100% at 50% 50%);
+    // }
+
+    // *** Projects ***
+    &-project {
+      overflow: hidden;
+
+      @include position-settings;
+      @include dimension-settings(100%, $height: 100%);
+    }
+    // *** End of Projects ***
+
+    // *** Project 01 ***
+    &-project-01 {
+      transition: clip-path 0.5s;
+      background: url('../../assets/images/space\ tourism\ V1.png') no-repeat
+        center/cover;
+
+      &:hover .future__box-content-01 {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s;
+      }
+    }
+    // *** End of Project 01 ***
+
+    // *** Project 02 ***
+    &-project-02 {
+      z-index: 2;
+
+      transition: clip-path 0.5s;
+
+      background: url('../../assets/images/CSS\ Art\ Anime\ 02.jpg') no-repeat
+        center/cover;
+
+      clip-path: polygon(70% 0, 100% 0, 100% 100%, 30% 100%);
+
+      &:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      &:hover .future__box-content-02 {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0.2s;
+      }
+    }
+    // *** End of Project 02 ***
+
+    .future__box-project-01:hover ~ .future__box-project {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+
+    // *** Content ***
+    &-content {
+      text-align: center;
+
+      padding-block: 4rem;
+      padding-inline: 10rem;
+
+      background-color: $dark-overlay;
+
+      //   overflow: hidden;
+
+      opacity: 0;
+
+      transition: all 0.5s ease-out;
+      transition-delay: 0s;
+
+      @include flex-settings($direction: column, $gap: 5rem);
+      @include position-settings(0, 0);
+      @include dimension-settings(100%, $height: 100%);
+
+      h3 {
+        font-size: 60px;
+        font-weight: bold;
+      }
+
+      p {
+        color: $color-white;
+        line-height: 2;
+      }
+
+      &-01 {
+        transform: translateX(-100%);
+        pointer-events: none;
+      }
+
+      &-02 {
+        transform: translateX(100%);
+      }
+    }
+    // *** End of Content ***
+  }
+  // *** End of Box ***
+}
 // *** End of Future ***
