@@ -78,7 +78,8 @@
     <link rel="stylesheet" href="/src/sass/main.scss" />
   </head>
   <body id="top">
-    <!--  Pridat sekciu certifikaty / learning -->
+    <!-- Pridat preloader : pozdrav, popis a animaciu lahku  -->
+    <!--  Pridat sekciu certifikaty / learning , learning rozdelit na bloky, education | certifications | atd -->
     <!--  Pridat sekciu github activity -->
     <!--  Pridat do sekcie future este jeden blok 2 projekty pexexo css art + designo 7-multi pagesku  -->
     <!-- Pridat sekciu GAME - memory/pexeso css art game -->
@@ -248,16 +249,15 @@
           <h2 class="skills__title" aria-hidden="true">
             <span>s</span><span>k</span><span>i</span><span>l</span
             ><span>l</span><span>s</span>
-            <!-- Pridal skills title span pre sr only  -->
           </h2>
+
+          <!-- Sr Only -->
+          <h2 class="skills__title-sr-only">Skills</h2>
+          <!-- End of Sr Only -->
 
           <!-- Skill Menu -->
           <ul class="skills__menu">
-            <li
-              class="skills__menu-item"
-              style="--i: 1"
-              aria-label="HTML - SEO, Accessibility"
-            >
+            <li class="skills__menu-item" style="--i: 1">
               <h3 class="skills__menu-heading">HTML</h3>
               <p class="skills__menu-description">SEO, Accessibility</p>
             </li>
@@ -306,13 +306,13 @@
         <!-- End of Skills -->
 
         <!-- Projects -->
-
-        <!-- daj aria label na popisy technologii u projektoch, alebo pridat na cely articel aria label a popis celeho article co tam asi je  -->
         <section class="projects">
           <div class="projects__wrapper">
             <h2 class="projects__title">
               Projects
-              <span class="projects__title-span">Projects</span>
+              <span class="projects__title-span" aria-hidden="true"
+                >Projects</span
+              >
             </h2>
             <a class="projects__button" href="#contact"
               >Contact Me
@@ -328,10 +328,7 @@
           <!-- Projects Menu -->
           <ul class="projects__menu">
             <!-- Space Tourism V2 - Creative -->
-            <li
-              class="projects__item"
-              aria-label="Space Tourism V2 - Creative. Technologies - HTML, Sass, JS, TypeScript, GSAP, Three.js. Links to live project and source code."
-            >
+            <li class="projects__item">
               <article>
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
@@ -342,7 +339,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/space-tourism-v1/"
                       target="_blank"
@@ -388,7 +385,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/space-tourism-v1/"
                       target="_blank"
@@ -429,7 +426,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/My-Hope---Ultimate-App/"
                       target="_blank"
@@ -472,7 +469,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/Web-App---Gis-Services/"
                       target="_blank"
@@ -514,7 +511,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/css-art-gallery/"
                       target="_blank"
@@ -557,7 +554,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/landing-page-gallery/"
                       target="_blank"
@@ -600,7 +597,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/creative-mini-projects-gallery/"
                       target="_blank"
@@ -645,7 +642,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/mini-projects-gallery/"
                       target="_blank"
@@ -688,7 +685,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/mini-css-art-animations-gallery/"
                       target="_blank"
@@ -733,7 +730,7 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay">
+                  <div class="projects__box-overlay" role="group">
                     <a
                       href="https://jojo25011990.github.io/mix-projects-gallery/"
                       target="_blank"

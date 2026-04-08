@@ -64,6 +64,12 @@
 }
 // *** End of General ***
 
+// *** Skills Title Span - Sr Only ***
+.skills__title-sr-only {
+  @extend %sr-only;
+}
+// *** End of Skills Title Span - Sr Only ***
+
 // *** Faq - h4 ***
 .faq__item-question {
   // *** Responsive Design ***
