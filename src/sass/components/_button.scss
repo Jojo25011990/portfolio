@@ -2,6 +2,13 @@
 @use '../base' as *;
 
 // *** General - Placeholder -> %cta-btn ***
+.header__author-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 .header__button,
 .projects__button,
 .services__button,

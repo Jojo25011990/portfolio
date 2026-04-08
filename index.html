@@ -59,9 +59,7 @@
     />
     <!-- End of Google Font: Space Grotesk  -->
 
-    <title>
-      Jozef Kudrna Portfolio V1 | Frontend Developer & Creative Coding & CSS Art
-    </title>
+    <title>Jozef Kudrna | Frontend Developer Portfolio</title>
 
     <script type="application/ld+json">
       {
@@ -79,7 +77,7 @@
     </script>
     <link rel="stylesheet" href="/src/sass/main.scss" />
   </head>
-  <body id="body">
+  <body id="top">
     <!--  Pridat sekciu certifikaty / learning -->
     <!--  Pridat sekciu github activity -->
     <!--  Pridat do sekcie future este jeden blok 2 projekty pexexo css art + designo 7-multi pagesku  -->
@@ -92,7 +90,7 @@
       <header class="header">
         <div class="header__wrapper">
           <!-- Navigation -->
-          <nav class="header__navigation" aria-label="Main navigation">
+          <nav class="header__navigation" aria-label="Social Links">
             <a href="#top" class="header__logo" aria-label="Back to top"
               >JozefKudrna</a
             >
@@ -168,7 +166,7 @@
               experiences through animations, creative coding, Three.js scenes,
               and CSS Art
             </p>
-            <a class="header__button" href="#contact" role="button"
+            <a class="header__button" href="#contact"
               >Contact Me
               <span aria-hidden="true"></span>
             </a>
@@ -179,7 +177,6 @@
           <img
             src="./src/assets/images/pattern-rings.svg"
             alt=""
-            aria-hidden="true"
             class="header__ring"
           />
           <!-- End of Ring Image - Decoration -->
@@ -191,6 +188,7 @@
             width="129"
             height="129"
             class="header__svg"
+            aria-hidden="true"
           >
             <circle
               class="header__svg-circle"
@@ -205,22 +203,37 @@
           <!-- End of Circle SVG - Decoration -->
 
           <!-- Jozef Kudrna -->
-          <img
-            src="./src/assets/images/jojo.jpg"
-            alt="Jozef Kudrna - Frontend Developer"
-            class="header__author"
-          />
+          <!-- tu dorobit ten button, musi byt kvoli accessibility  -->
+          <button
+            type="button"
+            class="header__author-button"
+            aria-label="Open to original photo of Jozef Kudrna"
+          >
+            <img
+              src="./src/assets/images/jojo.jpg"
+              alt="Jozef Kudrna - Frontend Developer"
+              class="header__author"
+            />
+          </button>
           <!-- End of Jozef Kudrna -->
         </div>
 
         <!-- Lightbox -->
-        <div class="header__lightbox hidden" role="dialog" aria-modal="true">
+        <!-- upravit zatvorenie lightboxu na esc - keyboard , mobiloch cize nejaky active styl ..click na mouse mam finish -->
+        <!-- je mozne ze sa bude musiet pridavat button na close lighjtboxu.
+         button by tam mal byt za kazdych okolnosti + ked sa otvori lightbox, musi byt focus vnutri napr lightbox.focus() - na ten close buttn pripadne ..close button mozem spravit len pre screen readery pripadne   -->
+        <div
+          class="header__lightbox hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="lightbox-description"
+        >
           <img
             src="./src/assets/images/jojo.jpg"
             alt="Jozef Kudrna - Frontend Developer"
             class="header__lightbox-author"
           />
-          <p class="header__lightbox-description">
+          <p id="lightbox-description" class="header__lightbox-description">
             Click everywhere to close the lightbox
           </p>
         </div>
@@ -235,11 +248,16 @@
           <h2 class="skills__title" aria-hidden="true">
             <span>s</span><span>k</span><span>i</span><span>l</span
             ><span>l</span><span>s</span>
+            <!-- Pridal skills title span pre sr only  -->
           </h2>
 
           <!-- Skill Menu -->
           <ul class="skills__menu">
-            <li class="skills__menu-item" style="--i: 1">
+            <li
+              class="skills__menu-item"
+              style="--i: 1"
+              aria-label="HTML - SEO, Accessibility"
+            >
               <h3 class="skills__menu-heading">HTML</h3>
               <p class="skills__menu-description">SEO, Accessibility</p>
             </li>
@@ -281,7 +299,6 @@
           <img
             src="./src/assets/images/pattern-rings.svg"
             alt=""
-            aria-hidden="true"
             class="skills__ring"
           />
           <!-- End of Ring Image - Decoration -->
@@ -289,13 +306,15 @@
         <!-- End of Skills -->
 
         <!-- Projects -->
+
+        <!-- daj aria label na popisy technologii u projektoch, alebo pridat na cely articel aria label a popis celeho article co tam asi je  -->
         <section class="projects">
           <div class="projects__wrapper">
             <h2 class="projects__title">
               Projects
               <span class="projects__title-span">Projects</span>
             </h2>
-            <a class="projects__button" href="#contact" role="button"
+            <a class="projects__button" href="#contact"
               >Contact Me
               <span aria-hidden="true"></span>
             </a>
@@ -309,7 +328,10 @@
           <!-- Projects Menu -->
           <ul class="projects__menu">
             <!-- Space Tourism V2 - Creative -->
-            <li class="projects__item">
+            <li
+              class="projects__item"
+              aria-label="Space Tourism V2 - Creative. Technologies - HTML, Sass, JS, TypeScript, GSAP, Three.js. Links to live project and source code."
+            >
               <article>
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
@@ -753,7 +775,7 @@
               Services
               <span class="services__title-span">Services</span>
             </h2>
-            <a class="services__button" href="#contact" role="button">
+            <a class="services__button" href="#contact">
               Contact Me
               <span aria-hidden="true"></span>
             </a>
@@ -769,8 +791,16 @@
             <li class="services__item">
               <article class="services__item-box">
                 <i class="fa-solid fa-anchor services__item-icon"></i>
-                <h3 class="services__item-heading">Anchored Technologies</h3>
-                <p class="services__item-description">
+                <h3
+                  class="services__item-heading"
+                  aria-label="Anchored Technologies"
+                >
+                  Anchored Technologies
+                </h3>
+                <p
+                  class="services__item-description"
+                  aria-label="Every project start with a solid foundaton - clean code, well-structured animations, and flexible components ready to scale."
+                >
                   Every project starts with a solid foundation - clean code,
                   well-structured animations, and flexible components ready to
                   scale.
@@ -821,13 +851,14 @@
         <!-- End of Services -->
 
         <!-- Features -->
+        <!-- pridat na icony aria hidden true , su len vizal character, pridat na p tag aria label presneho textu -->
         <section class="features">
           <div class="features__wrapper">
             <h2 class="features__title">
               Features
               <span class="features__title-span">Features</span>
             </h2>
-            <a class="features__button" href="#contact" role="button">
+            <a class="features__button" href="#contact">
               Contact Me
               <span aria-hidden="true"></span>
             </a>
@@ -973,21 +1004,24 @@
           <div class="future__wrapper">
             <h2 class="future__title">
               Future
-              <span class="future__title-span">Future</span>
+              <span class="future__title-span" aria-hidden="true">Future</span>
             </h2>
-            <a class="future__button" href="#contact" role="button">
+            <a class="future__button" href="#contact">
               Contact Me
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <p class="future__description"></p>
+          <p class="future__description" aria-label="pridat sem text"></p>
 
-          <div class="future__box">
+          <div class="future__box" role="group">
             <!-- Project 01 -->
-            <div class="future__box-project future__box-project-01">
+            <div
+              class="future__box-project future__box-project-01"
+              role="group"
+            >
               <div class="future__box-content future__box-content-01">
-                <h3>Space Tourism V2</h3>
-                <p>
+                <h3 aria-label="Space Tourism V2">Space Tourism V2</h3>
+                <p aria-label="pridat text">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Voluptatum id temporibus repudiandae dolores corrupti minima
                   vitae cupiditate velit voluptate eligendi perspiciatis
@@ -1049,13 +1083,14 @@
         <!-- End of Future -->
 
         <!-- Faq -->
+        <!-- pridat js na aria expanded true / false, pridat role button na headingy, a pridat celkovy popis na LI ako predtym otazka + odpoved. pridat na pod nadpis description aria label klasicky ako vsade v sekciach  -->
         <section class="faq">
           <div class="faq__wrapper">
             <h2 class="faq__title">
               Faq
-              <span class="faq__title-span">Faq</span>
+              <span class="faq__title-span" aria-hidden="true">Faq</span>
             </h2>
-            <a class="faq__button" href="#contact" role="button">
+            <a class="faq__button" href="#contact">
               Contact Me
               <span aria-hidden="true"></span>
             </a>
@@ -1115,10 +1150,12 @@
         <!-- End of Faq -->
 
         <!-- My Experience - Overlay | Story | Behind the scene -->
-        <section class="my-experience">
+        <section class="my-experience" role="group">
           <!-- My Overlay -->
           <section class="my-overlay">
-            <canvas class="my-overlay__canvas"></canvas>
+            <canvas class="my-overlay__canvas" aria-hidden="true"></canvas>
+            <!-- vsak nestaci len tu mat nejaky heading napr h3 -->
+            <h3 class="sr-only">Enter the journey</h3>
 
             <div class="my-overlay__wrapper">
               <div class="my-overlay__box">
@@ -1129,7 +1166,6 @@
                 <button type="button" class="my-overlay__button">Enter</button>
               </div>
             </div>
-            <!-- <button>HALO</button> -->
           </section>
           <!-- End of My Overlay -->
 
@@ -1277,12 +1313,15 @@
           <img
             src="./src/assets/images/pattern-rings.svg"
             alt=""
-            aria-hidden="true"
             class="footer__ring"
           />
           <!-- End of Ring Image - Decoration -->
 
           <!-- Form -->
+          <!-- zvazit odstranit autocomplete , pripadne na video nechat ale potom odstranit a doriesit defaultne browser styly autocomplete ked sa autocompletne meno,email - aspon sa oto pokusit :D 
+          doplnit cez js na inputoch attr = aria-invlaid, true ked je fail a ked je success zmenit boolean na false  
+          doplnit ako v headery pri lightboxe aj tu na envelope vsetky aria spravne attr 
+          -->
           <form novalidate autocomplete="off" class="footer__form" id="form">
             <!-- Name -->
             <div class="footer__form-wrapper">
@@ -1302,7 +1341,7 @@
                 class="footer__form-message-line footer__form-message-line--error"
               ></span>
 
-              <p class="footer__form-message error-message">
+              <p class="footer__form-message error-message" aria-live="polite">
                 <span class="footer__form-message-span" style="--i: 1"
                   >Please</span
                 >
@@ -1323,7 +1362,7 @@
             <div class="footer__form-wrapper">
               <label for="email" class="footer__form-label">Email</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 placeholder="email"
                 class="footer__form-input"
@@ -1337,7 +1376,7 @@
                 class="footer__form-message-line footer__form-message-line--error"
               ></span>
 
-              <p class="footer__form-message error-message">
+              <p class="footer__form-message error-message" aria-live="polite">
                 <span class="footer__form-message-span" style="--i: 1"
                   >Please</span
                 >
@@ -1371,7 +1410,7 @@
                 class="footer__form-message-line footer__form-message-line--error footer__form-message-line--textarea"
               ></span>
 
-              <p class="footer__form-message error-message">
+              <p class="footer__form-message error-message" aria-live="polite">
                 <span class="footer__form-message-span" style="--i: 1"
                   >Please</span
                 >
@@ -1382,7 +1421,7 @@
                   >your</span
                 >
                 <span class="footer__form-message-span" style="--i: 4"
-                  >email.</span
+                  >message.</span
                 >
               </p>
             </div>
@@ -1405,7 +1444,7 @@
         </section>
 
         <!-- Navigation -->
-        <nav class="footer__navigation" aria-label="Main navigation">
+        <nav class="footer__navigation" aria-label="Social Links">
           <span class="footer__navigation-line"></span>
 
           <a href="#top" class="footer__logo" aria-label="Back to top"
@@ -1528,7 +1567,7 @@
       <!-- End of Footer -->
 
       <!-- Back to top button -->
-      <a href="#" class="back-to-top" aria-label="Back to top">
+      <a href="#top" class="back-to-top" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
       </a>
       <!-- End of Back to top button -->
