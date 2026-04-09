@@ -245,14 +245,14 @@
       <!-- Main -->
       <main class="main">
         <!-- Skills -->
-        <section class="skills">
+        <section class="skills" aria-labelledby="skills-heading">
           <h2 class="skills__title" aria-hidden="true">
             <span>s</span><span>k</span><span>i</span><span>l</span
             ><span>l</span><span>s</span>
           </h2>
 
           <!-- Sr Only -->
-          <h2 class="skills__title-sr-only">Skills</h2>
+          <h2 class="skills__title-sr-only" id="skills-heading">Skills</h2>
           <!-- End of Sr Only -->
 
           <!-- Skill Menu -->
@@ -306,9 +306,9 @@
         <!-- End of Skills -->
 
         <!-- Projects -->
-        <section class="projects">
+        <section class="projects" aria-labelledby="projects-heading">
           <div class="projects__wrapper">
-            <h2 class="projects__title">
+            <h2 class="projects__title" id="projects-heading">
               Projects
               <span class="projects__title-span" aria-hidden="true"
                 >Projects</span
@@ -320,16 +320,20 @@
             </a>
           </div>
 
-          <p
-            class="projects__description"
-            aria-label="From over 150 completed projects, this is a refined selection of 10 that reflect my growth, technical range, and creative direction."
-          ></p>
+          <p class="projects__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="projects__description-sr-only">
+            From over 150 completed projects, this is a refined selection of 10
+            that reflect my growth, technical range, and creative direction.
+          </p>
+          <!-- End of Sr Only -->
 
           <!-- Projects Menu -->
           <ul class="projects__menu">
             <!-- Space Tourism V2 - Creative -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -339,7 +343,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Space Tourism V2 - Creative Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/space-tourism-v1/"
                       target="_blank"
@@ -375,7 +383,7 @@
 
             <!-- Space Tourism V1 - Clean -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -385,7 +393,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Space Tourism V1 - Clean Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/space-tourism-v1/"
                       target="_blank"
@@ -416,7 +428,7 @@
 
             <!-- My Hope -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -426,7 +438,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="My Hope - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/My-Hope---Ultimate-App/"
                       target="_blank"
@@ -459,7 +475,7 @@
 
             <!-- Web App CV -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -469,7 +485,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Web App CV - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/Web-App---Gis-Services/"
                       target="_blank"
@@ -501,7 +521,7 @@
 
             <!-- CSS Art Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -511,7 +531,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="CSS Art Gallery - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/css-art-gallery/"
                       target="_blank"
@@ -544,7 +568,7 @@
 
             <!-- Landing Page Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -554,7 +578,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Landing Page Gallery - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/landing-page-gallery/"
                       target="_blank"
@@ -587,7 +615,7 @@
 
             <!-- Creative Mini Projects Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -597,7 +625,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Creative Mini Projects Gallery - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/creative-mini-projects-gallery/"
                       target="_blank"
@@ -632,7 +664,7 @@
 
             <!-- Mini Projects Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -642,7 +674,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Mini Projects Gallery - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/mini-projects-gallery/"
                       target="_blank"
@@ -675,7 +711,7 @@
 
             <!-- Mini CSS Arts & Animations Projects Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -685,7 +721,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Mini CSS Arts & Animations Projects Gallery - Links"
+                  >
                     <a
                       href="https://jojo25011990.github.io/mini-css-art-animations-gallery/"
                       target="_blank"
@@ -720,7 +760,7 @@
 
             <!-- Mix Projects Gallery -->
             <li class="projects__item">
-              <article>
+              <article class="projects__container">
                 <div class="projects__box">
                   <div class="projects__box-wrapper">
                     <img
@@ -730,7 +770,11 @@
                     />
                   </div>
 
-                  <div class="projects__box-overlay" role="group">
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Mix Projects Gallery"
+                  >
                     <a
                       href="https://jojo25011990.github.io/mix-projects-gallery/"
                       target="_blank"
@@ -766,11 +810,13 @@
         <!-- End of Projects -->
 
         <!-- Services -->
-        <section class="services">
+        <section class="services" aria-labelledby="services-title">
           <div class="services__wrapper">
-            <h2 class="services__title">
+            <h2 class="services__title" id="services-title">
               Services
-              <span class="services__title-span">Services</span>
+              <span class="services__title-span" aria-hidden="true"
+                >Services</span
+              >
             </h2>
             <a class="services__button" href="#contact">
               Contact Me
@@ -778,26 +824,25 @@
             </a>
           </div>
 
-          <p
-            class="services__description"
-            aria-label="Exploring, building, and animating digital experiences that tell a story."
-          ></p>
+          <p class="services__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="services__description-sr-only">
+            Exploring, building, and animating digital experiences that tell a
+            story.
+          </p>
+          <!-- End of Sr Only -->
 
           <!-- Services Menu -->
           <ul class="services__menu">
             <li class="services__item">
               <article class="services__item-box">
-                <i class="fa-solid fa-anchor services__item-icon"></i>
-                <h3
-                  class="services__item-heading"
-                  aria-label="Anchored Technologies"
-                >
-                  Anchored Technologies
-                </h3>
-                <p
-                  class="services__item-description"
-                  aria-label="Every project start with a solid foundaton - clean code, well-structured animations, and flexible components ready to scale."
-                >
+                <i
+                  class="fa-solid fa-anchor services__item-icon"
+                  aria-hidden="true"
+                ></i>
+                <h3 class="services__item-heading">Anchored Technologies</h3>
+                <p class="services__item-description">
                   Every project starts with a solid foundation - clean code,
                   well-structured animations, and flexible components ready to
                   scale.
@@ -807,7 +852,10 @@
 
             <li class="services__item">
               <article class="services__item-box">
-                <i class="fa-solid fa-paint-brush services__item-icon"></i>
+                <i
+                  class="fa-solid fa-paint-brush services__item-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3 class="services__item-heading">Creative Design</h3>
                 <p class="services__item-description">
                   Visuals and interactions always have a purpose. I experiment
@@ -819,7 +867,10 @@
 
             <li class="services__item">
               <article class="services__item-box">
-                <i class="fa-solid fa-brain services__item-icon"></i>
+                <i
+                  class="fa-solid fa-brain services__item-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3 class="services__item-heading">Efficient Thinking</h3>
                 <p class="services__item-description">
                   I prioritize efficiency and thoughtful solutions. Code,
@@ -831,7 +882,10 @@
 
             <li class="services__item">
               <article class="services__item-box">
-                <i class="fa-solid fa-hands-helping services__item-icon"></i>
+                <i
+                  class="fa-solid fa-hands-helping services__item-icon"
+                  aria-hidden="true"
+                ></i>
                 <h3 class="services__item-heading">
                   Storytelling & Interaction
                 </h3>
@@ -848,22 +902,29 @@
         <!-- End of Services -->
 
         <!-- Features -->
-        <!-- pridat na icony aria hidden true , su len vizal character, pridat na p tag aria label presneho textu -->
-        <section class="features">
+        <!-- Pridat attr na modal atd -->
+        <section class="features" aria-labelledby="features-title">
           <div class="features__wrapper">
-            <h2 class="features__title">
+            <h2 class="features__title" id="features-title">
               Features
-              <span class="features__title-span">Features</span>
+              <span class="features__title-span" aria-hidden="true"
+                >Features</span
+              >
             </h2>
             <a class="features__button" href="#contact">
               Contact Me
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <p
-            class="features__description"
-            aria-label="Small details that make every project engaging, interactive, and memorable."
-          ></p>
+
+          <p class="features__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="features__description-sr-only">
+            Small details that make every project engaging, interactive, and
+            memorable.
+          </p>
+          <!-- End of Sr Only -->
 
           <!-- Container -->
           <div class="features__container">
@@ -871,7 +932,10 @@
             <ul class="features__menu">
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-laptop features__item-icon"></i>
+                  <i
+                    class="fa fa-laptop features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Responsive design that adapts to any screen, optimized for
                     smooth interactions.
@@ -881,7 +945,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-lightbulb-o features__item-icon"></i>
+                  <i
+                    class="fa fa-lightbulb-o features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Creative coding experiments that add playful and innovative
                     elements.
@@ -891,7 +958,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-palette features__item-icon"></i>
+                  <i
+                    class="fa fa-palette features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Color, shapes, and visuals crafted to create memorable
                     experiences.
@@ -901,7 +971,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-cogs features__item-icon"></i>
+                  <i
+                    class="fa fa-cogs features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Interactive features and subtle animations to enhance
                     engagement.
@@ -911,7 +984,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-rocket features__item-icon"></i>
+                  <i
+                    class="fa fa-rocket features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Quick prototypes and ideas to test creative directions
                     rapidly.
@@ -921,7 +997,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-search features__item-icon"></i>
+                  <i
+                    class="fa fa-search features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Attention to detail ensures polished visuals and clean code.
                   </p>
@@ -930,7 +1009,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-tasks features__item-icon"></i>
+                  <i
+                    class="fa fa-tasks features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Efficient workflows and structured code for scalability.
                   </p>
@@ -939,7 +1021,10 @@
 
               <li class="features__item">
                 <article class="features__item-box">
-                  <i class="fa fa-heart features__item-icon"></i>
+                  <i
+                    class="fa fa-heart features__item-icon"
+                    aria-hidden="true"
+                  ></i>
                   <p class="features__item-description">
                     Passion for storytelling through interactive digital
                     experiences.
@@ -997,9 +1082,9 @@
         <!-- End of Features -->
 
         <!-- Future -->
-        <section class="future">
+        <section class="future" aria-labelledby="future-title">
           <div class="future__wrapper">
-            <h2 class="future__title">
+            <h2 class="future__title" id="future-title">
               Future
               <span class="future__title-span" aria-hidden="true">Future</span>
             </h2>
@@ -1008,49 +1093,22 @@
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <p class="future__description" aria-label="pridat sem text"></p>
 
-          <div class="future__box" role="group">
-            <!-- Project 01 -->
-            <div
-              class="future__box-project future__box-project-01"
-              role="group"
-            >
-              <div class="future__box-content future__box-content-01">
-                <h3 aria-label="Space Tourism V2">Space Tourism V2</h3>
-                <p aria-label="pridat text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptatum id temporibus repudiandae dolores corrupti minima
-                  vitae cupiditate velit voluptate eligendi perspiciatis
-                  consequuntur autem minus, sint nulla repellat tempore ipsam
-                  doloribus.
-                </p>
-              </div>
-            </div>
-            <!-- End of Project 01 -->
+          <p class="future__description" aria-hidden="true"></p>
 
-            <!-- Project 02 -->
-            <div class="future__box-project future__box-project-02">
-              <div class="future__box-content future__box-content-02">
-                <h3>CSS Art Anime</h3>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Voluptatum id temporibus repudiandae dolores corrupti minima
-                  vitae cupiditate velit voluptate eligendi perspiciatis
-                  consequuntur autem minus, sint nulla repellat tempore ipsam
-                  doloribus.
-                </p>
-              </div>
-            </div>
-            <!-- End of Project 02 -->
-          </div>
+          <!-- Sr - Only -->
+          <p class="future__description-sr-only">
+            Check out the upcoming projects. I'm planning and what's next in
+            line.
+          </p>
+          <!-- End of Sr - Only -->
 
-          <div class="future__box">
+          <div class="future__box" role="group" aria-label="Upcoming projects">
             <!-- Project 01 -->
             <div class="future__box-project future__box-project-01">
               <div class="future__box-content future__box-content-01">
-                <h3>Space Tourism V2</h3>
-                <p>
+                <h3 class="future__box-heading">Space Tourism V2</h3>
+                <p class="future__box-description">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Voluptatum id temporibus repudiandae dolores corrupti minima
                   vitae cupiditate velit voluptate eligendi perspiciatis
@@ -1064,8 +1122,8 @@
             <!-- Project 02 -->
             <div class="future__box-project future__box-project-02">
               <div class="future__box-content future__box-content-02">
-                <h3>CSS Art Anime</h3>
-                <p>
+                <h3 class="future__box-heading">CSS Art Anime</h3>
+                <p class="future__box-description">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Voluptatum id temporibus repudiandae dolores corrupti minima
                   vitae cupiditate velit voluptate eligendi perspiciatis
@@ -1081,9 +1139,9 @@
 
         <!-- Faq -->
         <!-- pridat js na aria expanded true / false, pridat role button na headingy, a pridat celkovy popis na LI ako predtym otazka + odpoved. pridat na pod nadpis description aria label klasicky ako vsade v sekciach  -->
-        <section class="faq">
+        <section class="faq" aria-labelledby="faq-title">
           <div class="faq__wrapper">
-            <h2 class="faq__title">
+            <h2 class="faq__title" id="faq-title">
               Faq
               <span class="faq__title-span" aria-hidden="true">Faq</span>
             </h2>
@@ -1092,7 +1150,14 @@
               <span aria-hidden="true"></span>
             </a>
           </div>
-          <p class="faq__description"></p>
+
+          <p class="faq__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="faq__description-sr-only">
+            Curious how I work and create? Here are some quick answers.
+          </p>
+          <!-- End of Sr Only -->
 
           <ul class="faq__menu">
             <li class="faq__item">
@@ -1104,7 +1169,7 @@
               </p>
             </li>
             <li class="faq__item">
-              <h4 class="faq__item-question" role="button" tabindex="1">
+              <h4 class="faq__item-question" role="button" tabindex="-1">
                 Are you experienced with React?
               </h4>
               <p class="faq__item-answer">
@@ -1112,7 +1177,7 @@
               </p>
             </li>
             <li class="faq__item">
-              <h4 class="faq__item-question" role="button" tabindex="3">
+              <h4 class="faq__item-question" role="button" tabindex="-2">
                 How do you keep improving?
               </h4>
               <p class="faq__item-answer">
@@ -1151,8 +1216,10 @@
           <!-- My Overlay -->
           <section class="my-overlay">
             <canvas class="my-overlay__canvas" aria-hidden="true"></canvas>
-            <!-- vsak nestaci len tu mat nejaky heading napr h3 -->
-            <h3 class="sr-only">Enter the journey</h3>
+
+            <!-- Sr Only -->
+            <h3 class="my-overlay__sr-only">Enter the journey</h3>
+            <!-- End of Sr Only -->
 
             <div class="my-overlay__wrapper">
               <div class="my-overlay__box">
@@ -1291,12 +1358,16 @@
 
       <!-- Footer -->
       <footer class="footer">
-        <section class="footer__contact" id="contact">
+        <section
+          class="footer__contact"
+          id="contact"
+          aria-labelledby="footer-title"
+        >
           <!-- Content -->
           <div class="footer__container">
-            <h2 class="footer__title">
+            <h2 class="footer__title" id="footer-title">
               Contact
-              <span class="footer__title-span">Contact</span>
+              <span class="footer__title-span" aria-hidden="true">Contact</span>
             </h2>
             <p class="footer__description">
               Open to collaborations, freelance work, and creative challenges. I
@@ -1322,10 +1393,13 @@
           <form novalidate autocomplete="off" class="footer__form" id="form">
             <!-- Name -->
             <div class="footer__form-wrapper">
+              <!-- Sr Only -->
               <label for="name" class="footer__form-label">Name</label>
+              <!-- End of Sr Only -->
               <input
                 type="text"
                 id="name"
+                name="name"
                 placeholder="name"
                 class="footer__form-input"
               />
@@ -1357,10 +1431,13 @@
 
             <!-- Email -->
             <div class="footer__form-wrapper">
+              <!-- Sr Only -->
               <label for="email" class="footer__form-label">Email</label>
+              <!-- End of Sr Only -->
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="email"
                 class="footer__form-input"
               />
@@ -1392,9 +1469,12 @@
 
             <!-- Message -->
             <div class="footer__form-wrapper footer__form-wrapper--textarea">
+              <!-- Sr Only -->
               <label for="message" class="footer__form-label">Message</label>
+              <!-- End of Sr Only -->
               <textarea
                 id="message"
+                name="message"
                 placeholder="message"
                 class="footer__form-textarea"
               ></textarea>

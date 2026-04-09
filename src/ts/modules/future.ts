@@ -15,8 +15,7 @@ export default function future() {
     '.future__title-span',
   );
 
-  //   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
-  const futureBoxex = document.querySelectorAll<HTMLDivElement>('.future__box');
+  const futureBox = document.querySelector<HTMLDivElement>('.future__box');
 
   if (futureTitle) {
     gsap.to(futureTitle, {
@@ -39,38 +38,25 @@ export default function future() {
       },
 
       duration: 1.5,
-      text: 'Check out the upcoming projects I’m planning and what’s next in line.',
+      text: 'Check out the upcoming projects. I’m planning and what’s next in line.',
       ease: 'none',
     });
   }
 
   // *** Version 01 ***
-  //   if (futureBox) {
-  //     gsap.to(futureBox, {
-  //       clipPath: 'circle(100% at 50% 50%)',
-  //       duration: 1,
-  //       scrollTrigger: {
-  //         trigger: futureBox,
-  //         start: 'top 60%',
-  //         end: 'bottom 60%',
-  //         scrub: true,
-  //       },
-  //     });
-  //   }
-  if (futureBoxex) {
-    futureBoxex.forEach(futureBox => {
-      gsap.to(futureBox, {
-        clipPath: 'circle(100% at 50% 50%)',
-        duration: 1,
-        scrollTrigger: {
-          trigger: futureBox,
-          start: 'top 60%',
-          end: 'bottom 60%',
-          scrub: true,
-        },
-      });
+  if (futureBox) {
+    gsap.to(futureBox, {
+      clipPath: 'circle(100% at 50% 50%)',
+      duration: 1,
+      scrollTrigger: {
+        trigger: futureBox,
+        start: 'top 60%',
+        end: 'bottom 60%',
+        scrub: true,
+      },
     });
   }
+
   // *** End of Version 01 ***
 
   // *** Version 02 - active class ***

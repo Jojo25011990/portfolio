@@ -3,6 +3,16 @@
 
 //  *** here are all headings without "fun facts component" ***
 
+// *** Sr Only ***
+.projects__description-sr-only,
+.services__description-sr-only,
+.features__description-sr-only,
+.future__description-sr-only,
+.faq__description-sr-only {
+  @extend %sr-only;
+}
+// *** End of Sr Only ***
+
 // *** General ***
 p {
   // *** Responsive Design ***
