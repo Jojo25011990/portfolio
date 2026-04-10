@@ -1,7 +1,7 @@
 @use '../abstract' as *;
 @use '../base' as *;
 @use './projects' as *;
-@use './funFacts' as *;
+@use '../components/funFacts' as *;
 
 // *** Faq ***
 .faq {

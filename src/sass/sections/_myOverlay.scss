@@ -1,6 +1,6 @@
 @use '../abstract' as *;
 @use '../base' as *;
-@use './funFacts' as *;
+@use '../components/funFacts' as *;
 
 // *** My Overlay ***
 .my-overlay {
