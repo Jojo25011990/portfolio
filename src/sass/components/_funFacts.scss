@@ -32,12 +32,6 @@
     transform: translateY(-50%) translateX(-50%);
   }
 
-  // *** Sr Only ***
-  &-heading {
-    @extend %sr-only;
-  }
-  // *** End of Sr Only ***
-
   // *** Menu ***
   &-menu {
     @include flex-settings(space-around, $direction: column, $gap: 3rem);
@@ -49,57 +43,5 @@
     @include flex-settings(space-around, $direction: column, $gap: 1rem);
   }
   // *** End of Item ***
-
-  // *** Title ***
-  &-title {
-    color: $success-primary;
-
-    text-transform: uppercase;
-    @include font-settings(2rem);
-  }
-  // *** End of Title ***
-
-  // *** Description ***
-  &-description {
-    @include font-settings(1.6rem, null, 1.4);
-
-    &--strong {
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-  }
-  // *** End of Description ***
 }
 // *** End of Fun Facts ***
-
-// *** Fun Facts - Button ***
-.features__fun-facts-button {
-  color: $success-primary;
-
-  background-color: transparent;
-
-  padding: 1.6rem 2.8rem;
-
-  border: 0.16rem solid $success-primary;
-
-  cursor: pointer;
-
-  transition: all 0.3s;
-
-  text-transform: uppercase;
-  @include font-settings(2.4rem, 700, null, 0.1rem);
-
-  &:hover,
-  &:active {
-    color: $color-white;
-    background-color: $success-secondary;
-
-    border-color: transparent;
-
-    box-shadow:
-      0 0 0.8rem $success-primary,
-      0 0 2.4rem $success-primary,
-      0 0 4.8rem $success-primary;
-  }
-}
-// *** End of Fun Facts - Button ***

@@ -29,6 +29,10 @@ export default function features() {
     '.features__fun-facts-button',
   );
 
+  const featuresFunFactsCloseButton = document.querySelector<HTMLButtonElement>(
+    '.features__fun-facts-closebtn',
+  );
+
   const featuresTitle =
     document.querySelector<HTMLHeadingElement>('.features__title');
   const featuresTitleSpan = document.querySelector<HTMLSpanElement>(
@@ -101,6 +105,7 @@ export default function features() {
   //   }
   // *** End of Version 02 ***
 
+  // *** Random Animation Icon ***
   setInterval(() => {
     let randomItemIndex: number;
 
@@ -119,14 +124,32 @@ export default function features() {
       previousItemIndex = randomItemIndex;
     }
   }, randomSpeed);
+  // *** End of Random Animation Icon ***
   // *** End of Features Eight Mini blocks ***
 
-  // *** Fun Facts ***
-  const funFactsSlideBox = () => featuresFunFacts?.classList.toggle('active');
-  const funFactsContainer = () => featuresMenu?.classList.toggle('active');
+  // *** Fun Facts - ADD | REMOVE | FOCUS ***
+  const openFanFactsModal = () => {
+    featuresFunFacts?.classList.add('active');
+    featuresMenu?.classList.add('active');
 
-  featuresFunFactsButton?.addEventListener('click', funFactsSlideBox);
-  featuresFunFactsButton?.addEventListener('click', funFactsContainer);
+    featuresFunFacts?.setAttribute('aria-hidden', 'false');
+    featuresFunFactsButton?.setAttribute('aria-expanded', 'true');
 
-  // *** End of Fun Facts ***
+    featuresFunFactsCloseButton?.focus();
+  };
+
+  const closeFanFactsModal = () => {
+    featuresFunFacts?.classList.remove('active');
+    featuresMenu?.classList.remove('active');
+
+    featuresFunFacts?.setAttribute('aria-hidden', 'true');
+    featuresFunFactsButton?.setAttribute('aria-expanded', 'false');
+
+    featuresFunFacts?.focus();
+  };
+
+  featuresFunFactsButton?.addEventListener('click', openFanFactsModal);
+  featuresFunFactsCloseButton?.addEventListener('click', closeFanFactsModal);
+
+  // *** End of Fun Facts - ADD | REMOVE | FOCUS ***
 }

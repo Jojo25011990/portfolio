@@ -70,32 +70,11 @@
     }
     // *** End of Responsive Design ***
 
-    // *** Title | Description ***
-    &-question {
-      display: inline-block;
-      color: $color-white;
-
-      transition: color 0.35s;
-
-      cursor: pointer;
-
-      &:hover,
-      &:active {
-        color: $success-primary;
-      }
+    // *** Icon ***
+    &-question-icon {
+      transition: transform 0.35s;
     }
-
-    &-answer {
-      margin-top: 2rem;
-      @include font-settings(1.6rem);
-
-      // *** Responsive Design ***
-      @include responsive-settings(mobile) {
-        margin-top: 1.5rem;
-      }
-      // *** End of Responsive Design ***
-    }
-    // *** End of Title | Description ***
+    // *** End of Icon ***
   }
   // *** End of Menu | Item ***
 }

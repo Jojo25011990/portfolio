@@ -43,7 +43,8 @@ p:not(
 
 .projects__description,
 .services__description,
-.features__description {
+.features__description,
+.future__description {
   text-align: center;
   @include dimension-settings(100%, 76rem, 5.6rem);
 }
@@ -91,10 +92,14 @@ p:not(
 }
 // *** End of Header ***
 
+// *** Skills ***
+.skills__menu-description {
+  color: $grey-primary;
+}
+// *** End of Skills ***
+
 // *** Projects ***
 .projects__description {
-  //   @include dimension-settings(100%, 76rem, 5.6rem);
-
   // *** Responsive Design ***
   @include responsive-settings(tablet-small) {
     @include dimension-settings(100%, 76rem, 8.4rem);
@@ -106,6 +111,30 @@ p:not(
   // *** End of Responsive Design ***
 }
 // *** End of Projects ***
+
+// *** Features - Fun Facts ***
+.features__fun-facts-description {
+  @include font-settings(1.6rem, 400, 1.4);
+
+  &--strong {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+// *** End of Features - Fun Facts ***
+
+// *** FAQ - Accordion ***
+.faq__item-answer {
+  margin-top: 2rem;
+  @include font-settings(1.6rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    margin-top: 1.5rem;
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of FAQ - Accordion ***
 
 // *** Footer ***
 .footer__description {

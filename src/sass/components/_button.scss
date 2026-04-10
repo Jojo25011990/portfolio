@@ -1,14 +1,14 @@
 @use '../abstract' as *;
 @use '../base' as *;
 
-// *** General - Placeholder -> %cta-btn ***
+// *** Header
 .header__author-button {
   background: none;
   border: none;
   padding: 0;
   margin: 0;
 }
-
+// *** Main CTA Button ***
 .header__button,
 .projects__button,
 .services__button,
@@ -31,4 +31,103 @@
 .footer__form-btn {
   text-transform: uppercase;
 }
-// *** End of General - Placeholder -> %cta-btn ***
+// *** End of Main CTA Button ***
+
+// *** Secondary Button ***
+.features__fun-facts-button,
+.my-overlay__button {
+  @extend %glowing-btn;
+}
+// *** End of Secondary Button ***
+
+// *** Fun Facts Close Button ***
+.features__fun-facts-closebtn,
+.future__box-01-project-closebtn {
+  cursor: pointer;
+
+  padding: 0.5rem;
+
+  transition: color 0.35s;
+
+  @include position-settings(0.5rem, $right: 0.5rem);
+
+  &:hover,
+  &:active {
+    color: $success-primary;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    color: $success-primary;
+  }
+}
+// *** End of Fun Facts Close Button ***
+
+// *** FAQ - Accordion ***
+.faq__item-question {
+  text-align: left;
+
+  color: $color-white;
+
+  transition: color 0.35s;
+
+  cursor: pointer;
+
+  @include dimension-settings(100%);
+  @include flex-settings(space-between, $gap: 1rem);
+
+  &[aria-expanded='true'] .faq__item-question-icon {
+    transform: rotate(180deg);
+  }
+
+  &:hover,
+  &:active {
+    color: $success-primary;
+  }
+}
+// *** End of FAQ - Accordion ***
+
+// *** Back to top - Button ***
+.back-to-top {
+  color: inherit;
+
+  border: 0.1rem solid $color-white;
+  border-radius: 50%;
+
+  transform: scale(0);
+  opacity: 0;
+
+  transform-origin: center;
+
+  transition: all 0.5s;
+
+  will-change: transform, opacity, color, border-color;
+
+  @include position-settings($bottom: 2rem, $right: 2rem, $zIndex: 50);
+  @include dimension-settings(4.5rem, $height: 4.5rem);
+  @include font-settings(1.6rem);
+  @include flex-settings;
+
+  &:hover,
+  &:active {
+    color: $success-primary;
+    border-color: $success-primary;
+  }
+
+  &.active {
+    transform: scale(1);
+    opacity: 1;
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile) {
+      transform: scale(1) translateX(-50%);
+
+      @include position-settings($left: 50%, $right: 0);
+    }
+    // *** End of Responsive Design ***
+  }
+}
+// *** End of Back to top - Button ***

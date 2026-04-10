@@ -34,7 +34,7 @@ export default function projects() {
     gsap.to(projectsDescription, {
       scrollTrigger: {
         trigger: projectsDescription,
-        start: 'top center',
+        start: 'top 70%',
       },
 
       duration: 3,

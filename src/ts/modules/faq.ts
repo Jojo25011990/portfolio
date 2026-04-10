@@ -63,7 +63,11 @@ export default function faq() {
     const faqQuestion = oneFaqItem.querySelector('.faq__item-question');
 
     faqQuestion?.addEventListener('click', () => {
-      oneFaqItem.classList.toggle('active');
+      const activeFaqItem = oneFaqItem.classList.toggle('active');
+      faqQuestion.setAttribute(
+        'aria-expanded',
+        activeFaqItem ? 'true' : 'false',
+      );
     });
   });
   // *** End of FAQ - Accordion ***

@@ -1,6 +1,5 @@
 @use '../abstract' as *;
 @use '../base' as *;
-@use '../components/funFacts' as *;
 
 // *** My Overlay ***
 .my-overlay {
@@ -34,15 +33,6 @@
     @include flex-settings(space-around, center, column);
   }
   // *** End of  Box ***
-
-  // *** Description ***
-  &__description {
-  }
-  // *** End of Description ***
-
-  &__button {
-    @extend .features__fun-facts-button;
-  }
 }
 
 // *** End of My Overlay ***

@@ -64,3 +64,35 @@
   }
 }
 // *** End of CTA - Button ***
+
+// *** Glowing Button ( Fun Facts, etc .. ) ***
+%glowing-btn {
+  color: $success-primary;
+
+  background-color: transparent;
+
+  padding: 1.6rem 2.8rem;
+
+  border: 0.16rem solid $success-primary;
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  text-transform: uppercase;
+  @include font-settings(2.4rem, 700, null, 0.1rem);
+
+  &:hover,
+  &:active {
+    color: $color-white;
+    background-color: $success-secondary;
+
+    border-color: transparent;
+
+    box-shadow:
+      0 0 0.8rem $success-primary,
+      0 0 2.4rem $success-primary,
+      0 0 4.8rem $success-primary;
+  }
+}
+// *** End of Glowing Button ( Fun Facts, etc .. ) ***

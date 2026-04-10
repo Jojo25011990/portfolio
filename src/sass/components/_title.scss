@@ -64,11 +64,21 @@
 }
 // *** End of General ***
 
-// *** Skills Title Span - Sr Only ***
-.skills__title-sr-only {
+// *** Sr Only ***
+.skills__title-sr-only,
+.features__fun-facts-heading {
   @extend %sr-only;
 }
-// *** End of Skills Title Span - Sr Only ***
+// *** End of Sr Only ***
+
+// *** Fun Facts Title ***
+.features__fun-facts-title {
+  color: $success-primary;
+
+  text-transform: uppercase;
+  @include font-settings(2rem);
+}
+// *** End of Fun Facts Title ***
 
 // *** Faq - h4 ***
 .faq__item-question {
@@ -193,4 +203,11 @@
     animation: span-animate-06 0.35s 3.5s forwards;
   }
 }
+
+// *** Menu Heading ***
+.skills__menu-heading {
+  @include font-settings(4.8rem, 700, 5.6rem, -0.15rem);
+}
+// *** End of Menu Heading ***
+
 // *** End of Skills ***

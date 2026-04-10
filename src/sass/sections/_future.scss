@@ -13,7 +13,8 @@
   // *** End of Wrapper ***
 
   // *** Box ***
-  &__box {
+  &__box,
+  &__box-01 {
     margin-top: 4rem;
     background-color: $dark-tertiary;
 
@@ -32,7 +33,6 @@
     &-project {
       overflow: hidden;
 
-      @include position-settings;
       @include dimension-settings(100%, $height: 100%);
     }
     // *** End of Projects ***
@@ -46,7 +46,7 @@
       &:hover .future__box-content-01 {
         opacity: 1;
         transform: translateX(0);
-        transition-delay: 0.2s;
+        transition-delay: 0.6s;
       }
     }
     // *** End of Project 01 ***
@@ -69,7 +69,7 @@
       &:hover .future__box-content-02 {
         opacity: 1;
         transform: translateX(0);
-        transition-delay: 0.2s;
+        transition-delay: 0.6s;
       }
     }
     // *** End of Project 02 ***
@@ -120,5 +120,55 @@
     // *** End of Content ***
   }
   // *** End of Box ***
+
+  //  *** Tablet | Mobile Version ***
+  // *** Box 01 ***
+  &__box-01 {
+    clip-path: none;
+    background-color: transparent;
+
+    @include dimension-settings(100%, 70rem);
+
+    // *** Project ***
+    &-project {
+      overflow: hidden;
+
+      @include dimension-settings(100%, $height: 80%);
+    }
+
+    &-project-01 {
+      background: url('../../assets/images/space\ tourism\ V1.png') no-repeat
+        center/cover;
+    }
+
+    &-content-01 {
+      pointer-events: auto;
+      @include dimension-settings(100%, $height: 80%);
+      @include position-settings($zIndex: 5);
+
+      &.active {
+        opacity: 1;
+        transform: translateX(0);
+        transition-delay: 0s;
+      }
+    }
+    // *** End of Project ***
+
+    // button
+    &-btn {
+      transform: translateX(-50%);
+
+      @include position-settings($left: 50%, $bottom: 0);
+
+      @extend %glowing-btn;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+    // button
+  }
+  // *** End of Box 01 ***
+  //  *** Edd of Tablet | Mobile Version ***
 }
 // *** End of Future ***
