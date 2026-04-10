@@ -13,8 +13,7 @@
   // *** End of Wrapper ***
 
   // *** Box ***
-  &__box,
-  &__box-01 {
+  &__box {
     margin-top: 4rem;
     background-color: $dark-tertiary;
 
@@ -25,15 +24,17 @@
     @include position-settings($position: relative);
     @include dimension-settings(100%, 80rem, 50rem);
 
-    // &.active {
-    //   clip-path: circle(100% at 50% 50%);
-    // }
-
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-large) {
+      @include dimension-settings(100%, 80rem, 40rem);
+    }
+    // *** End of Responsive Design ***
     // *** Projects ***
     &-project {
       overflow: hidden;
 
       @include dimension-settings(100%, $height: 100%);
+      @include position-settings;
     }
     // *** End of Projects ***
 
@@ -98,14 +99,44 @@
       @include position-settings(0, 0);
       @include dimension-settings(100%, $height: 100%);
 
+      // *** Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        padding-inline: 7rem;
+      }
+
+      @include responsive-settings(tablet-small) {
+        padding-inline: 4rem;
+      }
+      @include responsive-settings(mobile) {
+        padding-inline: 2rem;
+      }
+      // *** End of Responsive Design ***
+
       h3 {
         font-size: 60px;
         font-weight: bold;
+        // line-height: 1.5;
+
+        // *** Responsive Design ***
+        @include responsive-settings(tablet-large) {
+          font-size: 40px;
+        }
+
+        @include responsive-settings(mobile) {
+          font-size: 30px;
+        }
+        // *** End of Responsive Design ***
       }
 
       p {
         color: $color-white;
         line-height: 2;
+        // *** Responsive Design ***
+        @include responsive-settings(tablet-large) {
+          font-size: 16px;
+        }
+
+        // *** End of Responsive Design ***
       }
 
       &-01 {
@@ -120,55 +151,5 @@
     // *** End of Content ***
   }
   // *** End of Box ***
-
-  //  *** Tablet | Mobile Version ***
-  // *** Box 01 ***
-  &__box-01 {
-    clip-path: none;
-    background-color: transparent;
-
-    @include dimension-settings(100%, 70rem);
-
-    // *** Project ***
-    &-project {
-      overflow: hidden;
-
-      @include dimension-settings(100%, $height: 80%);
-    }
-
-    &-project-01 {
-      background: url('../../assets/images/space\ tourism\ V1.png') no-repeat
-        center/cover;
-    }
-
-    &-content-01 {
-      pointer-events: auto;
-      @include dimension-settings(100%, $height: 80%);
-      @include position-settings($zIndex: 5);
-
-      &.active {
-        opacity: 1;
-        transform: translateX(0);
-        transition-delay: 0s;
-      }
-    }
-    // *** End of Project ***
-
-    // button
-    &-btn {
-      transform: translateX(-50%);
-
-      @include position-settings($left: 50%, $bottom: 0);
-
-      @extend %glowing-btn;
-
-      &:focus {
-        outline: 0;
-      }
-    }
-    // button
-  }
-  // *** End of Box 01 ***
-  //  *** Edd of Tablet | Mobile Version ***
 }
 // *** End of Future ***

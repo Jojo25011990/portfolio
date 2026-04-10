@@ -16,16 +16,6 @@ export default function future() {
   );
 
   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
-  const futureOverlayModal01 = document.querySelector<HTMLDivElement>(
-    '.future__box-01-content-01',
-  );
-
-  const futureOverlayOpenBtn = document.querySelector<HTMLButtonElement>(
-    '.future__box-01-btn-01',
-  );
-  const futureOverlayCloseBtn = document.querySelector<HTMLButtonElement>(
-    '.future__box-01-project-closebtn',
-  );
 
   if (futureTitle) {
     gsap.to(futureTitle, {
@@ -85,27 +75,4 @@ export default function future() {
   //     });
   //   }
   // *** End of Version 02 - active class ***
-
-  // *** Future Boxes - ADD | REMOVE | FOCUS ***
-  const openFutureProjectModal = () => {
-    futureOverlayModal01?.classList.add('active');
-
-    futureOverlayOpenBtn?.setAttribute('aria-expanded', 'true');
-    futureOverlayModal01?.setAttribute('aria-hidden', 'false');
-
-    futureOverlayCloseBtn?.focus();
-  };
-
-  const closeFutureProjectModal = () => {
-    futureOverlayModal01?.classList.remove('active');
-
-    futureOverlayOpenBtn?.setAttribute('aria-expanded', 'false');
-    futureOverlayModal01?.setAttribute('aria-hidden', 'true');
-
-    futureOverlayOpenBtn?.focus();
-  };
-
-  futureOverlayCloseBtn?.addEventListener('click', closeFutureProjectModal);
-  futureOverlayOpenBtn?.addEventListener('click', openFutureProjectModal);
-  // *** End of Future Boxes - ADD | REMOVE | FOCUS ***
 }

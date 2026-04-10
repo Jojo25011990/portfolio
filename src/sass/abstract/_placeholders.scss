@@ -81,6 +81,7 @@
 
   text-transform: uppercase;
   @include font-settings(2.4rem, 700, null, 0.1rem);
+  @include position-settings($position: relative, $zIndex: 50);
 
   &:hover,
   &:active {

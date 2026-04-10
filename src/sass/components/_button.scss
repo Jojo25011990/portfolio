@@ -38,11 +38,11 @@
 .my-overlay__button {
   @extend %glowing-btn;
 }
+
 // *** End of Secondary Button ***
 
 // *** Fun Facts Close Button ***
-.features__fun-facts-closebtn,
-.future__box-01-project-closebtn {
+.features__fun-facts-closebtn {
   cursor: pointer;
 
   padding: 0.5rem;
