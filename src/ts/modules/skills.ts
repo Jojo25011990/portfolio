@@ -13,7 +13,7 @@ export default function skillsHeading() {
   gsap.to([skillsSection, skillsHeading, skillsMenu], {
     scrollTrigger: {
       trigger: skillsSection,
-      start: 'top center',
+      start: 'top 60%',
     },
 
     onStart: () => {

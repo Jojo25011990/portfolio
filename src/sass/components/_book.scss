@@ -1,0 +1,114 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** CSS Art Book - Behind the scenes ***
+.my-bonus__book {
+  perspective: 100rem;
+  transform-style: preserve-3d;
+
+  //   filter: drop-shadow(0 0 0.1rem $success-primary);
+  transition: transform 1s;
+  //   transform: scale(2);
+
+  @include position-settings($position: relative);
+  @include dimension-settings(100%, 25rem, 30rem);
+
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  p {
+    font-size: 14px !important;
+    line-height: 1.5;
+    color: $color-black;
+  }
+
+  &.active {
+    transform: translateX(75%) scale(1.5);
+    // transform: translateX(calc(100% / 2)) scale(2);
+    // transform: translateX(100%) scale(2);
+    // transform: translateX(-50%) scale(2);
+  }
+
+  // *** Cover Front ***
+  &-cover {
+    background-image: linear-gradient(
+      to top,
+      $success-secondary,
+      $success-tertiary
+    );
+
+    text-align: center;
+
+    border-radius: 0 0.2rem 0.2rem 0;
+
+    cursor: pointer;
+
+    box-shadow:
+      inset 0.2rem 0 2rem rgba($color: $color-black, $alpha: 0.2),
+      0 0 1rem rgba($color: $color-black, $alpha: 0.1);
+
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0);
+    @include flex-settings($direction: column, $gap: 0.5rem);
+
+    &--front {
+      @include position-settings($zIndex: 100);
+    }
+
+    transform-origin: left;
+
+    transition: transform 1s;
+
+    &--front.active {
+      transform: rotateY(-180deg);
+    }
+  }
+  // *** End of Cover Front ***
+
+  // *** Page ***
+  &-page {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    color: black;
+
+    border-radius: 0 0.2rem 0.2rem 0;
+
+    transform: translateY(-50%);
+    transition: all 1s ease-out;
+
+    background-color: $body-bg-color;
+
+    box-shadow:
+      inset 0.3rem 0 2rem rgba($color: $color-black, $alpha: 0.2),
+      0 0 1rem rgba($color: $color-black, $alpha: 0.2);
+
+    @include dimension-settings(97%, $height: 97%);
+    @include position-settings(50%, 0);
+
+    &-front,
+    &-back {
+      text-align: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      inset: 0;
+      @include position-settings;
+      @include dimension-settings(100%, $height: 100%);
+      @include flex-settings;
+    }
+
+    &-back {
+      transform: rotateY(180deg);
+    }
+
+    &--01 {
+      z-index: 5;
+    }
+    &--01.active {
+      transform: translateY(-50%) rotateY(-180deg);
+      z-index: 105;
+      //   transform: rotateX(180deg);
+    }
+  }
+  // *** End of Page ***
+}
+// *** End of CSS Art Book - Behind the scenes ***

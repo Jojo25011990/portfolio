@@ -2,10 +2,14 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import gsap from 'gsap';
+import myStory from './myStory';
 
 export default function myStoryOverlay() {
   // --- Select elements ---
   const myOverlay = document.querySelector<HTMLElement>('.my-overlay');
+  const myOverlayButton = document.querySelector<HTMLButtonElement>(
+    '.my-overlay__button',
+  );
 
   const canvas = document.querySelector<HTMLCanvasElement>(
     '.my-overlay__canvas',
@@ -69,11 +73,16 @@ export default function myStoryOverlay() {
     scene.add(textMesh);
 
     gsap.from(textMesh.scale, {
+      scrollTrigger: {
+        trigger: myOverlay,
+        start: 'top center',
+        once: true,
+      },
+
       x: 0,
       y: 0,
       z: 0,
-      duration: 1,
-      delay: 1,
+      duration: 1.5,
       ease: 'power2',
     });
 
@@ -87,4 +96,10 @@ export default function myStoryOverlay() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
   }
+
+  myOverlayButton?.addEventListener('click', () => {
+    myOverlay?.classList.add('active');
+
+    myStory();
+  });
 }

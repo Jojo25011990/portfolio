@@ -42,46 +42,22 @@ export default function myStory() {
   const [myStoryManBubbles01, myStoryManBubbles02] = myStoryManBubbles;
   const [myStoryWomanBubbles01, myStoryWomanBubbles02] = myStoryWomanBubbles;
 
-  let dragonRoarFixed: boolean = false;
+  const dragonTimeline = gsap.timeline().pause();
 
-  const dragonTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: myStory,
-      start: 'top center',
-      toggleActions: 'play none none none',
-    },
-  });
+  dragonTimeline
+    .to(myStoryDragonRoar, {
+      delay: 2,
 
-  const dragonRoarReady = () => {
-    dragonRoarFixed = true;
-
-    window.removeEventListener('scroll', dragonRoarReady);
-    window.removeEventListener('click', dragonRoarReady);
-  };
-
-  window.addEventListener(
-    'scroll',
-    () => {
-      window.addEventListener('pointerdown', e => {
-        if (e.button === 1) dragonRoarReady();
-      });
-    },
-    { once: true },
-  );
-  window.addEventListener('click', dragonRoarReady, { once: true });
-
-  dragonTimeline.to(myStoryDragonRoar, {
-    delay: 3,
-
-    onStart: () => {
-      if (dragonRoarFixed) myStoryDragonRoar?.play();
-    },
-  });
+      onStart: () => {
+        myStoryDragonRoar?.play();
+      },
+    })
+    .play();
 
   dragonTimeline.to(myStoryContainer, {
-    delay: 2,
     x: '+=7',
-    repeat: 7,
+    y: '+=7',
+    repeat: 20,
     yoyo: true,
     duration: 0.06,
   });
@@ -142,7 +118,8 @@ export default function myStory() {
           .add(() => {
             myStoryWomanBubbles02.classList.remove('active');
             myStoryWoman?.classList.remove('active');
-          }, '+=1.2');
+          }, '+=1.2')
+          .add(() => myStory?.classList.add('active'), '+=5');
       },
       { once: true },
     );

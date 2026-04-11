@@ -11,6 +11,12 @@
   @include position-settings(0, 0, $zIndex: 2000);
   @include flex-settings;
 
+  display: none;
+
+  &.active {
+    transform: translateY(-100%);
+  }
+
   &__canvas {
     @include position-settings(0, 0);
   }
