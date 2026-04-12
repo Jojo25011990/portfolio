@@ -55,6 +55,7 @@ export default function myStory() {
     .play();
 
   dragonTimeline.to(myStoryContainer, {
+    delay: 0.1,
     x: '+=7',
     y: '+=7',
     repeat: 20,
