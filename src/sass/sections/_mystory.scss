@@ -10,7 +10,7 @@
   transition: transform 1s;
 
   z-index: 200;
-  //   display: none;
+  display: none;
 
   &.active {
     transform: translateY(-100%);
