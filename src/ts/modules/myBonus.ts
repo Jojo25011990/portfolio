@@ -1,5 +1,3 @@
-import gsap from 'gsap';
-
 export default function myBonus() {
   const myBonusBook = document.querySelector<HTMLDivElement>('.my-bonus__book');
   const coverFront = document.querySelector<HTMLDivElement>(
@@ -24,25 +22,30 @@ export default function myBonus() {
     coverFront.classList.toggle('active');
     myBonusBook?.classList.toggle('active');
   });
+
   coverBack?.addEventListener('click', () => {
-    // coverBack.classList.toggle('active');
     coverBack.classList.add('active');
-    myBonusBook?.classList.toggle('active');
-    myBonusBook?.classList.toggle('close');
 
     setTimeout(() => {
       coverBack.classList.remove('active');
-      [...myPages].reverse().forEach((page, index) => {
+      myBonusBook?.classList.remove('active');
+
+      [...myPages].reverse().forEach((myOnePage, index) => {
         setTimeout(
           () => {
-            page.classList.remove('active');
+            myOnePage.classList.remove('active');
           },
-          (index + 1) * 200,
+          (index + 1) * 120,
         );
       });
+
+      setTimeout(
+        () => {
+          coverFront?.classList.remove('active');
+        },
+        (myPages.length + 1.5) * 120,
+      );
     }, 1000);
   });
-
-  // *** Version 02 ***
 }
 // *** End of Version 02 ***

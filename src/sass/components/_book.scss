@@ -11,6 +11,10 @@
   transition: transform 1s;
   //   transform: scale(2);
 
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+
   @include position-settings($position: relative);
   @include dimension-settings(100%, 25rem, 30rem);
   //   mobile
@@ -19,10 +23,19 @@
 
   //   left: 50%;
   //   transform: translateX(-50%);
+  img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+
   p {
     font-size: 14px !important;
     line-height: 1.5;
+    letter-spacing: 0.03rem;
     color: $color-black;
+    opacity: 0.85;
+    width: 95%;
+    text-align: center;
   }
 
   &.active {

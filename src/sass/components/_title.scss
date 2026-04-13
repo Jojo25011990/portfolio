@@ -8,7 +8,8 @@
 .features__title,
 .future__title,
 .faq__title,
-.footer__title {
+.footer__title,
+.my-bonus__title {
   @include font-settings(8.8rem, 700, 8.8rem, -0.25rem);
 
   @include responsive-settings(tablet-small) {
@@ -25,6 +26,7 @@
 .features__title,
 .future__title,
 .faq__title,
+.my-bonus__title,
 .footer__title {
   position: relative;
 

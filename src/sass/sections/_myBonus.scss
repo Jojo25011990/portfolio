@@ -1,20 +1,31 @@
 @use '../abstract' as *;
 @use '../base' as *;
+@use './projects' as *;
 
 // *** My Bonus ***
 .my-bonus {
-  @include dimension-settings(100%, $height: 100%);
-  @include flex-settings;
-
+  margin-top: 0;
   transition: transform 1s;
+  @include dimension-settings(100%, $height: 100%);
+  @include flex-settings(start, center, column, 8rem);
+
+  //   @extend .projects;
+
   //   background-color: $color-black;
 
   // *** Wrapper ***
   &__wrapper {
-    @include dimension-settings(100%, 110rem, 70rem);
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+
+  // *** Container ***
+  &__container {
+    // @include dimension-settings(100%, 110rem, 70rem);
+    @include dimension-settings(100%, 110rem, 50rem);
     @include flex-settings;
     border: 1px solid white;
   }
-  // *** End of Wrapper ***
+  // *** End of Container ***
 }
 // *** End of My Bonus ***
