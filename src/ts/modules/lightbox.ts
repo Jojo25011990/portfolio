@@ -1,37 +1,58 @@
 export default function lightbox() {
-  const authorImg = document.querySelector<HTMLImageElement>('.header__author');
   const lightbox = document.querySelector<HTMLDivElement>('.header__lightbox');
+  const lightboxOpenButton = document.querySelector<HTMLImageElement>(
+    '.header__author-button',
+  );
+  const lightboxCloseButton = document.querySelector<HTMLButtonElement>(
+    '.header__lightbox-closebtn',
+  );
   const circleSvg = document.querySelector<SVGCircleElement>(
     '.header__svg circle',
   )!;
   console.log(circleSvg);
 
-  // *** Version 01 ***
-  if (authorImg) {
-    authorImg.addEventListener('click', () => {
-      lightbox?.classList.remove('hidden');
-      lightbox?.classList.add('show');
-    });
-
-    authorImg.addEventListener('mouseenter', () => {
+  if (lightboxOpenButton) {
+    lightboxOpenButton.addEventListener('mouseenter', () => {
       circleSvg.style.stroke = '#4ee1a0';
     });
 
-    authorImg.addEventListener('mouseleave', () => {
+    lightboxOpenButton.addEventListener('mouseleave', () => {
       circleSvg.style.stroke = '#fff';
     });
   }
 
-  // *** End of Version 01 ***
-  // *** Version 02 ***
-  //   authorImg!.addEventListener('click', () => {
-  //     lightbox?.classList.remove('hidden');
-  //     lightbox?.classList.add('show');
-  //   });
-  // *** End of Version 02 ***
+  // *** Lightbox - ADD | REMOVE | FOCUS ***
+  const openLightbox = () => {
+    lightbox?.classList.add('show');
 
-  lightbox?.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-    lightbox.classList.remove('show');
+    lightbox?.setAttribute('aria-hidden', 'false');
+    lightboxOpenButton?.setAttribute('aria-expanded', 'true');
+
+    lightboxCloseButton?.focus();
+
+    document.addEventListener('keydown', lightboxEscapeKey);
+  };
+
+  const closeLightbox = () => {
+    lightbox?.classList.remove('show');
+
+    lightbox?.setAttribute('aria-hidden', 'true');
+    lightboxOpenButton?.setAttribute('aria-expanded', 'false');
+
+    lightboxOpenButton?.focus({ preventScroll: true });
+
+    document.removeEventListener('keydown', lightboxEscapeKey);
+  };
+
+  const lightboxEscapeKey = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') closeLightbox();
+  };
+
+  lightbox?.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
   });
+
+  lightboxOpenButton?.addEventListener('click', openLightbox);
+  lightboxCloseButton?.addEventListener('click', closeLightbox);
+  // *** End of Lightbox - ADD | REMOVE | FOCUS ***
 }

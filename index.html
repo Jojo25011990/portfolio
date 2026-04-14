@@ -88,7 +88,6 @@
     <!-- Container -->
     <div class="container">
       <!-- Header -->
-      <!-- dokoncit tu lightbox aria attr -->
       <header class="header">
         <div class="header__wrapper">
           <!-- Navigation -->
@@ -205,11 +204,12 @@
           <!-- End of Circle SVG - Decoration -->
 
           <!-- Jozef Kudrna -->
-          <!-- tu dorobit ten button, musi byt kvoli accessibility  -->
           <button
             type="button"
             class="header__author-button"
-            aria-label="Open to original photo of Jozef Kudrna"
+            aria-label="Open profile photo in lightbox"
+            aria-controls="header-lightbox"
+            aria-expanded="false"
           >
             <img
               src="./src/assets/images/jojo.jpg"
@@ -221,22 +221,26 @@
         </div>
 
         <!-- Lightbox -->
-        <!-- upravit zatvorenie lightboxu na esc - keyboard , mobiloch cize nejaky active styl ..click na mouse mam finish -->
-        <!-- je mozne ze sa bude musiet pridavat button na close lighjtboxu.
-         button by tam mal byt za kazdych okolnosti + ked sa otvori lightbox, musi byt focus vnutri napr lightbox.focus() - na ten close buttn pripadne ..close button mozem spravit len pre screen readery pripadne   -->
         <div
-          class="header__lightbox hidden"
+          class="header__lightbox"
+          id="header-lightbox"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="lightbox-description"
+          aria-label="Profile photo lightbox"
+          aria-describedby="lightbox-description"
+          aria-hidden="true"
         >
+          <button class="header__lightbox-closebtn" aria-label="Close Lightbox">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+
           <img
             src="./src/assets/images/jojo.jpg"
             alt="Jozef Kudrna - Frontend Developer"
             class="header__lightbox-author"
           />
           <p id="lightbox-description" class="header__lightbox-description">
-            Click everywhere to close the lightbox
+            Click outside or press Esc to close
           </p>
         </div>
         <!-- End of Lightbox -->
@@ -1232,6 +1236,7 @@
                 Creative Milestones
               </h4>
               <!-- End of Sr Only -->
+
               <button
                 class="features__fun-facts-closebtn"
                 aria-label="close Fun Facts modal"
@@ -1489,6 +1494,14 @@
           </ul>
         </section>
         <!-- End of Faq -->
+
+        <!-- Showcase -->
+        <section class="showcase"></section>
+        <!-- End of Showcase -->
+
+        <!-- Game -->
+        <section class="game"></section>
+        <!-- End of Game -->
 
         <!-- Github Activity -->
         <section class="activity">

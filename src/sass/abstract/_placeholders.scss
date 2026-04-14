@@ -95,5 +95,10 @@
       0 0 2.4rem $success-primary,
       0 0 4.8rem $success-primary;
   }
+
+  &:focus {
+    outline: 0;
+    border-color: $success-primary;
+  }
 }
 // *** End of Glowing Button ( Fun Facts, etc .. ) ***

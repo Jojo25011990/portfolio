@@ -136,6 +136,8 @@ export default function features() {
     featuresFunFactsButton?.setAttribute('aria-expanded', 'true');
 
     featuresFunFactsCloseButton?.focus();
+
+    document.addEventListener('keydown', funFactsEscapeKey);
   };
 
   const closeFanFactsModal = () => {
@@ -145,11 +147,16 @@ export default function features() {
     featuresFunFacts?.setAttribute('aria-hidden', 'true');
     featuresFunFactsButton?.setAttribute('aria-expanded', 'false');
 
-    featuresFunFacts?.focus();
+    featuresFunFactsButton?.focus();
+
+    document.removeEventListener('keydown', funFactsEscapeKey);
+  };
+
+  const funFactsEscapeKey = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') closeFanFactsModal();
   };
 
   featuresFunFactsButton?.addEventListener('click', openFanFactsModal);
   featuresFunFactsCloseButton?.addEventListener('click', closeFanFactsModal);
-
   // *** End of Fun Facts - ADD | REMOVE | FOCUS ***
 }

@@ -100,6 +100,22 @@
     }
   }
 
+  &__author-button {
+    @include position-settings(0, $right: 0, $zIndex: 10);
+
+    min-width: 44.5rem;
+    min-height: 72rem;
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet) {
+      min-width: 34rem;
+      min-height: 55rem;
+
+      @include position-settings(0, $position: relative);
+    }
+    // *** End of Responsive Design ***
+  }
+
   &__author {
     cursor: pointer;
 
@@ -109,15 +125,8 @@
 
     animation: author-image 0.4s linear 2s forwards;
 
-    min-width: 44.5rem;
-    @include dimension-settings($height: 100%);
-    @include position-settings(0, $right: 0, $zIndex: 10);
-
-    @include responsive-settings(tablet) {
-      min-width: 34rem;
-      @include dimension-settings($height: 55rem);
-      @include position-settings(0, $position: relative);
-    }
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0, $zIndex: 10);
   }
   // *** End of Img - Ring | Circle | Author ***
 
@@ -131,7 +140,11 @@
 
     backdrop-filter: blur(0.8rem);
 
-    @include position-settings(0, 0, $zIndex: 50, $position: fixed);
+    opacity: 0;
+
+    overflow: hidden;
+
+    @include position-settings(0, 0, $zIndex: -1, $position: fixed);
     @include dimension-settings(100%, $height: 100%);
     @include flex-settings(center, center, column, 1.5rem);
 
@@ -142,11 +155,7 @@
 
     &.show {
       opacity: 1;
-    }
-
-    &.hidden {
-      opacity: 0;
-      @include position-settings($position: fixed, $zIndex: -999);
+      @include position-settings($position: fixed, $zIndex: 999);
     }
 
     &-author {

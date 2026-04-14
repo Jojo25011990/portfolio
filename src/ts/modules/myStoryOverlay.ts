@@ -43,8 +43,6 @@ export default function myStoryOverlay() {
   //   scene.add(ambientLight);
   scene.add(ambientLight, dirLight);
 
-  const backLight = new THREE.SpotLight(0xffffff, 1.5);
-
   // --- Responsive text size ---
   let textSize: number;
   if (width >= 1200) textSize = 1.5;
