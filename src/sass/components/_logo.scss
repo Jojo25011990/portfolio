@@ -11,6 +11,13 @@
     clip-path: inset(0 100% 0 0);
 
     @include font-settings(3.2rem, 700, 3.2rem, -0.044rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-large) {
+      clip-path: none;
+      animation: none;
+    }
+    // *** End of Responsive Design ***
   }
 }
 

@@ -135,6 +135,14 @@
 
       @include position-settings($left: 0, $bottom: 0.5rem, $zIndex: -1);
       @include dimension-settings(100%, $height: 0.6rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(mobile-large) {
+        transform: scale(1);
+
+        animation: none;
+      }
+      // *** End of Responsive Design ***
     }
   }
 }
@@ -159,24 +167,24 @@
     animation: span-animate-01 0.35s 1s forwards;
 
     // *** Responsive Design ***
-    @include responsive-settings(desktop-small) {
-      @keyframes span-animate-01 {
-        0% {
-          opacity: 1;
-          transform: translate(0, 0);
-        }
+    // @include responsive-settings(desktop-small) {
+    //   @keyframes span-animate-01 {
+    //     0% {
+    //       opacity: 1;
+    //       transform: translate(0, 0);
+    //     }
 
-        70% {
-          opacity: 1;
-        }
+    //     70% {
+    //       opacity: 1;
+    //     }
 
-        100% {
-          opacity: 0;
+    //     100% {
+    //       opacity: 0;
 
-          transform: translate(-304px, -50px);
-        }
-      }
-    }
+    //       transform: translate(-304px, -50px);
+    //     }
+    //   }
+    // }
     // *** End of Responsive Design ***
   }
   &.is-active span:nth-child(2) {
@@ -209,6 +217,10 @@
 // *** Menu Heading ***
 .skills__menu-heading {
   @include font-settings(4.8rem, 700, 5.6rem, -0.15rem);
+
+  @include responsive-settings(tablet) {
+    @include font-settings(3.6rem, 700, 5.6rem, -0.15rem);
+  }
 }
 // *** End of Menu Heading ***
 

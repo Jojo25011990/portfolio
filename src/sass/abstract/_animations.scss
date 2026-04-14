@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 // *** General ***
 @keyframes line {
   to {
@@ -127,6 +129,48 @@
   }
 }
 
+// *** Responsive Design ***
+@include responsive-settings(desktop) {
+  @keyframes span-animate-01 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-35rem, -5rem);
+    }
+  }
+}
+
+@include responsive-settings(desktop-small) {
+  @keyframes span-animate-01 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-25.4rem, -10rem);
+    }
+  }
+}
+
+@include responsive-settings(tablet-large) {
+}
+// *** End of Responsive Design ***
 @keyframes skills-box {
   from {
     opacity: 0;

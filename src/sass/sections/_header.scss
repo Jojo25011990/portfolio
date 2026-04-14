@@ -94,26 +94,15 @@
 
       transition: stroke 0.3s;
 
-      &.active {
-        stroke-dashoffset: 500;
+      // *** Responsive Design ***
+      @include responsive-settings(mobile-large) {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+
+        animation: none;
       }
+      // *** End of Responsive Design ***
     }
-  }
-
-  &__author-button {
-    @include position-settings(0, $right: 0, $zIndex: 10);
-
-    min-width: 44.5rem;
-    min-height: 72rem;
-
-    // *** Responsive Design ***
-    @include responsive-settings(tablet) {
-      min-width: 34rem;
-      min-height: 55rem;
-
-      @include position-settings(0, $position: relative);
-    }
-    // *** End of Responsive Design ***
   }
 
   &__author {
@@ -127,6 +116,12 @@
 
     @include dimension-settings(100%, $height: 100%);
     @include position-settings(0, 0, $zIndex: 10);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-large) {
+      animation: author-image 0.4s linear 1s forwards;
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Img - Ring | Circle | Author ***
 

@@ -20,9 +20,24 @@
     position: relative;
 
     // *** Responsive Design ***
-    // tablet-large
     @include responsive-settings(desktop-small) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive-settings(tablet) {
+      grid-template-columns: 1fr;
+      place-items: center;
+      row-gap: calc(5.8rem / 2);
+
+      text-align: center;
+    }
+
+    @include responsive-settings(mobile-large) {
+      padding-top: calc(7.2rem / 2);
+      padding-bottom: calc(7.2rem / 2);
+
+      border-top: 0.1rem solid $color-white;
+      border-bottom: 0.1rem solid $color-white;
     }
     // *** End of Responsive Design ***
 
@@ -40,6 +55,12 @@
       background-color: $color-white;
 
       animation: line 0.4s linear 2.75s forwards;
+
+      // *** Responsive Design ***
+      @include responsive-settings(mobile) {
+        content: none;
+      }
+      // *** End of Responsive Design ***
     }
 
     &.is-active .skills__menu-item {

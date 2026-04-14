@@ -1,13 +1,23 @@
 @use '../abstract' as *;
 @use '../base' as *;
 
-// *** Header
+// *** Header Lightbox Button ***
 .header__author-button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
+  @include position-settings(0, $right: 0, $zIndex: 10);
+
+  min-width: 44.5rem;
+  min-height: 72rem;
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet) {
+    min-width: 34rem;
+    min-height: 55rem;
+
+    @include position-settings(0, $position: relative);
+  }
+  // *** End of Responsive Design ***
 }
+// *** End of Header Lightbox Button ***
 // *** Main CTA Button ***
 .header__button,
 .projects__button,
@@ -118,17 +128,19 @@
     border-color: $success-primary;
   }
 
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    opacity: 1;
+
+    transform: scale(1) translateX(-50%);
+
+    @include position-settings($left: 50%, $right: 0);
+  }
+  // *** End of Responsive Design ***
+
   &.active {
     transform: scale(1);
     opacity: 1;
-
-    // *** Responsive Design ***
-    @include responsive-settings(mobile) {
-      transform: scale(1) translateX(-50%);
-
-      @include position-settings($left: 50%, $right: 0);
-    }
-    // *** End of Responsive Design ***
   }
 }
 // *** End of Back to top - Button ***

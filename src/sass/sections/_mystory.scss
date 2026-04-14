@@ -49,6 +49,12 @@
       //   animation: dragon-flight 8s ease-in forwards;
       animation: dragon-flight 9s ease-in forwards;
       //   animation: dragon-flight 10s ease-in forwards;
+
+      // *** Responsive Design ***
+      @include responsive-settings(mobile) {
+        animation: dragon-flight 13s ease-in forwards;
+      }
+      // *** End of Responsive Design ***
     }
   }
   // *** End of Dragon ***
