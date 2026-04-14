@@ -44,7 +44,8 @@ p:not(
 .projects__description,
 .services__description,
 .features__description,
-.future__description {
+.future__description,
+.faq__description {
   text-align: center;
   @include dimension-settings(100%, 76rem, 5.6rem);
 }

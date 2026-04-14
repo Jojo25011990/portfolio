@@ -30,6 +30,12 @@
   &__container {
     @include dimension-settings(100%, 41.2rem);
     @include flex-settings(null, null, column, 3.7rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet-large) {
+      @include flex-settings(center, center, column, 3.7rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Container ***
 

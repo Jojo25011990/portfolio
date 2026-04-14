@@ -8,7 +8,7 @@
 }
 // *** End of General ***
 
-// *** Header ****
+// *** Header ***
 @keyframes author-animate {
   to {
     clip-path: inset(0 0 0 0);
@@ -29,7 +29,7 @@
     stroke-dashoffset: 0;
   }
 }
-// *** End of Header ****
+// *** End of Header ***
 
 // *** Skills ***
 @keyframes span-animate-01 {
@@ -166,9 +166,195 @@
       transform: translate(-25.4rem, -10rem);
     }
   }
+
+  @keyframes span-animate-02 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(13rem, -11.4rem);
+    }
+  }
+
+  @keyframes span-animate-03 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-23.6rem, 3.9rem);
+    }
+  }
+
+  @keyframes span-animate-04 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(8rem, 3.6rem);
+    }
+  }
+
+  @keyframes span-animate-05 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-27.8rem, 17.2rem);
+    }
+  }
+
+  @keyframes span-animate-06 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(4rem, 18.6rem);
+    }
+  }
 }
 
-@include responsive-settings(tablet-large) {
+@include responsive-settings(tablet) {
+  @keyframes span-animate-01 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(6.7rem, -27.5rem);
+    }
+  }
+
+  @keyframes span-animate-02 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(2.6rem, -15.8rem);
+    }
+  }
+
+  @keyframes span-animate-03 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-0.1rem, -4.9rem);
+    }
+  }
+
+  @keyframes span-animate-04 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-1.4rem, 7rem);
+    }
+  }
+
+  @keyframes span-animate-05 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-1.4rem, 18.2rem);
+    }
+  }
+
+  @keyframes span-animate-06 {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    70% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+
+      transform: translate(-6.9rem, 30.3rem);
+    }
+  }
 }
 // *** End of Responsive Design ***
 @keyframes skills-box {
