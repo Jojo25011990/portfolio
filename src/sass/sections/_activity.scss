@@ -1,0 +1,9 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+
+// *** Activity ***
+.activity {
+  display: none !important;
+}
+// *** End of Activity ***
