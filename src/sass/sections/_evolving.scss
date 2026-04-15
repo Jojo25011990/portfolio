@@ -1,0 +1,15 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+
+// *** Evolving ***
+.evolving {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+}
+// *** End of Evolving ***

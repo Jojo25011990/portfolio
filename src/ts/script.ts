@@ -10,22 +10,30 @@ import myStoryOverlay from './modules/myStoryOverlay';
 import faq from './modules/faq';
 import future from './modules/future';
 import myBonus from './modules/myBonus';
+import showcase from './modules/showcase';
+import evolving from './modules/evolving';
+import activity from './modules/activity';
+import game from './modules/game';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
 });
 
 function init() {
+  header();
   lightbox();
   skillsHeading();
   projects();
   services();
   features();
+  evolving();
+  future();
+  faq();
+  activity();
+  game();
+  showcase();
   footer();
-  header();
   backToTop();
   myStoryOverlay();
-  faq();
-  future();
   myBonus();
 }

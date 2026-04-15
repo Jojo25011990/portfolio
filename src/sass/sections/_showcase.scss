@@ -1,0 +1,108 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+
+// *** Showcase ***
+.showcase {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+
+  // *** Container ***
+  &__container {
+    border-radius: 0.6rem;
+
+    overflow: hidden;
+
+    @include dimension-settings(100%, 110rem);
+    @include flex-settings($direction: column);
+  }
+  // *** End of Container ***
+
+  // *** Video ***
+  &__video {
+    border: 5rem solid $dark-tertiary;
+
+    cursor: pointer;
+
+    @include dimension-settings(100%);
+  }
+  // *** End of Video ***
+
+  // *** Controls ***
+  &__controls {
+    position: relative;
+    background-color: $dark-secondary;
+    background-color: #1a1a1a;
+    color: #fff;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    padding-inline: 5rem;
+
+    &-btn {
+      cursor: pointer;
+
+      @include dimension-settings(3.6rem, $height: 3.9rem);
+      @include flex-settings;
+    }
+
+    &-icon {
+      color: $color-white;
+
+      transition: color 0.35s ease-out;
+    }
+
+    &-btn-play {
+      //   display: none;
+    }
+
+    &-btn-pause {
+      position: absolute;
+      top: 2rem;
+      left: 5rem;
+    }
+
+    &-btn-play:hover .showcase__controls-icon-play,
+    &-btn-play:active .showcase__controls-icon-play {
+      color: $success-tertiary;
+    }
+
+    &-btn-play:hover .showcase__controls-icon-pause,
+    &-btn-play:active .showcase__controls-icon-pause {
+      color: $danger-secondary;
+    }
+
+    &-btn-reset:hover .showcase__controls-icon-reset,
+    &-btn-reset:active .showcase__controls-icon-reset {
+      color: $yellow-primary;
+    }
+
+    &-progress {
+      cursor: pointer;
+
+      @include dimension-settings(100%);
+    }
+
+    &-progress::-webkit-slider-thumb {
+      transition: transform 0.15s ease-out;
+    }
+    &-progress:hover::-webkit-slider-thumb {
+      transform: scale(1.4);
+    }
+
+    &-time {
+      width: 52px;
+    }
+  }
+  // *** End of Controls ***
+}
+// *** End of Showcase ***

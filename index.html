@@ -1305,6 +1305,33 @@
         </section>
         <!-- End of Features -->
 
+        <!-- Evolving -->
+        <!-- pozmenit description SR !! -->
+        <section class="evolving">
+          <div class="evolving__wrapper">
+            <h2 class="evolving__title" id="evolving-title">
+              Evolving
+              <span class="evolving__title-span" aria-hidden="true"
+                >Evolving</span
+              >
+            </h2>
+            <a class="evolving__button" href="#contact">
+              Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <p class="evolving__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="evolving__description-sr-only">
+            A cinematic storytelling reel combining CSS art, animations, 3D work
+            and interactive experiments.
+          </p>
+          <!-- End of Sr Only -->
+        </section>
+        <!-- End of Evolving -->
+
         <!-- Future -->
         <section class="future" aria-labelledby="future-title">
           <div class="future__wrapper">
@@ -1508,21 +1535,10 @@
         </section>
         <!-- End of Faq -->
 
-        <!-- Game -->
-        <section class="game"></section>
-        <!-- End of Game -->
-
-        <!-- Evolving -->
-        <section class="evolving"></section>
-        <!-- End of Evolving -->
-
-        <!-- Showcase -->
-        <section class="showcase"></section>
-        <!-- End of Showcase -->
-
         <!-- Github Activity -->
+        <!-- pozmenit description SR !! -->
         <section class="activity">
-          <div class="activity">
+          <div class="activity__wrapper">
             <h2 class="activity__title" id="activity-title">
               Activity
               <span class="activity__title-span" aria-hidden="true"
@@ -1542,14 +1558,104 @@
             Curious how I work and create? Here are some quick answers.
           </p>
           <!-- End of Sr Only -->
-
-          <div>
-            <div class="github-wrapper">
-              <img src="./src/assets/images/Github Activity 2025.png" alt="" />
-            </div>
-          </div>
         </section>
         <!-- End of Github Activity -->
+
+        <!-- Game -->
+        <!-- pozmenit description SR -->
+        <section class="game">
+          <div class="game__wrapper">
+            <h2 class="game__title" id="game-title">
+              Game
+              <span class="game__title-span" aria-hidden="true">Game</span>
+            </h2>
+            <a class="game__button" href="#contact">
+              Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <p class="game__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="game__description-sr-only">
+            A cinematic storytelling reel combining CSS art, animations, 3D work
+            and interactive experiments.
+          </p>
+          <!-- End of Sr Only -->
+        </section>
+        <!-- End of Game -->
+
+        <!-- Showcase -->
+        <section class="showcase">
+          <div class="showcase__wrapper">
+            <h2 class="showcase__title" id="showcase-title">
+              Showcase
+              <span class="showcase__title-span" aria-hidden="true"
+                >Showcase</span
+              >
+            </h2>
+            <a class="showcase__button" href="#contact">
+              Contact Me
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <p class="showcase__description" aria-hidden="true"></p>
+
+          <!-- Sr Only -->
+          <p class="showcase__description-sr-only">
+            A cinematic storytelling reel combining CSS art, animations, 3D work
+            and interactive experiments.
+          </p>
+          <!-- End of Sr Only -->
+
+          <!-- Video Player -->
+          <!-- pripadne doplnit poster png  -->
+          <div class="showcase__container">
+            <video
+              src="./src/assets/video/Css Arts - 10 Projects.mp4"
+              id="showcase-video"
+              class="showcase__video"
+            ></video>
+
+            <div class="showcase__controls">
+              <button
+                type="button"
+                class="showcase__controls-btn showcase__controls-btn-play"
+              >
+                <i
+                  class="fa-solid fa-play fa-2x showcase__controls-icon showcase__controls-icon-play"
+                ></i>
+              </button>
+
+              <button
+                type="button"
+                class="showcase__controls-btn showcase__controls-btn-reset"
+              >
+                <i
+                  class="fa-solid fa-arrow-rotate-left fa-2x showcase__controls-icon showcase__controls-icon-reset"
+                ></i>
+              </button>
+
+              <input
+                type="range"
+                id="showcase-controls-progress"
+                class="showcase__controls-progress"
+                min="0"
+                max="100"
+                step="0.1"
+                value="0"
+              />
+
+              <span class="showcase__controls-time" id="showcase-controls-time"
+                >00:00</span
+              >
+            </div>
+          </div>
+          <!-- End of Video Player -->
+        </section>
+        <!-- End of Showcase -->
 
         <!-- My Experience - Overlay | Story | Behind the scene -->
         <section class="my-experience" role="group">

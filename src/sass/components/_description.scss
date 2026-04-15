@@ -7,8 +7,12 @@
 .projects__description-sr-only,
 .services__description-sr-only,
 .features__description-sr-only,
+.evolving__description-sr-only,
 .future__description-sr-only,
-.faq__description-sr-only {
+.faq__description-sr-only,
+.activity__description-sr-only,
+.game__description-sr-only,
+.showcase__description-sr-only {
   @extend %sr-only;
 }
 // *** End of Sr Only ***
@@ -44,8 +48,12 @@ p:not(
 .projects__description,
 .services__description,
 .features__description,
+.evolving__description,
 .future__description,
-.faq__description {
+.faq__description,
+.activity__description,
+.game__description,
+.showcase__description {
   text-align: center;
   @include dimension-settings(100%, 76rem, 5.6rem);
 }

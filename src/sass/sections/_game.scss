@@ -1,0 +1,15 @@
+@use '../abstract' as *;
+@use '../base' as *;
+@use './projects' as *;
+
+// *** Game ***
+.game {
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
+}
+// *** End of Game ***

@@ -18,14 +18,19 @@
   // *** End of Responsive Design ***
 }
 // *** End of Header Lightbox Button ***
+
 // *** Main CTA Button ***
 .header__button,
 .projects__button,
 .services__button,
 .features__button,
+.evolving__button,
 .projects__box-button,
 .future__button,
 .faq__button,
+.activity__button,
+.game__button,
+.showcase__button,
 .footer__form-btn {
   @extend %cta-btn;
 }
@@ -33,8 +38,12 @@
 .projects__button,
 .services__button,
 .features__button,
+.evolving__button,
 .future__button,
-.faq__button {
+.faq__button,
+.activity__button,
+.game__button,
+.showcase__button {
   align-self: center;
 }
 

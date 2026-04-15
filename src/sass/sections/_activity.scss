@@ -4,6 +4,12 @@
 
 // *** Activity ***
 .activity {
-  display: none !important;
+  @extend .projects;
+
+  // *** Wrapper ***
+  &__wrapper {
+    @extend .projects__wrapper;
+  }
+  // *** End of Wrapper ***
 }
 // *** End of Activity ***
