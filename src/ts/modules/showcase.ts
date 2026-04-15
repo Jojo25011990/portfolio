@@ -30,6 +30,15 @@ export default function showcase() {
     '.showcase__controls-time',
   );
 
+  const showcaseContainerOverlay = document.querySelector<HTMLDivElement>(
+    '.showcase__container-overlay',
+  );
+
+  const showcaseContainerOverlaySpans =
+    document.querySelectorAll<HTMLSpanElement>(
+      '.showcase__container-overlay-span',
+    );
+
   if (showcaseTitle) {
     gsap.to(showcaseTitle, {
       scrollTrigger: {
@@ -53,6 +62,25 @@ export default function showcase() {
       duration: 2.5,
       text: 'A cinematic storytelling reel combining CSS Art, Animations, 3D work and interactive experiments.',
       ease: 'none',
+    });
+  }
+
+  if (showcaseContainerOverlaySpans.length) {
+    gsap.to('.showcase__container-overlay-span', {
+      delay: 0.5,
+      yPercent: -100,
+      duration: 0.8,
+      ease: 'power3.inOut',
+      stagger: 0.12,
+      scrollTrigger: {
+        trigger: '.showcase__container',
+        start: 'top center',
+        once: true,
+      },
+
+      onComplete: () => {
+        showcaseContainerOverlay!.style.display = 'none';
+      },
     });
   }
 

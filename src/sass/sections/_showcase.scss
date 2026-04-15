@@ -20,6 +20,39 @@
 
     @include dimension-settings(100%, 110rem);
     @include flex-settings($direction: column);
+    @include position-settings($position: relative);
+
+    // *** Overlay ***
+    &-overlay {
+      overflow: hidden;
+
+      background-color: transparent;
+
+      @include dimension-settings(100%, $height: 100%);
+      @include position-settings(0, 0);
+
+      &-span {
+        display: inline-block;
+        background-color: $color-black;
+
+        @include position-settings(0, $zIndex: 500);
+        @include dimension-settings(25%, $height: 100%);
+      }
+
+      &-span01 {
+        @include position-settings($left: 0);
+      }
+      &-span02 {
+        @include position-settings($left: 25%);
+      }
+      &-span03 {
+        @include position-settings($left: 50%);
+      }
+      &-span04 {
+        @include position-settings($left: 75%);
+      }
+    }
+    // *** End of Overlay ***
   }
   // *** End of Container ***
 
@@ -37,7 +70,9 @@
   &__controls {
     position: relative;
     background-color: $dark-secondary;
+    background-color: #181818;
     background-color: #1a1a1a;
+    background-color: #121212;
     color: #fff;
     width: 100%;
 
