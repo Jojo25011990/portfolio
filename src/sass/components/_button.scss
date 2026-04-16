@@ -110,6 +110,36 @@
 }
 // *** End of FAQ - Accordion ***
 
+// *** Showcase ***
+.showcase__controls-btn {
+  cursor: pointer;
+
+  @include dimension-settings(3.6rem, $height: 3.9rem);
+  @include flex-settings;
+}
+
+.showcase__controls-btn-pause {
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+}
+
+.showcase__controls-btn-play:hover .showcase__controls-icon-play,
+.showcase__controls-btn-play:active .showcase__controls-icon-play {
+  color: $success-tertiary;
+}
+
+.showcase__controls-btn-play:hover .showcase__controls-icon-pause,
+.showcase__controls-btn-play:active .showcase__controls-icon-pause {
+  color: $danger-secondary;
+}
+
+.showcase__controls-btn-reset:hover .showcase__controls-icon-reset,
+.showcase__controls-btn-reset:active .showcase__controls-icon-reset {
+  color: $yellow-primary;
+}
+// *** End of Showcase ***
+
 // *** Back to top - Button ***
 .back-to-top {
   color: inherit;

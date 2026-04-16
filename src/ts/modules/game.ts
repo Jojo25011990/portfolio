@@ -37,4 +37,67 @@ export default function game() {
       ease: 'none',
     });
   }
+
+  // *** CSS Art Memory Game ***
+  const emojis = [
+    '❤️',
+    '❤️',
+    '🤣',
+    '🤣',
+    '😘',
+    '😘',
+    '😅',
+    '😅',
+    '✌️',
+    '✌️',
+    '😎',
+    '😎',
+    '😊',
+    '😊',
+    '👀',
+    '👀',
+  ];
+  const shuffleEmojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
+  for (let i = 0; i < emojis.length; i++) {
+    let box = document.createElement('div');
+    box.className = 'item';
+    box.innerHTML = shuffleEmojis[i];
+
+    box.onclick = function () {
+      box.classList.add('boxOpen');
+
+      setTimeout(() => {
+        if (document.querySelectorAll('.boxOpen').length > 1) {
+          if (
+            document.querySelectorAll('.boxOpen')[0].innerHTML ==
+            document.querySelectorAll('.boxOpen')[1].innerHTML
+          ) {
+            document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
+            document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
+
+            document
+              .querySelectorAll('.boxOpen')[1]
+              .classList.remove('boxOpen');
+            document
+              .querySelectorAll('.boxOpen')[0]
+              .classList.remove('boxOpen');
+
+            if (document.querySelectorAll('.boxOpen').length == emojis.length) {
+              alert('win');
+            }
+          } else {
+            document
+              .querySelectorAll('.boxOpen')[1]
+              .classList.remove('boxOpen');
+            document
+              .querySelectorAll('.boxOpen')[0]
+              .classList.remove('boxOpen');
+          }
+        }
+      }, 500);
+    };
+
+    document.querySelector('.game__memory')?.appendChild(box);
+  }
+  // *** End of CSS Art Memory Game ***
 }
