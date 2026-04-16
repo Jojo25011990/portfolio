@@ -29,6 +29,8 @@ body {
 }
 
 .container {
+  border-top: 0.5rem solid $success-tertiary;
+
   background-color: $dark-primary;
 
   overflow: hidden;
