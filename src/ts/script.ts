@@ -14,12 +14,14 @@ import showcase from './modules/showcase';
 import evolving from './modules/evolving';
 import activity from './modules/activity';
 import game from './modules/game';
+import preloader from './modules/preloader';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
 });
 
 function init() {
+  preloader();
   header();
   lightbox();
   skillsHeading();

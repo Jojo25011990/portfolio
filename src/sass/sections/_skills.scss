@@ -3,6 +3,8 @@
 
 // *** Skills ***
 .skills {
+  margin-top: 0;
+
   @include position-settings($position: relative);
   @include dimension-settings(100%);
   @include flex-settings(center, null);

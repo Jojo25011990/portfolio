@@ -127,8 +127,39 @@ export default function features() {
   // *** End of Random Animation Icon ***
   // *** End of Features Eight Mini blocks ***
 
+  // *** Focus Modal Trap ***
+  const focusFunFactsModalTrap = (event: KeyboardEvent) => {
+    if (event.key !== 'Tab') return;
+    const focusableElements = Array.from(
+      featuresFunFacts?.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      ) ?? [],
+    );
+    if (!focusableElements.length) return;
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+    const currentIndex = focusableElements.indexOf(
+      document.activeElement as HTMLElement,
+    );
+    if (event.shiftKey) {
+      if (currentIndex <= 0) {
+        event.preventDefault();
+        lastElement.focus();
+      }
+    } else {
+      if (
+        currentIndex === focusableElements.length - 1 ||
+        currentIndex === -1
+      ) {
+        event.preventDefault();
+        firstElement.focus();
+      }
+    }
+  };
+  // *** End of Focus Modal Trap ***
+
   // *** Fun Facts - ADD | REMOVE | FOCUS ***
-  const openFanFactsModal = () => {
+  const openFunFactsModal = () => {
     featuresFunFacts?.classList.add('active');
     featuresMenu?.classList.add('active');
 
@@ -138,9 +169,10 @@ export default function features() {
     featuresFunFactsCloseButton?.focus();
 
     document.addEventListener('keydown', funFactsEscapeKey);
+    document.addEventListener('keydown', focusFunFactsModalTrap);
   };
 
-  const closeFanFactsModal = () => {
+  const closeFunFactsModal = () => {
     featuresFunFacts?.classList.remove('active');
     featuresMenu?.classList.remove('active');
 
@@ -150,13 +182,14 @@ export default function features() {
     featuresFunFactsButton?.focus();
 
     document.removeEventListener('keydown', funFactsEscapeKey);
+    document.addEventListener('keydown', focusFunFactsModalTrap);
   };
 
   const funFactsEscapeKey = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') closeFanFactsModal();
+    if (event.key === 'Escape') closeFunFactsModal();
   };
 
-  featuresFunFactsButton?.addEventListener('click', openFanFactsModal);
-  featuresFunFactsCloseButton?.addEventListener('click', closeFanFactsModal);
+  featuresFunFactsButton?.addEventListener('click', openFunFactsModal);
+  featuresFunFactsCloseButton?.addEventListener('click', closeFunFactsModal);
   // *** End of Fun Facts - ADD | REMOVE | FOCUS ***
 }

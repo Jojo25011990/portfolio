@@ -4,8 +4,6 @@
 
 // *** Projects ***
 .projects {
-  margin-top: 14rem;
-
   @include dimension-settings(100%);
   @include flex-settings(center, center, column, 8rem);
 

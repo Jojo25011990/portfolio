@@ -79,9 +79,16 @@
   </head>
   <body id="top">
     <!-- Map -->
+    <!-- Preloader -> NOK -->
     <!-- Header -> OK -->
     <!-- Skills -> OK -->
     <!-- Projects -> OK -->
+    <!-- Services -> OK -->
+    <!-- Features -> OK -->
+    <!-- Evolving -> NOK -->
+    <!-- Future -> OK -->
+    <!-- Faq -> OK -->
+    <!-- Faq -> OK -->
     <!-- ENd of Map -->
 
     <!-- Pridat preloader : pozdrav, popis a animaciu lahku  -->
@@ -92,7 +99,16 @@
     <!-- Sekcia Behind the scenes v MY experience - css art book s stagmi napr stage 01 , na lavej popis na pravej strane img vs code  -->
 
     <!-- Preloader -->
-    <div class="preloader"></div>
+    <div class="preloader" hidden>
+      <div class="preloader-imgbox">
+        <img src="./src/assets/images/Portfolio-V1-4-17-2026.png" alt="" />
+      </div>
+
+      <div class="preloader__bar">
+        <div class="preloader-fill"></div>
+      </div>
+      <div class="preloader-text">0%</div>
+    </div>
     <!-- End of Preloader -->
 
     <!-- Container -->
@@ -437,6 +453,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -458,6 +475,7 @@
                       >view code <span></span
                     ></a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">My Hope</h4>
@@ -511,6 +529,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -532,6 +551,7 @@
                       >view code <span></span
                     ></a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">Web App CV</h4>
@@ -584,6 +604,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -607,6 +628,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">CSS Art Gallery</h4>
@@ -658,6 +680,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -681,6 +704,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">Landing Page Gallery</h4>
@@ -732,6 +756,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -755,6 +780,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">
@@ -808,6 +834,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -831,6 +858,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">Mini Projects Gallery</h4>
@@ -882,6 +910,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -905,6 +934,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">
@@ -958,6 +988,7 @@
                     />
                   </div>
 
+                  <!-- Desktop -->
                   <div
                     class="projects__box-overlay"
                     role="group"
@@ -981,6 +1012,7 @@
                       view code <span></span>
                     </a>
                   </div>
+                  <!-- End of Desktop -->
                 </div>
 
                 <h4 class="projects__item-heading">Mix Projects Gallery</h4>
@@ -1024,9 +1056,9 @@
         <!-- End of Projects -->
 
         <!-- Services -->
-        <section class="services" aria-labelledby="services-title">
+        <section class="services">
           <div class="services__wrapper">
-            <h2 class="services__title" id="services-title">
+            <h2 class="services__title">
               Services
               <span class="services__title-span" aria-hidden="true"
                 >Services</span
@@ -1116,9 +1148,9 @@
         <!-- End of Services -->
 
         <!-- Features -->
-        <section class="features" aria-labelledby="features-title">
+        <section class="features">
           <div class="features__wrapper">
-            <h2 class="features__title" id="features-title">
+            <h2 class="features__title">
               Features
               <span class="features__title-span" aria-hidden="true"
                 >Features</span
@@ -1345,9 +1377,9 @@
         <!-- End of Evolving -->
 
         <!-- Future -->
-        <section class="future" aria-labelledby="future-title">
+        <section class="future">
           <div class="future__wrapper">
-            <h2 class="future__title" id="future-title">
+            <h2 class="future__title">
               Future
               <span class="future__title-span" aria-hidden="true">Future</span>
             </h2>
@@ -1366,7 +1398,7 @@
           </p>
           <!-- End of Sr - Only -->
 
-          <!-- Desktop Version -->
+          <!-- Future Box -->
           <div class="future__box" role="group" aria-label="Upcoming projects">
             <!-- Project 01 -->
             <div class="future__box-project future__box-project-01">
@@ -1395,16 +1427,14 @@
             </div>
             <!-- End of Project 02 -->
           </div>
-          <!-- End of Desktop Version -->
-
-          <!-- mozno spravit tablet mobile verziu na konci -->
+          <!-- End of Future Box -->
         </section>
         <!-- End of Future -->
 
         <!-- Faq -->
-        <section class="faq" aria-labelledby="faq-title">
+        <section class="faq">
           <div class="faq__wrapper">
-            <h2 class="faq__title" id="faq-title">
+            <h2 class="faq__title">
               Faq
               <span class="faq__title-span" aria-hidden="true">Faq</span>
             </h2>
@@ -1577,7 +1607,7 @@
         <!-- pozmenit description SR -->
         <section class="game">
           <div class="game__wrapper">
-            <h2 class="game__title" id="game-title">
+            <h2 class="game__title">
               Game
               <span class="game__title-span" aria-hidden="true">Game</span>
             </h2>
@@ -1612,7 +1642,7 @@
         <!-- na konci porjektu , zvaz prerobit player na css art staru TV s antenkami  -->
         <section class="showcase">
           <div class="showcase__wrapper">
-            <h2 class="showcase__title" id="showcase-title">
+            <h2 class="showcase__title">
               Showcase
               <span class="showcase__title-span" aria-hidden="true"
                 >Showcase</span
@@ -1949,14 +1979,10 @@
       <!-- Footer -->
       <!-- dokoncit tu aria attr, modal atd -->
       <footer class="footer">
-        <section
-          class="footer__contact"
-          id="contact"
-          aria-labelledby="footer-title"
-        >
+        <section class="footer__contact" id="contact">
           <!-- Content -->
           <div class="footer__container">
-            <h2 class="footer__title" id="footer-title">
+            <h2 class="footer__title">
               Contact
               <span class="footer__title-span" aria-hidden="true">Contact</span>
             </h2>

@@ -56,9 +56,18 @@ body {
 }
 
 section {
+  margin-top: 14rem;
   padding-inline: 2rem;
 
   // *** Responsive Design ***
+  @include responsive-settings(desktop-small) {
+    margin-top: 10rem;
+  }
+
+  @include responsive-settings(mobile) {
+    margin-top: 8rem;
+  }
+
   @include responsive-settings(mobile-small) {
     padding-inline: 1.25rem;
   }
@@ -66,17 +75,14 @@ section {
 }
 // *** End of Main | Section ***
 
-// test github
-.github-wrapper {
-  width: 500px;
-  height: 300px;
-  border: 2px solid $success-primary;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    // object-fit: cover;
-  }
+// *** Preloader ***
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: $color-black;
+  @include flex-settings;
 }
-// test github
+// *** End of Preloader ***
