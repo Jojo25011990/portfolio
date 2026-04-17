@@ -17,6 +17,14 @@ export default function projects() {
     '.projects__title-span',
   );
 
+  const projectsDesktopOverlay = document.querySelector<HTMLDivElement>(
+    '.projects__box-overlay',
+  );
+  const projectsTabletMobileLinks = document.querySelector<HTMLDivElement>(
+    '.projects__box-links',
+  );
+  const projectsMediaQuery = window.matchMedia('(max-width: 850px)');
+
   if (projectsTitle) {
     gsap.to(projectsTitle, {
       scrollTrigger: {
@@ -61,4 +69,24 @@ export default function projects() {
       });
     });
   }
+
+  // *** Media Queries - matchMedia ***
+  const projectsAriaHidden = (event: MediaQueryList | MediaQueryListEvent) => {
+    if (event.matches) {
+      // *** Tablet | Mobile ***
+      projectsDesktopOverlay?.setAttribute('aria-hidden', 'true');
+      projectsTabletMobileLinks?.setAttribute('aria-hidden', 'false');
+      // *** End of Tablet | Mobile ***
+    } else {
+      // *** Desktop ***
+      projectsDesktopOverlay?.setAttribute('aria-hidden', 'false');
+      projectsTabletMobileLinks?.setAttribute('aria-hidden', 'true');
+      // *** End of Desktop ***
+    }
+  };
+
+  projectsMediaQuery.addEventListener('change', projectsAriaHidden);
+
+  projectsAriaHidden(projectsMediaQuery);
+  // *** End of Media Queries - matchMedia ***
 }
