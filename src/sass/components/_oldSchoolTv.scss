@@ -10,7 +10,7 @@
 
 .showcase__tv {
   transform: translateX(-50%) translateY(-50%);
-  outline: 2px solid red;
+  //   outline: 2px solid red;
 
   @include dimension-settings(100%, 50rem, 65rem);
   @include position-settings(50%, 50%);
@@ -89,7 +89,7 @@
   background-color: $success-tertiary;
 
   @include dimension-settings(100%, 48rem, 32rem);
-  @include position-settings(52%, 50%);
+  @include position-settings(52%, 50%, $zIndex: 5);
   @include flex-settings;
 
   // *** Inner ***
@@ -143,21 +143,83 @@
       @include flex-settings(start, center, column);
     }
 
-    // *** Buttons ***
-    &-btn {
+    // *** Wrapper | Buttons ***
+    &-wrapper {
       margin-bottom: 0.5rem;
-      background-color: $success-secondary;
+      background-color: $success-primary;
 
       border-radius: 50%;
       border: 0.4rem solid $success-quaternary;
 
       @include dimension-settings(100%, 7rem, 7rem);
+      @include flex-settings;
+
+      position: relative;
+      &-01 {
+        &::before {
+          content: '';
+
+          border-radius: 50%;
+          background: repeating-conic-gradient(
+            from 0deg,
+            rgba($success-quaternary, 0.8) 0deg 2deg,
+            transparent 7deg 28deg
+          );
+
+          @include position-settings(0, 0, 0, 0);
+        }
+      }
+
+      &-02 {
+        margin-bottom: 1rem;
+      }
     }
 
-    &-btn-02 {
-      margin-bottom: 1rem;
+    &-btn {
+      cursor: pointer;
+
+      overflow: hidden;
+
+      border-radius: 50%;
+
+      @include dimension-settings(100%, 4rem, 4rem);
+
+      &-span {
+        display: inline-block;
+        background-color: $success-quaternary;
+
+        @include dimension-settings(100%, 0.5rem, 120%);
+      }
+
+      &-01 {
+        transform: rotate(25deg);
+        background-color: $success-tertiary;
+        border: 0.4rem solid $success-quaternary;
+      }
+
+      &-02 {
+        background: rgba($success-tertiary, 0.25);
+        backdrop-filter: blur(0.8rem);
+
+        background-color: $success-tertiary;
+
+        box-shadow:
+          0 0.2rem 0.5rem rgba($color-black, 0.25),
+          inset 0 0.1rem 0 rgba($color-white, 0.25),
+          inset 0 -0.2rem 0 rgba($color-black, 0.2),
+          inset 0 -0.2rem 0 rgba($color-black, 0.25);
+      }
+
+      &-02:active {
+        transform: translateY(0.25rem) scale(0.98);
+
+        box-shadow:
+          0 0.2rem 0.6rem rgba($color-black, 0.3),
+          inset 0 0.3rem 0.6rem rgba($color-black, 0.35);
+      }
     }
-    // *** End of Buttons ***
+
+    // *** End of Wrapper | Buttons ***
 
     // *** Speaker ***
     &-speaker {
@@ -178,6 +240,187 @@
     // *** End of Controls ***
   }
   // *** End of Inner ***
+
+  // *** Bottom ***
+  &-bottom {
+    transform: translate(-50%, -76.5%);
+    background-color: $success-tertiary;
+
+    border: 0.4rem solid rgba($success-quaternary, 0.4);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+    @include dimension-settings(90%, $height: 2rem);
+    @include position-settings(76.5%, 50%, $zIndex: 2);
+  }
+  // *** End of Bottom ***
 }
 // *** End of TV - Body ***
+
+// *** Table ***
+.showcase__table {
+  transform: translateX(-50%);
+  @include dimension-settings(100%, 48rem, 14rem);
+  @include position-settings($left: 50%, $bottom: 0.9rem);
+  z-index: 50;
+
+  // *** Body ***
+  &-body {
+    transform: translateX(-50%);
+    background-color: $brown-primary;
+
+    border-top: 0.4rem solid $brown-secondary;
+    border-bottom: 0.4rem solid $brown-secondary;
+
+    @include dimension-settings(100%, 40rem, 3rem);
+    @include position-settings(0, 50%);
+
+    // *** Helper ***
+    &-helper {
+      transform: translateX(-50%);
+      background-color: $brown-primary;
+
+      @include dimension-settings(100%, 40rem, 2.2rem);
+
+      @include position-settings(0.44rem, 50%, $zIndex: 100);
+    }
+    // *** End of Helper ***
+  }
+  // *** End of Body ***
+
+  // *** Legs ***
+  &-leg {
+    & > div:nth-child(1) {
+      background-color: $brown-primary;
+
+      border-top: 0.4rem solid $brown-secondary;
+      border-left: 0.4rem solid $brown-secondary;
+      border-bottom: 0.4rem solid $brown-secondary;
+
+      @include dimension-settings(45%, $height: 100%);
+      @include position-settings(0, 0);
+      z-index: 50;
+    }
+    & > div:nth-child(2) {
+      transform: rotate(5deg);
+      background-color: $brown-primary;
+
+      border-right: 0.4rem solid $brown-secondary;
+
+      @include dimension-settings(40%, $height: 90%);
+      @include position-settings($right: 1.3rem, $bottom: 0);
+    }
+  }
+
+  // *** Left ***
+  &-leg-left {
+    transform: rotate(20deg) skewY(-18deg);
+    @include dimension-settings(100%, 4rem, 14rem);
+    @include position-settings(-0.3rem, 1.4rem);
+  }
+  // *** End of Left ***
+
+  // *** Right ***
+  &-leg-right {
+    transform: scaleX(-1) rotate(20deg) skewY(-18deg);
+
+    @include dimension-settings(100%, 4rem, 14rem);
+    @include position-settings(-0.3rem, 0, 1.4rem);
+    left: unset;
+  }
+  // *** End of Right ***
+  // *** End of Legs ***
+}
+// *** End of Table ***
 // *** End of Old School TV ***
+
+.showcase__lightning {
+  @include position-settings(0, 50%); // absolútna pozícia nad anténami
+  transform: translateX(-50%);
+
+  @include dimension-settings(
+    100%,
+    24rem,
+    12rem
+  ); // prispôsob podľa pozície antén
+  z-index: 10;
+  pointer-events: none;
+  overflow: visible;
+
+  transform: translateX(-66.5%) translateY(-1%);
+
+  @include dimension-settings(100%, 24rem, 17rem);
+  @include position-settings(1%, 66.5%);
+
+  &-bolt,
+  &-branch {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: url(#glow);
+
+    // Kľúčový trik — skryté cez dash
+    stroke-dasharray: 300;
+    // stroke-dashoffset: 300;
+  }
+
+  &-branch {
+    stroke-width: 1.5;
+    stroke: rgba(#fff, 0.6);
+    stroke-dasharray: 100;
+    // stroke-dashoffset: 100;
+  }
+}
+
+// Trieda pridaná cez JS
+.showcase__lightning--active {
+  //   .showcase__lightning-bolt {
+  //     animation:
+  //       lightning-draw 0.15s ease-out forwards,
+  //       lightning-flicker 0.6s ease-in 0.15s forwards;
+  //   }
+
+  //   .showcase__lightning-branch {
+  //     animation:
+  //       lightning-draw-branch 0.1s ease-out 0.05s forwards,
+  //       lightning-flicker 0.4s ease-in 0.2s forwards;
+  //   }
+}
+
+@keyframes lightning-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lightning-draw-branch {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lightning-flicker {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

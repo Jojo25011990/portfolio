@@ -1675,6 +1675,31 @@
 
             <div class="showcase__tv">
               <div class="showcase__antennas">
+                <svg
+                  viewBox="0 0 240 170"
+                  xmlns="[w3.org](http://www.w3.org/2000/svg)"
+                  style="
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: visible;
+                    border: 1px solid red;
+                    z-index: 999;
+                    pointer-events: none;
+                  "
+                >
+                  <polyline
+                    points="54.6,13.6 80,30 65,45 100,25 130,55 155,40 175.6,73.4"
+                    fill="none"
+                    stroke="yellow"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
                 <div class="showcase__antennas-left"></div>
                 <div class="showcase__antennas-right"></div>
                 <div class="showcase__antennas-base"></div>
@@ -1683,7 +1708,6 @@
               <div class="showcase__body">
                 <div class="showcase__body-inner">
                   <div class="showcase__body-inner-screen">
-                    <!-- <div class="showcase__body-inner-screen-video"></div> -->
                     <video
                       class="showcase__body-inner-screen-video"
                       src="./src/assets/video/Css Arts - 10 Projects.mp4"
@@ -1694,30 +1718,41 @@
                   </div>
 
                   <div class="showcase__body-inner-controls">
-                    <button
-                      class="showcase__body-inner-btn showcase__body-inner-btn-01"
-                    ></button>
-                    <button
-                      class="showcase__body-inner-btn showcase__body-inner-btn-02"
-                    ></button>
+                    <div
+                      class="showcase__body-inner-wrapper showcase__body-inner-wrapper-01"
+                    >
+                      <button
+                        class="showcase__body-inner-btn showcase__body-inner-btn-01"
+                      >
+                        <span class="showcase__body-inner-btn-span"></span>
+                      </button>
+                    </div>
+                    <div
+                      class="showcase__body-inner-wrapper showcase__body-inner-wrapper-02"
+                    >
+                      <button
+                        class="showcase__body-inner-btn showcase__body-inner-btn-02"
+                      ></button>
+                    </div>
 
                     <div class="showcase__body-inner-speaker"></div>
                   </div>
                 </div>
-
-                <div class="showcase__body-bottom"></div>
               </div>
 
-              <div class="showcase__shelf">
-                <div class="showcase__shelf-body"></div>
-                <div class="showcase__shelf-leg showcase__shelf-leg-top"></div>
-                <div class="showcase__shelf-leg showcase__shelf-leg-left"></div>
-                <div
-                  class="showcase__shelf-leg showcase__shelf-leg-right"
-                ></div>
-                <div
-                  class="showcase__shelf-leg showcase__shelf-leg-bottom"
-                ></div>
+              <div class="showcase__body-bottom"></div>
+
+              <div class="showcase__table">
+                <div class="showcase__table-body"></div>
+                <div class="showcase__table-body-helper"></div>
+                <div class="showcase__table-leg showcase__table-leg-left">
+                  <div></div>
+                  <div></div>
+                </div>
+                <div class="showcase__table-leg showcase__table-leg-right">
+                  <div></div>
+                  <div></div>
+                </div>
               </div>
             </div>
           </div>

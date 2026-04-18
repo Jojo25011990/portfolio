@@ -176,4 +176,111 @@ export default function showcase() {
   // *** End of Event Listeners ***
 
   // *** End of Video Player ***
+
+  const lightning = document.querySelector<SVGSVGElement>(
+    '.showcase__lightning',
+  );
+  const boltPath = document.querySelector<SVGPolylineElement>(
+    '.showcase__lightning-bolt',
+  );
+  const branchPath = document.querySelector<SVGPolylineElement>(
+    '.showcase__lightning-branch',
+  );
+  const video = document.querySelector<HTMLVideoElement>(
+    '.showcase__body-inner-screen-video',
+  );
+  const tv = document.querySelector<HTMLElement>('.showcase__tv');
+
+  const leftTip = document.querySelector<HTMLElement>(
+    '.showcase__antennas-left',
+  );
+  const rightTip = document.querySelector<HTMLElement>(
+    '.showcase__antennas-right',
+  );
+
+  const getAntennaTop = (el: HTMLElement, svgEl: SVGSVGElement) => {
+    const elRect = el.getBoundingClientRect();
+    const svgRect = svgEl.getBoundingClientRect();
+
+    return {
+      x: elRect.left + elRect.width / 2 - svgRect.left,
+      y: elRect.top - svgRect.top,
+    };
+  };
+
+  const generateZigzag = (
+    x1: number,
+    y1: number,
+    x2: number,
+    y2: number,
+    steps: number = 6,
+  ): string => {
+    const points: string[] = [`${x1},${y1}`];
+
+    for (let i = 1; i < steps; i++) {
+      const t = i / steps;
+      const midX = x1 + (x2 - x1) * t + (Math.random() - 0.5) * 40;
+      const midY = y1 + (y2 - y1) * t + (Math.random() - 0.5) * 25;
+      points.push(`${midX.toFixed(1)},${midY.toFixed(1)}`);
+    }
+
+    points.push(`${x2},${y2}`);
+    return points.join(' ');
+  };
+
+  const triggerLightning = () => {
+    if (!lightning || !boltPath || !branchPath || !leftTip || !rightTip) return;
+
+    // Vypočítaj reálne pozície vrcholov antén relatívne k SVG
+    const left = getAntennaTop(leftTip, lightning);
+    const right = getAntennaTop(rightTip, lightning);
+
+    // Náhodný zigzag medzi nimi — každý trigger iný tvar
+    boltPath.setAttribute(
+      'points',
+      generateZigzag(left.x, left.y, right.x, right.y, 6),
+    );
+    branchPath.setAttribute(
+      'points',
+      generateZigzag(left.x, left.y, right.x, right.y, 4),
+    );
+
+    // Nastav dĺžku dashu podľa skutočnej dĺžky path
+    const boltLen = boltPath.getTotalLength?.() ?? 300;
+    const branchLen = branchPath.getTotalLength?.() ?? 150;
+
+    // boltPath.style.strokeDasharray = `${boltLen}`;
+    // boltPath.style.strokeDashoffset = `${boltLen}`;
+    // branchPath.style.strokeDasharray = `${branchLen}`;
+    // branchPath.style.strokeDashoffset = `${branchLen}`;
+
+    // lightning.classList.add('showcase__lightning--active');
+
+    setTimeout(() => video?.play(), 300);
+    // setTimeout(
+    //   () => lightning.classList.remove('showcase__lightning--active'),
+    //   900,
+    // );
+  };
+
+  tv?.addEventListener('mouseenter', triggerLightning);
+
+  const left = document.querySelector('.showcase__antennas-left');
+  const right = document.querySelector('.showcase__antennas-right');
+  const svg = document.querySelector('.showcase__lightning');
+
+  const svgRect = svg!.getBoundingClientRect();
+  const leftRect = left!.getBoundingClientRect();
+  const rightRect = right!.getBoundingClientRect();
+
+  console.log(
+    'LEFT tip:',
+    leftRect.left + leftRect.width / 2 - svgRect.left,
+    leftRect.top - svgRect.top,
+  );
+  console.log(
+    'RIGHT tip:',
+    rightRect.left + rightRect.width / 2 - svgRect.left,
+    rightRect.top - svgRect.top,
+  );
 }
