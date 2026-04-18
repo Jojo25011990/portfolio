@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
-  preloader();
+  //   preloader();
   header();
   lightbox();
   skillsHeading();

@@ -177,110 +177,88 @@ export default function showcase() {
 
   // *** End of Video Player ***
 
-  const lightning = document.querySelector<SVGSVGElement>(
-    '.showcase__lightning',
-  );
-  const boltPath = document.querySelector<SVGPolylineElement>(
-    '.showcase__lightning-bolt',
-  );
-  const branchPath = document.querySelector<SVGPolylineElement>(
-    '.showcase__lightning-branch',
-  );
-  const video = document.querySelector<HTMLVideoElement>(
+  const showcaseCSSArtLightning = document.querySelector('.lightning');
+  const showcaseCSSArtLightningPath = document.querySelector('.lightning path');
+  const showcaseCSSArtLightningSparks =
+    document.querySelector<HTMLAudioElement>('.lightning-sparks-audio');
+  const showcaseCssArtVideo = document.querySelector<HTMLVideoElement>(
     '.showcase__body-inner-screen-video',
   );
-  const tv = document.querySelector<HTMLElement>('.showcase__tv');
-
-  const leftTip = document.querySelector<HTMLElement>(
-    '.showcase__antennas-left',
+  const showcaseCSSArtBtns = document.querySelectorAll<HTMLButtonElement>(
+    '.showcase__body-inner-btn',
   );
-  const rightTip = document.querySelector<HTMLElement>(
-    '.showcase__antennas-right',
+  console.log(showcaseCSSArtBtns);
+  const [showcaseCSSArtButton01, showcaseCSSArtButton02] = showcaseCSSArtBtns;
+
+  showcaseCSSArtButton01.addEventListener('click', function () {
+    this.classList.toggle('active');
+
+    if (showcaseCssArtVideo && this.classList.contains('active')) {
+      showcaseCssArtVideo.muted = false;
+    } else showcaseCssArtVideo!.muted = true;
+  });
+
+  showcaseCSSArtButton02.addEventListener(
+    'click',
+    () => {
+      triggerLightning();
+      showcaseCSSArtLightningSparks?.play();
+    },
+    { once: true },
   );
 
-  const getAntennaTop = (el: HTMLElement, svgEl: SVGSVGElement) => {
-    const elRect = el.getBoundingClientRect();
-    const svgRect = svgEl.getBoundingClientRect();
+  function triggerLightning() {
+    const tl = gsap.timeline();
 
-    return {
-      x: elRect.left + elRect.width / 2 - svgRect.left,
-      y: elRect.top - svgRect.top,
-    };
-  };
+    gsap.set(showcaseCSSArtLightning, { opacity: 1 });
+    gsap.set(showcaseCSSArtLightningPath, {
+      strokeDasharray: 300,
+      strokeDashoffset: 300,
+      opacity: 1,
+    });
 
-  const generateZigzag = (
-    x1: number,
-    y1: number,
-    x2: number,
-    y2: number,
-    steps: number = 6,
-  ): string => {
-    const points: string[] = [`${x1},${y1}`];
+    tl.to(showcaseCSSArtLightningPath, {
+      strokeDashoffset: 0,
+      duration: 0.08,
+      ease: 'power2.out',
+    });
 
-    for (let i = 1; i < steps; i++) {
-      const t = i / steps;
-      const midX = x1 + (x2 - x1) * t + (Math.random() - 0.5) * 40;
-      const midY = y1 + (y2 - y1) * t + (Math.random() - 0.5) * 25;
-      points.push(`${midX.toFixed(1)},${midY.toFixed(1)}`);
-    }
+    tl.to(showcaseCSSArtLightningPath, {
+      opacity: 0,
+      duration: 0.02,
+      repeat: 5,
+      yoyo: true,
+      ease: 'none',
+    });
 
-    points.push(`${x2},${y2}`);
-    return points.join(' ');
-  };
+    tl.to(showcaseCSSArtLightningPath, {
+      opacity: 1,
+      duration: 0.02,
+      repeat: 2,
+      yoyo: true,
+      ease: 'none',
+    });
 
-  const triggerLightning = () => {
-    if (!lightning || !boltPath || !branchPath || !leftTip || !rightTip) return;
+    tl.to(showcaseCSSArtLightningPath, {
+      opacity: 0.3,
+      duration: 0.02,
+      repeat: 5,
+      yoyo: true,
+      ease: 'none',
+    });
 
-    // Vypočítaj reálne pozície vrcholov antén relatívne k SVG
-    const left = getAntennaTop(leftTip, lightning);
-    const right = getAntennaTop(rightTip, lightning);
+    tl.to(showcaseCSSArtLightningPath, {
+      opacity: 1,
+      duration: 0.02,
+      repeat: 2,
+      yoyo: true,
+      ease: 'none',
 
-    // Náhodný zigzag medzi nimi — každý trigger iný tvar
-    boltPath.setAttribute(
-      'points',
-      generateZigzag(left.x, left.y, right.x, right.y, 6),
-    );
-    branchPath.setAttribute(
-      'points',
-      generateZigzag(left.x, left.y, right.x, right.y, 4),
-    );
+      onComplete: () => {
+        showcaseCssArtVideo?.play();
+      },
+    });
 
-    // Nastav dĺžku dashu podľa skutočnej dĺžky path
-    const boltLen = boltPath.getTotalLength?.() ?? 300;
-    const branchLen = branchPath.getTotalLength?.() ?? 150;
-
-    // boltPath.style.strokeDasharray = `${boltLen}`;
-    // boltPath.style.strokeDashoffset = `${boltLen}`;
-    // branchPath.style.strokeDasharray = `${branchLen}`;
-    // branchPath.style.strokeDashoffset = `${branchLen}`;
-
-    // lightning.classList.add('showcase__lightning--active');
-
-    setTimeout(() => video?.play(), 300);
-    // setTimeout(
-    //   () => lightning.classList.remove('showcase__lightning--active'),
-    //   900,
-    // );
-  };
-
-  tv?.addEventListener('mouseenter', triggerLightning);
-
-  const left = document.querySelector('.showcase__antennas-left');
-  const right = document.querySelector('.showcase__antennas-right');
-  const svg = document.querySelector('.showcase__lightning');
-
-  const svgRect = svg!.getBoundingClientRect();
-  const leftRect = left!.getBoundingClientRect();
-  const rightRect = right!.getBoundingClientRect();
-
-  console.log(
-    'LEFT tip:',
-    leftRect.left + leftRect.width / 2 - svgRect.left,
-    leftRect.top - svgRect.top,
-  );
-  console.log(
-    'RIGHT tip:',
-    rightRect.left + rightRect.width / 2 - svgRect.left,
-    rightRect.top - svgRect.top,
-  );
+    tl.set(showcaseCSSArtLightning, { opacity: 0 });
+  }
 }

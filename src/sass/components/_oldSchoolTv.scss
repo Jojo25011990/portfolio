@@ -91,6 +91,7 @@
   @include dimension-settings(100%, 48rem, 32rem);
   @include position-settings(52%, 50%, $zIndex: 5);
   @include flex-settings;
+  z-index: 100;
 
   // *** Inner ***
   &-inner {
@@ -192,9 +193,15 @@
       }
 
       &-01 {
-        transform: rotate(25deg);
+        transform: rotate(0);
         background-color: $success-tertiary;
         border: 0.4rem solid $success-quaternary;
+
+        transition: transform 0.35s ease-out;
+
+        &.active {
+          transform: rotate(40deg);
+        }
       }
 
       &-02 {
@@ -333,94 +340,34 @@
 }
 // *** End of Table ***
 // *** End of Old School TV ***
-
-.showcase__lightning {
-  @include position-settings(0, 50%); // absolútna pozícia nad anténami
-  transform: translateX(-50%);
-
-  @include dimension-settings(
-    100%,
-    24rem,
-    12rem
-  ); // prispôsob podľa pozície antén
-  z-index: 10;
-  pointer-events: none;
-  overflow: visible;
-
-  transform: translateX(-66.5%) translateY(-1%);
-
-  @include dimension-settings(100%, 24rem, 17rem);
-  @include position-settings(1%, 66.5%);
-
-  &-bolt,
-  &-branch {
-    fill: none;
-    stroke: #fff;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: url(#glow);
-
-    // Kľúčový trik — skryté cez dash
-    stroke-dasharray: 300;
-    // stroke-dashoffset: 300;
-  }
-
-  &-branch {
-    stroke-width: 1.5;
-    stroke: rgba(#fff, 0.6);
-    stroke-dasharray: 100;
-    // stroke-dashoffset: 100;
-  }
+.lightning {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -68px;
+  left: -14px;
+  z-index: 50;
+  transform: rotate(15deg);
 }
 
-// Trieda pridaná cez JS
-.showcase__lightning--active {
-  //   .showcase__lightning-bolt {
-  //     animation:
-  //       lightning-draw 0.15s ease-out forwards,
-  //       lightning-flicker 0.6s ease-in 0.15s forwards;
-  //   }
+.lightning path {
+  fill: none;
+  stroke: #6e91ca; // tvoja modrá
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 
-  //   .showcase__lightning-branch {
-  //     animation:
-  //       lightning-draw-branch 0.1s ease-out 0.05s forwards,
-  //       lightning-flicker 0.4s ease-in 0.2s forwards;
-  //   }
-}
+  filter: drop-shadow(0 0 4px rgba(110, 145, 202, 0.9))
+    drop-shadow(0 0 10px rgba(110, 145, 202, 0.6))
+    drop-shadow(0 0 18px rgba(110, 145, 202, 0.3));
+  stroke: #8fb6ff;
 
-@keyframes lightning-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+  filter: drop-shadow(0 0 2px #6e91ca) drop-shadow(0 0 8px #6e91ca)
+    drop-shadow(0 0 14px rgba(110, 145, 202, 0.7))
+    drop-shadow(0 0 24px rgba(110, 145, 202, 0.4));
 
-@keyframes lightning-draw-branch {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
 
-@keyframes lightning-flicker {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 0;
-  }
-  35% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0;
-  }
-  65% {
-    opacity: 0.7;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
+  opacity: 0;
 }

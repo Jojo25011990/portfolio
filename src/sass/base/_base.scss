@@ -83,6 +83,16 @@ section {
   inset: 0;
   z-index: 9999;
   background-color: $color-black;
+  //   background-color: white;
   @include flex-settings;
+
+  animation: preloader 0.5s linear forwards;
+  animation-delay: 1.25s;
+}
+
+@keyframes preloader {
+  to {
+    transform: translateY(-100%);
+  }
 }
 // *** End of Preloader ***

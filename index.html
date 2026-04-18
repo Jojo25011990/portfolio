@@ -101,16 +101,15 @@
     <!-- Sekcia Behind the scenes v MY experience - css art book s stagmi napr stage 01 , na lavej popis na pravej strane img vs code  -->
 
     <!-- Preloader -->
-    <!-- <div class="preloader" hidden>
+    <div class="preloader">
       <div class="preloader-imgbox">
-        <img src="./src/assets/images/Portfolio-V1-4-17-2026.png" alt="" />
+        <!-- <img src="./src/assets/images/Portfolio-V1-4-17-2026.png" alt="" /> -->
+        <img
+          src="./src/assets/images/Portfolio-V1-Jozef-Kudrna-4-18-2026.png"
+          alt=""
+        />
       </div>
-
-      <div class="preloader__bar">
-        <div class="preloader-fill"></div>
-      </div>
-      <div class="preloader-text">0%</div>
-    </div> -->
+    </div>
     <!-- End of Preloader -->
 
     <!-- Container -->
@@ -1674,32 +1673,34 @@
             />
 
             <div class="showcase__tv">
-              <div class="showcase__antennas">
-                <svg
-                  viewBox="0 0 240 170"
-                  xmlns="[w3.org](http://www.w3.org/2000/svg)"
-                  style="
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    width: 100%;
-                    height: 100%;
-                    overflow: visible;
-                    border: 1px solid red;
-                    z-index: 999;
-                    pointer-events: none;
-                  "
-                >
-                  <polyline
-                    points="54.6,13.6 80,30 65,45 100,25 130,55 155,40 175.6,73.4"
-                    fill="none"
-                    stroke="yellow"
-                    stroke-width="3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <svg class="lightning" viewBox="-50 169 300 200">
+                <path
+                  d="M35 140 
+       L45 132 
+       L52 145 
+       L60 128 
+       L68 138 
+       L75 122 
+       L82 135 
+       L90 118 
+       L98 132 
+       L106 120 
+       L114 134 
+       L122 116 
+       L130 130 
+       L138 120 
+       L146 135 
+       L154 125 
+       L162 140"
+                />
+              </svg>
 
+              <audio
+                src="./src/assets/audio/Lightning spark.mp4"
+                class="lightning-sparks-audio"
+              ></audio>
+
+              <div class="showcase__antennas">
                 <div class="showcase__antennas-left"></div>
                 <div class="showcase__antennas-right"></div>
                 <div class="showcase__antennas-base"></div>
@@ -1712,7 +1713,6 @@
                       class="showcase__body-inner-screen-video"
                       src="./src/assets/video/Css Arts - 10 Projects.mp4"
                       muted
-                      autoplay
                       loop
                     ></video>
                   </div>
