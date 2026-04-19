@@ -75,8 +75,8 @@ section {
 }
 // *** End of Main | Section ***
 
-// *** Preloader ***
-.preloader {
+// *** Intro ***
+.intro {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -86,13 +86,13 @@ section {
   //   background-color: white;
   @include flex-settings;
 
-  animation: preloader 0.5s linear forwards;
+  animation: intro 0.5s linear forwards;
   animation-delay: 1.25s;
 }
 
-@keyframes preloader {
+@keyframes intro {
   to {
     transform: translateY(-100%);
   }
 }
-// *** End of Preloader ***
+// *** End of Intro ***
