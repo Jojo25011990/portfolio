@@ -14,6 +14,8 @@ export default function faq() {
 
   const faqItems = document.querySelectorAll<HTMLLIElement>('.faq__item');
 
+  let faqTimeout: ReturnType<typeof setTimeout> | null = null;
+
   if (faqTitle) {
     gsap.to(faqTitle, {
       scrollTrigger: {
@@ -63,11 +65,25 @@ export default function faq() {
     const faqQuestion = oneFaqItem.querySelector('.faq__item-question');
 
     faqQuestion?.addEventListener('click', () => {
-      const activeFaqItem = oneFaqItem.classList.toggle('active');
-      faqQuestion.setAttribute(
-        'aria-expanded',
-        activeFaqItem ? 'true' : 'false',
-      );
+      const isActive = oneFaqItem.classList.toggle('active');
+      faqQuestion.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+
+      const faqAnswerId = faqQuestion.getAttribute('aria-controls');
+      const faqAnswer = faqAnswerId
+        ? document.getElementById(faqAnswerId)
+        : null;
+
+      if (faqAnswer) {
+        if (isActive) {
+          if (faqTimeout) clearTimeout(faqTimeout);
+
+          faqAnswer.removeAttribute('hidden');
+        } else {
+          faqTimeout = setTimeout(() => {
+            faqAnswer.setAttribute('hidden', '');
+          }, 360);
+        }
+      }
     });
   });
   // *** End of FAQ - Accordion ***

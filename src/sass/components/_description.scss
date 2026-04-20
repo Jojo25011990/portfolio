@@ -12,7 +12,8 @@
 .faq__description-sr-only,
 .activity__description-sr-only,
 .game__description-sr-only,
-.showcase__description-sr-only {
+.showcase__description-sr-only,
+.showcase__container-sr-only {
   @extend %sr-only;
 }
 // *** End of Sr Only ***

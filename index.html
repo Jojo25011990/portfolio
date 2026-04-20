@@ -1486,7 +1486,7 @@
                 ></i>
               </button>
 
-              <p class="faq__item-answer" id="faq__item-answer-01">
+              <p class="faq__item-answer" id="faq__item-answer-01" hidden>
                 I plan, experiment, and refine until everything fits perfectly.
               </p>
             </li>
@@ -1506,7 +1506,7 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <p class="faq__item-answer" id="faq__item-answer-02">
+              <p class="faq__item-answer" id="faq__item-answer-02" hidden>
                 Oh, absolutely… check out the Skills section 🤣.
               </p>
             </li>
@@ -1525,7 +1525,7 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <p class="faq__item-answer" id="faq__item-answer-03">
+              <p class="faq__item-answer" id="faq__item-answer-03" hidden>
                 Daily practice, experimentation, and building challenging
                 projects.
               </p>
@@ -1545,7 +1545,7 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <p class="faq__item-answer" id="faq__item-answer-04">
+              <p class="faq__item-answer" id="faq__item-answer-04" hidden>
                 Yes - JavaScript 😎
               </p>
             </li>
@@ -1565,7 +1565,7 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <p class="faq__item-answer" id="faq__item-answer-05">
+              <p class="faq__item-answer" id="faq__item-answer-05" hidden>
                 Passion for coding and creating interactive experiences.
               </p>
             </li>
@@ -1585,7 +1585,7 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <p class="faq__item-answer" id="faq__item-answer-06">
+              <p class="faq__item-answer" id="faq__item-answer-06" hidden>
                 Console.log everything and hope for the best 🤷
               </p>
             </li>
@@ -1655,7 +1655,6 @@
         <!-- End of Game -->
 
         <!-- Showcase -->
-        <!-- na konci porjektu , zvaz prerobit player na css art staru TV s antenkami  -->
         <section class="showcase">
           <div class="showcase__wrapper">
             <h2 class="showcase__title">
@@ -1681,38 +1680,27 @@
 
           <!-- CSS Art - Old School TV -->
           <div class="showcase__container showcase__container-01">
-            <img
-              src="./src/assets/images/old school tv.jpg"
-              alt=""
-              class="tv"
-            />
+            <!-- Sr Only -->
+            <p class="showcase__container-sr-only">
+              CSS art piece — an interactive old school TV with lightning
+              effect.
+            </p>
+            <!-- End of Sr Only -->
 
-            <div class="showcase__tv">
-              <svg class="lightning" viewBox="-50 169 300 200">
+            <div class="showcase__container-overlay" aria-hidden="true">
+              <h3 class="showcase__container-title">Old School TV</h3>
+            </div>
+
+            <div class="showcase__tv" aria-hidden="true">
+              <svg class="showcase__lightning" viewBox="-50 169 300 200">
                 <path
-                  d="M35 140 
-       L45 132 
-       L52 145 
-       L60 128 
-       L68 138 
-       L75 122 
-       L82 135 
-       L90 118 
-       L98 132 
-       L106 120 
-       L114 134 
-       L122 116 
-       L130 130 
-       L138 120 
-       L146 135 
-       L154 125 
-       L162 140"
+                  d="M35 140 L45 132 L52 145 L60 128 L68 138 L75 122 L82 135 L90 118 L98 132 L106 120 L114 134 L122 116 L130 130 L138 120 L146 135 L154 125 L162 140"
                 />
               </svg>
 
               <audio
                 src="./src/assets/audio/Lightning spark.mp4"
-                class="lightning-sparks-audio"
+                class="showcase__lightning-spark"
               ></audio>
 
               <div class="showcase__antennas">
@@ -1724,6 +1712,35 @@
               <div class="showcase__body">
                 <div class="showcase__body-inner">
                   <div class="showcase__body-inner-screen">
+                    <div class="showcase__body-inner-screen-overlay">
+                      <div class="img"></div>
+
+                      <!-- SVG Turbulence -->
+                      <svg id="funguj">
+                        <filter
+                          id="noise"
+                          x="0%"
+                          y="0%"
+                          width="100%"
+                          height="100%"
+                        >
+                          <!-- 0.02 0.3 -->
+                          <feTurbulence
+                            id="turbulence"
+                            baseFrequency="0.09 0.2"
+                            numOctaves="1"
+                            result="NOISE"
+                          />
+                          <feDisplacementMap
+                            in="SourceGraphic"
+                            in2="NOISE"
+                            scale="20"
+                          />
+                        </filter>
+                      </svg>
+                      <!-- End of SVG Turbulence -->
+                    </div>
+
                     <video
                       class="showcase__body-inner-screen-video"
                       src="./src/assets/video/Css Arts - 10 Projects.mp4"
@@ -1775,43 +1792,42 @@
 
           <!-- Video Player -->
           <div class="showcase__container showcase__container-02">
-            <div class="showcase__container-overlay" aria-hidden="true">
-              <span
-                class="showcase__container-overlay-span showcase__container-overlay-span01"
-              ></span>
-              <span
-                class="showcase__container-overlay-span showcase__container-overlay-span02"
-              ></span>
-              <span
-                class="showcase__container-overlay-span showcase__container-overlay-span03"
-              ></span>
-              <span
-                class="showcase__container-overlay-span showcase__container-overlay-span04"
-              ></span>
+            <div class="showcase__container-overlay">
+              <h3 class="showcase__container-title">Custom Video Player</h3>
             </div>
 
             <video
               src="./src/assets/video/Css Arts - 10 Projects.mp4"
               id="showcase-video"
               class="showcase__video"
+              aria-label="CSS Arts - 10 Projects showcase reel"
             ></video>
 
-            <div class="showcase__controls">
+            <div
+              class="showcase__controls"
+              role="group"
+              aria-label="Video player controls"
+            >
               <button
                 type="button"
                 class="showcase__controls-btn showcase__controls-btn-play"
+                aria-label="Play"
+                aria-pressed="false"
               >
                 <i
                   class="fa-solid fa-play fa-2x showcase__controls-icon showcase__controls-icon-play"
+                  aria-hidden="true"
                 ></i>
               </button>
 
               <button
                 type="button"
                 class="showcase__controls-btn showcase__controls-btn-reset"
+                aria-label="Restart video"
               >
                 <i
                   class="fa-solid fa-arrow-rotate-left fa-2x showcase__controls-icon showcase__controls-icon-reset"
+                  aria-hidden="true"
                 ></i>
               </button>
 
@@ -1823,9 +1839,14 @@
                 max="100"
                 step="0.1"
                 value="0"
+                aria-label="Video progress"
+                aria-valuenow="0"
               />
 
-              <span class="showcase__controls-time" id="showcase-controls-time"
+              <span
+                class="showcase__controls-time"
+                id="showcase-controls-time"
+                aria-live="off"
                 >00:00</span
               >
             </div>

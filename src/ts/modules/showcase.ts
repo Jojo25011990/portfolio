@@ -30,14 +30,9 @@ export default function showcase() {
     '.showcase__controls-time',
   );
 
-  const showcaseContainerOverlay = document.querySelector<HTMLDivElement>(
+  const showcaseContainersOverlay = document.querySelectorAll<HTMLDivElement>(
     '.showcase__container-overlay',
   );
-
-  const showcaseContainerOverlaySpans =
-    document.querySelectorAll<HTMLSpanElement>(
-      '.showcase__container-overlay-span',
-    );
 
   if (showcaseTitle) {
     gsap.to(showcaseTitle, {
@@ -65,24 +60,41 @@ export default function showcase() {
     });
   }
 
-  if (showcaseContainerOverlaySpans.length) {
-    gsap.to('.showcase__container-overlay-span', {
-      delay: 0.5,
+  showcaseContainersOverlay.forEach(showcaseContainerOverlay => {
+    const showcaseContainerHeading = showcaseContainerOverlay.querySelectorAll(
+      '.showcase__container-title',
+    );
+
+    gsap.to(showcaseContainerOverlay, {
+      delay: 1.35,
       yPercent: -100,
       duration: 0.8,
-      ease: 'power3.inOut',
+      ease: 'power2.out',
       stagger: 0.12,
       scrollTrigger: {
-        trigger: '.showcase__container',
+        trigger: showcaseContainerOverlay,
         start: 'top center',
         once: true,
       },
-
       onComplete: () => {
-        showcaseContainerOverlay!.style.display = 'none';
+        if (showcaseContainerOverlay)
+          gsap.set(showcaseContainerOverlay, { display: 'none', delay: 0.25 });
       },
     });
-  }
+
+    gsap.to(showcaseContainerHeading, {
+      delay: 0.9,
+      autoAlpha: 0,
+      y: -200,
+      duration: 0.3,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: showcaseContainerOverlay,
+        start: 'top center',
+        once: true,
+      },
+    });
+  });
 
   // *** Video Player ***
 
@@ -106,10 +118,14 @@ export default function showcase() {
   const showcaseVideoIconStatus = () => {
     if (showcaseVideo?.paused) {
       showcaseButtonPlay!.innerHTML =
-        '<i class="fa-solid fa-play fa-2x showcase__controls-icon showcase__controls-icon-play"></i>';
+        '<i class="fa-solid fa-play fa-2x showcase__controls-icon showcase__controls-icon-play" aria-hidden="true"></i>';
+      showcaseButtonPlay?.setAttribute('aria-label', 'Play');
+      showcaseButtonPlay?.setAttribute('aria-pressed', 'false');
     } else {
       showcaseButtonPlay!.innerHTML =
-        '<i class="fa-solid fa-pause fa-2x showcase__controls-icon showcase__controls-icon-pause"></i>';
+        '<i class="fa-solid fa-pause fa-2x showcase__controls-icon showcase__controls-icon-pause" aria-hidden="true"></i>';
+      showcaseButtonPlay?.setAttribute('aria-label', 'Pause');
+      showcaseButtonPlay?.setAttribute('aria-pressed', 'true');
     }
   };
   // *** Status - Play | Pause ***
@@ -120,8 +136,14 @@ export default function showcase() {
     if (!showcaseVideo.duration) return;
     if (isScrubbing) return;
 
-    showcaseProgress.value = String(
-      (showcaseVideo.currentTime / showcaseVideo.duration) * 100,
+    const showcaseVideoProgress =
+      (showcaseVideo.currentTime / showcaseVideo.duration) * 100;
+
+    showcaseProgress.value = String(showcaseVideoProgress);
+
+    showcaseProgress.setAttribute(
+      'aria-valuenow',
+      String(Math.round(showcaseVideoProgress)),
     );
 
     let mins: string | number = Math.floor(showcaseVideo.currentTime / 60);
@@ -135,6 +157,7 @@ export default function showcase() {
     }
 
     showcaseTime.innerHTML = `${mins}:${secs}`;
+    showcaseProgress.setAttribute('aria-valuetext', `${mins}:${secs}`);
   };
   // *** End of Time - ( Timestamp ) ***
 
@@ -174,21 +197,32 @@ export default function showcase() {
     isScrubbing = false;
   });
   // *** End of Event Listeners ***
-
   // *** End of Video Player ***
 
-  const showcaseCSSArtLightning = document.querySelector('.lightning');
-  const showcaseCSSArtLightningPath = document.querySelector('.lightning path');
+  // *** Old School TV ***
+  const showcaseCSSArtVideoOverlay = document.querySelector<HTMLDivElement>(
+    '.showcase__body-inner-screen-overlay',
+  );
+  const showcaseCSSArtLightning = document.querySelector<SVGSVGElement>(
+    '.showcase__lightning',
+  );
+  const showcaseCSSArtLightningPath = document.querySelector<SVGPathElement>(
+    '.showcase__lightning path',
+  );
   const showcaseCSSArtLightningSparks =
-    document.querySelector<HTMLAudioElement>('.lightning-sparks-audio');
+    document.querySelector<HTMLAudioElement>('.showcase__lightning-spark');
   const showcaseCssArtVideo = document.querySelector<HTMLVideoElement>(
     '.showcase__body-inner-screen-video',
   );
   const showcaseCSSArtBtns = document.querySelectorAll<HTMLButtonElement>(
     '.showcase__body-inner-btn',
   );
-  console.log(showcaseCSSArtBtns);
   const [showcaseCSSArtButton01, showcaseCSSArtButton02] = showcaseCSSArtBtns;
+
+  const el = document.getElementById('turbulence');
+  //   const timeline = gsap.timeline({ paused: true });
+  //   timeline.to(el, 3, { attr: { baseFrequency: '0.05 0.2' } }, 2);
+  //   timeline.play();
 
   showcaseCSSArtButton01.addEventListener('click', function () {
     this.classList.toggle('active');
@@ -254,11 +288,29 @@ export default function showcase() {
       yoyo: true,
       ease: 'none',
 
+      //   onComplete: () => {
+      //     showcaseCssArtVideo?.play();
+      //   },
+    });
+
+    tl.set(showcaseCSSArtLightning, { opacity: 0 });
+
+    tl.to(el, {
+      duration: 2,
+      attr: { baseFrequency: '0.05 0.2' },
       onComplete: () => {
         showcaseCssArtVideo?.play();
       },
     });
 
-    tl.set(showcaseCSSArtLightning, { opacity: 0 });
+    tl.to(showcaseCSSArtVideoOverlay, {
+      duration: 0.7,
+      autoAlpha: 0,
+
+      onComplete: () => {
+        showcaseCssArtVideo?.play();
+      },
+    });
   }
+  // *** End of Old School TV ***
 }

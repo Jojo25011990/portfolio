@@ -87,7 +87,9 @@ section {
   @include flex-settings;
 
   animation: intro 0.5s linear forwards;
-  animation-delay: 1.25s;
+  animation-delay: 1.5s;
+
+  display: none;
 }
 
 @keyframes intro {

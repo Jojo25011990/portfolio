@@ -14,7 +14,7 @@ import showcase from './modules/showcase';
 import evolving from './modules/evolving';
 import activity from './modules/activity';
 import game from './modules/game';
-import intro from './modules/intro';
+// import intro from './modules/intro';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
