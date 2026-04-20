@@ -1655,6 +1655,7 @@
         <!-- End of Game -->
 
         <!-- Showcase -->
+        <!-- spravit responsive design na TV, SR je to hotove  -->
         <section class="showcase">
           <div class="showcase__wrapper">
             <h2 class="showcase__title">
@@ -1681,7 +1682,7 @@
           <!-- CSS Art - Old School TV -->
           <div class="showcase__container showcase__container-01">
             <!-- Sr Only -->
-            <p class="showcase__container-sr-only">
+            <p class="showcase__description-sr-only">
               CSS art piece — an interactive old school TV with lightning
               effect.
             </p>
@@ -1713,32 +1714,29 @@
                 <div class="showcase__body-inner">
                   <div class="showcase__body-inner-screen">
                     <div class="showcase__body-inner-screen-overlay">
-                      <div class="img"></div>
+                      <div class="showcase__body-inner-screen-gradient"></div>
 
-                      <!-- SVG Turbulence -->
-                      <svg id="funguj">
+                      <svg>
                         <filter
-                          id="noise"
+                          id="displacement"
                           x="0%"
                           y="0%"
                           width="100%"
                           height="100%"
                         >
-                          <!-- 0.02 0.3 -->
                           <feTurbulence
-                            id="turbulence"
+                            class="showcase__body-inner-screen-error"
                             baseFrequency="0.09 0.2"
                             numOctaves="1"
-                            result="NOISE"
+                            result="displacement"
                           />
                           <feDisplacementMap
                             in="SourceGraphic"
-                            in2="NOISE"
+                            in2="displacement"
                             scale="20"
                           />
                         </filter>
                       </svg>
-                      <!-- End of SVG Turbulence -->
                     </div>
 
                     <video

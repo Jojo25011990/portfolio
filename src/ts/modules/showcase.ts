@@ -203,6 +203,11 @@ export default function showcase() {
   const showcaseCSSArtVideoOverlay = document.querySelector<HTMLDivElement>(
     '.showcase__body-inner-screen-overlay',
   );
+  const showcaseCSSArtVideoOverlayError =
+    document.querySelector<SVGFETurbulenceElement>(
+      '.showcase__body-inner-screen-error',
+    );
+
   const showcaseCSSArtLightning = document.querySelector<SVGSVGElement>(
     '.showcase__lightning',
   );
@@ -218,11 +223,6 @@ export default function showcase() {
     '.showcase__body-inner-btn',
   );
   const [showcaseCSSArtButton01, showcaseCSSArtButton02] = showcaseCSSArtBtns;
-
-  const el = document.getElementById('turbulence');
-  //   const timeline = gsap.timeline({ paused: true });
-  //   timeline.to(el, 3, { attr: { baseFrequency: '0.05 0.2' } }, 2);
-  //   timeline.play();
 
   showcaseCSSArtButton01.addEventListener('click', function () {
     this.classList.toggle('active');
@@ -287,15 +287,11 @@ export default function showcase() {
       repeat: 2,
       yoyo: true,
       ease: 'none',
-
-      //   onComplete: () => {
-      //     showcaseCssArtVideo?.play();
-      //   },
     });
 
     tl.set(showcaseCSSArtLightning, { opacity: 0 });
 
-    tl.to(el, {
+    tl.to(showcaseCSSArtVideoOverlayError, {
       duration: 2,
       attr: { baseFrequency: '0.05 0.2' },
       onComplete: () => {
