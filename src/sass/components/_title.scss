@@ -6,7 +6,7 @@
 .projects__title,
 .services__title,
 .features__title,
-.evolving__title,
+.evolution__title,
 .future__title,
 .faq__title,
 .activity__title,
@@ -29,7 +29,7 @@
 .projects__title,
 .services__title,
 .features__title,
-.evolving__title,
+.evolution__title,
 .future__title,
 .faq__title,
 .activity__title,
@@ -60,7 +60,8 @@
 }
 
 .projects__item-heading,
-.services__item-heading {
+.services__item-heading,
+.evolution__phase-heading {
   margin-top: 2rem;
 
   @include font-settings(2.4rem, 700, 3.2rem);

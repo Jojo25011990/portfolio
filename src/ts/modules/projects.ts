@@ -38,7 +38,7 @@ export default function projects() {
       },
 
       duration: 3,
-      text: 'From over 150 completed projects, this is a refined selection of 10 that reflect my growth, technical range, and creative direction.',
+      text: 'From over 150 completed projects, this is a curated selection showcasing my work across interactive UI systems, creative coding, animations, and frontend experiments.',
       ease: 'none',
     });
   }

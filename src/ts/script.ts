@@ -11,7 +11,7 @@ import faq from './modules/faq';
 import future from './modules/future';
 import myBonus from './modules/myBonus';
 import showcase from './modules/showcase';
-import evolving from './modules/evolving';
+import evolution from './modules/evolution';
 import activity from './modules/activity';
 import game from './modules/game';
 // import intro from './modules/intro';
@@ -28,7 +28,7 @@ function init() {
   projects();
   services();
   features();
-  evolving();
+  evolution();
   future();
   faq();
   activity();
