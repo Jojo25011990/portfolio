@@ -54,7 +54,8 @@
 
 // *** Secondary Button ***
 .features__fun-facts-button,
-.my-overlay__button {
+.my-overlay__button,
+.showcase__switcher-btn {
   @extend %glowing-btn;
 }
 
@@ -137,6 +138,12 @@
 .showcase__controls-btn-reset:hover .showcase__controls-icon-reset,
 .showcase__controls-btn-reset:active .showcase__controls-icon-reset {
   color: $yellow-primary;
+}
+
+.showcase__switcher-btn:nth-child(2) {
+  @include responsive-settings(tablet-small) {
+    order: 1;
+  }
 }
 // *** End of Showcase ***
 

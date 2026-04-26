@@ -24,12 +24,9 @@
 
     // *** Old School TV ***
     &-01 {
-      // skusit 0.6 na konci namiesto 0.7
       background-color: rgba($color-white, $alpha: 0.7);
 
       min-height: 69rem;
-
-      // display: none;
     }
     // *** End of Old School TV ***
 
@@ -50,19 +47,50 @@
   }
   // *** End of Container ***
 
-  // *** Video ***
-  &__video {
+  // *** Video Wrapper ***
+  &__wrapper-video {
+    background-color: $dark-tertiary;
+
     border: 5rem solid $dark-tertiary;
 
-    cursor: pointer;
+    overflow: hidden;
 
     @include dimension-settings(100%);
+    @include position-settings($position: relative);
+
+    aspect-ratio: 16 / 9;
 
     // *** Responsive Design ***
     @include responsive-settings(tablet) {
       border-width: 4rem;
     }
+
+    @include responsive-settings(mobile) {
+      border-width: 3rem;
+    }
     // *** End of Responsive Design ***
+  }
+  // *** End of Video Wrapper ***
+
+  // *** Video ***
+  &__video {
+    cursor: pointer;
+
+    object-fit: cover;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    transition: opacity 0.35s linear;
+
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0);
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
   // *** End of Video ***
 
@@ -114,5 +142,14 @@
     }
   }
   // *** End of Controls ***
+
+  // *** Switcher ***
+  &__video-switcher {
+    flex-wrap: wrap;
+
+    @include dimension-settings(100%, 60rem);
+    @include flex-settings($gap: 1.5rem);
+  }
+  // *** End of Switcher ***
 }
 // *** End of Showcase ***

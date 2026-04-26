@@ -89,7 +89,7 @@
     <!-- Projects -> OK -->
     <!-- Services -> OK -->
     <!-- Features -> OK -->
-    <!-- Evolution -> NOK -->
+    <!-- Evolution -> OK -->
     <!-- Future -> OK -->
     <!-- Faq -> OK -->
     <!-- Activity -> OK / 50% -->
@@ -1396,8 +1396,14 @@
           <!-- Desktop Version -->
           <!-- Evolution Timeline - Phase 01 | 02 | 03 -->
           <ol class="evolution__timeline">
-            <div class="evolution__line evolution__line-01"></div>
-            <div class="evolution__line evolution__line-02"></div>
+            <li
+              class="evolution__line evolution__line-01"
+              aria-hidden="true"
+            ></li>
+            <li
+              class="evolution__line evolution__line-02"
+              aria-hidden="true"
+            ></li>
 
             <!-- Phase 01 -->
             <li class="evolution__phase evolution__phase-01">
@@ -1496,9 +1502,11 @@
             <li class="evolution__phase-mobile evolution__phase-mobile-01">
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-01"
+                aria-hidden="true"
               ></div>
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-02"
+                aria-hidden="true"
               ></div>
 
               <h3 class="evolution__phase-mobile-heading">Phase 01</h3>
@@ -1962,7 +1970,6 @@
                       class="showcase__body-inner-screen-video"
                       src="./src/assets/video/Css Arts - 10 Projects.mp4"
                       muted
-                      loop
                     ></video>
                   </div>
 
@@ -2009,16 +2016,36 @@
 
           <!-- Video Player -->
           <div class="showcase__container showcase__container-02">
-            <div class="showcase__container-overlay">
+            <div class="showcase__container-overlay transition">
               <h3 class="showcase__container-title">Custom Video Player</h3>
             </div>
 
-            <video
-              src="./src/assets/video/Css Arts - 10 Projects.mp4"
-              id="showcase-video"
-              class="showcase__video"
-              aria-label="CSS Arts - 10 Projects showcase reel"
-            ></video>
+            <div class="showcase__wrapper-video">
+              <video
+                id="video-0"
+                src="./src/assets/video/Css Arts - 10 Projects.mp4"
+                class="showcase__video active"
+                aria-label="CSS Arts - 10 Projects showcase reel"
+                role="tabpanel"
+                aria-hidden="false"
+              ></video>
+              <video
+                id="video-1"
+                src="./src/assets/video/Mix Projects Part 01.mp4"
+                class="showcase__video"
+                aria-label="CSS Arts - 10 Projects showcase reel"
+                role="tabpanel"
+                aria-hidden="true"
+              ></video>
+              <video
+                id="video-2"
+                src="./src/assets/video/Portfolio V1.mp4"
+                class="showcase__video"
+                aria-label="CSS Arts - 10 Projects showcase reel"
+                role="tabpanel"
+                aria-hidden="true"
+              ></video>
+            </div>
 
             <div
               class="showcase__controls"
@@ -2068,6 +2095,35 @@
               >
             </div>
           </div>
+
+          <!-- Video Player Buttons -->
+          <div class="showcase__video-switcher" role="tablist">
+            <button
+              class="showcase__switcher-btn"
+              role="tab"
+              aria-selected="true"
+              aria-controls="video-0"
+            >
+              CSS Art
+            </button>
+            <button
+              class="showcase__switcher-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="video-1"
+            >
+              Animations
+            </button>
+            <button
+              class="showcase__switcher-btn"
+              role="tab"
+              aria-selected="false"
+              aria-controls="video-2"
+            >
+              Mix Work
+            </button>
+          </div>
+          <!-- End of Video Player Buttons -->
           <!-- End of Video Player -->
         </section>
         <!-- End of Showcase -->

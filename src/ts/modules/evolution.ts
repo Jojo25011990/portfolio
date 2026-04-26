@@ -26,10 +26,10 @@ export default function evolution() {
   const [phaseHeading01, phaseHeading02, phaseHeading03] =
     evolutionPhaseHeadings;
 
-  const evolutionPhaseLine01 = document.querySelector<HTMLDivElement>(
+  const evolutionPhaseLine01 = document.querySelector<HTMLLIElement>(
     '.evolution__line-01',
   );
-  const evolutionPhaseLine02 = document.querySelector<HTMLDivElement>(
+  const evolutionPhaseLine02 = document.querySelector<HTMLLIElement>(
     '.evolution__line-02',
   );
 

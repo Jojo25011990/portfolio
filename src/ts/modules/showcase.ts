@@ -15,8 +15,12 @@ export default function showcase() {
     '.showcase__description',
   );
 
-  const showcaseVideo =
-    document.querySelector<HTMLVideoElement>('.showcase__video');
+  const showcaseVideos =
+    document.querySelectorAll<HTMLVideoElement>('.showcase__video');
+  const showcaseSwitcherBtns = document.querySelectorAll<HTMLButtonElement>(
+    '.showcase__switcher-btn',
+  );
+
   const showcaseButtonPlay = document.querySelector<HTMLButtonElement>(
     '.showcase__controls-btn-play',
   );
@@ -97,16 +101,55 @@ export default function showcase() {
   });
 
   // *** Video Player ***
+  // *** Switcher Buttons ***
+  let activeIndex = 0;
+
+  const setShowcaseActiveVideo = (index: number) => {
+    if (index === activeIndex) return;
+
+    const currentShowcaseVideo = showcaseVideos[activeIndex];
+    const nextShowcaseVideo = showcaseVideos[index];
+
+    showcaseSwitcherBtns.forEach((showcaseSwitcherBtn, ariaAttrIndex) => {
+      showcaseSwitcherBtn.setAttribute(
+        'aria-selected',
+        ariaAttrIndex === index ? 'true' : 'false',
+      );
+    });
+
+    showcaseVideos.forEach((showcaseVideo, ariaAttrIndex) => {
+      showcaseVideo.setAttribute(
+        'aria-hidden',
+        ariaAttrIndex === index ? 'false' : 'true',
+      );
+    });
+
+    currentShowcaseVideo.pause();
+    currentShowcaseVideo.classList.remove('active');
+
+    nextShowcaseVideo.classList.add('active');
+    nextShowcaseVideo.currentTime = 0;
+
+    activeIndex = index;
+  };
+
+  showcaseSwitcherBtns.forEach((showcaseSwitcherButton, index) => {
+    showcaseSwitcherButton.addEventListener('click', () => {
+      setShowcaseActiveVideo(index);
+    });
+  });
+
+  // *** End of Switcher Buttons ***
 
   let isScrubbing = false;
 
   // *** Status - Play | Pause ***
   const showcaseVideoStatus = () => {
     // *** Version 01***
-    if (showcaseVideo?.paused) {
-      showcaseVideo.play();
+    if (showcaseVideos[activeIndex]?.paused) {
+      showcaseVideos[activeIndex].play();
     } else {
-      showcaseVideo?.pause();
+      showcaseVideos[activeIndex]?.pause();
     }
     // *** End of Version 01***
 
@@ -116,7 +159,7 @@ export default function showcase() {
   };
 
   const showcaseVideoIconStatus = () => {
-    if (showcaseVideo?.paused) {
+    if (showcaseVideos[activeIndex]?.paused) {
       showcaseButtonPlay!.innerHTML =
         '<i class="fa-solid fa-play fa-2x showcase__controls-icon showcase__controls-icon-play" aria-hidden="true"></i>';
       showcaseButtonPlay?.setAttribute('aria-label', 'Play');
@@ -132,12 +175,15 @@ export default function showcase() {
 
   // *** Time - ( Timestamp ) ***
   const showcaseVideoTime = () => {
-    if (!showcaseProgress || !showcaseVideo || !showcaseTime) return;
-    if (!showcaseVideo.duration) return;
+    if (!showcaseProgress || !showcaseVideos[activeIndex] || !showcaseTime)
+      return;
+    if (!showcaseVideos[activeIndex].duration) return;
     if (isScrubbing) return;
 
     const showcaseVideoProgress =
-      (showcaseVideo.currentTime / showcaseVideo.duration) * 100;
+      (showcaseVideos[activeIndex].currentTime /
+        showcaseVideos[activeIndex].duration) *
+      100;
 
     showcaseProgress.value = String(showcaseVideoProgress);
 
@@ -146,12 +192,16 @@ export default function showcase() {
       String(Math.round(showcaseVideoProgress)),
     );
 
-    let mins: string | number = Math.floor(showcaseVideo.currentTime / 60);
+    let mins: string | number = Math.floor(
+      showcaseVideos[activeIndex].currentTime / 60,
+    );
     if (mins < 10) {
       mins = '0' + String(mins);
     }
 
-    let secs: string | number = Math.floor(showcaseVideo.currentTime % 60);
+    let secs: string | number = Math.floor(
+      showcaseVideos[activeIndex].currentTime % 60,
+    );
     if (secs < 10) {
       secs = '0' + String(secs);
     }
@@ -163,26 +213,35 @@ export default function showcase() {
 
   // *** Reset | Restart ***
   const showcaseVideoReset = () => {
-    if (showcaseVideo) {
-      showcaseVideo.currentTime = 0;
-      showcaseVideo.pause();
+    if (showcaseVideos[activeIndex]) {
+      showcaseVideos[activeIndex].currentTime = 0;
+      showcaseVideos[activeIndex].pause();
     }
   };
   // *** End of Reset | Restart ***
 
   // *** Progress ***
   const showcaseVideoProgress = () => {
-    if (!showcaseVideo || !showcaseProgress || !showcaseVideo.duration) return;
-    showcaseVideo.currentTime =
-      (Number(showcaseProgress?.value) * showcaseVideo!.duration) / 100;
+    if (
+      !showcaseVideos[activeIndex] ||
+      !showcaseProgress ||
+      !showcaseVideos[activeIndex].duration
+    )
+      return;
+    showcaseVideos[activeIndex].currentTime =
+      (Number(showcaseProgress?.value) *
+        showcaseVideos[activeIndex]!.duration) /
+      100;
   };
   // *** End of Progress ***
 
   // *** Event Listeners ***
-  showcaseVideo?.addEventListener('click', showcaseVideoStatus);
-  showcaseVideo?.addEventListener('play', showcaseVideoIconStatus);
-  showcaseVideo?.addEventListener('pause', showcaseVideoIconStatus);
-  showcaseVideo?.addEventListener('timeupdate', showcaseVideoTime);
+  showcaseVideos.forEach(video => {
+    video.addEventListener('click', showcaseVideoStatus);
+    video.addEventListener('play', showcaseVideoIconStatus);
+    video.addEventListener('pause', showcaseVideoIconStatus);
+    video.addEventListener('timeupdate', showcaseVideoTime);
+  });
 
   showcaseButtonPlay?.addEventListener('click', showcaseVideoStatus);
   showcaseButtonReset?.addEventListener('click', showcaseVideoReset);
@@ -241,6 +300,17 @@ export default function showcase() {
     { once: true },
   );
 
+  const showcaseAutoSoundButton01 = () => {
+    if (!showcaseCSSArtButton01.classList.contains('active')) {
+      const activeDelay = 1000;
+
+      setTimeout(() => {
+        showcaseCSSArtButton01.classList.add('active');
+        showcaseCssArtVideo!.muted = false;
+      }, activeDelay);
+    }
+  };
+
   function triggerLightning() {
     const tl = gsap.timeline();
 
@@ -296,6 +366,7 @@ export default function showcase() {
       attr: { baseFrequency: '0.05 0.2' },
       onComplete: () => {
         showcaseCssArtVideo?.play();
+        showcaseAutoSoundButton01();
       },
     });
 
@@ -308,5 +379,15 @@ export default function showcase() {
       },
     });
   }
+  showcaseCssArtVideo?.addEventListener('ended', () => {
+    showcaseCSSArtButton01.classList.remove('active');
+    showcaseCssArtVideo!.muted = true;
+
+    gsap.to(showcaseCSSArtVideoOverlay, {
+      autoAlpha: 1,
+      duration: 0.5,
+    });
+  });
+
   // *** End of Old School TV ***
 }
