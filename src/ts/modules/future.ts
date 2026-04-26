@@ -46,12 +46,13 @@ export default function future() {
   // *** Version 01 ***
   if (futureBox) {
     gsap.to(futureBox, {
-      clipPath: 'circle(100% at 50% 50%)',
+      clipPath: 'circle(110% at 50% 50%)',
       duration: 1,
+      ease: 'none',
       scrollTrigger: {
         trigger: futureBox,
         start: 'top 60%',
-        end: 'bottom 60%',
+        end: 'bottom 80%',
         scrub: true,
       },
     });
