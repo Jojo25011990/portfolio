@@ -14,6 +14,7 @@ import showcase from './modules/showcase';
 import evolution from './modules/evolution';
 import activity from './modules/activity';
 import game from './modules/game';
+import milestones from './modules/milestones';
 // import intro from './modules/intro';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +31,7 @@ function init() {
   features();
   evolution();
   future();
+  milestones();
   faq();
   activity();
   game();
