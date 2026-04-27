@@ -67,7 +67,8 @@ p:not(
 }
 
 .projects__item-description,
-.services__item-description {
+.services__item-description,
+.milestones__item-description {
   @include flex-settings(null, null, $gap: 1.2rem);
 
   // *** Responsive Design ***
@@ -146,6 +147,12 @@ p:not(
   // *** End of Responsive Design ***
 }
 // *** End of FAQ - Accordion ***
+
+// *** Milestones ***
+.milestones__item-description {
+  @include dimension-settings(100%, 76rem);
+}
+// *** End of Milestones ***
 
 // *** Footer ***
 .footer__description {

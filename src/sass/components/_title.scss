@@ -177,27 +177,6 @@
     opacity: 1;
     transform: translate(0, 0);
     animation: span-animate-01 0.35s 1s forwards;
-
-    // *** Responsive Design ***
-    // @include responsive-settings(desktop-small) {
-    //   @keyframes span-animate-01 {
-    //     0% {
-    //       opacity: 1;
-    //       transform: translate(0, 0);
-    //     }
-
-    //     70% {
-    //       opacity: 1;
-    //     }
-
-    //     100% {
-    //       opacity: 0;
-
-    //       transform: translate(-304px, -50px);
-    //     }
-    //   }
-    // }
-    // *** End of Responsive Design ***
   }
   &.is-active span:nth-child(2) {
     opacity: 1;
@@ -237,3 +216,23 @@
 // *** End of Menu Heading ***
 
 // *** End of Skills ***
+
+// *** Milestones - h3 ***
+.milestones__item-heading {
+  @include font-settings(7.2rem, 700, 7.2rem, -0.25rem);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    @include font-settings(5.5rem, 700, 5.5rem, -0.25rem);
+  }
+
+  @include responsive-settings(tablet-small) {
+    @include font-settings(4.5rem, 700, 4.5rem, -0.25rem);
+  }
+
+  @include responsive-settings(mobile) {
+    @include font-settings(3.6rem, 700, 3.8rem, -0.25rem);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Milestones - h3 ***
