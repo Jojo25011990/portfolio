@@ -2478,7 +2478,8 @@
       <!-- End of Main -->
 
       <!-- Footer -->
-      <!-- dokoncit tu aria attr, modal atd -->
+      <!--   zvazit odstranit autocomplete , pripadne na video nechat ale potom odstranit a doriesit defaultne browser styly autocomplete ked sa autocompletne meno,email - aspon sa oto pokusit :D 
+          doplnit ako v headery pri lightboxe aj tu na envelope vsetky aria spravne attr  -->
       <footer class="footer">
         <section class="footer__contact" id="contact">
           <!-- Content -->
@@ -2504,10 +2505,6 @@
           <!-- End of Ring Image - Decoration -->
 
           <!-- Form -->
-          <!-- zvazit odstranit autocomplete , pripadne na video nechat ale potom odstranit a doriesit defaultne browser styly autocomplete ked sa autocompletne meno,email - aspon sa oto pokusit :D 
-          doplnit cez js na inputoch attr = aria-invlaid, true ked je fail a ked je success zmenit boolean na false  
-          doplnit ako v headery pri lightboxe aj tu na envelope vsetky aria spravne attr 
-          -->
           <form novalidate autocomplete="off" class="footer__form" id="form">
             <!-- Name -->
             <div class="footer__form-wrapper">
@@ -2518,8 +2515,11 @@
                 type="text"
                 id="name"
                 name="name"
-                placeholder="name"
+                placeholder="Your name"
                 class="footer__form-input"
+                aria-describedby="name-error"
+                aria-invalid="false"
+                required
               />
 
               <span
@@ -2530,17 +2530,35 @@
                 class="footer__form-message-line footer__form-message-line--error"
               ></span>
 
-              <p class="footer__form-message error-message" aria-live="polite">
-                <span class="footer__form-message-span" style="--i: 1"
+              <p
+                class="footer__form-message error-message"
+                aria-live="polite"
+                id="name-error"
+              >
+                <span class="sr-only">Please enter your name.</span>
+
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 1"
+                  aria-hidden="true"
                   >Please</span
                 >
-                <span class="footer__form-message-span" style="--i: 2"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 2"
+                  aria-hidden="true"
                   >enter</span
                 >
-                <span class="footer__form-message-span" style="--i: 3"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 3"
+                  aria-hidden="true"
                   >your</span
                 >
-                <span class="footer__form-message-span" style="--i: 4"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 4"
+                  aria-hidden="true"
                   >name.</span
                 >
               </p>
@@ -2556,8 +2574,11 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="email"
+                placeholder="Your email"
                 class="footer__form-input"
+                aria-describedby="email-error"
+                aria-invalid="false"
+                required
               />
 
               <span
@@ -2568,17 +2589,35 @@
                 class="footer__form-message-line footer__form-message-line--error"
               ></span>
 
-              <p class="footer__form-message error-message" aria-live="polite">
-                <span class="footer__form-message-span" style="--i: 1"
+              <p
+                class="footer__form-message error-message"
+                aria-live="polite"
+                id="email-error"
+              >
+                <span class="sr-only">Please check your email.</span>
+
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 1"
+                  aria-hidden="true"
                   >Please</span
                 >
-                <span class="footer__form-message-span" style="--i: 2"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 2"
+                  aria-hidden="true"
                   >check</span
                 >
-                <span class="footer__form-message-span" style="--i: 3"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 3"
+                  aria-hidden="true"
                   >your</span
                 >
-                <span class="footer__form-message-span" style="--i: 4"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 4"
+                  aria-hidden="true"
                   >email.</span
                 >
               </p>
@@ -2593,8 +2632,11 @@
               <textarea
                 id="message"
                 name="message"
-                placeholder="message"
+                placeholder="Your message"
                 class="footer__form-textarea"
+                aria-describedby="message-error"
+                aria-invalid="false"
+                required
               ></textarea>
 
               <span
@@ -2605,17 +2647,35 @@
                 class="footer__form-message-line footer__form-message-line--error footer__form-message-line--textarea"
               ></span>
 
-              <p class="footer__form-message error-message" aria-live="polite">
-                <span class="footer__form-message-span" style="--i: 1"
+              <p
+                class="footer__form-message footer__form-message--textarea error-message"
+                aria-live="polite"
+                id="message-error"
+              >
+                <span class="sr-only">Please check your message.</span>
+
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 1"
+                  aria-hidden="true"
                   >Please</span
                 >
-                <span class="footer__form-message-span" style="--i: 2"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 2"
+                  aria-hidden="true"
                   >check</span
                 >
-                <span class="footer__form-message-span" style="--i: 3"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 3"
+                  aria-hidden="true"
                   >your</span
                 >
-                <span class="footer__form-message-span" style="--i: 4"
+                <span
+                  class="footer__form-message-span"
+                  style="--i: 4"
+                  aria-hidden="true"
                   >message.</span
                 >
               </p>
@@ -2639,7 +2699,7 @@
         </section>
 
         <!-- Navigation -->
-        <nav class="footer__navigation" aria-label="Social Links">
+        <nav class="footer__navigation" aria-label="Social media Links">
           <span class="footer__navigation-line"></span>
 
           <a href="#top" class="footer__logo" aria-label="Back to top"

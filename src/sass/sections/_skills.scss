@@ -56,7 +56,7 @@
 
       background-color: $color-white;
 
-      animation: line 0.4s linear 2.75s forwards;
+      animation: line 0.4s linear 3.75s forwards;
 
       // *** Responsive Design ***
       @include responsive-settings(mobile) {

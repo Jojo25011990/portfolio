@@ -82,8 +82,6 @@ export default function footer() {
   );
   // *** End of Error Message && Error Lines | Success Lines***
 
-  formInputName?.value;
-
   if (form) {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -102,11 +100,15 @@ export default function footer() {
 
           setTimeout(() => {
             footerEnvelopeHeart?.classList.add('active');
+
+            if (formInputName && formInputEmail && formTextarea) {
+              formInputName.value = '';
+              formInputEmail.value = '';
+              formTextarea.value = '';
+            }
           }, 250);
         }, 1000);
       }
-
-      console.log(event);
     });
   }
 
@@ -120,8 +122,6 @@ export default function footer() {
       if (!oneInput) return;
       const inputElementValue = oneInput.value.trim().toLowerCase();
       // *** End of Guard - Prevented non-existent inputs ***
-
-      console.log(index, oneInput.id);
 
       // *** Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
 
@@ -159,10 +159,13 @@ export default function footer() {
         if (inputElementValue === '') {
           isInputValid = false;
           addErrorMessages(index);
+          oneInput.setAttribute('aria-invalid', 'true');
         } else {
           removeErrorMessages(index);
 
           addSuccesLines(index);
+
+          oneInput.setAttribute('aria-invalid', 'false');
 
           setTimeout(() => {
             removeSuccesLines(index);
@@ -181,10 +184,13 @@ export default function footer() {
         ) {
           isInputValid = false;
           addErrorMessages(index);
+          oneInput.setAttribute('aria-invalid', 'true');
         } else {
           removeErrorMessages(index);
 
           addSuccesLines(index);
+
+          oneInput.setAttribute('aria-invalid', 'false');
 
           setTimeout(() => {
             removeSuccesLines(index);
@@ -200,9 +206,12 @@ export default function footer() {
         if (inputElementValue === '') {
           isInputValid = false;
           addErrorMessages(index);
+          oneInput.setAttribute('aria-invalid', 'true');
         } else {
           removeErrorMessages(index);
           addSuccesLines(index);
+
+          oneInput.setAttribute('aria-invalid', 'false');
 
           setTimeout(() => {
             removeSuccesLines(index);

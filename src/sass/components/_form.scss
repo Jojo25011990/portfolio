@@ -69,10 +69,9 @@
 
     transition: border-color 0.3s;
 
-    resize: vertical;
+    resize: none;
 
-    max-height: 9rem;
-    @include dimension-settings(100%, 100%, 100%);
+    @include dimension-settings(100%, 100%, 9rem);
     @include font-settings(1.8rem, 700);
 
     &:focus {
@@ -89,6 +88,12 @@
     padding-left: 1rem;
 
     @include position-settings($position: relative);
+
+    &--textarea {
+      margin-top: 0;
+
+      @include position-settings(-0.4rem, $position: relative);
+    }
 
     &-span {
       display: inline-block;
