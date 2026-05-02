@@ -13,10 +13,16 @@
 
   user-select: none;
   -webkit-user-select: none;
-  -webkit-touch-callout: none;
 
   @include position-settings($position: relative);
   @include dimension-settings(100%, 25rem, 30rem);
+
+  @include responsive-settings(mobile) {
+    //   transform: translateX(30%) scale(0.6);
+    // transform: translateX(36%) scale(0.7);
+    transform: scale(0.6);
+  }
+
   //   mobile
   //   @include dimension-settings(100%, 15rem, 20rem);
   //   mobile
@@ -40,15 +46,45 @@
 
   &.active {
     transform: translateX(75%) scale(1.5);
-    // transform: translateX(50%) scale(1);
-    // transform: translateX(calc(100% / 2)) scale(2);
-    // transform: translateX(100%) scale(2);
-    // transform: translateX(-50%) scale(2);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      transform: translateX(60%) scale(1.25);
+    }
+    @include responsive-settings(tablet) {
+      transform: translateX(50%) scale(1);
+    }
+    @include responsive-settings(mobile-large) {
+      transform: translateX(42%) scale(0.8);
+    }
+
+    @include responsive-settings(mobile) {
+      //   transform: translateX(30%) scale(0.6);
+      transform: translateX(36%) scale(0.7);
+    }
+    // *** End of Responsive Design ***
   }
 
-  &.close {
-    transform: translateX(100%) scale(1);
+  transform: scale(1);
+
+  // *** Responsive Design ***
+  @include responsive-settings(desktop) {
+    // transform: translateX(60%) scale(1.25);
   }
+  @include responsive-settings(tablet) {
+    // transform: translateX(50%) scale(1);
+  }
+  @include responsive-settings(mobile-large) {
+    // transform: translateX(42%) scale(0.8);
+  }
+
+  @include responsive-settings(mobile) {
+    //   transform: translateX(30%) scale(0.6);
+    // transform: translateX(36%) scale(0.7);
+    transform: scale(0.7);
+    transform: scale(0.6);
+  }
+  // *** End of Responsive Design ***
 
   // *** Cover Front ***
   &-cover {

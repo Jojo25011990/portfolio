@@ -94,16 +94,26 @@ export default function myStoryOverlay() {
   // *** End of 3D Text | Material | Mesh | Gsap Anim ***
 
   // *** Animate | Loop ***
+  let rafId: number;
+
   animate();
   function animate() {
-    requestAnimationFrame(animate);
+    rafId = window.requestAnimationFrame(animate);
     renderer.render(scene, camera);
   }
 
   myOverlayButton?.addEventListener('click', () => {
     myOverlay?.classList.add('active');
 
-    // myStory();
+    setTimeout(() => {
+      if (myOverlay) myOverlay.style.display = 'none';
+
+      window.cancelAnimationFrame(rafId);
+      scene.clear();
+      renderer.dispose();
+    }, 1250);
+
+    myStory();
   });
   // End of *** Animate | Loop ***
 }

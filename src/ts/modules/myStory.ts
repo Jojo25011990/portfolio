@@ -121,7 +121,12 @@ export default function myStory() {
             myStoryWomanBubbles02.classList.remove('active');
             myStoryWoman?.classList.remove('active');
           }, '+=1.2')
-          .add(() => myStory?.classList.add('active'), '+=2')
+          .add(() => {
+            myStory?.classList.add('active');
+            setTimeout(() => {
+              if (myStory) myStory.style.display = 'none';
+            }, 1250);
+          }, '+=2')
           .add(() => startMyProcess(), '+=1.5');
       },
       { once: true },

@@ -15,9 +15,8 @@ import evolution from './modules/evolution';
 import activity from './modules/activity';
 import game from './modules/game';
 import milestones from './modules/milestones';
-// import intro from './modules/intro';
-
 import myStory from './modules/myStory';
+// import intro from './modules/intro';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -40,7 +39,7 @@ function init() {
   showcase();
   footer();
   backToTop();
-  //   myStoryOverlay();
+  myStoryOverlay();
   myProcess();
-  myStory();
+  //   myStory();
 }
