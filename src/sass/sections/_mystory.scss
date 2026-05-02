@@ -30,6 +30,7 @@
     @include position-settings(0, 0, $zIndex: 1);
     @include flex-settings;
     @include dimension-settings(100%, $height: 100%);
+    @include dimension-settings(100%);
   }
 
   // *** Dragon ***
@@ -48,13 +49,23 @@
     @include dimension-settings(100%, 60rem, 60rem);
 
     &.active {
-      //   animation: dragon-flight 8s ease-in forwards;
       animation: dragon-flight 9s ease-in forwards;
-      //   animation: dragon-flight 10s ease-in forwards;
 
       // *** Responsive Design ***
-      @include responsive-settings(mobile) {
-        animation: dragon-flight 13s ease-in forwards;
+      @include responsive-settings(desktop) {
+        animation: dragon-flight 10.5s ease-in forwards;
+      }
+      @include responsive-settings(tablet-large) {
+        animation: dragon-flight 12s ease-in forwards;
+
+        @include position-settings(5rem, $right: 0, $zIndex: 2);
+        @include dimension-settings(100%, 55rem, 55rem);
+      }
+      @include responsive-settings(tablet) {
+        animation: dragon-flight 12.5s ease-in forwards;
+
+        @include position-settings(10rem, $right: 0, $zIndex: 2);
+        @include dimension-settings(100%, 50rem, 50rem);
       }
       // *** End of Responsive Design ***
     }
@@ -63,20 +74,42 @@
 
   // *** Characters ****
   &__characters {
-    padding-block: 12rem;
-
     @include position-settings($position: relative, $zIndex: 5);
     @include dimension-settings(80vw);
     @include flex-settings($direction: column);
+
+    // *** Responsive Design ***
+    @include responsive-settings(desktop) {
+      @include position-settings($position: relative, $left: 5rem);
+    }
+
+    @include responsive-settings(tablet-large) {
+      @include position-settings($position: relative, $left: 0);
+      @include flex-settings($gap: 4rem);
+    }
+    // *** End of Responsive Design ***
   }
 
   &__character {
     @include position-settings($position: relative);
     @include flex-settings;
 
+    // ***  Responsive Design ***
+    @include responsive-settings(tablet-large) {
+      text-align: center;
+      @include flex-settings($direction: column);
+    }
+    // ***  End of Responsive Design ***
+
     &-img-box {
       @include position-settings($position: relative);
-      @include dimension-settings(100%, 260px);
+      @include dimension-settings(100%, 26rem);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet) {
+        @include dimension-settings(100%, 22rem);
+      }
+      // ***  End of Responsive Design ***
     }
 
     &-img {
@@ -122,11 +155,23 @@
 
     &-title-box {
       @include position-settings($left: 6.2rem, $bottom: 0.4rem);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet) {
+        @include position-settings($left: 5.2rem, $bottom: 0.4rem);
+      }
+      // ***  End of Responsive Design ***
     }
 
     &-title {
       text-transform: uppercase;
       @include font-settings(1.6rem, $weight: 700);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet) {
+        font-size: 14px !important;
+      }
+      // ***  End of Responsive Design ***
     }
 
     &-description-box {
@@ -134,14 +179,40 @@
       margin-left: -4rem;
 
       @include dimension-settings(100%, 65rem);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      @include responsive-settings(tablet) {
+        margin-left: -3.2rem;
+      }
+      // ***  End of Responsive Design ***
     }
 
     &-description {
       color: $grey-primary;
 
-      // margin-bottom: 6.6rem;
-
       @include font-settings(1.8rem, 500, 2.8rem, 0);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        font-size: 1.6rem;
+      }
+
+      @include responsive-settings(tablet) {
+        font-size: 1.4rem !important;
+        line-height: 2.4rem;
+      }
+
+      @include responsive-settings(mobile-large) {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+
+      // ***  End of Responsive Design ***
     }
 
     &-bubble-box {
@@ -153,16 +224,31 @@
 
       background-color: $color-white;
 
-      box-shadow: 0 0 0 0.2rem $grey-primary;
       box-shadow: 0 0 0 0.2rem $grey-secondary;
-
-      //   opacity: 0;
 
       transition: opacity 0.325s ease-in;
 
       @include position-settings(68%, -10.8rem, $zIndex: 999);
       @include dimension-settings(100%, 18rem, 5rem);
       @include flex-settings;
+
+      // ***  Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        @include position-settings(68%, -12rem, $zIndex: 999);
+      }
+
+      @include responsive-settings(mobile-large) {
+        padding-inline: 0;
+
+        @include position-settings($left: -9rem);
+        @include dimension-settings(100%, 15rem);
+      }
+
+      @include responsive-settings(mobile) {
+        @include position-settings($left: -6.8rem);
+        @include dimension-settings(100%, 13rem);
+      }
+      // ***  End of Responsive Design ***
 
       &::before {
         content: '';
@@ -181,6 +267,12 @@
       color: $grey-secondary;
 
       @include font-settings(1.4rem, 700);
+
+      // ***  Responsive Design ***
+      @include responsive-settings(mobile-large) {
+        font-size: 1.2rem !important;
+      }
+      // ***  End of Responsive Design ***
     }
 
     &-bubble-woman,
@@ -193,10 +285,6 @@
         opacity: 1;
       }
     }
-    // *** Character 01 - Women Anabel Leban ***
-    // *** End of Character 01 - Women Anabel Leban ***
-    // *** Character 02 - Man Diogo Alvago ***
-    // *** End of Character 02 - Man Diogo Alvago ***
   }
 
   // *** End of Characters ****

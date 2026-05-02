@@ -13,7 +13,8 @@
 .faq__description-sr-only,
 .activity__description-sr-only,
 .game__description-sr-only,
-.showcase__description-sr-only {
+.showcase__description-sr-only,
+.my-process__description-sr-only {
   @extend %sr-only;
 }
 // *** End of Sr Only ***
@@ -55,7 +56,8 @@ p:not(
 .faq__description,
 .activity__description,
 .game__description,
-.showcase__description {
+.showcase__description,
+.my-process__description {
   text-align: center;
   @include dimension-settings(100%, 76rem, 5.6rem);
 }

@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import myStory from './myStory';
 
 export default function myStoryOverlay() {
-  // --- Select elements ---
+  // *** Select Elements ***
   const myOverlay = document.querySelector<HTMLElement>('.my-overlay');
   const myOverlayButton = document.querySelector<HTMLButtonElement>(
     '.my-overlay__button',
@@ -14,43 +14,50 @@ export default function myStoryOverlay() {
   const canvas = document.querySelector<HTMLCanvasElement>(
     '.my-overlay__canvas',
   );
+  // *** End of Select Elements ***
 
-  // --- Scene & Camera ---
-  const width = myOverlay!.clientWidth;
-  const height = myOverlay!.clientHeight;
+  // *** Scene | Camera | Aspect Ratio ***
+  const aspectRatio = {
+    width: myOverlay!.clientWidth,
+    height: myOverlay!.clientHeight,
+  };
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color('#070707');
 
-  const camera = new THREE.PerspectiveCamera(70, width / height, 0.1, 100);
+  const camera = new THREE.PerspectiveCamera(
+    70,
+    aspectRatio.width / aspectRatio.height,
+    0.1,
+    100,
+  );
   camera.position.z = 13;
+  // *** End of Scene | Camera | Aspect Ratio ***
 
-  // --- Renderer ---
+  // *** Renderer | Lights ****
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas!,
     antialias: true,
   });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(aspectRatio.width, aspectRatio.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // --- Lights ---
   const ambientLight = new THREE.AmbientLight(0x4ee1a0, 0.1);
   const dirLight = new THREE.DirectionalLight(0xffffff, 1);
-  //   dirLight.position.set(10, 10, 10);
+
   dirLight.position.set(0, 10, 10);
-  //   ambientLight.position.set(50, 500, 30);
-  //   scene.add(dirLight);
-  //   scene.add(ambientLight);
   scene.add(ambientLight, dirLight);
+  // *** End of Renderer | Lights ****
 
-  // --- Responsive text size ---
+  // *** Responsive Design ***
   let textSize: number;
-  if (width >= 1200) textSize = 1.5;
-  else if (width >= 768) textSize = 1;
-  else if (width >= 500) textSize = 0.8;
+  if (aspectRatio.width >= 1200) textSize = 1.5;
+  else if (aspectRatio.width >= 768) textSize = 1;
+  else if (aspectRatio.width >= 500) textSize = 0.8;
   else textSize = 0.6;
+  // *** End of Responsive Design ***
 
-  // --- Load font + create 3D text ---
+  // *** 3D Text | Material | Mesh | Gsap Anim ***
   const loader = new FontLoader();
   loader.load('src/assets/fonts/Space Grotesk_Bold.json', font => {
     const textGeometry = new TextGeometry('ENTER THE JOURNEY', {
@@ -83,13 +90,11 @@ export default function myStoryOverlay() {
       duration: 1.5,
       ease: 'power2',
     });
-
-    // --- Back spot light ---
-
-    animate();
   });
+  // *** End of 3D Text | Material | Mesh | Gsap Anim ***
 
-  // --- Animate function ---
+  // *** Animate | Loop ***
+  animate();
   function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
@@ -98,6 +103,7 @@ export default function myStoryOverlay() {
   myOverlayButton?.addEventListener('click', () => {
     myOverlay?.classList.add('active');
 
-    myStory();
+    // myStory();
   });
+  // End of *** Animate | Loop ***
 }

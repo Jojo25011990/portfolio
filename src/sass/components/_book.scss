@@ -2,7 +2,7 @@
 @use '../base' as *;
 
 // *** CSS Art Book - Behind the scenes ***
-.my-bonus__book {
+.my-process__book {
   perspective: 100rem;
   transform-style: preserve-3d;
   //   overflow: hidden;
@@ -40,7 +40,7 @@
 
   &.active {
     transform: translateX(75%) scale(1.5);
-    transform: translateX(50%) scale(1);
+    // transform: translateX(50%) scale(1);
     // transform: translateX(calc(100% / 2)) scale(2);
     // transform: translateX(100%) scale(2);
     // transform: translateX(-50%) scale(2);

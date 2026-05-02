@@ -2226,7 +2226,7 @@
         <!-- End of Showcase -->
 
         <!-- My Experience - Overlay | Story | Behind the scene -->
-        <section class="my-experience" role="group">
+        <section class="my-experience">
           <!-- My Overlay -->
           <section class="my-overlay">
             <canvas class="my-overlay__canvas" aria-hidden="true"></canvas>
@@ -2251,7 +2251,7 @@
           <section class="my-story">
             <div class="my-story__container">
               <!-- Dragon -->
-              <div class="my-story__dragon"></div>
+              <div class="my-story__dragon" aria-hidden="true"></div>
               <audio
                 src="./src/assets/audio/dragon-roar.mp3"
                 class="my-story__dragon-roar"
@@ -2273,6 +2273,7 @@
                       src="./src/assets/images/rock.png"
                       alt="Cartoon rock"
                       class="my-story__character-img my-story__character-img-rock-woman"
+                      aria-hidden="true"
                     />
                     <figcaption class="my-story__character-title-box">
                       <h4 class="my-story__character-title">Anabel Leban</h4>
@@ -2280,6 +2281,7 @@
 
                     <div
                       class="my-story__character-bubble-box my-story__character-bubble-woman"
+                      aria-hidden="true"
                     >
                       <p class="my-story__character-bubble-message">
                         Shh, don't move!
@@ -2288,6 +2290,7 @@
 
                     <div
                       class="my-story__character-bubble-box my-story__character-bubble-woman"
+                      aria-hidden="true"
                     >
                       <p class="my-story__character-bubble-message">
                         Quiet, please!
@@ -2322,6 +2325,7 @@
                       src="./src/assets/images/rock.png"
                       alt="Cartoon rock"
                       class="my-story__character-img my-story__character-img-rock-man"
+                      aria-hidden="true"
                     />
                     <figcaption class="my-story__character-title-box">
                       <h4 class="my-story__character-title">Diogo Alvago</h4>
@@ -2329,6 +2333,7 @@
 
                     <div
                       class="my-story__character-bubble-box my-story__character-bubble-man"
+                      aria-hidden="true"
                     >
                       <p class="my-story__character-bubble-message">
                         Watch out, dragon!
@@ -2337,6 +2342,7 @@
 
                     <div
                       class="my-story__character-bubble-box my-story__character-bubble-man"
+                      aria-hidden="true"
                     >
                       <p class="my-story__character-bubble-message">
                         Phew, it's gone!
@@ -2359,42 +2365,84 @@
               </div>
               <!-- End of Characters -->
             </div>
+
+            <!-- Story - SR Only -->
+            <article class="my-story__sr-only">
+              <p class="my-story__sr-only-01">
+                The experience begins with an interactive prompt inviting the
+                user to enter the scene. The environment is designed as an
+                immersive narrative and is best experienced with sound enabled.
+              </p>
+
+              <p class="my-story__sr-only-02">
+                After entering, a dragon appears and interrupts the scene with a
+                sudden roar. The environment reacts to the impact, creating
+                tension and movement across the composition.
+              </p>
+
+              <p class="my-story__sr-only-03">
+                Two characters are introduced into the scene. They respond to
+                the threat by hiding and reacting to the dragon's presence,
+                communicating briefly through visual speech bubbles.
+              </p>
+
+              <p class="my-story__sr-only-04">
+                As the dragon disappears, the characters return to view and the
+                situation stabilizes. Their reaction shift from fear to relief,
+                continuing the narrative interaction between them.
+              </p>
+
+              <p class="my-story__sr-only-05">
+                As the dragon disappears, the characters return to view and the
+                situation stabilizes. Their reaction shift from fear to relief,
+                continuing the narrative interaction between them.
+              </p>
+
+              <p class="my-story__sr-only-06">
+                The experience concludes with a transition into a final state
+                where the story settles, revealing the underlying structure of
+                the scene and completing the interaction loop.
+              </p>
+            </article>
+            <!-- End of Story - SR Only -->
           </section>
           <!-- End of My Story -->
 
           <!-- My Behind the scene -->
-          <section class="my-bonus">
-            <div class="my-bonus__wrapper">
-              <h2 class="my-bonus__title" id="my-bonus-title">
+          <section class="my-process">
+            <div class="my-process__wrapper">
+              <h2 class="my-process__title" id="my-process-title">
                 Process
-                <span class="my-bonus__title-span" aria-hidden="true"
+                <span class="my-process__title-span" aria-hidden="true"
                   >Process</span
                 >
               </h2>
             </div>
 
-            <p class="my-bonus__description" aria-hidden="true"></p>
+            <p class="my-process__description" aria-hidden="true"></p>
 
             <!-- Sr - Only -->
-            <p class="my-bonus__description-sr-only">
+            <p class="my-process__description-sr-only">
               Check out the upcoming projects. I'm planning and what's next in
               line.
             </p>
             <!-- End of Sr - Only -->
 
-            <div class="my-bonus__container">
+            <div class="my-process__container">
               <!-- CSS Art book -->
-              <div class="my-bonus__book">
-                <div class="my-bonus__book-cover my-bonus__book-cover--back">
-                  <div class="my-bonus__book-cover-front">
+              <div class="my-process__book">
+                <div
+                  class="my-process__book-cover my-process__book-cover--back"
+                >
+                  <div class="my-process__book-cover-front">
                     <h3>The End</h3>
                     <h4>JK</h4>
                   </div>
 
-                  <div class="my-bonus__book-cover-back"></div>
+                  <div class="my-process__book-cover-back"></div>
                 </div>
-                <div class="my-bonus__book-page my-bonus__book-page--01">
-                  <div class="my-bonus__book-page-front">
+                <div class="my-process__book-page my-process__book-page--01">
+                  <div class="my-process__book-page-front">
                     <p>
                       <em>
                         Before the visuals, animations, and final experience,
@@ -2404,45 +2452,45 @@
                     </p>
                   </div>
 
-                  <div class="my-bonus__book-page-back">
+                  <div class="my-process__book-page-back">
                     <h3>STAGE 01</h3>
                   </div>
                 </div>
-                <div class="my-bonus__book-page my-bonus__book-page--02">
-                  <div class="my-bonus__book-page-front">
+                <div class="my-process__book-page my-process__book-page--02">
+                  <div class="my-process__book-page-front">
                     <img src="./src/assets/images/jojo.jpg" alt="" />
                   </div>
-                  <div class="my-bonus__book-page-back">
+                  <div class="my-process__book-page-back">
                     <h3>STAGE 02</h3>
                   </div>
                 </div>
-                <div class="my-bonus__book-page my-bonus__book-page--03">
-                  <div class="my-bonus__book-page-front">
+                <div class="my-process__book-page my-process__book-page--03">
+                  <div class="my-process__book-page-front">
                     <img
                       src="./src/assets/images/CSS Art Anime 02.jpg"
                       alt=""
                     />
                   </div>
-                  <div class="my-bonus__book-page-back">
+                  <div class="my-process__book-page-back">
                     <h3>STAGE 03</h3>
                   </div>
                 </div>
-                <div class="my-bonus__book-page my-bonus__book-page--04">
-                  <div class="my-bonus__book-page-front">
+                <div class="my-process__book-page my-process__book-page--04">
+                  <div class="my-process__book-page-front">
                     <img
                       src="./src/assets/images/landing page gallery.png"
                       alt=""
                     />
                   </div>
-                  <div class="my-bonus__book-page-back">
+                  <div class="my-process__book-page-back">
                     <h3>STAGE 04</h3>
                   </div>
                 </div>
-                <div class="my-bonus__book-page my-bonus__book-page--05">
-                  <div class="my-bonus__book-page-front">
+                <div class="my-process__book-page my-process__book-page--05">
+                  <div class="my-process__book-page-front">
                     <img src="./src/assets/images/CSS Art Gallery.png" alt="" />
                   </div>
-                  <div class="my-bonus__book-page-back">
+                  <div class="my-process__book-page-back">
                     <p>
                       <em>
                         What started as an idea became a story told through
@@ -2452,14 +2500,16 @@
                   </div>
                 </div>
 
-                <div class="my-bonus__book-cover my-bonus__book-cover--front">
-                  <div class="my-bonus__book-cover-front">
+                <div
+                  class="my-process__book-cover my-process__book-cover--front"
+                >
+                  <div class="my-process__book-cover-front">
                     <h3>Behind the scene</h3>
                     <h4>My Story</h4>
                     <h4>JK</h4>
                   </div>
 
-                  <div class="my-bonus__book-cover-back"></div>
+                  <div class="my-process__book-cover-back"></div>
                 </div>
               </div>
               <!-- End of CSS Art book -->

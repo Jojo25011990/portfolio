@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { startMyProcess } from './myProcess';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,7 +70,7 @@ export default function myStory() {
     .add(() => {
       myStoryManBubbles01.classList.add('active');
       myStoryMan?.classList.add('active');
-    }, '+=0.4')
+    }, '+=0.1')
     .add(() => {
       myStoryManBubbles01.classList.remove('active');
       myStoryMan?.classList.remove('active');
@@ -103,7 +104,7 @@ export default function myStory() {
           .add(() => {
             myStoryMan?.classList.remove('hide');
             myStoryWoman?.classList.remove('hide');
-          }, '+=0.5')
+          }, '+=0.3')
           .add(() => {
             myStoryManBubbles02.classList.add('active');
             myStoryMan?.classList.add('active');
@@ -120,9 +121,12 @@ export default function myStory() {
             myStoryWomanBubbles02.classList.remove('active');
             myStoryWoman?.classList.remove('active');
           }, '+=1.2')
-          .add(() => myStory?.classList.add('active'), '+=5');
+          .add(() => myStory?.classList.add('active'), '+=2')
+          .add(() => startMyProcess(), '+=1.5');
       },
       { once: true },
     );
   });
+
+  return dragonTimeline;
 }

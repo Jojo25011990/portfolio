@@ -9,13 +9,15 @@ import backToTop from './modules/backToTop';
 import myStoryOverlay from './modules/myStoryOverlay';
 import faq from './modules/faq';
 import future from './modules/future';
-import myBonus from './modules/myBonus';
+import myProcess from './modules/myProcess';
 import showcase from './modules/showcase';
 import evolution from './modules/evolution';
 import activity from './modules/activity';
 import game from './modules/game';
 import milestones from './modules/milestones';
 // import intro from './modules/intro';
+
+import myStory from './modules/myStory';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
@@ -38,6 +40,7 @@ function init() {
   showcase();
   footer();
   backToTop();
-  myStoryOverlay();
-  myBonus();
+  //   myStoryOverlay();
+  myProcess();
+  myStory();
 }

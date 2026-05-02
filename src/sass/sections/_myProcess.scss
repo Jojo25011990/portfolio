@@ -2,8 +2,8 @@
 @use '../base' as *;
 @use './projects' as *;
 
-// *** My Bonus ***
-.my-bonus {
+// *** My Process ***
+.my-process {
   margin-top: 0;
   transition: transform 1s;
   @include dimension-settings(100%, $height: 100%);
@@ -24,8 +24,7 @@
     // @include dimension-settings(100%, 110rem, 70rem);
     @include dimension-settings(100%, 110rem, 50rem);
     @include flex-settings;
-    border: 1px solid white;
   }
   // *** End of Container ***
 }
-// *** End of My Bonus ***
+// *** End of My Process ***
