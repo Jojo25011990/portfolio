@@ -14,7 +14,7 @@
     @include dimension-settings(100%);
 
     &--textarea {
-      max-height: 100px;
+      max-height: 10rem;
       @include dimension-settings(100%, $height: 100%);
     }
 

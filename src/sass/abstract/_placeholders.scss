@@ -84,7 +84,7 @@
   @include position-settings($position: relative, $zIndex: 50);
 
   // *** Responsive Design ***
-  @include responsive-settings(mobile) {
+  @include responsive-settings(mobile-large) {
     padding: 1.3rem 2.5rem;
 
     @include font-settings(1.8rem, 700, null, 0.1rem);

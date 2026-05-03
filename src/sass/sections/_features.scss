@@ -47,6 +47,12 @@
       @include dimension-settings(100%, 48rem);
       @include flex-settings(null, center, $gap: 1rem);
 
+      // *** Responsive ***
+      @include responsive-settings(mobile-small) {
+        padding: 1.8rem;
+      }
+      // *** End of Responsive ***
+
       &:hover {
         transform: scale(1.05);
 
@@ -55,12 +61,8 @@
           transform: scale(1.03);
         }
 
-        @include responsive-settings(mobile) {
-          transform: none !important;
-        }
-
-        @include responsive-settings(mobile-small) {
-          padding: 1.8rem !important;
+        @include responsive-settings(mobile-large) {
+          transform: none;
         }
         // *** End of Responsive Design ***
       }

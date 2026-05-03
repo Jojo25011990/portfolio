@@ -1,0 +1,45 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** Lightbox ***
+.header__lightbox {
+  background-color: rgba($color: $color-black, $alpha: 0.8);
+
+  padding: 1rem;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(0.8rem);
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  @include position-settings(0, 0, $zIndex: -1, $position: fixed);
+  @include dimension-settings(100%, $height: 100%);
+  @include flex-settings(center, center, column, 1.5rem);
+
+  &.show,
+  &.hidden {
+    transition: opacity 0.25s linear;
+  }
+
+  &.show {
+    opacity: 1;
+    @include position-settings($position: fixed, $zIndex: 999);
+  }
+
+  &-author {
+    border: 0.5rem solid $color-white;
+
+    max-height: 80vh;
+    @include dimension-settings($height: auto);
+  }
+
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-large) {
+    display: none;
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Lightbox ***

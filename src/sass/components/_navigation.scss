@@ -37,8 +37,7 @@
 
   // *** Responsive Design ***
   @include responsive-settings(mobile) {
-    min-height: 8rem;
-    @include dimension-settings($height: 100%);
+    @include dimension-settings($height: 100%, $min-height: 8rem);
     @include flex-settings(center, center, column);
   }
   // *** End of Responsive Design ***

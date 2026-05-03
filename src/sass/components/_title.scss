@@ -86,35 +86,6 @@
 }
 // *** End of Sr Only ***
 
-// *** Fun Facts Title ***
-.features__fun-facts-title {
-  color: $success-primary;
-
-  text-transform: uppercase;
-  @include font-settings(2rem);
-}
-// *** End of Fun Facts Title ***
-
-// *** Faq - h4 ***
-.faq__item-question {
-  // *** Responsive Design ***
-  @include responsive-settings(mobile) {
-    @include font-settings(1.5rem);
-  }
-  // *** End of Responsive Design ***
-}
-// *** End of Faq - h4 ***
-
-// *** Footer - H2 ***
-.footer__title {
-  // *** Responsive Design ***
-  @include responsive-settings(tablet-large) {
-    text-align: center;
-  }
-  // *** End of Responsive Design ***
-}
-// *** End of Footer - H2 ***
-
 // *** Header - H1 ***
 .header__title {
   margin-bottom: 4.6rem;
@@ -223,6 +194,15 @@
 
 // *** End of Skills ***
 
+// *** Fun Facts Title ***
+.features__fun-facts-title {
+  color: $success-primary;
+
+  text-transform: uppercase;
+  @include font-settings(2rem);
+}
+// *** End of Fun Facts Title ***
+
 // *** Evolution - h3 ***
 .evolution__phase-heading {
   margin-top: 0;
@@ -237,6 +217,10 @@
 
 // *** Mobile ***
 .evolution__phase-mobile-heading {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-3rem);
+
   // *** Responsive Design ***
   @include responsive-settings(tablet) {
     @include font-settings(3.6rem, 700, 5.6rem, -0.15rem);
@@ -288,3 +272,64 @@
   // *** End of Responsive Design ***
 }
 // *** End of Milestones - h3 ***
+
+// *** Faq - h4 ***
+.faq__item-question {
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    @include font-settings(1.5rem);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Faq - h4 ***
+
+// *** My Story ***
+.my-story__character-title {
+  text-transform: uppercase;
+  @include font-settings(1.6rem, $weight: 700);
+
+  // ***  Responsive Design ***
+  @include responsive-settings(tablet) {
+    font-size: 14px !important;
+  }
+  // ***  End of Responsive Design ***
+}
+// *** End of My Story ***
+
+// *** Footer - H2 ***
+.footer__title {
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    text-align: center;
+  }
+  // *** End of Responsive Design ***
+}
+
+// *** Envelope - Letter ***
+.footer__envelope-letter-title {
+  margin-bottom: 0.4rem;
+  @include font-settings(1.6rem, 400, 2rem);
+}
+
+.footer__envelope-letter-nickname {
+  color: $dark-primary;
+
+  display: inline-block;
+  margin-top: 0.4rem;
+
+  @include position-settings($position: relative);
+  @include font-settings(1.4rem, 900, $line-height: 2rem);
+
+  &::before {
+    content: '';
+    transform: scaleX(1);
+
+    background-color: $success-primary;
+
+    @include position-settings($left: 0, $bottom: 0);
+    @include dimension-settings(100%, $height: 0.2rem);
+  }
+}
+// *** End of Envelope - Letter ***
+
+// *** End of Footer - H2 ***

@@ -26,13 +26,14 @@
     &-01 {
       background-color: rgba($color-white, $alpha: 0.7);
 
-      min-height: 69rem;
+      @include dimension-settings($min-height: 69rem);
     }
     // *** End of Old School TV ***
 
     // *** Overlay ***
     &-overlay {
       text-align: center;
+
       background-color: $color-black;
 
       @include dimension-settings(100%, $height: 100%);
@@ -49,6 +50,8 @@
 
   // *** Video Wrapper ***
   &__wrapper-video {
+    aspect-ratio: 16 / 9;
+
     background-color: $dark-tertiary;
 
     border: 5rem solid $dark-tertiary;
@@ -57,8 +60,6 @@
 
     @include dimension-settings(100%);
     @include position-settings($position: relative);
-
-    aspect-ratio: 16 / 9;
 
     // *** Responsive Design ***
     @include responsive-settings(tablet) {
@@ -115,13 +116,6 @@
     }
     // *** End of Responsive Design ***
 
-    &-btn {
-      cursor: pointer;
-
-      @include dimension-settings(3.6rem, $height: 3.9rem);
-      @include flex-settings;
-    }
-
     &-icon {
       color: $color-white;
 
@@ -132,10 +126,6 @@
       // *** Responsive Design ***
       @include responsive-settings(mobile) {
         @include font-settings(2.6rem);
-      }
-
-      @include responsive-settings(mobile) {
-        // @include font-settings(2rem);
       }
       // *** End of Responsive Design ***
     }

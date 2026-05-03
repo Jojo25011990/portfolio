@@ -15,10 +15,6 @@
 
   // *** Menu | Item ***
   &__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
     padding: 4rem;
 
     border-radius: 0.5rem;
@@ -28,6 +24,7 @@
     transition: all 0.3s ease-out;
 
     @include dimension-settings(100%, 70rem);
+    @include flex-settings(null, null, column, 2rem);
 
     // *** Responsive Design ***
     @include responsive-settings(tablet-small) {
@@ -64,7 +61,6 @@
     }
 
     // *** Responsive Design ***
-
     @include responsive-settings(mobile-small) {
       padding: 2rem;
     }

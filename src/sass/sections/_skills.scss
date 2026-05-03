@@ -19,7 +19,7 @@
     padding-top: 7.2rem;
 
     @include dimension-settings(100%, 110rem);
-    position: relative;
+    @include position-settings($position: relative);
 
     // *** Responsive Design ***
     @include responsive-settings(desktop-small) {
@@ -45,18 +45,15 @@
 
     &::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
       transform: scaleX(0);
       transform-origin: left;
-
-      width: 100%;
-      height: 0.1rem;
 
       background-color: $color-white;
 
       animation: line 0.4s linear 3.75s forwards;
+
+      @include position-settings(0, 0);
+      @include dimension-settings(100%, $height: 0.1rem);
 
       // *** Responsive Design ***
       @include responsive-settings(mobile) {

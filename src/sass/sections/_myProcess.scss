@@ -6,12 +6,15 @@
 .my-process {
   margin-top: 0;
   transition: transform 1s;
+
   @include dimension-settings(100%, $height: 100%);
   @include flex-settings(start, center, column, 8rem);
 
-  //   @extend .projects;
-
-  //   background-color: $color-black;
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-small) {
+    @include flex-settings(center, center, column, 6rem);
+  }
+  // *** End of Responsive Design ***
 
   // *** Wrapper ***
   &__wrapper {
@@ -27,7 +30,6 @@
 
   // *** Container ***
   &__container {
-    // @include dimension-settings(100%, 110rem, 70rem);
     @include dimension-settings(100%, 110rem, 50rem);
     @include flex-settings;
   }

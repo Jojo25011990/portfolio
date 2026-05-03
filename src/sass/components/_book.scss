@@ -14,9 +14,11 @@
   @include position-settings($position: relative);
   @include dimension-settings(100%, 25rem, 30rem);
 
+  // *** Responsive Design ***
   @include responsive-settings(mobile) {
     transform: scale(0.7);
   }
+  // *** End of Responsive Design ***
 
   img {
     pointer-events: none;

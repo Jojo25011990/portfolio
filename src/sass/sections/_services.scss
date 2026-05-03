@@ -22,7 +22,6 @@
 
   &__item {
     //  *** Box ***
-
     &-box {
       transform: scale(1);
 
@@ -42,16 +41,14 @@
       @include flex-settings(center, center, column, 2rem);
 
       &:hover {
-        //destop
         transform: scale(1.05);
-        // tablet a dole asi
 
         // *** Responsive Design ***
         @include responsive-settings(tablet-small) {
           transform: scale(1.03);
         }
 
-        @include responsive-settings(mobile) {
+        @include responsive-settings(mobile-large) {
           transform: none;
         }
         // *** End of Responsive Design ***
@@ -71,7 +68,7 @@
 
       box-shadow: 0.2rem 0.4rem 0.1rem $body-bg-color;
 
-      @include font-settings(40px);
+      @include font-settings(4rem);
       @include flex-settings;
       @include dimension-settings(8.5rem, $height: 8.5rem);
 
