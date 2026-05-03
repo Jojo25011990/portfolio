@@ -114,6 +114,10 @@
     @include responsive-settings(mobile) {
       padding: 2rem 3rem;
     }
+
+    @include responsive-settings(mobile-small) {
+      padding: 1rem 3rem;
+    }
     // *** End of Responsive Design ***
 
     &-icon {
@@ -126,6 +130,9 @@
       // *** Responsive Design ***
       @include responsive-settings(mobile) {
         @include font-settings(2.6rem);
+      }
+      @include responsive-settings(mobile-small) {
+        @include font-settings(2rem);
       }
       // *** End of Responsive Design ***
     }
