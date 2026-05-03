@@ -59,7 +59,7 @@ export default function myStoryOverlay() {
 
   // *** 3D Text | Material | Mesh | Gsap Anim ***
   const loader = new FontLoader();
-  loader.load('/portfolio/src/assets/fonts/Space Grotesk_Bold.json', font => {
+  loader.load('./src/assets/fonts/Space Grotesk_Bold.json', font => {
     const textGeometry = new TextGeometry('ENTER THE JOURNEY', {
       font,
       size: textSize,
