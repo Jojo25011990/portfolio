@@ -16,14 +16,14 @@ import evolution from './modules/evolution';
 // import game from './modules/game';
 import milestones from './modules/milestones';
 // import myStory from './modules/myStory';
-import intro from './modules/intro';
+// import intro from './modules/intro';
 
 document.addEventListener('DOMContentLoaded', () => {
   init();
 });
 
 function init() {
-  intro();
+  //   intro();
   header();
   lightbox();
   skillsHeading();
