@@ -14,6 +14,8 @@
 
   // *** Contact ***
   &__contact {
+    margin-top: 0;
+
     @include dimension-settings(100%, 110rem, null, 32.7rem);
     @include flex-settings(space-between, null, $gap: 4rem);
     @include position-settings($position: relative);

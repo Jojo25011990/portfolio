@@ -31,8 +31,6 @@
 // *** Footer ***
 .footer__navigation {
   padding-top: 4.7rem;
-  // nezabudni zmenit a z animovat ako projects line
-  //   border-top: 0.1rem solid white;
 
   @include dimension-settings(100%, 110rem, 8rem);
   @include position-settings($position: relative);

@@ -60,22 +60,9 @@
 
   // *** Phase 01 | 02 | 03 ***
   &__phase {
-    // @include dimension-settings(100%, 30rem);
+    @include position-settings($position: relative);
     @include dimension-settings(100%, 60rem);
     @include flex-settings(center, center, column, 4rem);
-    position: relative;
-
-    &-heading {
-      margin-top: 0;
-      font-size: 40px;
-      position: relative;
-
-      left: -14.5rem;
-      z-index: 15;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-3rem);
-    }
 
     &-sentence {
       margin-bottom: 0.5rem;
@@ -87,10 +74,6 @@
     }
 
     &-wrapper {
-      //   transform: translateX(-50%);
-      //   transition: transform 0.35s ease-out;
-
-      //   @include dimension-settings(100%, 30rem);
       @include dimension-settings(100%);
     }
   }
@@ -100,6 +83,7 @@
   // *** Mobile Version ***
   &__timeline-mobile {
     display: none;
+
     @include dimension-settings(100%, 85rem);
 
     &::before {
@@ -121,6 +105,12 @@
     @include dimension-settings(100%, 40rem);
     @include flex-settings(center, center, column, 4rem);
     @include position-settings($position: relative);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-small) {
+      @include flex-settings(center, center, column, 2rem);
+    }
+    // *** End of Responsive Design ***
 
     // *** Line Progress ***
     &-line {
@@ -150,11 +140,6 @@
       }
     }
     // *** End of Line Progress ***
-
-    &-heading {
-      margin-top: 0;
-      font-size: 40px;
-    }
 
     &-sentence {
       margin-bottom: 0.5rem;

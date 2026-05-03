@@ -58,6 +58,10 @@
         @include responsive-settings(mobile) {
           transform: none;
         }
+
+        @include responsive-settings(mobile-small) {
+          padding: 2rem;
+        }
         // *** End of Responsive Design ***
       }
     }

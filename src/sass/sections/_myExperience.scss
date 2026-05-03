@@ -3,12 +3,8 @@
 
 // *** My Experience ***
 .my-experience {
-  //   margin-top: 14rem;
-
   overflow: hidden;
 
-  //   height: 90vh;
-  //   @include dimension-settings(100%);
   @include dimension-settings(100%, $height: 100vh);
   @include position-settings($position: relative);
   @include flex-settings;

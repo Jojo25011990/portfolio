@@ -16,6 +16,12 @@
   // *** Wrapper ***
   &__wrapper {
     @extend .projects__wrapper;
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet-large) {
+      @include flex-settings(center);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Wrapper ***
 

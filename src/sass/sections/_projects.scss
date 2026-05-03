@@ -7,10 +7,16 @@
   @include dimension-settings(100%);
   @include flex-settings(center, center, column, 8rem);
 
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-small) {
+    @include flex-settings(center, center, column, 6rem);
+  }
+  // *** End of Responsive Design ***
+
   // *** Wrapper ***
   &__wrapper {
     @include dimension-settings(100%, 110rem);
-    @include flex-settings(space-between, null, $gap: 4rem);
+    @include flex-settings(space-between, null, $gap: 3rem);
   }
   // *** End of Wrapper ***
 

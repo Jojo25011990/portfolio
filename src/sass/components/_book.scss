@@ -5,11 +5,8 @@
 .my-process__book {
   perspective: 100rem;
   transform-style: preserve-3d;
-  //   overflow: hidden;
 
-  //   filter: drop-shadow(0 0 0.1rem $success-primary);
   transition: transform 1s;
-  //   transform: scale(2);
 
   user-select: none;
   -webkit-user-select: none;
@@ -18,17 +15,9 @@
   @include dimension-settings(100%, 25rem, 30rem);
 
   @include responsive-settings(mobile) {
-    //   transform: translateX(30%) scale(0.6);
-    // transform: translateX(36%) scale(0.7);
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
 
-  //   mobile
-  //   @include dimension-settings(100%, 15rem, 20rem);
-  //   mobile
-
-  //   left: 50%;
-  //   transform: translateX(-50%);
   img {
     pointer-events: none;
     -webkit-user-drag: none;
@@ -79,9 +68,6 @@
   }
 
   @include responsive-settings(mobile) {
-    //   transform: translateX(30%) scale(0.6);
-    // transform: translateX(36%) scale(0.7);
-    transform: scale(0.7);
     transform: scale(0.6);
   }
   // *** End of Responsive Design ***

@@ -28,7 +28,6 @@ export default function preloader() {
     if (state.domReady) progress += 25;
     if (state.fontsReady) progress += 15;
 
-    // images = hlavná váha (60%)
     progress += Math.min(60, imgProgress * 0.6);
 
     const finalProgress = Math.round(progress);

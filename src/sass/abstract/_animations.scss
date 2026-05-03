@@ -8,6 +8,14 @@
 }
 // *** End of General ***
 
+// *** Intro ***
+@keyframes intro {
+  to {
+    transform: translateY(-100%);
+  }
+}
+// *** End of Intro ***
+
 // *** Header ***
 @keyframes author-animate {
   to {

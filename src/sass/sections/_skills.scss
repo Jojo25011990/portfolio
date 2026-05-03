@@ -83,6 +83,12 @@
   // *** Img - Ring ***
   &__ring {
     @include position-settings($bottom: -6rem, $right: -24.4rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-small) {
+      @include position-settings($bottom: -5rem, $right: -24.4rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Img - Ring ***
 }

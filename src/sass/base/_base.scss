@@ -74,26 +74,3 @@ section {
   // *** End of Responsive Design ***
 }
 // *** End of Main | Section ***
-
-// *** Intro ***
-.intro {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-color: $color-black;
-  @include flex-settings;
-
-  animation: intro 0.5s linear forwards;
-  animation-delay: 1.5s;
-
-  display: none;
-}
-
-@keyframes intro {
-  to {
-    transform: translateY(-100%);
-  }
-}
-// *** End of Intro ***

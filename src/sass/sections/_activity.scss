@@ -6,6 +6,8 @@
 .activity {
   @extend .projects;
 
+  display: none;
+
   // *** Wrapper ***
   &__wrapper {
     @extend .projects__wrapper;
