@@ -83,7 +83,6 @@ section {
   inset: 0;
   z-index: 9999;
   background-color: $color-black;
-  //   background-color: white;
   @include flex-settings;
 
   animation: intro 0.5s linear forwards;
