@@ -37,7 +37,7 @@
   }
 
   // *** Responsive Design ***
-  @include responsive-settings(mobile-large) {
+  @include responsive-settings(tablet) {
     display: none;
   }
   // *** End of Responsive Design ***

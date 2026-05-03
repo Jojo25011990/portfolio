@@ -73,7 +73,7 @@
 
       transform: translate(-50%, -75%);
 
-      @include position-settings(75%, 50%);
+      @include position-settings(85%, 50%);
     }
 
     &.active {
