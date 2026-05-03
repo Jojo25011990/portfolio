@@ -1,0 +1,16 @@
+@use '../abstract' as *;
+
+// *** Intro ***
+.intro {
+  background-color: $color-black;
+
+  animation: intro 0.5s linear forwards;
+  animation-delay: 1.25s;
+
+  @include flex-settings;
+  @include position-settings(0, 0, 0, 0, 999, fixed);
+  @include dimension-settings(100vw, $height: 100vh);
+
+  display: none;
+}
+// *** End of Intro ***

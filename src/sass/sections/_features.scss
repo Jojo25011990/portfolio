@@ -56,11 +56,11 @@
         }
 
         @include responsive-settings(mobile) {
-          transform: none;
+          transform: none !important;
         }
 
         @include responsive-settings(mobile-small) {
-          padding: 2rem;
+          padding: 1.8rem !important;
         }
         // *** End of Responsive Design ***
       }
