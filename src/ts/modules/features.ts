@@ -146,17 +146,21 @@ export default function features() {
   // *** Focus Modal Trap ***
   const focusFunFactsModalTrap = (event: KeyboardEvent) => {
     if (event.key !== 'Tab') return;
+
     const focusableElements = Array.from(
       featuresFunFacts?.querySelectorAll<HTMLElement>(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       ) ?? [],
     );
+
     if (!focusableElements.length) return;
+
     const firstElement = focusableElements[0];
     const lastElement = focusableElements[focusableElements.length - 1];
     const currentIndex = focusableElements.indexOf(
       document.activeElement as HTMLElement,
     );
+
     if (event.shiftKey) {
       if (currentIndex <= 0) {
         event.preventDefault();

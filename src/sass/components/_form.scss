@@ -80,43 +80,6 @@
   }
   // *** End of Textarea ***
 
-  // *** Error Message ***
-  &-message {
-    color: $danger-primary;
-
-    margin-top: 0.4rem;
-    padding-left: 1rem;
-
-    @include position-settings($position: relative);
-
-    &--textarea {
-      margin-top: 0;
-
-      @include position-settings(-0.4rem, $position: relative);
-    }
-
-    &-span {
-      display: inline-block;
-
-      opacity: 0;
-
-      transform: translate(-200px, -50px) rotate(-180deg) scale(3);
-
-      transition:
-        transform 0.3s,
-        opacity 0.3s;
-      transition-delay: calc(0.06s * var(--i));
-
-      @include position-settings($position: relative);
-      @include font-settings(1.2rem);
-    }
-    &.active .footer__form-message-span {
-      transform: translate(0) rotate(0) scale(1);
-      opacity: 1;
-    }
-  }
-  // *** End of Error Message ***
-
   // *** Error Message Line ***
   &-message-line {
     display: inline-block;

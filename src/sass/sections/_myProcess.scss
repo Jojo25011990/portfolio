@@ -5,6 +5,7 @@
 // *** My Process ***
 .my-process {
   margin-top: 0;
+
   transition: transform 1s;
 
   @include dimension-settings(100%, $height: 100%);

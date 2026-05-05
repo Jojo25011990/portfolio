@@ -387,25 +387,6 @@
     transform: translateX(-280%);
   }
 }
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(-0.4rem);
-  }
-
-  25% {
-    transform: translateX(0.4rem);
-  }
-
-  50% {
-    transform: translateX(-0.4rem);
-  }
-
-  75% {
-    transform: translateX(0.4rem);
-  }
-}
 // *** End of My Story ***
 
 // *** Footer ***

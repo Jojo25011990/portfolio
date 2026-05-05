@@ -99,6 +99,7 @@
   // *** Phase 01 | 02 | 03 ***
   &__phase-mobile {
     padding-bottom: 4rem;
+
     text-align: center;
 
     @include dimension-settings(100%, 40rem);
@@ -139,20 +140,6 @@
       }
     }
     // *** End of Line Progress ***
-
-    &-sentence {
-      margin-bottom: 0.5rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    &-sentence {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-3rem);
-    }
 
     &-wrapper {
       @include dimension-settings(100%);

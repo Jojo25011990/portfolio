@@ -3,6 +3,8 @@
 
 // *** My Story ***
 .my-story {
+  overflow: hidden; // otestovat pri respon-e
+
   margin-top: 0;
 
   transition: transform 1s;
@@ -19,14 +21,18 @@
 
   // *** Container ***
   &__container {
-    will-change: transform;
+    overflow: hidden; // otestovat pri respon-e
+
     backface-visibility: hidden;
+
     transform: translateZ(0);
 
     background:
       linear-gradient(#151515d2, $dark-primary),
       url('../../assets/images/my\ story\ bg.jpg') no-repeat;
     background-size: cover;
+
+    will-change: transform;
 
     @include position-settings(0, 0, $zIndex: 1);
     @include flex-settings($direction: column, $gap: 4rem);
@@ -36,7 +42,8 @@
 
   // *** Dragon ***
   &__dragon {
-    will-change: transform;
+    transform: translateX(100%);
+
     backface-visibility: hidden;
 
     background: {
@@ -47,7 +54,7 @@
 
     filter: drop-shadow(0 0 0.2rem $color-black);
 
-    transform: translateX(100%);
+    will-change: transform;
 
     @include position-settings(0, $right: 0, $zIndex: 2);
     @include dimension-settings(100%, 60rem, 60rem);
@@ -118,6 +125,7 @@
 
     &-img {
       object-fit: cover;
+
       transition:
         transform 0.3s linear,
         opacity 0.3s linear;
@@ -263,7 +271,7 @@
 
       // ***  Responsive Design ***
       @include responsive-settings(mobile-large) {
-        font-size: 1.2rem !important;
+        @include font-settings(1.2rem);
       }
       // ***  End of Responsive Design ***
     }

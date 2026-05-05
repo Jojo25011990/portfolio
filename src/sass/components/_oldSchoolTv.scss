@@ -11,16 +11,16 @@
 
 // *** Lightning Spark ***
 .showcase__lightning {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: -68px;
-  left: -14px;
-  z-index: 50;
   transform: rotate(15deg);
 
+  @include dimension-settings(100%, $height: 100%);
+  @include position-settings(-6.8rem, -1.4rem, $zIndex: 50);
+
   & path {
+    opacity: 0;
+
     fill: none;
+
     stroke: $blue-secondary;
     stroke-width: 2.5;
     stroke-linecap: round;
@@ -37,8 +37,6 @@
 
     stroke-dasharray: 300;
     stroke-dashoffset: 300;
-
-    opacity: 0;
   }
 }
 // *** End of Lightning Spark ***
@@ -116,9 +114,8 @@
   background-color: $success-tertiary;
 
   @include dimension-settings(100%, 48rem, 32rem);
-  @include position-settings(52%, 50%, $zIndex: 5);
+  @include position-settings(52%, 50%, $zIndex: 100);
   @include flex-settings;
-  z-index: 100;
 
   // *** Inner ***
   &-inner {
@@ -148,27 +145,22 @@
 
       // *** Overlay *** //
       &-overlay {
-        padding: 2rem;
-        z-index: 999;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 85%;
-        height: 82%;
-        overflow: hidden;
         transform: translate(-50%, -50%);
+
+        padding: 2rem;
+
+        overflow: hidden;
 
         border: 0.4rem solid $dark-secondary;
         border-radius: 1.5rem;
+
+        @include dimension-settings(85%, $height: 82%);
+        @include position-settings(50%, 50%, $zIndex: 999);
       }
 
       &-gradient {
-        position: absolute;
-        top: -17px;
-        left: -28px;
-        width: 120%;
-        height: 120%;
         overflow: hidden;
+
         background-position: center center;
         background: linear-gradient(
           to right,
@@ -187,6 +179,9 @@
         );
 
         filter: url(#displacement);
+
+        @include dimension-settings(120%, $height: 120%);
+        @include position-settings(-1.7rem, -2.8rem);
       }
 
       // *** End of Overlay ***
@@ -206,8 +201,9 @@
 
     // *** Controls ***
     &-controls {
-      padding: 1rem;
       background-color: $dark-quaternary;
+
+      padding: 1rem;
 
       border-radius: 0.8rem;
 
@@ -217,8 +213,9 @@
 
     // *** Wrapper | Buttons ***
     &-wrapper {
-      margin-bottom: 0.5rem;
       background-color: $success-primary;
+
+      margin-bottom: 0.5rem;
 
       border-radius: 50%;
       border: 0.4rem solid $success-quaternary;
@@ -232,6 +229,7 @@
           content: '';
 
           border-radius: 50%;
+
           background: repeating-conic-gradient(
             from 0deg,
             rgba($success-quaternary, 0.8) 0deg 2deg,
@@ -258,6 +256,7 @@
 
       &-span {
         display: inline-block;
+
         background-color: $success-quaternary;
 
         @include dimension-settings(100%, 0.5rem, 120%);
@@ -265,7 +264,9 @@
 
       &-01 {
         transform: rotate(0);
+
         background-color: $success-tertiary;
+
         border: 0.4rem solid $success-quaternary;
 
         transition: transform 0.35s ease-out;
@@ -276,7 +277,6 @@
       }
 
       &-02 {
-        background: rgba($success-tertiary, 0.25);
         backdrop-filter: blur(0.8rem);
 
         background-color: $success-tertiary;
@@ -301,10 +301,9 @@
 
     // *** Speaker ***
     &-speaker {
-      border-radius: 0.25rem;
       background-color: $dark-primary;
 
-      @include dimension-settings(100%, $height: 0.7rem);
+      border-radius: 0.25rem;
 
       box-shadow:
         0 1rem 0 $dark-primary,
@@ -313,6 +312,8 @@
         0 4rem 0 $dark-primary,
         0 5rem 0 $dark-primary,
         0 6rem 0 $dark-primary;
+
+      @include dimension-settings(100%, $height: 0.7rem);
     }
     // *** End of Speaker ***
     // *** End of Controls ***
@@ -322,6 +323,7 @@
   // *** Bottom ***
   &-bottom {
     transform: translate(-50%, -76.5%);
+
     background-color: $success-tertiary;
 
     border: 0.4rem solid rgba($success-quaternary, 0.4);
@@ -338,13 +340,14 @@
 // *** Table ***
 .showcase__table {
   transform: translateX(-50%);
+
   @include dimension-settings(100%, 48rem, 14rem);
-  @include position-settings($left: 50%, $bottom: 0.9rem);
-  z-index: 50;
+  @include position-settings($left: 50%, $bottom: 0.9rem, $zIndex: 50);
 
   // *** Body ***
   &-body {
     transform: translateX(-50%);
+
     background-color: $brown-primary;
 
     border-top: 0.4rem solid $brown-secondary;
@@ -356,6 +359,7 @@
     // *** Helper ***
     &-helper {
       transform: translateX(-50%);
+
       background-color: $brown-primary;
 
       @include dimension-settings(100%, 40rem, 2.2rem);
@@ -376,11 +380,11 @@
       border-bottom: 0.4rem solid $brown-secondary;
 
       @include dimension-settings(45%, $height: 100%);
-      @include position-settings(0, 0);
-      z-index: 50;
+      @include position-settings(0, 0, $zIndex: 50);
     }
     & > div:nth-child(2) {
       transform: rotate(5deg);
+
       background-color: $brown-primary;
 
       border-right: 0.4rem solid $brown-secondary;
@@ -393,6 +397,7 @@
   // *** Left ***
   &-leg-left {
     transform: rotate(20deg) skewY(-18deg);
+
     @include dimension-settings(100%, 4rem, 14rem);
     @include position-settings(-0.3rem, 1.4rem);
   }
@@ -403,8 +408,7 @@
     transform: scaleX(-1) rotate(20deg) skewY(-18deg);
 
     @include dimension-settings(100%, 4rem, 14rem);
-    @include position-settings(-0.3rem, 0, 1.4rem);
-    left: unset;
+    @include position-settings(-0.3rem, unset, 1.4rem);
   }
   // *** End of Right ***
   // *** End of Legs ***

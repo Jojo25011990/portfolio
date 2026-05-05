@@ -83,6 +83,7 @@ export default function faq() {
 
     faqQuestion?.addEventListener('click', () => {
       const isActive = oneFaqItem.classList.toggle('active');
+
       faqQuestion.setAttribute('aria-expanded', isActive ? 'true' : 'false');
 
       const faqAnswerId = faqQuestion.getAttribute('aria-controls');

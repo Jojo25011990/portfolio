@@ -49,9 +49,10 @@ export default function evolution() {
     '.evolution__timeline-mobile',
   );
 
-  const evolutionPhaseMobileHeadings = document.querySelectorAll(
-    '.evolution__phase-mobile-heading',
-  );
+  const evolutionPhaseMobileHeadings =
+    document.querySelectorAll<HTMLHeadingElement>(
+      '.evolution__phase-mobile-heading',
+    );
   const [phaseMobileHeading01, phaseMobileHeading02, phaseMobileHeading03] =
     evolutionPhaseMobileHeadings;
 

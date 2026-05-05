@@ -123,7 +123,6 @@
 
   // *** Letter ***
   &-letter {
-    color: $dark-primary;
     color: $dark-overlay;
     background-color: $color-white;
 
@@ -137,16 +136,6 @@
 
     @include dimension-settings(90%, $height: 90%);
     @include position-settings(0, 50%, $zIndex: 3);
-
-    &-message {
-      font-style: italic;
-    }
-
-    &-strong {
-      color: $color-black;
-
-      @include font-settings(null, $weight: 700);
-    }
 
     &-lines {
       margin-top: 1rem;

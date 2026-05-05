@@ -1,8 +1,6 @@
 @use '../abstract' as *;
 @use '../base' as *;
 
-//  *** here are all headings without "fun facts component" ***
-
 // *** Sr Only ***
 .projects__description-sr-only,
 .services__description-sr-only,
@@ -22,10 +20,6 @@
 // *** General ***
 p {
   // *** Responsive Design ***
-  @include responsive-settings(mobile) {
-    @include font-settings(1.6rem !important, 500, 2.8rem, 0);
-  }
-
   @include responsive-settings(mobile-small) {
     @include font-settings(1.4rem !important, 500, 2.8rem, 0);
   }
@@ -36,15 +30,10 @@ p:not(
   li p,
   .header__lightbox-description,
   .footer__form-message,
-  .my-story__character-bubble-message
+  .my-story__character-bubble-message,
+  .my-process__book-description
 ) {
   color: $grey-primary;
-}
-
-.footer__envelope-letter p {
-  color: $dark-overlay;
-
-  @include font-settings(1rem !important, 500, 1.7rem);
 }
 
 .projects__description,
@@ -60,12 +49,12 @@ p:not(
 .my-process__description {
   text-align: center;
   @include dimension-settings(100%, 76rem, 5.6rem);
-}
 
-.features__item-description {
-  text-align: left;
-
-  @include font-settings(1.5rem, 500, 2.8rem);
+  // *** Responsive Design ***
+  @include responsive-settings(mobile) {
+    @include font-settings(1.6rem, 500, 2.8rem, 0);
+  }
+  // *** End of Responsive Design ***
 }
 
 .projects__item-description,
@@ -126,7 +115,13 @@ p:not(
 }
 // *** End of Projects ***
 
-// *** Features - Fun Facts ***
+// *** Features ***
+.features__item-description {
+  text-align: left;
+
+  @include font-settings(1.5rem, 500, 2.8rem);
+}
+
 .features__fun-facts-description {
   @include font-settings(1.6rem, 400, 1.4);
 
@@ -135,7 +130,36 @@ p:not(
     margin-bottom: 1rem;
   }
 }
-// *** End of Features - Fun Facts ***
+// *** End of Features ***
+
+// *** Evolution ***
+.evolution__phase-mobile-sentence {
+  transform: translateY(-3rem);
+
+  opacity: 0;
+  visibility: hidden;
+
+  margin-bottom: 0.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+// *** End of Evolution ***
+
+// *** Future ***
+.future__box-description {
+  color: $color-white;
+
+  @include font-settings(null, $line-height: 2);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-large) {
+    @include font-settings(1.6rem, $line-height: 2);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of Future ***
 
 // *** FAQ - Accordion ***
 .faq__item-answer {
@@ -156,6 +180,16 @@ p:not(
 }
 // *** End of Milestones ***
 
+// *** Process ***
+.my-process__book-description {
+  opacity: 0.85;
+
+  text-align: center;
+  @include font-settings(1.4rem, 500, 1.5, 0.03rem);
+  @include dimension-settings(95%);
+}
+// *** End of Process ***
+
 // *** Footer ***
 .footer__description {
   text-align: left;
@@ -174,4 +208,59 @@ p:not(
   // *** End of Responsive Design ***
 }
 
+// *** Form - Error Mesagge ***
+.footer__form-message {
+  color: $danger-primary;
+
+  margin-top: 0.4rem;
+  padding-left: 1rem;
+
+  @include position-settings($position: relative);
+
+  &--textarea {
+    margin-top: 0;
+
+    @include position-settings(-0.4rem, $position: relative);
+  }
+
+  &-span {
+    display: inline-block;
+
+    opacity: 0;
+
+    transform: translate(-200px, -50px) rotate(-180deg) scale(3);
+
+    transition:
+      transform 0.3s,
+      opacity 0.3s;
+    transition-delay: calc(0.06s * var(--i));
+
+    @include position-settings($position: relative);
+    @include font-settings(1.2rem);
+  }
+  &.active .footer__form-message-span {
+    transform: translate(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+// *** End of Form - Error Mesagge ***
+
+// *** Envelope - Letter ***
+.footer__envelope .footer__envelope-letter-message {
+  color: $dark-overlay;
+
+  @include font-settings(1rem, 500, 1.7rem);
+}
+
+.footer__envelope .footer__envelope-description {
+  color: $dark-overlay;
+  @include font-settings(1.2rem, 500, 1.7rem);
+}
+
+.footer__envelope-letter-strong {
+  color: $color-black;
+
+  @include font-settings(null, $weight: 700);
+}
+// *** End of Envelope - Letter ***
 // *** End of Footer ***

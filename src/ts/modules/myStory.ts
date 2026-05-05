@@ -5,8 +5,6 @@ import { startMyProcess } from './myProcess';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function myStory() {
-  console.log('Dragon');
-
   const myStory = document.querySelector<HTMLElement>('.my-story');
 
   const myStoryContainer = document.querySelector<HTMLDivElement>(
@@ -55,14 +53,20 @@ export default function myStory() {
     })
     .play();
 
-  dragonTimeline.to(myStoryContainer, {
-    delay: 0.1,
-    x: '+=7',
-    y: '+=7',
-    repeat: 20,
-    yoyo: true,
-    duration: 0.06,
-  });
+  dragonTimeline
+    .to(myStoryContainer, {
+      delay: 0.1,
+      x: '+=7',
+      y: '+=7',
+      repeat: 20,
+      yoyo: true,
+      duration: 0.06,
+    })
+    .to(myStoryContainer, {
+      x: '0',
+      y: '0',
+      duration: 0.06,
+    });
 
   dragonTimeline.add(() => myStoryDragon?.classList.add('active'));
 

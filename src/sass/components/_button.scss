@@ -3,17 +3,17 @@
 
 // *** Header Lightbox Button ***
 .header__author-button {
-  @include position-settings(0, $right: 0, $zIndex: 10);
-
   min-width: 44.5rem;
-  min-height: 72rem;
+
+  @include position-settings(0, $right: 0, $zIndex: 10);
+  @include dimension-settings($min-height: 72rem);
 
   // *** Responsive Design ***
   @include responsive-settings(tablet) {
     min-width: 34rem;
-    min-height: 55rem;
 
     @include position-settings(0, $position: relative);
+    @include dimension-settings($min-height: 55rem);
   }
   // *** End of Responsive Design ***
 }
@@ -122,9 +122,7 @@
 }
 
 .showcase__controls-btn-pause {
-  position: absolute;
-  top: 2rem;
-  left: 5rem;
+  @include position-settings(2rem, 5rem);
 }
 
 .showcase__controls-btn-play:hover .showcase__controls-icon-play,

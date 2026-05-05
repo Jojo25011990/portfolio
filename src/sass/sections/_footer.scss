@@ -9,7 +9,7 @@
 
   padding: 8.75rem 2rem;
 
-  @include dimension-settings(100%, $min-height: 67.5rem);
+  @include dimension-settings(100%);
   @include flex-settings($direction: column, $gap: 9.2rem);
 
   // *** Contact ***

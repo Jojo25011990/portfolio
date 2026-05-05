@@ -290,7 +290,7 @@
 
   // ***  Responsive Design ***
   @include responsive-settings(tablet) {
-    font-size: 14px !important;
+    @include font-settings(1.4rem);
   }
   // ***  End of Responsive Design ***
 }
@@ -312,9 +312,10 @@
 }
 
 .footer__envelope-letter-nickname {
+  display: inline-block;
+
   color: $dark-primary;
 
-  display: inline-block;
   margin-top: 0.4rem;
 
   @include position-settings($position: relative);
@@ -322,6 +323,7 @@
 
   &::before {
     content: '';
+
     transform: scaleX(1);
 
     background-color: $success-primary;
