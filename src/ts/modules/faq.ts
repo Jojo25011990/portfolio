@@ -5,29 +5,12 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function faq() {
-  const faqTitle = document.querySelector<HTMLHeadingElement>('.faq__title');
-  const faqTitleSpan =
-    document.querySelector<HTMLSpanElement>('.faq__title-span');
-
   const faqDescription =
     document.querySelector<HTMLParagraphElement>('.faq__description');
 
   const faqItems = document.querySelectorAll<HTMLLIElement>('.faq__item');
 
   let faqTimeout: ReturnType<typeof setTimeout> | null = null;
-
-  if (faqTitle) {
-    gsap.to(faqTitle, {
-      scrollTrigger: {
-        trigger: faqTitle,
-        start: 'top 70%',
-      },
-
-      onStart: () => {
-        faqTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (faqDescription) {
     gsap.to(faqDescription, {

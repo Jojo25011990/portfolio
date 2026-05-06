@@ -11,25 +11,6 @@ export default function projects() {
     '.projects__description',
   );
 
-  const projectsTitle =
-    document.querySelector<HTMLHeadingElement>('.projects__title');
-  const projectsTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.projects__title-span',
-  );
-
-  if (projectsTitle) {
-    gsap.to(projectsTitle, {
-      scrollTrigger: {
-        trigger: projectsTitle,
-        start: 'top 70%',
-      },
-
-      onStart: () => {
-        projectsTitleSpan?.classList.add('active');
-      },
-    });
-  }
-
   if (projectsDescription) {
     gsap.to(projectsDescription, {
       scrollTrigger: {

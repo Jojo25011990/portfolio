@@ -5,12 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function showcase() {
-  const showcaseTitle =
-    document.querySelector<HTMLHeadingElement>('.showcase__title');
-  const showcaseTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.showcase__title-span',
-  );
-
   const showcaseDescription = document.querySelector<HTMLParagraphElement>(
     '.showcase__description',
   );
@@ -37,19 +31,6 @@ export default function showcase() {
   const showcaseContainersOverlay = document.querySelectorAll<HTMLDivElement>(
     '.showcase__container-overlay',
   );
-
-  if (showcaseTitle) {
-    gsap.to(showcaseTitle, {
-      scrollTrigger: {
-        trigger: showcaseTitle,
-        start: 'top center',
-      },
-
-      onStart: () => {
-        showcaseTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (showcaseDescription) {
     gsap.to(showcaseDescription, {

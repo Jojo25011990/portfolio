@@ -5,12 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function evolution() {
-  const evolutionTitle =
-    document.querySelector<HTMLHeadingElement>('.evolution__title');
-  const evolutionTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.evolution__title-span',
-  );
-
   const evolutionDescription = document.querySelector<HTMLParagraphElement>(
     '.evolution__description',
   );
@@ -76,19 +70,6 @@ export default function evolution() {
       '.evolution__phase-mobile-wrapper-03 .evolution__phase-mobile-sentence',
     );
   // *** End of Mobile Version ***
-
-  if (evolutionTitle) {
-    gsap.to(evolutionTitle, {
-      scrollTrigger: {
-        trigger: evolutionTitle,
-        start: 'top center',
-      },
-
-      onStart: () => {
-        evolutionTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (evolutionDescription) {
     gsap.to(evolutionDescription, {

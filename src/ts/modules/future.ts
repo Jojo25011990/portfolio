@@ -9,26 +9,7 @@ export default function future() {
     '.future__description',
   );
 
-  const futureTitle =
-    document.querySelector<HTMLHeadingElement>('.future__title');
-  const futureTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.future__title-span',
-  );
-
   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
-
-  if (futureTitle) {
-    gsap.to(futureTitle, {
-      scrollTrigger: {
-        trigger: futureTitle,
-        start: 'top 70%',
-      },
-
-      onStart: () => {
-        futureTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (futureDescription) {
     gsap.to(futureDescription, {

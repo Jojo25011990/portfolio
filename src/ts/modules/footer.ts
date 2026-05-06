@@ -7,12 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function footer() {
   const footer = document.querySelector<HTMLElement>('.footer');
 
-  const footerTitle =
-    document.querySelector<HTMLHeadingElement>('.footer__title');
-  const footerTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.footer__title-span',
-  );
-
   const footerNavigationLine = document.querySelector<HTMLSpanElement>(
     '.footer__navigation-line',
   );
@@ -24,19 +18,6 @@ export default function footer() {
   const footerEnvelopeHeart = document.querySelector<HTMLDivElement>(
     '.footer__envelope-heart',
   );
-
-  if (footerTitle) {
-    gsap.to(footerTitle, {
-      scrollTrigger: {
-        trigger: footerTitle,
-        start: 'top center',
-      },
-
-      onStart: () => {
-        footerTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (footer) {
     gsap.to(footer, {

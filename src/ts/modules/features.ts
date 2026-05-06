@@ -5,11 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function features() {
-  const featuresTitle =
-    document.querySelector<HTMLHeadingElement>('.features__title');
-  const featuresTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.features__title-span',
-  );
   const featuresDescription = document.querySelector<HTMLParagraphElement>(
     '.features__description',
   );
@@ -37,19 +32,6 @@ export default function features() {
   const featuresFunFactsCloseButton = document.querySelector<HTMLButtonElement>(
     '.features__fun-facts-closebtn',
   );
-
-  if (featuresTitle) {
-    gsap.to(featuresTitle, {
-      scrollTrigger: {
-        trigger: featuresTitle,
-        start: 'top center',
-      },
-
-      onStart: () => {
-        featuresTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   // *** Main Description - Paragraph Tag ***
   if (featuresDescription) {

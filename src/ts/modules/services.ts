@@ -5,31 +5,12 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function services() {
-  const servicesTitle =
-    document.querySelector<HTMLHeadingElement>('.services__title');
-  const servicesTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.services__title-span',
-  );
-
   const servicesDescription = document.querySelector<HTMLParagraphElement>(
     '.services__description',
   );
 
   const servicesItems =
     document.querySelectorAll<HTMLLIElement>('.services__item');
-
-  if (servicesTitle) {
-    gsap.to(servicesTitle, {
-      scrollTrigger: {
-        trigger: servicesTitle,
-        start: 'top center',
-      },
-
-      onStart: () => {
-        servicesTitleSpan?.classList.add('active');
-      },
-    });
-  }
 
   if (servicesDescription) {
     gsap.to(servicesDescription, {

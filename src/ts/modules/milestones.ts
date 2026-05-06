@@ -8,25 +8,6 @@ export default function milestones() {
     '.milestones__description',
   );
 
-  const milestonesTitle =
-    document.querySelector<HTMLHeadingElement>('.milestones__title');
-  const milestonesTitleSpan = document.querySelector<HTMLSpanElement>(
-    '.milestones__title-span',
-  );
-
-  if (milestonesTitle) {
-    gsap.to(milestonesTitle, {
-      scrollTrigger: {
-        trigger: milestonesTitle,
-        start: 'top 70%',
-      },
-
-      onStart: () => {
-        milestonesTitleSpan?.classList.add('active');
-      },
-    });
-  }
-
   if (milestonesDescription) {
     gsap.to(milestonesDescription, {
       scrollTrigger: {
