@@ -33,21 +33,6 @@ export default function features() {
     '.features__fun-facts-closebtn',
   );
 
-  // *** Main Description - Paragraph Tag ***
-  if (featuresDescription) {
-    gsap.to(featuresDescription, {
-      scrollTrigger: {
-        trigger: featuresDescription,
-        start: 'top center',
-      },
-
-      duration: 2,
-      text: 'Small details that make every project engaging, interactive, and memorable.',
-      ease: 'none',
-    });
-  }
-  // *** End of Main Description - Paragraph Tag ***
-
   // *** Features Eight Mini Blocks ***
   if (featuresItems.length) {
     gsap.from(featuresItems, {

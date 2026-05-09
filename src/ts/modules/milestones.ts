@@ -4,26 +4,9 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function milestones() {
-  const milestonesDescription = document.querySelector<HTMLParagraphElement>(
-    '.milestones__description',
-  );
-
-  if (milestonesDescription) {
-    gsap.to(milestonesDescription, {
-      scrollTrigger: {
-        trigger: milestonesDescription,
-        start: 'top center',
-      },
-
-      duration: 2.25,
-      text: 'A collection of key milestones that shaped how I approach building interfaces, animations and frontend systems.',
-      ease: 'none',
-    });
-  }
-
   const items = gsap.utils.toArray<HTMLElement>('.milestones__item');
 
-  items.forEach((item, index) => {
+  items.forEach((item, index: number) => {
     if (index < items.length - 1) {
       ScrollTrigger.create({
         trigger: item,

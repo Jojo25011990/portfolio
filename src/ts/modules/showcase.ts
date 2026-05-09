@@ -5,10 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function showcase() {
-  const showcaseDescription = document.querySelector<HTMLParagraphElement>(
-    '.showcase__description',
-  );
-
   const showcaseVideos =
     document.querySelectorAll<HTMLVideoElement>('.showcase__video');
   const showcaseSwitcherBtns = document.querySelectorAll<HTMLButtonElement>(
@@ -31,19 +27,6 @@ export default function showcase() {
   const showcaseContainersOverlay = document.querySelectorAll<HTMLDivElement>(
     '.showcase__container-overlay',
   );
-
-  if (showcaseDescription) {
-    gsap.to(showcaseDescription, {
-      scrollTrigger: {
-        trigger: showcaseDescription,
-        start: 'top center',
-      },
-
-      duration: 2.5,
-      text: 'A cinematic storytelling reel combining CSS Art, Animations, 3D work and interactive experiments.',
-      ease: 'none',
-    });
-  }
 
   showcaseContainersOverlay.forEach(showcaseContainerOverlay => {
     const showcaseContainerHeading = showcaseContainerOverlay.querySelectorAll(

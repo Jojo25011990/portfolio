@@ -6,7 +6,7 @@
 .game {
   @extend .projects;
 
-  display: none;
+  //   display: none;
 
   // *** Wrapper ***
   &__wrapper {
@@ -22,7 +22,7 @@
     // overflow: hidden;
 
     @include dimension-settings(100%, 110rem);
-    @include flex-settings($direction: column);
+    @include flex-settings($direction: column, $gap: 6rem);
   }
   // *** End of Container ***
 
@@ -48,50 +48,5 @@
     }
   }
   // *** End of Bomberman ***
-
-  // *** CSS Art Memory Game ***
-  &__memory {
-    perspective: 70rem;
-    transform-style: preserve-3d;
-
-    flex-wrap: wrap;
-
-    @include dimension-settings(44rem, $height: 44rem);
-    @include flex-settings($gap: 1rem);
-  }
-  // *** End of CSS Art Memory Game ***
-
-  .item {
-    position: relative;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    background-color: $color-white;
-    transform: rotateY(180deg);
-    transition: all 0.35s;
-    cursor: pointer;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      transition: all 0.35s;
-      transform: rotateY(0deg);
-      background-color: $success-tertiary;
-      backface-visibility: hidden;
-    }
-
-    &.boxOpen {
-      transform: rotateY(0);
-    }
-  }
-
-  .boxOpen::after,
-  .boxMatch::after {
-    transform: rotateY(180deg);
-  }
 }
 // *** End of Game ***

@@ -5,24 +5,7 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function future() {
-  const futureDescription = document.querySelector<HTMLParagraphElement>(
-    '.future__description',
-  );
-
   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
-
-  if (futureDescription) {
-    gsap.to(futureDescription, {
-      scrollTrigger: {
-        trigger: futureDescription,
-        start: 'top center',
-      },
-
-      duration: 1.5,
-      text: 'Check out the upcoming projects. I’m planning and what’s next in line.',
-      ease: 'none',
-    });
-  }
 
   // *** Version 01 ***
   if (futureBox) {

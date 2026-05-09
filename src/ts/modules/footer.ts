@@ -1,10 +1,9 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import envelope from './envelope';
-
 gsap.registerPlugin(ScrollTrigger);
 export default function footer() {
+  // *** Footer - General ***
   const footer = document.querySelector<HTMLElement>('.footer');
 
   const footerNavigationLine = document.querySelector<HTMLSpanElement>(
@@ -14,10 +13,6 @@ export default function footer() {
   const footerLogo = document.querySelector<HTMLAnchorElement>('.footer__logo');
 
   const overlay = document.querySelector<HTMLDivElement>('.footer__overlay');
-
-  const footerEnvelopeHeart = document.querySelector<HTMLDivElement>(
-    '.footer__envelope-heart',
-  );
 
   if (footer) {
     gsap.to(footer, {
@@ -32,8 +27,58 @@ export default function footer() {
       },
     });
   }
+  // *** End of Footer - General ***
 
-  // *** Form ***
+  // *** Envelope ***
+  const footerEnvelopeButton = document.querySelector<HTMLButtonElement>(
+    '.footer__envelope-button',
+  );
+  const footerEnvelopeHeart = document.querySelector<HTMLDivElement>(
+    '.footer__envelope-heart',
+  );
+  const footerEnvelopeLetter = document.querySelector<HTMLElement>(
+    '.footer__envelope-letter',
+  );
+  const footerEnvelopeTopSide = document.querySelector<HTMLDivElement>(
+    '.footer__envelope-top-side',
+  );
+
+  const addClasses = function () {
+    footerEnvelopeHeart?.classList.add('is-open');
+    footerEnvelopeLetter?.classList.add('is-open');
+    footerEnvelopeTopSide?.classList.add('is-open');
+  };
+
+  const removeClasses = function () {
+    footerEnvelopeHeart?.classList.remove('is-open');
+    footerEnvelopeLetter?.classList.remove('is-open');
+    footerEnvelopeTopSide?.classList.remove('is-open');
+    footerEnvelopeHeart?.classList.remove('active');
+  };
+
+  footerEnvelopeButton?.addEventListener('click', () => {
+    footerEnvelopeHeart?.classList.remove('initial-state');
+
+    addClasses();
+  });
+
+  // *** Overlay ***
+  const footerOverlay =
+    document.querySelector<HTMLDivElement>('.footer__overlay');
+  console.log(footerOverlay);
+
+  if (footerOverlay) {
+    footerOverlay.addEventListener('click', function (e) {
+      if (e.target === footerOverlay) {
+        removeClasses();
+        footerOverlay.classList.remove('active');
+      }
+    });
+  }
+  // *** End of Overlay ***
+  // *** End of Envelope ***
+
+  // *** FORM ***
 
   // *** Version - Typing instead querySelector<HTMLInputElement> ***
 
@@ -77,7 +122,7 @@ export default function footer() {
         setTimeout(() => {
           overlay?.classList.add('active');
           footerEnvelopeHeart?.classList.add('initial-state');
-          envelope();
+          //   envelope();
 
           setTimeout(() => {
             footerEnvelopeHeart?.classList.add('active');
@@ -208,5 +253,5 @@ export default function footer() {
     return isInputValid;
   }
 
-  // *** End of Form ***
+  // *** End of FORM ***
 }

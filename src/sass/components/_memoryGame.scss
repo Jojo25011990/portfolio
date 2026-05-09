@@ -1,0 +1,85 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** CSS Art Memory Game ***
+.game__memory {
+  perspective: 70rem;
+  transform-style: preserve-3d;
+
+  flex-wrap: wrap;
+
+  max-height: 44rem;
+  @include dimension-settings(100%, 44rem, $height: 100%);
+  @include flex-settings($gap: 1rem);
+
+  // *** Box ***
+
+  &-box {
+    overflow: hidden;
+
+    background-color: $dark-secondary;
+
+    transform: rotateY(180deg);
+
+    transition: all 0.35s ease-out;
+    cursor: pointer;
+
+    @include dimension-settings(100%, 10rem, 10rem);
+    @include flex-settings;
+    @include position-settings($position: static, $zIndex: 50);
+
+    &::after {
+      content: '';
+
+      transform: rotateY(0);
+      //   transform: rotateY(180deg);
+
+      transition: all 0.35s ease-out;
+
+      background-color: $success-tertiary;
+      backface-visibility: hidden;
+
+      @include position-settings(0, 0, 0, 0);
+    }
+
+    &.boxOpen {
+      transform: rotateY(0);
+    }
+
+    &-img {
+      object-fit: cover;
+
+      transform: scale(2);
+
+      @include dimension-settings(100%);
+
+      // *** Captain America | Pepsi Logo ***
+      &--ca,
+      &--pe {
+        transform: scale(2.5);
+      }
+
+      &--spider {
+        transform: translateY(1.4rem) scale(2.5);
+      }
+      // *** End of Captain America | Pepsi Logo ***
+
+      // *** Instagram Logo | Snowman | Tree ***
+      &--ig,
+      &--sm,
+      &--tree {
+        transform: scale(4);
+      }
+      // *** End of Instagram Logo | Snowman | Tree ***
+    }
+  }
+
+  .boxOpen::after {
+    transform: rotateY(180deg);
+  }
+  .boxMatch::after {
+  }
+
+  // *** End of Box ***
+}
+// *** End of CSS Art Memory Game ***

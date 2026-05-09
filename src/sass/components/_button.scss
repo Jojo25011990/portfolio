@@ -57,7 +57,8 @@
 // *** Secondary Button ***
 .features__fun-facts-button,
 .my-overlay__button,
-.showcase__switcher-btn {
+.showcase__switcher-btn,
+.game__container-button {
   @extend %glowing-btn;
 }
 

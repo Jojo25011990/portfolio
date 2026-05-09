@@ -3,6 +3,7 @@ import TextPlugin from 'gsap/TextPlugin';
 
 gsap.registerPlugin(TextPlugin);
 
+// *** Heading | Description ( in timeline - my story ) ***
 export function startMyProcess() {
   const myProcessTitle =
     document.querySelector<HTMLHeadingElement>('.my-process__title');
@@ -30,7 +31,9 @@ export function startMyProcess() {
     });
   }
 }
+// *** End of Heading | Description ( in timeline - my story ) ***
 
+// *** CSS Art Book ***
 export default function myProcess() {
   const myProcessBook =
     document.querySelector<HTMLDivElement>('.my-process__book');
@@ -83,4 +86,4 @@ export default function myProcess() {
     }, 1000);
   });
 }
-// *** End of Version 02 ***
+// *** End of CSS Art Book ***

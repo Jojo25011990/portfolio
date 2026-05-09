@@ -5,10 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function evolution() {
-  const evolutionDescription = document.querySelector<HTMLParagraphElement>(
-    '.evolution__description',
-  );
-
   // *** Desktop Version ***
   const evolutionContainer = document.querySelector<HTMLOListElement>(
     '.evolution__timeline',
@@ -70,19 +66,6 @@ export default function evolution() {
       '.evolution__phase-mobile-wrapper-03 .evolution__phase-mobile-sentence',
     );
   // *** End of Mobile Version ***
-
-  if (evolutionDescription) {
-    gsap.to(evolutionDescription, {
-      scrollTrigger: {
-        trigger: evolutionDescription,
-        start: 'top center',
-      },
-
-      duration: 3,
-      text: ' My evolution from experimenting with visuals into a self-defined way of building custom, storytelling-driven interactive systems.',
-      ease: 'none',
-    });
-  }
 
   // *** Desktop Version ***
   const evolutionPhaseTimeline = gsap.timeline({

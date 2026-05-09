@@ -1,4 +1,3 @@
-import lightbox from './modules/lightbox';
 import skillsHeading from './modules/skills';
 import projects from './modules/projects';
 import services from './modules/services';
@@ -13,9 +12,10 @@ import myProcess from './modules/myProcess';
 import showcase from './modules/showcase';
 import evolution from './modules/evolution';
 // import activity from './modules/activity';
-// import game from './modules/game';
+import game from './modules/game';
 import milestones from './modules/milestones';
-import heading from './modules/Heading';
+import heading from './modules/heading';
+import description from './modules/description';
 // import myStory from './modules/myStory';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,8 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
+  heading();
+  description();
+
   header();
-  lightbox();
   skillsHeading();
   projects();
   services();
@@ -34,13 +36,11 @@ function init() {
   milestones();
   faq();
   //   activity();
-  //   game();
+  game();
   showcase();
   footer();
   backToTop();
   myStoryOverlay();
   myProcess();
   //   myStory();
-
-  heading();
 }
