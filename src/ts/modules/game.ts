@@ -5,6 +5,12 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function game() {
+  // *** Bomberman ***
+  const bomberman = document.querySelector<HTMLDivElement>('.game__bomberman');
+  // *** End of Bomberman ***
+
+  // *** CSS Art Memory Game ***
+
   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const gameBoxes =
     document.querySelectorAll<HTMLLIElement>('.game__memory-box');
@@ -12,8 +18,6 @@ export default function game() {
   const resetGameButton = document.querySelector<HTMLButtonElement>(
     '.game__container-button',
   );
-
-  // *** CSS Art Memory Game ***
 
   // *** Shuffle Boxes ***
 
@@ -40,73 +44,94 @@ export default function game() {
   // *** End of Shuffle Boxes ***
 
   // *** Core Game ***
-  newGameBoxes.forEach((newGameBox, index) => {
-    const game = function () {
-      newGameBox.classList.add('boxOpen');
+  let firstBox: HTMLLIElement | null = null;
+  let secondBox: HTMLLIElement | null = null;
 
-      const gameBoxDelay = 750;
+  // *** Reset State ***
+  let lockBox = false;
+
+  const resetState = function () {
+    lockBox = false;
+    firstBox = null;
+    secondBox = null;
+  };
+  // *** End of Reset State ***
+
+  // *** misMatch | ADD | REMOVE ***
+  const misMatchBoxAdd = function (
+    newGameBox01: HTMLLIElement,
+    newGameBox02: HTMLLIElement,
+  ) {
+    newGameBox01?.classList.add('boxMisMatch');
+    newGameBox02?.classList.add('boxMisMatch');
+  };
+
+  const misMatchBoxRemove = function (
+    newGameBox01: HTMLLIElement,
+    newGameBox02: HTMLLIElement,
+  ) {
+    newGameBox01?.classList.remove('boxMisMatch');
+    newGameBox02?.classList.remove('boxMisMatch');
+  };
+  // *** End of misMatch | ADD | REMOVE ***
+
+  const memeryGame = function (newGameBox: HTMLLIElement) {
+    if (lockBox) return;
+
+    newGameBox.classList.add('boxOpen');
+
+    if (!firstBox) {
+      firstBox = newGameBox;
+      return;
+    }
+
+    secondBox = newGameBox;
+
+    const firstBoxId = firstBox.dataset.box;
+    const secondBoxId = secondBox.dataset.box;
+
+    if (!firstBoxId || !secondBoxId) return;
+
+    const isMatch = firstBoxId === secondBoxId;
+
+    lockBox = true;
+
+    if (isMatch) {
+      firstBox?.classList.add('boxMatch');
+      secondBox?.classList.add('boxMatch');
+
+      resetState();
+    } else {
+      misMatchBoxAdd(firstBox, secondBox);
+
+      const gameBoxDelay = 1050;
 
       setTimeout(() => {
-        if (newGameBox.classList.contains('boxOpen')) {
-        }
-      }, gameBoxDelay);
-    };
+        firstBox?.classList.remove('boxOpen');
+        secondBox?.classList.remove('boxOpen');
 
-    newGameBox.addEventListener('click', game);
+        misMatchBoxRemove(firstBox!, secondBox!);
+
+        resetState();
+      }, gameBoxDelay);
+    }
+  };
+
+  newGameBoxes.forEach(newGameBox => {
+    newGameBox.addEventListener('click', () => memeryGame(newGameBox));
   });
+
   // *** End of Core Game ***
 
   // *** Reset Game ***
   function resetGame() {
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');
+      newGameBox.classList.remove('boxMatch');
     });
   }
 
   resetGameButton?.addEventListener('click', resetGame);
   resetGameButton?.addEventListener('click', shuffleGameBoxes);
   // *** End of Reset Game ***
-
-  //   for (let i = 0; i < emojis.length; i++) {
-  //     let box = document.createElement('div');
-  //     box.className = 'game__memory-box';
-  //     box.innerHTML = shuffleEmojis[i];
-
-  //     box.onclick = function () {
-  //       box.classList.add('boxOpen');
-
-  //       setTimeout(() => {
-  //         if (document.querySelectorAll('.boxOpen').length > 1) {
-  //           if (
-  //             document.querySelectorAll('.boxOpen')[0].innerHTML ==
-  //             document.querySelectorAll('.boxOpen')[1].innerHTML
-  //           ) {
-  //             document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch');
-  //             document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch');
-
-  //             document
-  //               .querySelectorAll('.boxOpen')[1]
-  //               .classList.remove('boxOpen');
-  //             document
-  //               .querySelectorAll('.boxOpen')[0]
-  //               .classList.remove('boxOpen');
-
-  //             if (document.querySelectorAll('.boxOpen').length == emojis.length) {
-  //               alert('win');
-  //             }
-  //           } else {
-  //             document
-  //               .querySelectorAll('.boxOpen')[1]
-  //               .classList.remove('boxOpen');
-  //             document
-  //               .querySelectorAll('.boxOpen')[0]
-  //               .classList.remove('boxOpen');
-  //           }
-  //         }
-  //       }, 500);
-  //     };
-
-  //     document.querySelector('.game__memory')?.appendChild(box);
-  //   }
-  // *** End of CSS Art Memory Game ***
 }

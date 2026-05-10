@@ -9,11 +9,59 @@
   flex-wrap: wrap;
 
   max-height: 44rem;
-  @include dimension-settings(100%, 44rem, $height: 100%);
+  @include dimension-settings(100%, 43rem, $height: 100%);
   @include flex-settings($gap: 1rem);
 
-  // *** Box ***
+  // *** Responsive Design ***
+  @include responsive-settings(mobile-large) {
+    @include dimension-settings(100%, 31.5rem, $height: 100%);
+  }
+  // *** End of Responsive Design ***
 
+  // *** Overlay ***
+  &-overlay {
+    transform: translateY(-100%);
+    background-color: $success-tertiary;
+
+    @include position-settings(0, 0, $zIndex: 100);
+
+    @include dimension-settings(100%, $height: 100%);
+  }
+  // *** End of Overlay ***
+
+  // *** Vertical Lines ***
+  &-line-vertical {
+    background-color: $dark-primary;
+    width: 1rem;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+
+    &-01 {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-02 {
+      left: 23.83%;
+      transform: translateX(-23.83%);
+    }
+    &-03 {
+      left: 76.2%;
+      transform: translateX(-76.2%);
+    }
+  }
+  // *** End of Vertical Lines ***
+
+  // *** Horizontal Lines ***
+  &-line-horizontal {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+  }
+  // *** End of Horizontal Lines ***
+
+  // *** Box ***
   &-box {
     overflow: hidden;
 
@@ -27,6 +75,12 @@
     @include dimension-settings(100%, 10rem, 10rem);
     @include flex-settings;
     @include position-settings($position: static, $zIndex: 50);
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-large) {
+      @include dimension-settings(100%, 7rem, 7rem);
+    }
+    // *** End of Responsive Design ***
 
     &::after {
       content: '';
@@ -77,9 +131,15 @@
   .boxOpen::after {
     transform: rotateY(180deg);
   }
-  .boxMatch::after {
-  }
 
+  .boxMisMatch {
+    animation: shakeBox 0.325s 1 linear;
+    animation-delay: 0.5s;
+  }
+  .boxMatch {
+    animation: scaleBox 0.35s ease-out;
+    animation-delay: 0.5s;
+  }
   // *** End of Box ***
 }
 // *** End of CSS Art Memory Game ***

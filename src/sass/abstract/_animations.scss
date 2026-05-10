@@ -377,6 +377,37 @@
 }
 // *** End of Skills ***
 
+// *** Game ***
+@keyframes shakeBox {
+  0%,
+  100% {
+    transform: translateX(0.4rem);
+  }
+
+  25% {
+    transform: translateX(-0.4rem);
+  }
+  50% {
+    transform: translateX(0.4rem);
+  }
+  75% {
+    transform: translateX(-0.4rem);
+  }
+}
+
+@keyframes scaleBox {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+// *** End of Game ***
+
 // *** My Story ***
 @keyframes dragon-flight {
   from {

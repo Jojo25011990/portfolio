@@ -38,7 +38,7 @@
     animation: appear-bomberman 0.35s 0.5s linear forwards;
 
     @include dimension-settings(44rem, $height: 50rem);
-    @include position-settings(0, $right: 0);
+    @include position-settings(4rem, $right: 0);
   }
 
   @keyframes appear-bomberman {
