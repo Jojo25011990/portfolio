@@ -10,7 +10,6 @@ export default function game() {
   // *** End of Bomberman ***
 
   // *** CSS Art Memory Game ***
-
   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const gameBoxes =
     document.querySelectorAll<HTMLLIElement>('.game__memory-box');
@@ -19,8 +18,29 @@ export default function game() {
     '.game__container-button',
   );
 
-  // *** Shuffle Boxes ***
+  const gameOverlay = document.querySelector<HTMLLIElement>(
+    '.game__memory-overlay',
+  );
+  const gameOverlayLines = gameOverlay?.querySelectorAll('div');
 
+  // *** Overlay | Lines - Animation ***
+  gsap.to(gameOverlay, {
+    scrollTrigger: {
+      trigger: gameOverlay,
+      start: 'top center',
+    },
+
+    onStart: () => {
+      gameOverlay?.classList.add('active');
+
+      gameOverlayLines?.forEach(gameOverlayLine =>
+        gameOverlayLine.classList.add('active'),
+      );
+    },
+  });
+  // *** End of Overlay | Lines - Animation ***
+
+  // *** Shuffle Boxes ***
   // *** Very good source -> https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle ***
 
   const shuffleGameBoxes = function () {

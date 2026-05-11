@@ -1,9 +1,24 @@
 @use './mixins' as *;
 
 // *** General ***
-@keyframes line {
+@keyframes lineX {
   to {
     transform: scaleX(1);
+  }
+}
+@keyframes lineY {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+
+    pointer-events: none;
+
+    @include position-settings($zIndex: -1);
   }
 }
 // *** End of General ***
