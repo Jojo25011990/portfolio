@@ -83,7 +83,7 @@
     <!-- Header -->
     <!-- Skills -->
     <!-- Projects -> OK -->
-    <!-- Services -> OK -->
+    <!-- Services -->
     <!-- Features -> OK -->
     <!-- Evolution -> OK -->
     <!-- Future -> OK -->
@@ -1946,7 +1946,11 @@
 
           <!-- CSS Art Memory Game -->
           <div class="game__container">
-            <div class="game__bomberman"></div>
+            <div class="game__bomberman">
+              <div class="game__bomberman-bubble-box" aria-hidden="true">
+                <p class="game__bomberman-bubble-message">Find me.</p>
+              </div>
+            </div>
 
             <ul class="game__memory">
               <li class="game__memory-overlay" aria-hidden="true">
@@ -2088,6 +2092,11 @@
             <button type="button" class="game__container-button">
               Reset Game
             </button>
+
+            <p class="game__bomberman-box">
+              <span class="game__bomberman-box--name">Bomberman:</span>
+              <span class="game__bomberman-box--message"></span>
+            </p>
           </div>
           <!-- End of CSS Art Memory Game -->
         </section>

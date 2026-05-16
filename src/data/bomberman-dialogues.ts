@@ -12,14 +12,10 @@
 // you found me.
 // *** End of Sentences ***
 
-type BombermanDialoguesPhase = 'entry' | 'match' | 'fake' | 'win';
+type BombermanDialoguesPhase = 'match' | 'fake';
 
 export const bombermanDialogues: Record<BombermanDialoguesPhase, string[]> = {
-  entry: ['Find me.'],
-
-  match: ['Not bad.', 'interesting...', 'Lucky guess.', 'Stay focused.'],
+  match: ['Not bad.', 'interesting...', 'Stay focused.'],
 
   fake: ['I see you.', 'Not this time.'],
-
-  win: ['You found me.'],
 };

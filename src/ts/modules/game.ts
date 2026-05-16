@@ -2,11 +2,19 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import TextPlugin from 'gsap/TextPlugin';
 
+import { bombermanDialogues } from '../../data/bomberman-dialogues';
+
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function game() {
+  console.log(bombermanDialogues.match);
+
   // *** Bomberman ***
   const bomberman = document.querySelector<HTMLDivElement>('.game__bomberman');
+  const bombermanBubbleText = document.querySelector<HTMLDivElement>(
+    '.game__bomberman-bubble-box',
+  );
+  const bombermanBoxMessages = document.querySelector('.game__bomberman-box');
   // *** End of Bomberman ***
 
   // *** CSS Art Memory Game ***
@@ -24,21 +32,74 @@ export default function game() {
   const gameOverlayLines = gameOverlay?.querySelectorAll('div');
 
   // *** Overlay | Lines - Animation ***
-  gsap.to(gameOverlay, {
+  const bombermanTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: gameOverlay,
       start: 'top center',
     },
+  });
 
-    onStart: () => {
+  bombermanTimeline
+    .add(() => {
+      bomberman?.classList.add('active');
+    })
+    .add(() => bombermanBubbleText?.classList.add('active'), '+=1')
+    .add(() => bombermanBubbleText?.classList.remove('active'), '+=1')
+    .add(() => {
       gameOverlay?.classList.add('active');
 
       gameOverlayLines?.forEach(gameOverlayLine =>
         gameOverlayLine.classList.add('active'),
       );
-    },
-  });
+    }, '+=1.2');
   // *** End of Overlay | Lines - Animation ***
+
+  // *** Bomberman Fake Message Box ***
+  const bombermanFakeBoxMessages = () => {
+    if (fakeCount >= fakeLimit) return;
+
+    fakeCount++;
+
+    bombermanBoxMessages?.classList.add('active');
+
+    const bombermanMessage =
+      bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
+    console.log(bombermanMessage);
+
+    bombermanMessage.textContent = bombermanDialogues.fake[indexFakeMessages];
+
+    indexFakeMessages++;
+
+    const bombermanBoxMsgDelay = 1250;
+    setTimeout(() => {
+      bombermanBoxMessages?.classList.remove('active');
+    }, bombermanBoxMsgDelay);
+  };
+  // *** End of Bomberman Fake Message Box ***
+
+  // *** Bomberman Message Box ***
+  const bombermanMessages = () => {
+    if (matchCount % 2 === 0) {
+      if (indexMessages >= bombermanDialogues.match.length) return;
+
+      console.log('funguje');
+      bombermanBoxMessages?.classList.add('active');
+
+      const bombermanMessage =
+        bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
+      console.log(bombermanMessage);
+
+      bombermanMessage.textContent = bombermanDialogues.match[indexMessages];
+
+      indexMessages++;
+
+      const bombermanBoxMsgDelay = 1250;
+      setTimeout(() => {
+        bombermanBoxMessages?.classList.remove('active');
+      }, bombermanBoxMsgDelay);
+    }
+  };
+  // *** End of Bomberman Message Box ***
 
   // *** Shuffle Boxes ***
   // *** Very good source -> https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle ***
@@ -66,6 +127,17 @@ export default function game() {
   // *** Core Game ***
   let firstBox: HTMLLIElement | null = null;
   let secondBox: HTMLLIElement | null = null;
+
+  // *** Match Count | Fake Count | Fake Limit ***
+  let matchCount: number = 0;
+  let fakeCount: number = 0;
+  let fakeLimit: number = 2;
+  // *** End of Match Count | Fake Count | Fake Limit ***
+
+  // *** Index Messages | indexFakeMessages ***
+  let indexMessages: number = 0;
+  let indexFakeMessages: number = 0;
+  // *** End of Index Messages | indexFakeMessages ***
 
   // *** Reset State ***
   let lockBox = false;
@@ -98,6 +170,25 @@ export default function game() {
   const memeryGame = function (newGameBox: HTMLLIElement) {
     if (lockBox) return;
 
+    // *** Bomberman - Cheating ***
+    const isBomberman = newGameBox.dataset.box === 'bomberman';
+
+    if (isBomberman && fakeCount <= fakeLimit) {
+      lockBox = true;
+
+      bombermanFakeBoxMessages();
+      console.log('bomberman');
+
+      newGameBox.classList.remove('boxOpen');
+
+      setTimeout(() => {
+        lockBox = false;
+      }, 1300);
+
+      return;
+    }
+    // *** End of Bomberman - Cheating ***
+
     newGameBox.classList.add('boxOpen');
 
     if (!firstBox) {
@@ -119,6 +210,10 @@ export default function game() {
     if (isMatch) {
       firstBox?.classList.add('boxMatch');
       secondBox?.classList.add('boxMatch');
+
+      matchCount++;
+
+      bombermanMessages();
 
       resetState();
     } else {
@@ -145,6 +240,9 @@ export default function game() {
 
   // *** Reset Game ***
   function resetGame() {
+    matchCount = 0;
+    indexMessages = 0;
+
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');
       newGameBox.classList.remove('boxMatch');

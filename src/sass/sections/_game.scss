@@ -19,10 +19,8 @@
     perspective: 100rem;
     transform-style: preserve-3d;
 
-    // overflow: hidden;
-
     @include dimension-settings(100%, 110rem);
-    @include flex-settings($direction: column, $gap: 6rem);
+    @include flex-settings($direction: column, $gap: 4rem);
   }
   // *** End of Container ***
 
@@ -31,22 +29,86 @@
     background-image: url('../../assets/images/Bomberman-Photoroom.png');
     background-repeat: no-repeat;
     background-position: center center;
-    // background-size: cover;
+
     opacity: 0;
     transform: translate(40rem, -40rem) scale(0);
 
-    animation: appear-bomberman 0.35s 0.5s linear forwards;
+    transition: all 1s;
 
     @include dimension-settings(44rem, $height: 50rem);
     @include position-settings(4rem, $right: 0);
+
+    &.active {
+      animation:
+        appear-bomberman 0.35s 0.5s linear forwards,
+        scale-bomberman 0.35s 2.8s linear forwards;
+    }
+
+    // *** Bubble Box ***
+    &-bubble-box {
+      padding-inline: 1rem;
+
+      border-radius: 1rem;
+
+      background-color: $color-white;
+
+      box-shadow: 0 0 0 0.2rem $grey-secondary;
+
+      transition: opacity 0.325s ease-in;
+
+      @include position-settings(5rem, -6rem, $zIndex: 999);
+      @include dimension-settings(100%, 18rem, 5rem);
+      @include flex-settings;
+
+      opacity: 0;
+      transition: opacity 0.5s;
+
+      &.active {
+        opacity: 1;
+      }
+
+      &::before {
+        content: '';
+
+        transform: rotate(65deg);
+
+        border-bottom: 2rem solid transparent;
+        border-top: 2rem solid transparent;
+        border-left: 4rem solid $color-white;
+
+        @include position-settings(3rem, $right: 0.06rem);
+      }
+    }
+
+    &-bubble-message {
+      color: $grey-secondary !important;
+
+      @include font-settings(2.4rem, 700);
+    }
+    // *** End of Bubble Box ***
+
+    // *** Box ***
+    &-box {
+      padding: 1rem 1.5rem;
+      background-color: $color-black;
+
+      opacity: 0;
+      //   visibility: hidden;
+
+      transition: opacity 0.35s;
+
+      &.active {
+        opacity: 1;
+        // visibility: visible;
+      }
+
+      &--name {
+        color: $yellow-primary;
+      }
+    }
+    // *** End of Box ***
   }
 
-  @keyframes appear-bomberman {
-    to {
-      opacity: 1;
-      transform: translate(20rem, -20rem) scale(0.7);
-    }
-  }
   // *** End of Bomberman ***
 }
 // *** End of Game ***
