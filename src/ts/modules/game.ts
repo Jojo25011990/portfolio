@@ -54,19 +54,36 @@ export default function game() {
     }, '+=1.2');
   // *** End of Overlay | Lines - Animation ***
 
+  // *** Bomberman Heading Helper Function ***
+  const bombermanHeadingHelper = (color: string) => {
+    const bombermanHeading =
+      bombermanBoxMessages?.firstElementChild as HTMLSpanElement;
+    bombermanHeading.style.color = color;
+
+    // *** Match State ***
+    // $yellow-primary: #f4d35e;
+    // *** End of Match State ***
+
+    // *** Fake | Cheating State ***
+    // $danger-primary: #ff6f5b;
+    // *** End of Fake | Cheating State ***
+
+    // *** Win State ***
+    // $success-primary: #4ee1a0;
+    // *** End of Win State ***
+  };
+  // *** End of Bomberman Heading Helper Function ***
+
   // *** Bomberman Fake Message Box ***
   const bombermanFakeBoxMessages = () => {
-    if (fakeCount >= fakeLimit) return;
-
-    fakeCount++;
-
     bombermanBoxMessages?.classList.add('active');
 
     const bombermanMessage =
       bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
-    console.log(bombermanMessage);
 
     bombermanMessage.textContent = bombermanDialogues.fake[indexFakeMessages];
+
+    bombermanHeadingHelper('#ff6f5b');
 
     indexFakeMessages++;
 
@@ -90,6 +107,8 @@ export default function game() {
       console.log(bombermanMessage);
 
       bombermanMessage.textContent = bombermanDialogues.match[indexMessages];
+
+      bombermanHeadingHelper('#f4d35e');
 
       indexMessages++;
 
@@ -167,32 +186,47 @@ export default function game() {
   };
   // *** End of misMatch | ADD | REMOVE ***
 
-  const memeryGame = function (newGameBox: HTMLLIElement) {
-    if (lockBox) return;
+  // *** Bomberman Handle ***
+  const handleBomberman = function (newGameBox: HTMLLIElement) {
+    const isCheating = fakeCount < fakeLimit;
 
-    // *** Bomberman - Cheating ***
-    const isBomberman = newGameBox.dataset.box === 'bomberman';
-
-    if (isBomberman && fakeCount <= fakeLimit) {
-      lockBox = true;
+    if (isCheating) {
+      fakeCount++;
 
       bombermanFakeBoxMessages();
-      console.log('bomberman');
-
+      newGameBox.classList.add('boxFake');
       newGameBox.classList.remove('boxOpen');
 
+      console.log('BOOM', {
+        isBomberman: newGameBox.dataset.box,
+        fakeCount,
+        fakeLimit,
+      });
+
       setTimeout(() => {
-        lockBox = false;
-      }, 1300);
+        newGameBox.classList.remove('boxFake');
+      }, 1000);
+
+      return true;
+    }
+
+    if (!isCheating) {
+      newGameBox.classList.remove('boxFake');
+      newGameBox.classList.add('boxOpen');
 
       return;
     }
-    // *** End of Bomberman - Cheating ***
+  };
+  // *** End of Bomberman Handle ***
 
+  // *** Memory Game Handle ***
+  const handleMemoryGame = function (newGameBox: HTMLLIElement) {
+    console.log('CLICK EVENT');
     newGameBox.classList.add('boxOpen');
 
     if (!firstBox) {
       firstBox = newGameBox;
+
       return;
     }
 
@@ -215,6 +249,12 @@ export default function game() {
 
       bombermanMessages();
 
+      // 🔥 SCALE FIX POINT
+      requestAnimationFrame(() => {
+        firstBox?.classList.add('scale');
+        secondBox?.classList.add('scale');
+      });
+
       resetState();
     } else {
       misMatchBoxAdd(firstBox, secondBox);
@@ -227,13 +267,37 @@ export default function game() {
 
         misMatchBoxRemove(firstBox!, secondBox!);
 
+        // 🔥 SHAKE FIX POINT
+        requestAnimationFrame(() => {
+          firstBox?.classList.add('shake');
+          secondBox?.classList.add('shake');
+        });
+
         resetState();
       }, gameBoxDelay);
     }
   };
+  // *** End of Memory Game Handle ***
+
+  const memoryGame = function (newGameBox: HTMLLIElement) {
+    if (lockBox) return;
+
+    // *** Bomberman - Cheating ***
+    const isBomberman = newGameBox.dataset.box === 'bomberman';
+
+    if (isBomberman) {
+      const blocked = handleBomberman(newGameBox);
+      if (blocked) return;
+    }
+    // *** End of Bomberman - Cheating ***
+
+    // *** Memory Game ***
+    handleMemoryGame(newGameBox);
+    // *** End Memory Game ***
+  };
 
   newGameBoxes.forEach(newGameBox => {
-    newGameBox.addEventListener('click', () => memeryGame(newGameBox));
+    newGameBox.addEventListener('click', () => memoryGame(newGameBox));
   });
 
   // *** End of Core Game ***
@@ -241,11 +305,15 @@ export default function game() {
   // *** Reset Game ***
   function resetGame() {
     matchCount = 0;
+    fakeCount = 0;
+
     indexMessages = 0;
+    indexFakeMessages = 0;
 
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');
       newGameBox.classList.remove('boxMatch');
+      newGameBox.classList.remove('boxFake');
     });
   }
 

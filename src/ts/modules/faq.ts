@@ -54,6 +54,8 @@ export default function faq() {
       faqQuestion.setAttribute('aria-expanded', isActive ? 'true' : 'false');
 
       const faqAnswerId = faqQuestion.getAttribute('aria-controls');
+      const faqAnswerIdDelay = 360;
+
       const faqAnswer = faqAnswerId
         ? document.getElementById(faqAnswerId)
         : null;
@@ -66,7 +68,7 @@ export default function faq() {
         } else {
           faqTimeout = setTimeout(() => {
             faqAnswer.setAttribute('hidden', '');
-          }, 360);
+          }, faqAnswerIdDelay);
         }
       }
     });

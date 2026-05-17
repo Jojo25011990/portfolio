@@ -102,8 +102,8 @@ export default function description() {
   descriptionConfig({
     nameSection: 'game',
     nameSectionText:
-      'A cinematic storytelling reel combining CSS Art, Animations, 3D work and interactive experiments.',
-    duration: 2.5,
+      'An interactive CSS Art memory challenge with playful animations and gameplay.',
+    duration: 2,
   });
   // *** End of Game Section ***
 

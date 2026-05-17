@@ -191,6 +191,10 @@
     animation: scaleBox 0.2s 3 ease-out;
     animation-delay: 0.5s;
   }
+
+  .boxFake {
+    pointer-events: none;
+  }
   // *** End of Box ***
 }
 // *** End of CSS Art Memory Game ***
