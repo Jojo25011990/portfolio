@@ -30,6 +30,37 @@ export default function game() {
     '.game__memory-overlay',
   );
   const gameOverlayLines = gameOverlay?.querySelectorAll('div');
+  // *** End of CSS Art Memory Game ***
+
+  // *** First Box | Second Box | last Bomberman Box ***
+  let firstBox: HTMLLIElement | null = null;
+  let secondBox: HTMLLIElement | null = null;
+  let lastBombermanBox: HTMLLIElement | null = null;
+  // *** End of First Box | Second Box | last Bomberman Box ***
+
+  // *** Match Count | Fake Count | Fake Repeat Count ***
+
+  let matchCount: number = 0;
+  let fakeCount: number = 0;
+  let fakeRepeatCount: number = 0;
+
+  // *** End of Match Count | Fake Count | Fake Repeat Count ***
+
+  // *** Index Messages | indexFakeMessages | indexFakeRepeatMessages ***
+  let indexMessages: number = 0;
+  let indexFakeMessages: number = 0;
+  let indexFakeRepeatMessages: number = 0;
+  // *** End of Index Messages | indexFakeMessages | indexFakeRepeatMessages ***
+
+  // *** Reset State ***
+  let lockBox = false;
+
+  const resetState = function () {
+    lockBox = false;
+    firstBox = null;
+    secondBox = null;
+  };
+  // *** End of Reset State ***
 
   // *** Overlay | Lines - Animation ***
   const bombermanTimeline = gsap.timeline({
@@ -74,6 +105,35 @@ export default function game() {
   };
   // *** End of Bomberman Heading Helper Function ***
 
+  // *** Box Messages Delay Helper ***
+  const boxMessagesDelayHelper = () => {
+    const bombermanBoxMsgDelay = 1250;
+    setTimeout(() => {
+      bombermanBoxMessages?.classList.remove('active');
+    }, bombermanBoxMsgDelay);
+  };
+  // *** End of Box Messages Delay Helper ***
+
+  // *** Bomberman Message Box ***
+  const bombermanMessages = () => {
+    if (matchCount % 2 === 0) {
+      if (indexMessages >= bombermanDialogues.match.length) return;
+
+      bombermanBoxMessages?.classList.add('active');
+
+      const bombermanMessage =
+        bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
+      bombermanMessage.textContent = bombermanDialogues.match[indexMessages];
+
+      bombermanHeadingHelper('#f4d35e');
+
+      indexMessages++;
+
+      boxMessagesDelayHelper();
+    }
+  };
+  // *** End of Bomberman Message Box ***
+
   // *** Bomberman Fake Message Box ***
   const bombermanFakeBoxMessages = () => {
     bombermanBoxMessages?.classList.add('active');
@@ -87,45 +147,33 @@ export default function game() {
 
     indexFakeMessages++;
 
-    const bombermanBoxMsgDelay = 1250;
-    setTimeout(() => {
-      bombermanBoxMessages?.classList.remove('active');
-    }, bombermanBoxMsgDelay);
+    boxMessagesDelayHelper();
   };
   // *** End of Bomberman Fake Message Box ***
 
-  // *** Bomberman Message Box ***
-  const bombermanMessages = () => {
-    if (matchCount % 2 === 0) {
-      if (indexMessages >= bombermanDialogues.match.length) return;
+  // *** Bomberman FakeRepeat Message Box ***
+  const bombermanFakeRepeatMessages = () => {
+    bombermanBoxMessages?.classList.add('active');
 
-      console.log('funguje');
-      bombermanBoxMessages?.classList.add('active');
+    const bombermanMessage =
+      bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
 
-      const bombermanMessage =
-        bombermanBoxMessages?.lastElementChild as HTMLSpanElement;
-      console.log(bombermanMessage);
+    bombermanMessage.textContent =
+      bombermanDialogues.fakeRepeat[indexFakeRepeatMessages];
 
-      bombermanMessage.textContent = bombermanDialogues.match[indexMessages];
+    bombermanHeadingHelper('#ff6f5b');
 
-      bombermanHeadingHelper('#f4d35e');
+    indexFakeRepeatMessages++;
 
-      indexMessages++;
-
-      const bombermanBoxMsgDelay = 1250;
-      setTimeout(() => {
-        bombermanBoxMessages?.classList.remove('active');
-      }, bombermanBoxMsgDelay);
-    }
+    boxMessagesDelayHelper();
   };
-  // *** End of Bomberman Message Box ***
+  // *** End of Bomberman FakeRepeat Message Box ***
 
   // *** Shuffle Boxes ***
   // *** Very good source -> https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle ***
 
   const shuffleGameBoxes = function () {
     let currentIndex = newGameBoxes.length;
-    console.log(currentIndex);
 
     while (currentIndex) {
       let randomIndex = Math.floor(Math.random() * currentIndex);
@@ -144,30 +192,6 @@ export default function game() {
   // *** End of Shuffle Boxes ***
 
   // *** Core Game ***
-  let firstBox: HTMLLIElement | null = null;
-  let secondBox: HTMLLIElement | null = null;
-
-  // *** Match Count | Fake Count | Fake Limit ***
-  let matchCount: number = 0;
-  let fakeCount: number = 0;
-  let fakeLimit: number = 2;
-  // *** End of Match Count | Fake Count | Fake Limit ***
-
-  // *** Index Messages | indexFakeMessages ***
-  let indexMessages: number = 0;
-  let indexFakeMessages: number = 0;
-  // *** End of Index Messages | indexFakeMessages ***
-
-  // *** Reset State ***
-  let lockBox = false;
-
-  const resetState = function () {
-    lockBox = false;
-    firstBox = null;
-    secondBox = null;
-  };
-  // *** End of Reset State ***
-
   // *** misMatch | ADD | REMOVE ***
   const misMatchBoxAdd = function (
     newGameBox01: HTMLLIElement,
@@ -187,36 +211,52 @@ export default function game() {
   // *** End of misMatch | ADD | REMOVE ***
 
   // *** Bomberman Handle ***
-  const handleBomberman = function (newGameBox: HTMLLIElement) {
-    const isCheating = fakeCount < fakeLimit;
 
-    if (isCheating) {
-      fakeCount++;
+  let bombermanState: 'normal' | 'dialogue' = 'normal';
+  let fakeIndex = 0;
+  const handleBomberman = (box: HTMLLIElement) => {
+    // const isFakeClickAllowed = bombermanState !== 'fakeRepeat';
 
+    // if (!isFakeClickAllowed) {
+    //   return false; // už skončila fake sekvencia
+    // }
+
+    // prepis to do switchu
+    box.classList.add('boxFake');
+    box.classList.remove('boxOpen');
+
+    const isStart = bombermanState === 'normal';
+
+    if (isStart) {
+      bombermanState = 'dialogue';
       bombermanFakeBoxMessages();
-      newGameBox.classList.add('boxFake');
-      newGameBox.classList.remove('boxOpen');
-
-      console.log('BOOM', {
-        isBomberman: newGameBox.dataset.box,
-        fakeCount,
-        fakeLimit,
-      });
-
-      setTimeout(() => {
-        newGameBox.classList.remove('boxFake');
-      }, 1000);
-
-      return true;
-    }
-
-    if (!isCheating) {
-      newGameBox.classList.remove('boxFake');
-      newGameBox.classList.add('boxOpen');
-
+      fakeIndex = 1;
+    } else if (fakeIndex === 1) {
+      bombermanState = 'dialogue';
+      bombermanFakeRepeatMessages();
+      fakeIndex = 2;
+    } else if (fakeIndex === 2) {
+      bombermanFakeBoxMessages();
+      bombermanState = 'dialogue';
+      fakeIndex = 3;
+    } else if (fakeIndex === 3) {
+      bombermanState = 'dialogue';
+      bombermanFakeRepeatMessages();
+      fakeIndex = 4;
+    } else {
+      bombermanState = 'normal';
+      fakeIndex = 0;
+      box.classList.add('boxOpen');
       return;
     }
+
+    setTimeout(() => {
+      box.classList.remove('boxFake');
+    }, 1000);
+
+    return true;
   };
+
   // *** End of Bomberman Handle ***
 
   // *** Memory Game Handle ***
@@ -249,7 +289,6 @@ export default function game() {
 
       bombermanMessages();
 
-      // 🔥 SCALE FIX POINT
       requestAnimationFrame(() => {
         firstBox?.classList.add('scale');
         secondBox?.classList.add('scale');
@@ -267,7 +306,6 @@ export default function game() {
 
         misMatchBoxRemove(firstBox!, secondBox!);
 
-        // 🔥 SHAKE FIX POINT
         requestAnimationFrame(() => {
           firstBox?.classList.add('shake');
           secondBox?.classList.add('shake');
@@ -286,6 +324,15 @@ export default function game() {
     const isBomberman = newGameBox.dataset.box === 'bomberman';
 
     if (isBomberman) {
+      //   if (lastBombermanBox === newGameBox) {
+      //     bombermanRepeatCount++;
+      //   } else {
+      //     bombermanRepeatCount = 0;
+      //   }
+
+      //   lastBombermanBox = newGameBox;
+
+      //   const blocked = handleBomberman(newGameBox, bombermanRepeatCount);
       const blocked = handleBomberman(newGameBox);
       if (blocked) return;
     }
@@ -304,11 +351,13 @@ export default function game() {
 
   // *** Reset Game ***
   function resetGame() {
+    bombermanState = 'normal';
     matchCount = 0;
     fakeCount = 0;
 
     indexMessages = 0;
     indexFakeMessages = 0;
+    indexFakeRepeatMessages = 0;
 
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');
