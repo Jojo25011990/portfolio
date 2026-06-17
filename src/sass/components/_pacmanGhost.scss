@@ -1,0 +1,231 @@
+@use '../abstract' as *;
+
+// *** Intro Pacman | Ghost ***
+.intro-scene-pacman {
+  //   filter: drop-shadow(0 0 1px $yellow-primary);
+
+  @include dimension-settings(6rem, $height: 6rem);
+  @include position-settings($bottom: 1rem);
+
+  transform: translateX(-20rem);
+
+  &.pacman-active {
+    animation: move 5.5s linear forwards;
+  }
+
+  @keyframes move {
+    to {
+      transform: translateX(125rem);
+    }
+  }
+
+  // *** Eye ***
+  &-eye {
+    border-radius: 50%;
+
+    background-color: $color-black;
+
+    @include dimension-settings(1rem, $height: 1rem);
+    @include position-settings(1rem, 2rem);
+  }
+  // *** End of Eye ***
+
+  // *** Body ***
+  &::before,
+  &::after {
+    content: '';
+
+    display: block;
+
+    border: 3rem solid $yellow-primary; // 3 default
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+
+    @include dimension-settings(0, $height: 0);
+    @include position-settings;
+  }
+
+  &::before {
+    animation: before-mouth 0.5s ease infinite;
+  }
+
+  &::after {
+    border-color: $yellow-primary;
+    border-right-color: transparent;
+    border-top-color: transparent;
+
+    animation: after-mouth 0.5s ease infinite;
+  }
+  // *** End of Body ***
+}
+
+.intro-scene-ghost {
+  background-color: $success-primary;
+
+  border-top-left-radius: 7rem;
+  border-top-right-radius: 7rem;
+
+  //   @include position-settings(null, 20rem, $bottom: 1rem);
+  @include dimension-settings(6rem, $height: 7rem);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+
+  &.ghost-active {
+    animation:
+      fade-in-ghost-01 1s ease-out forwards,
+      fade-in-ghost-02 1.5s 2s linear forwards;
+  }
+
+  &.ghost-active-02 {
+    animation:
+      fade-in-ghost-03 1s ease-out forwards,
+      fade-in-ghost-04 0.45s 3.5s ease-in forwards;
+  }
+
+  @keyframes fade-in-ghost-01 {
+    to {
+      transform: translateX(-50%) translateY(5%);
+    }
+  }
+  @keyframes fade-in-ghost-02 {
+    0% {
+      transform: translateX(-50%) translateY(5%);
+    }
+
+    50%,
+    90% {
+      transform: translateX(-50%) translateY(-18%);
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(100%);
+    }
+  }
+
+  @keyframes fade-in-ghost-03 {
+    to {
+      transform: translateX(-50%) translateY(-60%);
+    }
+  }
+  @keyframes fade-in-ghost-04 {
+    to {
+      transform: translateX(-50%) translateY(100%);
+    }
+  }
+
+  // *** Eyes ***
+  &::before,
+  &::after {
+    content: '';
+
+    background-color: $color-white;
+
+    border-radius: 100%;
+
+    @include position-settings(1.5rem, 0.4rem);
+    @include dimension-settings(2rem, $height: 2.5rem);
+  }
+
+  &::after {
+    @include position-settings($left: 2.8rem);
+  }
+
+  &-eyes {
+    &::before,
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 25px;
+      left: 5px;
+      z-index: 99;
+      background-color: $dark-overlay;
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+    }
+
+    &::after {
+      left: 30px;
+    }
+
+    &.active-eye::before,
+    &.active-eye::after {
+      animation: eye-animation 0.7s 1s linear forwards;
+    }
+  }
+  // *** End of Eyes ***
+
+  @keyframes eye-animation {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(8px);
+    }
+  }
+
+  // *** Body ***
+  &-body {
+    border: 1rem solid $color-black;
+    border-top-color: transparent;
+
+    @include position-settings($bottom: -1rem);
+    @include dimension-settings(0, $height: 0);
+
+    &::before,
+    &::after {
+      content: '';
+
+      border: 1rem solid $color-black;
+      border-top-color: transparent;
+
+      @include position-settings($left: 1rem, $bottom: -1rem);
+      @include dimension-settings(0, $height: 0);
+    }
+
+    &::after {
+      border-color: $color-black;
+      border-top-color: transparent;
+
+      @include position-settings($left: 3rem, $bottom: -1rem);
+    }
+  }
+  // *** End of Body ***
+
+  // *** Smile ***
+  &-smile {
+    transform: translateY(-73%) translateX(-40%) scale(0);
+    transform-origin: bottom center;
+
+    transition: all 0.35s;
+
+    border-bottom: 5px solid $dark-overlay;
+    border-left: 5px solid $dark-overlay;
+    border-right: 5px solid $dark-overlay;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+
+    @include position-settings(73%, 40%);
+    @include dimension-settings(1.5rem, $height: 1rem);
+
+    &.active-smile {
+      animation: ghost-smile 0.45s 1.8s linear forwards;
+    }
+  }
+  // *** End of Smile ***
+
+  @keyframes ghost-smile {
+    to {
+      transform: translateY(-73%) translateX(-40%) scale(1);
+    }
+  }
+}
+// *** End of Intro Pacman | Ghost ***

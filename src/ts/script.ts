@@ -1,3 +1,4 @@
+import intro from './modules/intro';
 import skillsHeading from './modules/skills';
 import projects from './modules/projects';
 import services from './modules/services';
@@ -23,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
+  intro();
+
   heading();
   description();
 
@@ -35,12 +38,10 @@ function init() {
   future();
   milestones();
   faq();
-  //   activity();
   game();
   showcase();
   footer();
   backToTop();
   myStoryOverlay();
   myProcess();
-  //   myStory();
 }

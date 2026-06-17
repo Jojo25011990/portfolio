@@ -15,6 +15,7 @@ body {
   font-family: $font-primary;
 
   overflow-x: hidden;
+  //   overflow: hidden;
 
   @include dimension-settings(100vw, null, auto);
   @include flex-settings(center, null);
@@ -47,6 +48,8 @@ body {
   overflow: hidden;
 
   @include dimension-settings(100%);
+
+  //   display: none;
 
   // *** Responsive Design ***
   @include responsive-settings(mobile-small) {

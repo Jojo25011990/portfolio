@@ -29,6 +29,19 @@
     transform: translateY(-100%);
   }
 }
+
+@keyframes before-mouth {
+  50% {
+    transform: rotate(44deg);
+  }
+}
+
+@keyframes after-mouth {
+  50% {
+    transform: rotate(-44deg);
+  }
+}
+
 // *** End of Intro ***
 
 // *** Header ***
@@ -393,7 +406,6 @@
 // *** End of Skills ***
 
 // *** Game ***
-
 @keyframes scale-bomberman {
   to {
     transform-origin: center;
