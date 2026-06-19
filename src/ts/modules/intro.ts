@@ -1,11 +1,16 @@
 import gsap from 'gsap';
 
 export default function intro() {
+  // *** Body | My Experience ***
+  const body = document.querySelector<HTMLBodyElement>('body');
+  const showcase = document.querySelector<HTMLElement>('.showcase');
+  const game = document.querySelector<HTMLElement>('.game');
+  // *** End of Body | My Experience ***
+
+  const intro = document.querySelector<HTMLElement>('.intro');
+
   const introHeadingImage =
     document.querySelector<HTMLDivElement>('.intro-imgbox');
-
-  const introBomberman =
-    document.querySelector<HTMLDivElement>('.intro-bomberman');
 
   const introScene = document.querySelector<HTMLDivElement>('.intro-scene');
   const introScenePlaceholder = document.querySelector<HTMLDivElement>(
@@ -84,8 +89,18 @@ export default function intro() {
       },
       '+=0.2',
     )
+    .add(() => body?.classList.add('active'))
+    .to(intro, {
+      yPercent: -105,
+
+      onComplete: () => {
+        intro?.classList.add('hide');
+      },
+    })
     .add(() => {
-      introBomberman?.classList.add('active-bomberman');
+      game?.classList.remove('hide');
+      showcase?.classList.remove('hide');
     });
+
   // *** End of Functionality ***
 }

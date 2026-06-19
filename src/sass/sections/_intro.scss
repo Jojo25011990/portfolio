@@ -8,69 +8,41 @@
 
   background-color: $color-black;
 
-  //   animation: intro 0.5s linear forwards;
-  //   animation-delay: 1.25s;
+  pointer-events: none;
 
-  @include flex-settings($direction: column, $gap: 5rem);
-  @include position-settings(0, 0, 0, 0, 999, fixed);
-  @include dimension-settings(100vw, $height: 100vh);
+  @include position-settings(0, 0, 0, 0, 5000, fixed);
+  @include dimension-settings(100vw, $height: 100dvh);
 
-  display: none;
-
-  &-bomberman {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -48%) scale(0.9);
-    transition: all 0.5s ease-out;
-    opacity: 0;
-    width: 70rem;
-    height: 70rem;
-
-    &-box {
-      text-align: center;
-    }
-
-    &--name {
-      font-size: 20px;
-      color: $yellow-primary;
-    }
-    &-message {
-      font-size: 18px;
-    }
-
-    &-img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    &.active-bomberman {
-      opacity: 1;
-      transform: translate(-50%, -45%) scale(1);
-    }
+  &.hide {
+    display: none;
   }
 
   &-imgbox {
+    transform: translateX(-50%) translateY(-50%);
+
     opacity: 0;
     visibility: hidden;
+
+    @include dimension-settings(100%, 105rem);
+    @include position-settings(50%, 50%);
   }
 
   // *** CSS Art Scene ***
   &-scene {
+    transform: translateX(-50%) translateY(-50%);
+
     overflow: hidden;
 
     @include dimension-settings(100%, 102.4rem, $min-height: 9rem);
-    @include position-settings($position: relative);
+    @include position-settings(50%, 50%);
 
     // *** Lines ***
     &-line-01,
     &-line-02 {
       transform-origin: left;
 
-      z-index: 5;
       @include dimension-settings(100%, $height: 0.2rem);
-      @include position-settings(null, 0, null, 0);
+      @include position-settings(null, 0, null, 0, 5);
 
       &.active-line {
         transform: scaleX(0);
@@ -81,6 +53,7 @@
     // *** Line 01 - White Background Color ***
     &-line-01 {
       transform: scaleX(0);
+
       background-color: $color-white;
     }
     // *** End of Line 01 - White Background Color ***
@@ -88,28 +61,21 @@
     // *** Line 01 - Green Background Color ***
     &-line-02 {
       transform: scaleX(0);
+
       background-color: $success-secondary;
     }
     // *** End of Line 01 - Green Background Color ***
 
     // *** Placeholder ***
     &-placeholder {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      //   max-width: 262px;
-      height: 100%;
-
-      z-index: -1;
-
-      background-color: transparent;
-      //   background-color: white;
-
       transform: translate3d(-105%, 0, 0);
 
+      background-color: transparent;
+
       will-change: transform;
+
+      @include dimension-settings(100%, $height: 100%);
+      @include position-settings(0, 0, null, null, -1);
 
       &.placeholder-active {
         animation: move-scene 6s linear forwards;

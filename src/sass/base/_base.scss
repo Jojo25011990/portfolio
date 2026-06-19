@@ -14,8 +14,12 @@ body {
 
   font-family: $font-primary;
 
-  overflow-x: hidden;
-  //   overflow: hidden;
+  overflow: hidden;
+
+  &.active {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 
   @include dimension-settings(100vw, null, auto);
   @include flex-settings(center, null);
