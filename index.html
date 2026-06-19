@@ -82,7 +82,7 @@
     <!-- Intro -->
     <!-- Header -->
     <!-- Skills -->
-    <!-- Projects -> OK -->
+    <!-- Projects -->
     <!-- Services -->
     <!-- Features -->
     <!-- Evolution -->
@@ -96,29 +96,16 @@
     <!-- Post Scene - NOK -> Tough Fight -->
     <!-- End of Section Map -->
 
-    <!-- na konci projektu skusit spravit custom raw smooth scroll system like lenis library -->
-
     <!-- Intro -->
     <section class="intro">
-      <div class="intro-bomberman">
-        <img
-          src="./src/assets/images/Bomberman-Photoroom.png"
-          alt=""
-          class="intro-bomberman-img"
-        />
-
-        <p class="intro-bomberman-box">
-          <span class="intro-bomberman--name">Bomberman:</span>
-          <span class="intro-bomberman-message">Don't forget me.</span>
-        </p>
-      </div>
-
+      <!-- Jozef Kudrna - Portfolio V1 -->
       <div class="intro-imgbox">
         <img
           src="./src/assets/images/Portfolio-V1-Jozef-Kudrna-4-18-2026.png"
           alt="Portfolio V1 - Jozef Kudrna"
         />
       </div>
+      <!-- End of Jozef Kudrna - Portfolio V1 -->
 
       <!-- CSS Art Intro Scene -->
       <div class="intro-scene">
@@ -379,7 +366,6 @@
         <!-- End of Skills -->
 
         <!-- Projects -->
-        <!-- premenovat nazvy gallerii, lebo podnohocuje moj realny skills -->
         <section class="projects">
           <div class="projects__wrapper">
             <h2 class="projects__title">
@@ -406,6 +392,85 @@
 
           <!-- Projects Menu -->
           <ul class="projects__menu">
+            <!-- Space Tourism V2 - Creative -->
+            <li class="projects__item">
+              <article class="projects__container">
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="./src/assets/images/space tourism V2.png"
+                      alt="Space Tourism V2 - Frontend Mentor Challenge"
+                      class="projects__box-img"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <!-- Desktop -->
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Space Tourism V2 - Creative Links"
+                  >
+                    <a
+                      href="https://jojo25011990.github.io/space-tourism-v2/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/space-tourism-v2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                  <!-- End of Desktop -->
+                </div>
+
+                <h4 class="projects__item-heading">
+                  Space Tourism V2 - Creative
+                </h4>
+                <p class="projects__item-description">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>SASS</span>
+                  <span>Three.js</span>
+                  <span>GSAP</span>
+                  <span>API</span>
+                </p>
+
+                <!-- Tablet | Mobile -->
+                <div
+                  class="projects__box-links"
+                  role="group"
+                  aria-label="Space Tourism V2 - Creative Links"
+                >
+                  <a
+                    href="https://jojo25011990.github.io/space-tourism-v2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__box-button"
+                  >
+                    view project <span></span>
+                  </a>
+
+                  <a
+                    href="https://github.com/Jojo25011990/space-tourism-v2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__box-button"
+                  >
+                    view code <span></span>
+                  </a>
+                </div>
+                <!-- End of Tablet | Mobile -->
+              </article>
+            </li>
+            <!-- End of Space Tourism V1 - Clean -->
+
             <!-- Space Tourism V1 - Clean -->
             <li class="projects__item">
               <article class="projects__container">
@@ -478,7 +543,7 @@
                 <!-- End of Tablet | Mobile -->
               </article>
             </li>
-            <!-- End of Space Tourism V1 - Clean -->
+            <!-- End of Space Tourism V2 - Creative -->
 
             <!-- My Hope -->
             <li class="projects__item">
@@ -1670,12 +1735,11 @@
             <!-- Project 01 -->
             <div class="future__box-project future__box-project-01">
               <div class="future__box-content future__box-content-01">
-                <h3 class="future__box-heading">Space Tourism V2</h3>
+                <h3 class="future__box-heading">Designo</h3>
                 <p class="future__box-description">
-                  A custom vanilla reinterpretation of the original Frontend
-                  Mentor Challenge, evolving the 4-page React and Tailwind
-                  concept into 7-page immersive experience built with HTML,
-                  SCSS, JavaScript, GSAP, and Three.js.
+                  A planned 7-page digital agency experience focused on
+                  scalability, component reusability, accessibility, and clean
+                  frontend architecture using React, TypeScript and TailwindCSS.
                 </p>
               </div>
             </div>
@@ -1722,9 +1786,10 @@
           </p>
           <!-- End of Sr - Only -->
 
-          <div class="milestones__container">
+          <!-- Container -->
+          <ul class="milestones__container">
             <!-- CV Web App -->
-            <article class="milestones__item">
+            <li class="milestones__item">
               <h3 class="milestones__item-heading">CV Web App</h3>
               <p class="milestones__item-description">
                 First complex frontend project built with vanilla HTML, SCSS and
@@ -1733,11 +1798,11 @@
                 transitions and experimental CSS Art elements. Built as a
                 foundation for later experimental portfolio systems.
               </p>
-            </article>
+            </li>
             <!-- End of CV Web App -->
 
             <!-- My Hope -->
-            <article class="milestones__item">
+            <li class="milestones__item">
               <h3 class="milestones__item-heading">My Hope</h3>
               <p class="milestones__item-description">
                 My first large-scale experimental project, built as a personal
@@ -1746,11 +1811,11 @@
                 components and creative visuals — all built in a fully custom
                 vanilla stack.
               </p>
-            </article>
+            </li>
             <!-- End of My Hope -->
 
             <!-- Ship, Shark and Fish CSS Art Scene  -->
-            <article class="milestones__item">
+            <li class="milestones__item">
               <h3 class="milestones__item-heading">CSS Scene Art</h3>
               <p class="milestones__item-description">
                 First deeper exploration into complex CSS Art scenes, focused on
@@ -1759,11 +1824,11 @@
                 visual structure, while shaping a more systematic approach to
                 constructing detailed visuals purely with CSS.
               </p>
-            </article>
+            </li>
             <!-- End of Ship, Shark and Fish CSS Art Scene  -->
 
             <!-- Ferb & Phineas -->
-            <article class="milestones__item">
+            <li class="milestones__item">
               <h3 class="milestones__item-heading">Phineas & Ferb</h3>
               <p class="milestones__item-description">
                 Most advanced CSS Art project I’ve built, focused on recreating
@@ -1773,11 +1838,11 @@
                 piece, representing a significant step forward in visual
                 accuracy and technical execution.
               </p>
-            </article>
+            </li>
             <!-- End of Ferb & Phineas -->
 
             <!-- Portfolio V1 -->
-            <article class="milestones__item">
+            <li class="milestones__item">
               <h3 class="milestones__item-heading">Portfolio V1</h3>
               <p class="milestones__item-description">
                 My latest large-scale frontend project focused on building a
@@ -1786,9 +1851,10 @@
                 animation systems and UI architecture into a unified experience
                 built with a modern vanilla stack.
               </p>
-            </article>
+            </li>
             <!-- End of Portfolio V1 -->
-          </div>
+          </ul>
+          <!-- End of Container -->
         </section>
         <!-- End of Milestones -->
 
@@ -1957,7 +2023,10 @@
           <p class="game__description" aria-hidden="true"></p>
 
           <!-- Sr Only -->
-          <p class="game__description-sr-only"></p>
+          <p class="game__description-sr-only">
+            An interactive CSS Art memory challenge with playful animations and
+            gameplay.
+          </p>
           <!-- End of Sr Only -->
 
           <!-- CSS Art Memory Game -->
@@ -2138,8 +2207,8 @@
 
           <!-- Sr Only -->
           <p class="showcase__description-sr-only">
-            A cinematic storytelling reel combining CSS art, animations, 3D work
-            and interactive experiments.
+            A cinematic storytelling reels combining CSS art, animations, 3D
+            work and interactive experiments.
           </p>
           <!-- End of Sr Only -->
 
@@ -2268,7 +2337,7 @@
               ></video>
               <video
                 id="video-1"
-                src="./src/assets/video/Mix Projects Part 01.mp4"
+                src="./src/assets/video/Mix Animations.mp4"
                 class="showcase__video"
                 aria-label="CSS Arts - 10 Projects showcase reel"
                 role="tabpanel"
@@ -2336,7 +2405,7 @@
           <!-- Video Player Buttons -->
           <div class="showcase__video-switcher" role="tablist">
             <button
-              class="showcase__switcher-btn"
+              class="showcase__switcher-btn active-video-button"
               role="tab"
               aria-selected="true"
               aria-controls="video-0"
@@ -3027,9 +3096,3 @@
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
-<!-- Pridat preloader : pozdrav, popis a animaciu lahku  -->
-<!--  Pridat sekciu certifikaty / learning , learning rozdelit na bloky, education | certifications | atd -->
-<!--  Pridat sekciu github activity -->
-<!--  Pridat sekciu showcase - video player rucny a ukaze bud cely projekt video alebo nejake ine videa -->
-<!-- Pridat sekciu GAME - memory/pexeso css art game -->
-<!-- Sekcia Behind the scenes v MY experience - css art book s stagmi napr stage 01 , na lavej popis na pravej strane img vs code  -->

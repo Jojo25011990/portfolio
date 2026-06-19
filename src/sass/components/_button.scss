@@ -61,7 +61,6 @@
 .game__container-button {
   @extend %glowing-btn;
 }
-
 // *** End of Secondary Button ***
 
 // *** Fun Facts Close Button ***
@@ -139,6 +138,18 @@
 .showcase__controls-btn-reset:hover .showcase__controls-icon-reset,
 .showcase__controls-btn-reset:active .showcase__controls-icon-reset {
   color: $yellow-primary;
+}
+
+.showcase__switcher-btn.active-video-button {
+  color: $color-white;
+  background-color: $success-secondary;
+
+  border-color: transparent;
+
+  box-shadow:
+    0 0 0.8rem $success-primary,
+    0 0 2.4rem $success-primary,
+    0 0 4.8rem $success-primary;
 }
 
 .showcase__switcher-btn:nth-child(2) {

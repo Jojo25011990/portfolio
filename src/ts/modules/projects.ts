@@ -20,7 +20,7 @@ export default function projects() {
 
         scrollTrigger: {
           trigger: projectsItem,
-          start: 'top 60%',
+          start: 'top 90%',
           toggleActions: 'play none none none',
         },
       });

@@ -81,9 +81,9 @@ export default function myProcess() {
         () => {
           coverFront?.classList.remove('active');
         },
-        (myPages.length + 1.5) * 120,
+        (myPages.length + 4) * 120,
       );
-    }, 1000);
+    }, 700);
   });
 }
 // *** End of CSS Art Book ***

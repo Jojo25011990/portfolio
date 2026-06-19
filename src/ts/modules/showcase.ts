@@ -79,6 +79,14 @@ export default function showcase() {
         'aria-selected',
         ariaAttrIndex === index ? 'true' : 'false',
       );
+
+      // *** Active Button Class ***
+      if (ariaAttrIndex === index) {
+        showcaseSwitcherBtn.classList.add('active-video-button');
+      } else {
+        showcaseSwitcherBtn.classList.remove('active-video-button');
+      }
+      // *** End of  Active Button Class ***
     });
 
     showcaseVideos.forEach((showcaseVideo, ariaAttrIndex) => {
