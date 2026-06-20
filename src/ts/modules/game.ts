@@ -14,6 +14,9 @@ export default function game() {
     '.game__container-button',
   );
 
+  const gameOverlayWin =
+    document.querySelector<HTMLLIElement>('.game__memory-win');
+
   const gameOverlay = document.querySelector<HTMLLIElement>(
     '.game__memory-overlay',
   );
@@ -115,6 +118,7 @@ export default function game() {
 
     lockBox = true;
 
+    // *** Match | MisMatch State ***
     if (isMatch) {
       firstBox?.classList.add('boxMatch');
       secondBox?.classList.add('boxMatch');
@@ -146,6 +150,17 @@ export default function game() {
         resetState();
       }, gameBoxDelay);
     }
+    // *** End of Match | MisMatch State ***
+
+    //  *** Win State ***
+    if (matchCount === gameBoxes.length / 2) {
+      const gameWinDelay = 2500;
+
+      setTimeout(() => {
+        gameOverlayWin?.classList.add('active');
+      }, gameWinDelay);
+    }
+    //  *** End of Win State ***
   };
   // *** End of Memory Game Handle ***
 
@@ -166,6 +181,8 @@ export default function game() {
   // *** Reset Game ***
   function resetGame() {
     matchCount = 0;
+
+    gameOverlayWin?.classList.remove('active');
 
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');

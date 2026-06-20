@@ -97,7 +97,7 @@
     <!-- End of Section Map -->
 
     <!-- Intro -->
-    <section class="intro">
+    <section class="intro hide">
       <!-- Jozef Kudrna - Portfolio V1 -->
       <div class="intro-imgbox">
         <img
@@ -135,7 +135,11 @@
       <!-- End of CSS Art Intro Scene -->
 
       <!-- SR Only -->
-      <p class="intro-sr-only"></p>
+      <p class="intro-sr-only">
+        Animated intro scene showing a Pac-Man chasing a ghost across a stylized
+        CSS Art environment. The sequence represents playful interaction and
+        transition into the portfolio experience.
+      </p>
       <!-- End of SR Only -->
     </section>
     <!-- End of Intro -->
@@ -1739,11 +1743,11 @@
             <!-- Project 01 -->
             <div class="future__box-project future__box-project-01">
               <div class="future__box-content future__box-content-01">
-                <h3 class="future__box-heading">Designo</h3>
+                <h3 class="future__box-heading">CSS Art Anime</h3>
                 <p class="future__box-description">
-                  A planned 7-page digital agency experience focused on
-                  scalability, component reusability, accessibility, and clean
-                  frontend architecture using React, TypeScript and TailwindCSS.
+                  A peak CSS Art inspired by anime aesthetics, focused on
+                  handcrafted visuals, expressive detail, and polished design
+                  using HTML and SCSS.
                 </p>
               </div>
             </div>
@@ -1752,11 +1756,11 @@
             <!-- Project 02 -->
             <div class="future__box-project future__box-project-02">
               <div class="future__box-content future__box-content-02">
-                <h3 class="future__box-heading">CSS Art Anime</h3>
+                <h3 class="future__box-heading">Designo</h3>
                 <p class="future__box-description">
-                  A peak CSS Art inspired by anime aesthetics, focused on
-                  handcrafted visuals, expressive detail, and polished design
-                  using HTML and SCSS.
+                  A planned 7-page digital agency experience focused on
+                  scalability, component reusability, accessibility, and clean
+                  frontend architecture using React, TypeScript and TailwindCSS.
                 </p>
               </div>
             </div>
@@ -1791,9 +1795,13 @@
           <!-- End of Sr - Only -->
 
           <!-- Container -->
-          <ul class="milestones__container">
+          <div
+            class="milestones__container"
+            role="list"
+            aria-label="Frontend milestones timeline"
+          >
             <!-- CV Web App -->
-            <li class="milestones__item">
+            <article class="milestones__item" role="listitem">
               <h3 class="milestones__item-heading">CV Web App</h3>
               <p class="milestones__item-description">
                 First complex frontend project built with vanilla HTML, SCSS and
@@ -1802,11 +1810,11 @@
                 transitions and experimental CSS Art elements. Built as a
                 foundation for later experimental portfolio systems.
               </p>
-            </li>
+            </article>
             <!-- End of CV Web App -->
 
             <!-- My Hope -->
-            <li class="milestones__item">
+            <article class="milestones__item" role="listitem">
               <h3 class="milestones__item-heading">My Hope</h3>
               <p class="milestones__item-description">
                 My first large-scale experimental project, built as a personal
@@ -1815,11 +1823,11 @@
                 components and creative visuals — all built in a fully custom
                 vanilla stack.
               </p>
-            </li>
+            </article>
             <!-- End of My Hope -->
 
             <!-- Ship, Shark and Fish CSS Art Scene  -->
-            <li class="milestones__item">
+            <article class="milestones__item" role="listitem">
               <h3 class="milestones__item-heading">CSS Scene Art</h3>
               <p class="milestones__item-description">
                 First deeper exploration into complex CSS Art scenes, focused on
@@ -1828,11 +1836,11 @@
                 visual structure, while shaping a more systematic approach to
                 constructing detailed visuals purely with CSS.
               </p>
-            </li>
+            </article>
             <!-- End of Ship, Shark and Fish CSS Art Scene  -->
 
             <!-- Ferb & Phineas -->
-            <li class="milestones__item">
+            <article class="milestones__item" role="listitem">
               <h3 class="milestones__item-heading">Phineas & Ferb</h3>
               <p class="milestones__item-description">
                 Most advanced CSS Art project I’ve built, focused on recreating
@@ -1842,11 +1850,11 @@
                 piece, representing a significant step forward in visual
                 accuracy and technical execution.
               </p>
-            </li>
+            </article>
             <!-- End of Ferb & Phineas -->
 
             <!-- Portfolio V1 -->
-            <li class="milestones__item">
+            <article class="milestones__item" role="listitem">
               <h3 class="milestones__item-heading">Portfolio V1</h3>
               <p class="milestones__item-description">
                 My latest large-scale frontend project focused on building a
@@ -1855,9 +1863,9 @@
                 animation systems and UI architecture into a unified experience
                 built with a modern vanilla stack.
               </p>
-            </li>
+            </article>
             <!-- End of Portfolio V1 -->
-          </ul>
+          </div>
           <!-- End of Container -->
         </section>
         <!-- End of Milestones -->
@@ -2032,9 +2040,28 @@
           </p>
           <!-- End of Sr Only -->
 
+          <!-- Game Fallback Message -->
+          <p class="game__fallback-message">
+            <strong class="game__fallback-message-strong">
+              This game experience is optimized for Chrome and Edge.
+            </strong>
+          </p>
+          <!-- End of Game Fallback Message -->
+
           <!-- CSS Art Memory Game -->
           <div class="game__container">
             <ul class="game__memory">
+              <li
+                class="game__memory-win"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <p class="game__memory-win-text">
+                  <strong class="game__memory-win-strong">YOU WIN</strong>
+                  <span class="game__memory-win-span">All CSS Arts found</span>
+                </p>
+              </li>
+
               <li class="game__memory-overlay" aria-hidden="true">
                 <div
                   class="game__memory-line-vertical game__memory-line-vertical-01"
@@ -2180,7 +2207,6 @@
         <!-- End of Game -->
 
         <!-- Showcase -->
-        <!-- spravit responsive design na TV, SR je to hotove , zmenit hlavny description pre sr a normalny , kedze uz to neni jeden reel ale viac reelov konkretne 3 -->
         <section class="showcase">
           <div class="showcase__wrapper">
             <h2 class="showcase__title">
@@ -2337,7 +2363,7 @@
               ></video>
               <video
                 id="video-2"
-                src="./src/assets/video/Portfolio V1.mp4"
+                src="./src/assets/video/Mix Work.mp4"
                 class="showcase__video"
                 aria-label="CSS Arts - 10 Projects showcase reel"
                 role="tabpanel"

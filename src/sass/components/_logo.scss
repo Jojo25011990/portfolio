@@ -21,7 +21,7 @@
   }
 }
 
-.header__logo {
+.header__logo.active {
   &:link,
   &:visited {
     animation: author-animate 1s 2.3s ease forwards;

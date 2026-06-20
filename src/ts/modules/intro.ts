@@ -7,12 +7,26 @@ export default function intro() {
   const game = document.querySelector<HTMLElement>('.game');
   // *** End of Body | My Experience ***
 
+  // *** Header | Skills ***
+  const headerLogo = document.querySelector<HTMLAnchorElement>('.header__logo');
+  const headerCircle = document.querySelector<SVGCircleElement>(
+    '.header__svg-circle',
+  );
+  const headerAuthorImage =
+    document.querySelector<HTMLImageElement>('.header__author');
+  const headerAuthorSpan = document.querySelector<HTMLSpanElement>(
+    '.header__title-author',
+  );
+
+  const skillsMenu = document.querySelector<HTMLUListElement>('.skills__menu');
+  // *** End of Header | Skills ***
+
+  // *** Intro ***
   const intro = document.querySelector<HTMLElement>('.intro');
 
   const introHeadingImage =
     document.querySelector<HTMLDivElement>('.intro-imgbox');
 
-  const introScene = document.querySelector<HTMLDivElement>('.intro-scene');
   const introScenePlaceholder = document.querySelector<HTMLDivElement>(
     '.intro-scene-placeholder',
   );
@@ -35,6 +49,7 @@ export default function intro() {
 
   const introTimelineDelay = 1.5;
   const introTimeline = gsap.timeline().delay(introTimelineDelay);
+  // *** End of Intro ***
 
   // *** Functionality ***
   introTimeline
@@ -100,7 +115,14 @@ export default function intro() {
     .add(() => {
       game?.classList.remove('hide');
       showcase?.classList.remove('hide');
-    });
+    })
+    .add(() => {
+      headerAuthorImage?.classList.add('active');
+      headerLogo?.classList.add('active');
+      headerAuthorSpan?.classList.add('active');
+      headerCircle?.classList.add('active');
+      skillsMenu?.classList.add('active');
+    }, '-=1.4');
 
   // *** End of Functionality ***
 }

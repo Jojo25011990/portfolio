@@ -4,6 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function heading() {
+  // *** Secondary Headings - H2 ***
   const headings = document.querySelectorAll<HTMLHeadingElement>('h2');
 
   headings.forEach(heading => {
@@ -27,4 +28,5 @@ export default function heading() {
       });
     }
   });
+  // *** End of Secondary Headings - H2 ***
 }

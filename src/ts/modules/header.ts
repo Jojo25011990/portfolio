@@ -15,7 +15,6 @@ export default function header() {
   const circleSvg = document.querySelector<SVGCircleElement>(
     '.header__svg circle',
   )!;
-  console.log(circleSvg);
 
   if (lightboxOpenButton) {
     lightboxOpenButton.addEventListener('mouseenter', () => {

@@ -161,6 +161,12 @@ p:not(
 }
 // *** End of Future ***
 
+// *** Milestones ***
+.milestones__item-description {
+  @include dimension-settings(100%, 76rem);
+}
+// *** End of Milestones ***
+
 // *** FAQ - Accordion ***
 .faq__item-answer {
   margin-top: 2rem;
@@ -174,11 +180,17 @@ p:not(
 }
 // *** End of FAQ - Accordion ***
 
-// *** Milestones ***
-.milestones__item-description {
+// *** Game - Fallback Message ***
+
+.game__fallback-message {
+  text-align: center;
   @include dimension-settings(100%, 76rem);
+
+  &-strong {
+    @include font-settings(clamp(1.5rem, 3vw, 4rem), $line-height: 1.5);
+  }
 }
-// *** End of Milestones ***
+// *** End of Game - Fallback Message ***
 
 // *** Process ***
 .my-process__book-description {

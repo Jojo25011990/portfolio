@@ -406,21 +406,6 @@
 // *** End of Skills ***
 
 // *** Game ***
-@keyframes scale-bomberman {
-  to {
-    transform-origin: center;
-    transform: translate(20rem, -20rem) scale(0);
-    opacity: 0;
-  }
-}
-
-@keyframes appear-bomberman {
-  to {
-    opacity: 1;
-    transform: translate(20rem, -20rem) scale(0.7);
-  }
-}
-
 @keyframes shakeBox {
   0%,
   100% {

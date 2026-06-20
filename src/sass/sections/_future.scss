@@ -45,8 +45,8 @@
     &-project-01 {
       transition: clip-path 0.5s;
 
-      background: url('../../assets/images/Designo\ Frontend\ Mentor\ Challenge.jpg')
-        no-repeat center/cover;
+      background: url('../../assets/images/CSS\ Art\ Anime\ 02.jpg') no-repeat
+        center/cover;
 
       &:hover .future__box-content-01 {
         opacity: 1;
@@ -62,8 +62,8 @@
     &-project-02 {
       transition: clip-path 0.5s;
 
-      background: url('../../assets/images/CSS\ Art\ Anime\ 02.jpg') no-repeat
-        center/cover;
+      background: url('../../assets/images/Designo\ Frontend\ Mentor\ Challenge.jpg')
+        no-repeat center/cover;
 
       clip-path: polygon(70% 0, 100% 0, 100% 100%, 30% 100%);
 
