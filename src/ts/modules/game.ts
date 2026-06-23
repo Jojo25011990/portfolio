@@ -5,7 +5,34 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function game() {
-  // *** CSS Art Memory Game ***
+  // *** User Agent | Firefox | Safari | Game Container | Fallback Message ***
+  const gameContainer =
+    document.querySelector<HTMLDivElement>('.game__container');
+  const gameFallbackMessage = document.querySelector<HTMLParagraphElement>(
+    '.game__fallback-message',
+  );
+
+  const userNavigatorAgent = navigator.userAgent;
+
+  const isFirefox = userNavigatorAgent.includes('Firefox');
+
+  const isSafari =
+    userNavigatorAgent.includes('Safari') &&
+    !userNavigatorAgent.includes('Chrome') &&
+    !userNavigatorAgent.includes('Chromium') &&
+    !userNavigatorAgent.includes('Edg') &&
+    !userNavigatorAgent.includes('OPR');
+
+  if (isFirefox || isSafari) {
+    gameContainer?.classList.add('hide');
+  } else {
+    gameFallbackMessage?.classList.add('hide');
+  }
+  // *** End of User Agent | Firefox | Safari | Game Container | Fallback Message ***
+
+  // *** CSS Art Memory Game - CHrome | Edge ***
+  // *** Select Elements ***
+  //   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const gameBoxes =
     document.querySelectorAll<HTMLLIElement>('.game__memory-box');
@@ -21,7 +48,7 @@ export default function game() {
     '.game__memory-overlay',
   );
   const gameOverlayLines = gameOverlay?.querySelectorAll<HTMLDivElement>('div');
-  // *** End of CSS Art Memory Game ***
+  // *** End of Select Elements ***
 
   // *** First Box | Second Box | Match Count ***
   let firstBox: HTMLLIElement | null = null;
@@ -193,4 +220,5 @@ export default function game() {
   resetGameButton?.addEventListener('click', resetGame);
   resetGameButton?.addEventListener('click', shuffleGameBoxes);
   // *** End of Reset Game ***
+  // *** End of CSS Art Memory Game - CHrome | Edge ***
 }

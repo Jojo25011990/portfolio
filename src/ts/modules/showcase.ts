@@ -231,6 +231,12 @@ export default function showcase() {
   // *** End of Video Player ***
 
   // *** Old School TV ***
+  const isTvDesktop = function () {
+    return window.matchMedia('(min-width: 850px)').matches;
+  };
+
+  if (!isTvDesktop()) return;
+
   const showcaseCSSArtVideoOverlay = document.querySelector<HTMLDivElement>(
     '.showcase__body-inner-screen-overlay',
   );
@@ -266,7 +272,7 @@ export default function showcase() {
   showcaseCSSArtButton02.addEventListener(
     'click',
     () => {
-      triggerLightning();
+      triggerTvLightning();
       showcaseCSSArtLightningSparks?.play();
     },
     { once: true },
@@ -283,9 +289,8 @@ export default function showcase() {
     }
   };
 
-  function triggerLightning() {
+  function triggerTvLightning() {
     const tl = gsap.timeline();
-
     gsap.set(showcaseCSSArtLightning, { opacity: 1 });
     gsap.set(showcaseCSSArtLightningPath, {
       strokeDasharray: 300,

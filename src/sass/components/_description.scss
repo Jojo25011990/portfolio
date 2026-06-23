@@ -186,6 +186,10 @@ p:not(
   text-align: center;
   @include dimension-settings(100%, 76rem);
 
+  &.hide {
+    display: none;
+  }
+
   &-strong {
     @include font-settings(clamp(1.5rem, 3vw, 4rem), $line-height: 1.5);
   }

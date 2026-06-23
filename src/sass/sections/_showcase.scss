@@ -27,6 +27,12 @@
       background-color: rgba($color-white, $alpha: 0.7);
 
       @include dimension-settings($min-height: 69rem);
+
+      // *** Responsive Design ***
+      @include responsive-settings(tablet-large) {
+        display: none;
+      }
+      // *** End of Responsive Design ***
     }
     // *** End of Old School TV ***
 
