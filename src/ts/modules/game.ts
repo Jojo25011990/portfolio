@@ -1,34 +1,26 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import TextPlugin from 'gsap/TextPlugin';
+import detectBrowsers from './detectBrowsers';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function game() {
-  // *** User Agent | Firefox | Safari | Game Container | Fallback Message ***
+  // *** Game Container | Fallback Message | Browsers Helper Function ***
   const gameContainer =
     document.querySelector<HTMLDivElement>('.game__container');
   const gameFallbackMessage = document.querySelector<HTMLParagraphElement>(
     '.game__fallback-message',
   );
 
-  const userNavigatorAgent = navigator.userAgent;
+  const detectBrowser = detectBrowsers();
 
-  const isFirefox = userNavigatorAgent.includes('Firefox');
-
-  const isSafari =
-    userNavigatorAgent.includes('Safari') &&
-    !userNavigatorAgent.includes('Chrome') &&
-    !userNavigatorAgent.includes('Chromium') &&
-    !userNavigatorAgent.includes('Edg') &&
-    !userNavigatorAgent.includes('OPR');
-
-  if (isFirefox || isSafari) {
+  if (detectBrowser) {
     gameContainer?.classList.add('hide');
   } else {
     gameFallbackMessage?.classList.add('hide');
   }
-  // *** End of User Agent | Firefox | Safari | Game Container | Fallback Message ***
+  // *** End of Game Container | Fallback Message | Browsers Helper Function ***
 
   // *** CSS Art Memory Game - CHrome | Edge ***
   // *** Select Elements ***

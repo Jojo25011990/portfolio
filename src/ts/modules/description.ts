@@ -9,13 +9,13 @@ export default function description() {
     nameSection: string;
     nameSectionText: string;
 
-    duration: number;
+    duration?: number;
   };
 
   const descriptionConfig = ({
     nameSection,
     nameSectionText,
-    duration,
+    duration = 2,
   }: DescriptionTypes) => {
     const sectionDescription = document.querySelector<HTMLParagraphElement>(
       `.${nameSection}__description`,
@@ -30,7 +30,7 @@ export default function description() {
       },
 
       text: nameSectionText,
-      duration: duration,
+      duration: duration, // *** When key and value match, you can use only key -> duration ( Object shorthand ...) ***
       ease: 'none',
     });
   };
@@ -49,7 +49,6 @@ export default function description() {
     nameSection: 'services',
     nameSectionText:
       'Exploring, building, and animating digital experiences that tell a story.',
-    duration: 2,
   });
   // *** End of Services Section ***
 
@@ -58,7 +57,6 @@ export default function description() {
     nameSection: 'features',
     nameSectionText:
       'Small details that make every project engaging, interactive, and memorable.',
-    duration: 2,
   });
   // *** End of Features Section ***
 
@@ -94,7 +92,6 @@ export default function description() {
     nameSection: 'faq',
     nameSectionText:
       'Curious how I work and create? Here are some quick answers.',
-    duration: 2,
   });
   // *** End of Faq Section ***
 
@@ -103,7 +100,6 @@ export default function description() {
     nameSection: 'game',
     nameSectionText:
       'An interactive CSS Art memory challenge with playful animations and gameplay.',
-    duration: 2,
   });
   // *** End of Game Section ***
 

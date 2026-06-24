@@ -21,7 +21,8 @@
   // *** End of Responsive Design ***
 
   &.active {
-    transform: translateX(75%) scale(1.5);
+    transform: translateX(60%) scale(1.2);
+    // transform: translateX(75%) scale(1.5);
 
     // *** Responsive Design ***
     @include responsive-settings(desktop) {
@@ -80,7 +81,8 @@
 
     transform-origin: left;
 
-    transition: transform 1s;
+    // transition: transform 1s;
+    transition: all 1s ease-out;
 
     &--front.active {
       transform: rotateY(-180deg);
@@ -139,7 +141,7 @@
     transform-origin: left center;
     transform: translateY(-50%);
 
-    transition: transform 1s ease-out;
+    transition: all 1s ease-out;
 
     color: $color-black;
     background-color: $body-bg-color;
@@ -162,7 +164,6 @@
       overflow: hidden;
 
       backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
 
       text-align: center;
 

@@ -26,7 +26,7 @@ export function startMyProcess() {
   if (myProcessDescription) {
     gsap.to(myProcessDescription, {
       duration: 2,
-      text: 'From over 150 completed projects, this is a curated selection showcasing my work across interactive UI systems, creative coding, animations, and frontend experiments.',
+      text: 'Behind the scenes of how interactive experiences are shaped through code, motion, and design decisions.',
       ease: 'none',
     });
   }
