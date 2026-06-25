@@ -14,6 +14,10 @@
   @include position-settings($position: relative);
   @include dimension-settings(100%, 25rem, 30rem);
 
+  &.hide {
+    display: none;
+  }
+
   // *** Responsive Design ***
   @include responsive-settings(mobile) {
     transform: scale(0.7);
@@ -22,7 +26,6 @@
 
   &.active {
     transform: translateX(60%) scale(1.2);
-    // transform: translateX(75%) scale(1.5);
 
     // *** Responsive Design ***
     @include responsive-settings(desktop) {
@@ -81,7 +84,6 @@
 
     transform-origin: left;
 
-    // transition: transform 1s;
     transition: all 1s ease-out;
 
     &--front.active {
@@ -152,11 +154,6 @@
 
     @include dimension-settings(97%, $height: 97%);
     @include position-settings(50%, 0);
-
-    &-img {
-      pointer-events: none;
-      -webkit-user-drag: none;
-    }
 
     // *** Front | Back ***
     &-front,

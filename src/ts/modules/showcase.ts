@@ -110,7 +110,6 @@ export default function showcase() {
       setShowcaseActiveVideo(index);
     });
   });
-
   // *** End of Switcher Buttons ***
 
   let isScrubbing = false;
@@ -291,6 +290,7 @@ export default function showcase() {
 
   function triggerTvLightning() {
     const tl = gsap.timeline();
+
     gsap.set(showcaseCSSArtLightning, { opacity: 1 });
     gsap.set(showcaseCSSArtLightningPath, {
       strokeDasharray: 300,

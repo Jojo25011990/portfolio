@@ -5,6 +5,10 @@ import { startMyProcess } from './myProcess';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function myStory() {
+  const myProcessSlider = document.querySelector<HTMLDivElement>(
+    '.my-process__slider',
+  );
+
   const myStory = document.querySelector<HTMLElement>('.my-story');
 
   const myStoryContainer = document.querySelector<HTMLDivElement>(
@@ -131,7 +135,10 @@ export default function myStory() {
               if (myStory) myStory.style.display = 'none';
             }, 1250);
           }, '+=2')
-          .add(() => startMyProcess(), '+=1.5');
+          .add(() => {
+            startMyProcess();
+          }, '+=1.5')
+          .add(() => myProcessSlider?.classList.remove('active'), '+=2');
       },
       { once: true },
     );

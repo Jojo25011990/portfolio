@@ -31,19 +31,3 @@ export default function milestones() {
     }
   });
 }
-
-//   let current = 0;
-//   let target = 0;
-//   let ease = 0.08;
-
-//   function raf() {
-//     target = window.scrollY;
-
-//     current += (target - current) * ease;
-//     items.forEach(item => {
-//       item!.style.transform = `translateY(${-current}px)`;
-//     });
-
-//     requestAnimationFrame(raf);
-//   }
-//   raf();

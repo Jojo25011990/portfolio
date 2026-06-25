@@ -31,7 +31,9 @@ p:not(
   .header__lightbox-description,
   .footer__form-message,
   .my-story__character-bubble-message,
-  .my-process__book-description
+  .my-process__book-description,
+  .my-process__slider-description,
+  .my-process__slider-helper
 ) {
   color: $grey-primary;
 }
@@ -181,7 +183,6 @@ p:not(
 // *** End of FAQ - Accordion ***
 
 // *** Game - Fallback Message ***
-
 .game__fallback-message {
   text-align: center;
   @include dimension-settings(100%, 76rem);
@@ -203,6 +204,44 @@ p:not(
   text-align: center;
   @include font-settings(1.4rem, 500, 1.5, 0.03rem);
   @include dimension-settings(95%);
+}
+
+.my-process__slider-description {
+  @include font-settings(2rem, $line-height: 1.7);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-small) {
+    @include font-settings(1.6rem, 700);
+  }
+  // *** End of Responsive Design ***
+}
+
+.my-process__slider-helper {
+  text-transform: uppercase;
+
+  @include font-settings(1.5rem, 700);
+  @include position-settings($position: relative);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-small) {
+    @include font-settings(1.4rem, 700);
+  }
+  // *** End of Responsive Design ***
+
+  &::after {
+    content: '';
+
+    background-color: $color-white;
+
+    @include position-settings($left: 0, $bottom: 0);
+    @include dimension-settings(100%, null, 0.2rem);
+
+    // *** Responsive Design ***
+    @include responsive-settings(tablet-small) {
+      content: none;
+    }
+    // *** End of Responsive Design ***
+  }
 }
 // *** End of Process ***
 

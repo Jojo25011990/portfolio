@@ -198,7 +198,6 @@
   // *** End of Responsive Design ***
 }
 // *** End of Menu Heading ***
-
 // *** End of Skills ***
 
 // *** Fun Facts Title ***
@@ -302,6 +301,20 @@
   // ***  End of Responsive Design ***
 }
 // *** End of My Story ***
+
+// *** My Process ***
+.my-process__slider-title {
+  color: $color-white;
+
+  @include font-settings(4rem, 700, 1.2);
+
+  // *** Responsive Design ***
+  @include responsive-settings(tablet-small) {
+    @include font-settings(2.4rem, 700);
+  }
+  // *** End of Responsive Design ***
+}
+// *** End of My Process ***
 
 // *** Footer - H2 ***
 .footer__title {

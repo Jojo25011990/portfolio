@@ -122,7 +122,6 @@ export default function footer() {
         setTimeout(() => {
           overlay?.classList.add('active');
           footerEnvelopeHeart?.classList.add('initial-state');
-          //   envelope();
 
           setTimeout(() => {
             footerEnvelopeHeart?.classList.add('active');

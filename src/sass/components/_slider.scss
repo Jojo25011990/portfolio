@@ -1,0 +1,95 @@
+@use '../abstract' as *;
+@use '../base' as *;
+
+// *** Slider Component - Behind the scenes ***
+.my-process__slider {
+  padding: 2rem 3rem;
+
+  background-image: linear-gradient(
+    to right,
+    $success-quaternary,
+    $success-tertiary,
+    $success-primary
+  );
+
+  overflow: hidden;
+
+  @include dimension-settings(100%, 60rem, 30rem);
+  @include position-settings($position: relative);
+
+  &.hide {
+    display: none;
+  }
+
+  // *** Slide ***
+  &-slide {
+    padding: 2rem 3rem;
+
+    opacity: 0;
+
+    text-align: center;
+
+    @include flex-settings(center, center, column, 1.5rem);
+    @include dimension-settings(100%, $height: 100%);
+    @include position-settings(0, 0, 0, 0, 1);
+
+    animation: my-process-slider 5s linear forwards;
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile) {
+      padding: 2rem 1.2rem;
+    }
+    // *** End of Responsive Design ***
+
+    // *** Pause Slide | Hover | Active - State ***
+    .my-process__slider:hover &,
+    .my-process__slider:active & {
+      animation-play-state: paused;
+    }
+    // *** End of Pause Slide | Hover | Active - State ***
+
+    // *** Pause Slide - Timeline My Story ***
+    .my-process__slider.active & {
+      animation-play-state: paused;
+    }
+    // *** End of Pause Slide - Timeline My Story ***
+
+    // *** Intro ***
+    &--01 {
+      animation-delay: 0s;
+    }
+    // *** End of Intro ***
+
+    // *** Stage 01 ***
+    &--02 {
+      animation-delay: 5s;
+    }
+    // *** End of Stage 01 ***
+
+    // *** Stage 02 ***
+    &--03 {
+      animation-delay: 10s;
+    }
+    // *** End of Stage 02 ***
+
+    // *** Stage 03 ***
+    &--04 {
+      animation-delay: 15s;
+    }
+    // *** End of Stage 03 ***
+
+    // *** Stage 04 ***
+    &--05 {
+      animation-delay: 20s;
+    }
+    // *** End of Stage 04 ***
+
+    // *** Outro ***
+    &--06 {
+      animation: fadeIn 0.5s 25s linear forwards;
+    }
+    // *** End of Outro ***
+  }
+  // *** End of Slide ***
+}
+// *** End of Slider Component - Behind the scenes ***

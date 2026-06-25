@@ -95,7 +95,7 @@ export default function myStoryOverlay() {
   });
   // *** End of 3D Text | Material | Mesh | Gsap Anim ***
 
-  // *** Animate | Loop ***
+  // *** Animate | Loop | Raf ID ***
   let rafId: number;
 
   animate();
@@ -117,5 +117,5 @@ export default function myStoryOverlay() {
 
     myStory();
   });
-  // End of *** Animate | Loop ***
+  // End of *** Animate | Loop | Raf ID ***
 }

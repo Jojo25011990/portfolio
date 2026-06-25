@@ -3,7 +3,7 @@
 
 // *** My Story ***
 .my-story {
-  overflow: hidden; // otestovat pri respon-e
+  overflow: hidden;
 
   margin-top: 0;
 
@@ -12,8 +12,6 @@
   @include dimension-settings(100%, $height: 100%);
   @include position-settings(0, 0, $zIndex: 200);
   @include flex-settings;
-
-  //   display: none;
 
   &.active {
     transform: translateY(-150%);

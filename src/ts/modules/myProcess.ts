@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import TextPlugin from 'gsap/TextPlugin';
+import detectBrowsers from './detectBrowsers';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -33,10 +34,25 @@ export function startMyProcess() {
 }
 // *** End of Heading | Description ( in timeline - my story ) ***
 
-// *** CSS Art Book ***
+// *** CSS Art Book | Slider Component ***
 export default function myProcess() {
+  // *** CSS Art Book | Slider Component | Browsers Helper Function ***
   const myProcessBook =
     document.querySelector<HTMLDivElement>('.my-process__book');
+  const myProcessSlider = document.querySelector<HTMLDivElement>(
+    '.my-process__slider',
+  );
+
+  const detectBrowser = detectBrowsers();
+
+  if (detectBrowser) {
+    myProcessBook?.classList.add('hide');
+  } else {
+    myProcessSlider?.classList.add('hide');
+  }
+  // *** End of CSS Art Book | Slider Component | Browsers Helper Function ***
+
+  // *** CSS Art Book ****
   const coverFront = document.querySelector<HTMLDivElement>(
     '.my-process__book-cover--front',
   );
@@ -85,5 +101,9 @@ export default function myProcess() {
       );
     }, 700);
   });
+  // *** End of CSS Art Book ****
+
+  // *** Slider Component ***
+  // *** End of Slider Component ***
 }
-// *** End of CSS Art Book ***
+// *** End of CSS Art Book | Slider Component ***

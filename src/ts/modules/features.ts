@@ -5,10 +5,6 @@ import TextPlugin from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function features() {
-  const featuresDescription = document.querySelector<HTMLParagraphElement>(
-    '.features__description',
-  );
-
   const featuresMenu =
     document.querySelector<HTMLUListElement>('.features__menu');
   const featuresItems =
