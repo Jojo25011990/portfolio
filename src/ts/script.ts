@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
-  intro();
+  //   intro();
 
   heading();
   description();

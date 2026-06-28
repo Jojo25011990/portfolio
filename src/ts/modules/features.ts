@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import TextPlugin from 'gsap/TextPlugin';
+import focusModalTrap from './focusModalTrap';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -106,42 +107,13 @@ export default function features() {
   // *** End of Random Animation Icon ***
   // *** End of Features Eight Mini blocks ***
 
-  // *** Focus Modal Trap ***
-  const focusFunFactsModalTrap = (event: KeyboardEvent) => {
-    if (event.key !== 'Tab') return;
-
-    const focusableElements = Array.from(
-      featuresFunFacts?.querySelectorAll<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-      ) ?? [],
-    );
-
-    if (!focusableElements.length) return;
-
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-    const currentIndex = focusableElements.indexOf(
-      document.activeElement as HTMLElement,
-    );
-
-    if (event.shiftKey) {
-      if (currentIndex <= 0) {
-        event.preventDefault();
-        lastElement.focus();
-      }
-    } else {
-      if (
-        currentIndex === focusableElements.length - 1 ||
-        currentIndex === -1
-      ) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    }
-  };
-  // *** End of Focus Modal Trap ***
-
   // *** Fun Facts - ADD | REMOVE | FOCUS ***
+  const focusFunFactsModalTrap = (event: KeyboardEvent) => {
+    if (!featuresFunFacts) return;
+
+    focusModalTrap(event, featuresFunFacts);
+  };
+
   const openFunFactsModal = () => {
     featuresFunFacts?.classList.add('active');
     featuresMenu?.classList.add('active');
@@ -165,7 +137,7 @@ export default function features() {
     featuresFunFactsButton?.focus();
 
     document.removeEventListener('keydown', funFactsEscapeKey);
-    document.addEventListener('keydown', focusFunFactsModalTrap);
+    document.removeEventListener('keydown', focusFunFactsModalTrap);
   };
 
   const funFactsEscapeKey = (event: KeyboardEvent) => {

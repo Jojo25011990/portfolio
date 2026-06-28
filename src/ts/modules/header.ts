@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import focusModalTrap from './focusModalTrap';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,6 +27,12 @@ export default function header() {
     });
   }
   // *** OPEN | CLOSE | FOCUS ***
+  const headerFocusModalTrap = (event: KeyboardEvent) => {
+    if (!lightbox) return;
+
+    focusModalTrap(event, lightbox);
+  };
+
   const openLightbox = () => {
     lightbox?.classList.add('show');
 
@@ -34,6 +41,7 @@ export default function header() {
 
     lightboxCloseButton?.focus();
 
+    document.addEventListener('keydown', headerFocusModalTrap);
     document.addEventListener('keydown', lightboxEscapeKey);
   };
 
@@ -45,6 +53,7 @@ export default function header() {
 
     lightboxOpenButton?.focus({ preventScroll: true });
 
+    document.removeEventListener('keydown', headerFocusModalTrap);
     document.removeEventListener('keydown', lightboxEscapeKey);
   };
 
@@ -58,6 +67,4 @@ export default function header() {
 
   lightboxOpenButton?.addEventListener('click', openLightbox);
   lightboxCloseButton?.addEventListener('click', closeLightbox);
-  // *** OPEN | CLOSE | FOCUS ***
-  // *** End of Lightbox ***
 }
