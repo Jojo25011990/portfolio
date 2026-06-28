@@ -4,6 +4,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function milestones() {
+  const isMobileDevice = window.matchMedia('(max-width: 765px)').matches;
+
+  if (isMobileDevice) return;
+
   const items = gsap.utils.toArray<HTMLElement>('.milestones__item');
 
   items.forEach((item, index: number) => {

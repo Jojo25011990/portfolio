@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+// import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
