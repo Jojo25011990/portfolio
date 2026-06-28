@@ -33,6 +33,12 @@
   &__container {
     @include dimension-settings(100%, 110rem, 50rem);
     @include flex-settings;
+
+    // *** Responsive Design ***
+    @include responsive-settings(mobile-large) {
+      @include dimension-settings(100%, 110rem, 35rem);
+    }
+    // *** End of Responsive Design ***
   }
   // *** End of Container ***
 }
