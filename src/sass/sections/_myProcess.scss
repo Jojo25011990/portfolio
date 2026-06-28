@@ -36,7 +36,7 @@
 
     // *** Responsive Design ***
     @include responsive-settings(mobile-large) {
-      @include dimension-settings(100%, 110rem, 35rem);
+      @include dimension-settings(100%, 110rem, 32rem);
     }
     // *** End of Responsive Design ***
   }

@@ -20,13 +20,15 @@
 
     clip-path: circle(0% at 50% 50%);
 
-    transition: clip-path 0.8s ease-out;
-
     max-height: 100%;
     @include dimension-settings(100%, 80rem, 50rem);
     @include position-settings($position: relative);
 
     // *** Responsive Design ***
+
+    @include responsive-settings(tablet-large) {
+      clip-path: none;
+    }
     @include responsive-settings(mobile-large) {
       @include dimension-settings(100%, 80rem, 40rem);
     }

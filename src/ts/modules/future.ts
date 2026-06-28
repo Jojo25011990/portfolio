@@ -4,39 +4,29 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function future() {
+  // *** Desktop ***
   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
+  if (!futureBox) return;
 
-  // *** Version 01 ***
-  if (futureBox) {
-    gsap.to(futureBox, {
-      clipPath: 'circle(110% at 50% 50%)',
-      duration: 1,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: futureBox,
-        start: 'top 60%',
-        end: 'bottom 80%',
-        scrub: true,
-      },
+  const gsapMatchMedia = gsap.matchMedia();
+
+  gsapMatchMedia.add('(min-width: 850px)', () => {
+    const futureBoxDesktopContext = gsap.context(() => {
+      gsap.to(futureBox, {
+        clipPath: 'circle(110% at 50% 50%)',
+
+        scrollTrigger: {
+          trigger: futureBox,
+          start: 'top center',
+          end: 'bottom center',
+          scrub: 2,
+        },
+      });
     });
-  }
 
-  // *** End of Version 01 ***
-
-  // *** Version 02 - active class ***
-  //   if (futureBox) {
-  //     gsap.to(futureBox, {
-  //       scrollTrigger: {
-  //         trigger: futureBox,
-  //         start: 'top center',
-  //       },
-
-  //       delay: 1,
-
-  //       onStart: () => {
-  //         futureBox.classList.add('active');
-  //       },
-  //     });
-  //   }
-  // *** End of Version 02 - active class ***
+    //   // *** Cleanup ***
+    return () => futureBoxDesktopContext.revert();
+    // *** End of Cleanup ***
+  });
+  // *** End of Desktop ***
 }
