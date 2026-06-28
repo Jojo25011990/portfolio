@@ -28,18 +28,19 @@
       content="Explore Jozef Kudrna's portfolio featuring React/TypeScript projects, Three js, GSAP animations, CSS Art, and creative coding journey"
     />
     <meta property="og:type" content="website" />
+    <!-- Add correct url and preview image -->
     <meta
       property="og:url"
-      content="https://jojo25011990.github.io/single-page-portfolio-ak/"
+      content="https://jojo25011990.github.io/portfolio/"
     />
     <meta
       property="og:image"
-      content="https://jojo25011990.github.io/single-page-portfolio-ak/social-preview.png"
+      content="https://jojo25011990.github.io/portfolio/social-preview.png"
     />
     <!-- End of Open Graph -->
 
     <!-- Favicon -->
-    <!-- Sem dam potom svoj favicong, asi spravil svoju fotku alebo tak ... -->
+    <!-- Add custom favicon-->
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <!-- End of Favicon -->
 
@@ -75,62 +76,74 @@
         "description": "Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, CSS Art, React/TypeScript projects, and creative coding journey."
       }
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-rYrp8ASA.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BkbBlAKR.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-D3LZq5a3.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-CVq7U4RV.css">
   </head>
   <body id="top">
-    <!-- Skusit porozmyslat o sekcii milestones -->
-
-    <!-- Section Map -->
-    <!-- SEO - OK -->
-    <!-- SR | Semantics - OK / 90% -->
-    <!-- Intro -> OK -->
-    <!-- Header -> OK -->
-    <!-- Skills -> OK -->
-    <!-- Projects -> OK -->
-    <!-- Services -> OK -->
-    <!-- Features -> OK -->
-    <!-- Evolution -> OK -->
-    <!-- Future -> OK -->
-    <!-- Milestones -> NOK -->
-    <!-- Faq -> OK -->
-    <!-- Activity -> NOK -->
-    <!-- Game -> OK / 70% -->
-    <!-- Showcase -> OK / 90% -->
-    <!-- MY Experience | Intro | My Story | Behind The Scenes -> OK | 90% -->
-    <!-- Footer | Form | Popup Message | EmailJS - OK | 85-90% -->
-    <!-- Post Scene - NOK -> Tough Fight -->
-    <!-- End of Section Map -->
-
-    <!-- na konci projektu skusit spravit custom raw smooth scroll system like lenis library -->
+    <!-- Section Map - 17/18 Sections -->
+    <!-- Intro -->
+    <!-- Header -->
+    <!-- Skills -->
+    <!-- Projects -->
+    <!-- Services -->
+    <!-- Features -->
+    <!-- Evolution -->
+    <!-- Future -->
+    <!-- Milestones -->
+    <!-- Faq -->
+    <!-- Game -->
+    <!-- Showcase -->
+    <!-- MY Experience | My Overlay | My Story | My Process -->
+    <!-- Footer | Form | Popup Message | EmailJS -->
+    <!-- Post Scene - NOK - 90%. God help me please 🤣 -->
+    <!-- End of Section Map - 17/18 Sections -->
 
     <!-- Intro -->
-    <div class="intro">
+    <section class="intro">
+      <!-- Jozef Kudrna - Portfolio V1 -->
       <div class="intro-imgbox">
         <img
           src="/portfolio/assets/Portfolio-V1-Jozef-Kudrna-4-18-2026-CdxgmFSz.png"
-          alt=""
+          alt="Portfolio V1 - Jozef Kudrna"
         />
-        <!-- <img src="./src/assets/images/spider-Photoroom.png" alt="" /> -->
-        <!-- <img
-          src="./src/assets/images/Screenshot Css Battle Tree-Photoroom.png"
-          alt=""
-        /> -->
-        <!-- <img src="./src/assets/images/pepsi logo-Photoroom.png" alt="" /> -->
-        <!-- <img src="./src/assets/images/instagram bg-Photoroom.png" alt="" /> -->
-        <!-- <img src="./src/assets/images/Bomberman-Photoroom.png" alt="" /> -->
-        <!-- <img src="./src/assets/images/captain america-Photoroom.png" alt="" /> -->
-        <!-- <img
-          src="./src/assets/images/screencapture-127-0-0-1-5500-index-html-2026-04-19-20_25_29-Photoroom.png"
-          alt=""
-        /> -->
-        <!-- <img
-          src="./src/assets/images/screencapture-127-0-0-1-5500-index-html-2026-04-19-20_25_29-Photoroom.png"
-          alt=""
-        /> -->
-        <!-- <img src="./src/assets/images/snowman.png" alt="" /> -->
       </div>
-    </div>
+      <!-- End of Jozef Kudrna - Portfolio V1 -->
+
+      <!-- CSS Art Intro Scene -->
+      <div class="intro-scene" aria-hidden="true">
+        <div class="intro-scene-line-01"></div>
+        <div class="intro-scene-line-02"></div>
+
+        <div class="intro-scene-pacman" id="pacman-01">
+          <div class="intro-scene-pacman-eye"></div>
+        </div>
+        <div class="intro-scene-ghost" id="ghost-01">
+          <div class="intro-scene-ghost-eyes"></div>
+          <div class="intro-scene-ghost-body"></div>
+          <div class="intro-scene-ghost-smile"></div>
+        </div>
+
+        <div class="intro-scene-placeholder">
+          <div class="intro-scene-pacman">
+            <div class="intro-scene-pacman-eye"></div>
+          </div>
+          <div class="intro-scene-ghost">
+            <div class="intro-scene-ghost-eyes"></div>
+            <div class="intro-scene-ghost-body"></div>
+          </div>
+        </div>
+        <div class="intro-scene-line"></div>
+      </div>
+      <!-- End of CSS Art Intro Scene -->
+
+      <!-- SR Only -->
+      <p class="intro-sr-only">
+        Animated intro scene showing a Pac-Man chasing a ghost across a stylized
+        CSS Art environment. The sequence represents playful interaction and
+        transition into the portfolio experience.
+      </p>
+      <!-- End of SR Only -->
+    </section>
     <!-- End of Intro -->
 
     <!-- Container -->
@@ -139,7 +152,7 @@
       <header class="header">
         <div class="header__wrapper">
           <!-- Navigation -->
-          <nav class="header__navigation" aria-label="Social Links">
+          <nav class="header__navigation" aria-label="Social media links">
             <a href="#top" class="header__logo" aria-label="Back to top"
               >JozefKudrna</a
             >
@@ -280,7 +293,11 @@
           aria-describedby="lightbox-description"
           aria-hidden="true"
         >
-          <button class="header__lightbox-closebtn" aria-label="Close Lightbox">
+          <button
+            type="button"
+            class="header__lightbox-closebtn"
+            aria-label="Close Lightbox"
+          >
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
 
@@ -363,7 +380,6 @@
         <!-- End of Skills -->
 
         <!-- Projects -->
-        <!-- premenovat nazvy gallerii, lebo podnohocuje moj realny skills -->
         <section class="projects">
           <div class="projects__wrapper">
             <h2 class="projects__title">
@@ -390,6 +406,85 @@
 
           <!-- Projects Menu -->
           <ul class="projects__menu">
+            <!-- Space Tourism V2 - Creative -->
+            <li class="projects__item">
+              <article class="projects__container">
+                <div class="projects__box">
+                  <div class="projects__box-wrapper">
+                    <img
+                      src="/portfolio/assets/space%20tourism%20V2-DL_SOVX3.png"
+                      alt="Space Tourism V2 - Frontend Mentor Challenge"
+                      class="projects__box-img"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <!-- Desktop -->
+                  <div
+                    class="projects__box-overlay"
+                    role="group"
+                    aria-label="Space Tourism V2 - Creative Links"
+                  >
+                    <a
+                      href="https://jojo25011990.github.io/space-tourism-v2/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view project <span></span
+                    ></a>
+
+                    <a
+                      href="https://github.com/Jojo25011990/space-tourism-v2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="projects__box-button"
+                      >view code <span></span
+                    ></a>
+                  </div>
+                  <!-- End of Desktop -->
+                </div>
+
+                <h4 class="projects__item-heading">
+                  Space Tourism V2 - Creative
+                </h4>
+                <p class="projects__item-description">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>SASS</span>
+                  <span>Three.js</span>
+                  <span>GSAP</span>
+                  <span>API</span>
+                </p>
+
+                <!-- Tablet | Mobile -->
+                <div
+                  class="projects__box-links"
+                  role="group"
+                  aria-label="Space Tourism V2 - Creative Links"
+                >
+                  <a
+                    href="https://jojo25011990.github.io/space-tourism-v2/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__box-button"
+                  >
+                    view project <span></span>
+                  </a>
+
+                  <a
+                    href="https://github.com/Jojo25011990/space-tourism-v2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="projects__box-button"
+                  >
+                    view code <span></span>
+                  </a>
+                </div>
+                <!-- End of Tablet | Mobile -->
+              </article>
+            </li>
+            <!-- End of Space Tourism V1 - Clean -->
+
             <!-- Space Tourism V1 - Clean -->
             <li class="projects__item">
               <article class="projects__container">
@@ -462,7 +557,7 @@
                 <!-- End of Tablet | Mobile -->
               </article>
             </li>
-            <!-- End of Space Tourism V1 - Clean -->
+            <!-- End of Space Tourism V2 - Creative -->
 
             <!-- My Hope -->
             <li class="projects__item">
@@ -1376,7 +1471,7 @@
         <!-- Evolution -->
         <section class="evolution">
           <div class="evolution__wrapper">
-            <h2 class="evolution__title" id="evolution-title">
+            <h2 class="evolution__title">
               Evolution
               <span class="evolution__title-span" aria-hidden="true"
                 >Evolution</span
@@ -1546,9 +1641,11 @@
             <li class="evolution__phase-mobile evolution__phase-mobile-02">
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-01"
+                aria-hidden="true"
               ></div>
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-02"
+                aria-hidden="true"
               ></div>
 
               <h3 class="evolution__phase-mobile-heading">Phase 02</h3>
@@ -1584,9 +1681,11 @@
             <li class="evolution__phase-mobile evolution__phase-mobile-03">
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-01"
+                aria-hidden="true"
               ></div>
               <div
                 class="evolution__phase-mobile-line evolution__phase-mobile-line-02"
+                aria-hidden="true"
               ></div>
 
               <h3 class="evolution__phase-mobile-heading">Phase 03</h3>
@@ -1650,12 +1749,11 @@
             <!-- Project 01 -->
             <div class="future__box-project future__box-project-01">
               <div class="future__box-content future__box-content-01">
-                <h3 class="future__box-heading">Space Tourism V2</h3>
+                <h3 class="future__box-heading">CSS Art Anime</h3>
                 <p class="future__box-description">
-                  A custom vanilla reinterpretation of the original Frontend
-                  Mentor Challenge, evolving the 4-page React and Tailwind
-                  concept into 7-page immersive experience built with HTML,
-                  SCSS, JavaScript, GSAP, and Three.js.
+                  A peak CSS Art inspired by anime aesthetics, focused on
+                  handcrafted visuals, expressive detail, and polished design
+                  using HTML and SCSS.
                 </p>
               </div>
             </div>
@@ -1664,11 +1762,11 @@
             <!-- Project 02 -->
             <div class="future__box-project future__box-project-02">
               <div class="future__box-content future__box-content-02">
-                <h3 class="future__box-heading">CSS Art Anime</h3>
+                <h3 class="future__box-heading">Designo</h3>
                 <p class="future__box-description">
-                  A peak CSS Art inspired by anime aesthetics, focused on
-                  handcrafted visuals, expressive detail, and polished design
-                  using HTML and SCSS.
+                  A planned 7-page digital agency experience focused on
+                  scalability, component reusability, accessibility, and clean
+                  frontend architecture using React, TypeScript and TailwindCSS.
                 </p>
               </div>
             </div>
@@ -1702,7 +1800,11 @@
           </p>
           <!-- End of Sr - Only -->
 
-          <div class="milestones__container">
+          <!-- Container -->
+          <div
+            class="milestones__container"
+            aria-label="Frontend milestones timeline"
+          >
             <!-- CV Web App -->
             <article class="milestones__item">
               <h3 class="milestones__item-heading">CV Web App</h3>
@@ -1730,7 +1832,7 @@
             <!-- End of My Hope -->
 
             <!-- Ship, Shark and Fish CSS Art Scene  -->
-            <article class="milestones__item" data-index="2">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">CSS Scene Art</h3>
               <p class="milestones__item-description">
                 First deeper exploration into complex CSS Art scenes, focused on
@@ -1743,7 +1845,7 @@
             <!-- End of Ship, Shark and Fish CSS Art Scene  -->
 
             <!-- Ferb & Phineas -->
-            <article class="milestones__item" data-index="2">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">Phineas & Ferb</h3>
               <p class="milestones__item-description">
                 Most advanced CSS Art project I’ve built, focused on recreating
@@ -1769,6 +1871,7 @@
             </article>
             <!-- End of Portfolio V1 -->
           </div>
+          <!-- End of Container -->
         </section>
         <!-- End of Milestones -->
 
@@ -1793,6 +1896,7 @@
           </p>
           <!-- End of Sr Only -->
 
+          <!-- Menu -->
           <ul class="faq__menu">
             <li class="faq__item">
               <button
@@ -1915,39 +2019,13 @@
               </p>
             </li>
           </ul>
+          <!-- End of Menu -->
         </section>
         <!-- End of Faq -->
 
-        <!-- Github Activity -->
-        <!-- <section class="activity">
-          <div class="activity__wrapper">
-            <h2 class="activity__title" id="activity-title">
-              Activity
-              <span class="activity__title-span" aria-hidden="true"
-                >Activity</span
-              >
-            </h2>
-            <a class="activity__button" href="#contact">
-              Contact Me
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <p class="activity__description" aria-hidden="true"></p> -->
-
-        <!-- Sr Only -->
-        <!-- End of Sr Only -->
-        <!-- <p class="activity__description-sr-only">
-            A snapshot of my Github activity, contributions, and coding
-            consistency over time.
-          </p> -->
-        <!-- </section> -->
-        <!-- End of Github Activity -->
-
         <!-- Game -->
-        <!-- pozmenit description SR -->
-        <!-- <section class="game"> -->
-        <!-- <div class="game__wrapper">
+        <section class="game">
+          <div class="game__wrapper">
             <h2 class="game__title">
               Game
               <span class="game__title-span" aria-hidden="true">Game</span>
@@ -1958,29 +2036,182 @@
             </a>
           </div>
 
-          <p class="game__description" aria-hidden="true"></p> -->
+          <p class="game__description" aria-hidden="true"></p>
 
-        <!-- Sr Only -->
-        <!-- <p class="game__description-sr-only">
-            A cinematic storytelling reel combining CSS art, animations, 3D work
-            and interactive experiments.
-          </p> -->
-        <!-- End of Sr Only -->
+          <!-- Sr Only -->
+          <p class="game__description-sr-only">
+            An interactive CSS Art memory challenge with playful animations and
+            gameplay.
+          </p>
+          <!-- End of Sr Only -->
 
-        <!-- CSS Art Memory Game -->
-        <!-- <div class="game__container">
-            <div class="game__bomberman"></div>
-            <div class="game__memory"></div>
-            <button type="button" onclick="window.location.reload()">
-              Reset
+          <!-- Game Fallback Message -->
+          <p class="game__fallback-message">
+            <strong class="game__fallback-message-strong">
+              This game experience is optimized for Chrome and Edge.
+            </strong>
+          </p>
+          <!-- End of Game Fallback Message -->
+
+          <!-- CSS Art Memory Game -->
+          <div class="game__container">
+            <ul class="game__memory">
+              <li
+                class="game__memory-win"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <p class="game__memory-win-text">
+                  <strong class="game__memory-win-strong">YOU WIN</strong>
+                  <span class="game__memory-win-span">All CSS Arts found</span>
+                </p>
+              </li>
+
+              <li class="game__memory-overlay" aria-hidden="true">
+                <div
+                  class="game__memory-line-vertical game__memory-line-vertical-01"
+                ></div>
+                <div
+                  class="game__memory-line-vertical game__memory-line-vertical-02"
+                ></div>
+                <div
+                  class="game__memory-line-vertical game__memory-line-vertical-03"
+                ></div>
+
+                <div
+                  class="game__memory-line-horizontal game__memory-line-horizontal-01"
+                ></div>
+                <div
+                  class="game__memory-line-horizontal game__memory-line-horizontal-02"
+                ></div>
+                <div
+                  class="game__memory-line-horizontal game__memory-line-horizontal-03"
+                ></div>
+              </li>
+
+              <li class="game__memory-box" data-box="bomberman">
+                <img
+                  src="/portfolio/assets/Bomberman-Photoroom-B5ZaMMSt.png"
+                  alt=""
+                  class="game__memory-box-img"
+                />
+              </li>
+              <li class="game__memory-box" data-box="bomberman">
+                <img
+                  src="/portfolio/assets/Bomberman-Photoroom-B5ZaMMSt.png"
+                  alt=""
+                  class="game__memory-box-img"
+                />
+              </li>
+              <li class="game__memory-box" data-box="captain-america">
+                <img
+                  src="/portfolio/assets/captain%20america-Photoroom-CNmNpR83.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--ca"
+                />
+              </li>
+              <li class="game__memory-box" data-box="captain-america">
+                <img
+                  src="/portfolio/assets/captain%20america-Photoroom-CNmNpR83.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--ca"
+                />
+              </li>
+              <li class="game__memory-box" data-box="instagram">
+                <img
+                  src="/portfolio/assets/instagram%20bg-Photoroom-ZRt1mk4C.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--ig"
+                />
+              </li>
+              <li class="game__memory-box" data-box="instagram">
+                <img
+                  src="/portfolio/assets/instagram%20bg-Photoroom-ZRt1mk4C.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--ig"
+                />
+              </li>
+              <li class="game__memory-box" data-box="pepsi">
+                <img
+                  src="/portfolio/assets/pepsi%20logo-Photoroom-BLIEXcCT.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--pe"
+                />
+              </li>
+              <li class="game__memory-box" data-box="pepsi">
+                <img
+                  src="/portfolio/assets/pepsi%20logo-Photoroom-BLIEXcCT.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--pe"
+                />
+              </li>
+              <li class="game__memory-box" data-box="tree">
+                <img
+                  src="data:image/png;base64,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"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--tree"
+                />
+              </li>
+              <li class="game__memory-box" data-box="tree">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAOzBAMAAACrLQblAAAAIVBMVEUAAAAALgAGSxoAQxQANAMBQBAAQA8AMwQGShkDRBMBSBY5lhSgAAAACnRSTlMAxjUL2x7ypFZ8lzJCEwAADClJREFUeNrswYEAAAAAgKD9qRepAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABg9uBAAAAAAADI/7URVFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWFPTgQAAAAAADyf20EVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVhDw4EAAAAAID8XxtBVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVXYgwMBAAAAACD/10ZQVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVRX26xgl4TAO4/hLf7xCQ1PdIIigE0Q1BU6NQUsHKMXJQRB3BVdBEH6nVOQdvMKDn88dvjw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV2p4Gj82INLzajLZjhsQaFi+Vv1MbTAk+rqtk+9NA+IM6zp7N8GQ5+WjzvbzBqR5qO6vAWGGRXVvDQgz+q/u1wmGNKNZdYfPBmS5uatuJ2BIcxHwfQOyCBiCCRiCCRiCCRiCCRiCCRiCCfjI3h28pg1HARwPC4FdB6Nrb2M9lN4ko9D9A231JPQwr4WBkFtLNtxuzolnN9n+Acng/ZVrIc6nyX4YMp4++H7OmtsX4++9KOAYAQOOETDgGAEDjhEw4BgBA44RMOAYAQOOETDgGAEDjhEw4BgBA44RMOAYAQOOETDgGAEDjhEw4BgBA44RMOAYAQOOETDgGAEDjhEw4BgBA44RMOAYAQOOETDgGAEDhyt+22kbsL4UAEPpr5evpp3/EXA8uH/x+TQCYCbNRWQ4bRdw2W8uUlxTMGAmHsuT60n7gB/7fVQ8cBcNGNBxFienbQNO7zN5MuSgC7DyPpOy4H67gNP56kofIwAm4m9SKkadNgEn40xKN9xDAzaSL7JSPLQIOD7LZGXYjwBYeN6Tv5bfO80C1v32RNj2AIy9y2Ttriy4ccDx+ZGsLScRAAM6YDUObhrwIBel+BEBsKADLrcwmgec5hkBA3Z0wFrR7TcPOJ1vXYRbaMDGZU82FMf9pgEnW/3KkkMswETZZqnchGwWcDzOZNNvxkiAjfinbFmqgsMB6wGS1mWRAzCiFjDUMGnHgPUASS+EALCRlgEqw+nOAceD6tvv+AoMWNA7kNr1ZNeALzcHSDxOCBhL5rKt6L4OBVwdAGsnHGEBhtK8WvBNf5eAk0W1X36QA7CVfpKSHgeHA9ZPEGpDljgAY/okSg+TwgEns55su5tGAIypWZAaJoUDjmvfxAEWYC4+uwp9mOqAQ/0uR/QL7EEyqxsmhQIe1Bx9jTiABvbiYpzVDZOqAYcGSLcRgL1IFlLR7VcDDryaz1/AVngpozi+rQ/4Yi6b+EcGYI/C32p1wP8cADNAAvYifK5cDTiZ9RggAYcmPr+qD1MHXB/6B/oF9iW8W7Ud8PkRAyTgECXjunHwZsCXdZvT9AscgPrni3TAac4ACThUz/Ks2uebdcBfFzUDJH6CA/jD3h20tBGEcRhfMiz0E1j1Vjws3sKKkN7FtHsSRJocA0Lo3iqL2J4arHjWansOLFt4P2URIhmTN0NiZDIDz++sx4fW/e/sBKKjjEk7hUzUd8q/0AxIQChMX3lGNa22VJ5y8QAaCIa1EikYgIGwmayQpdV8wg4IixmVomNAAsJn3Xbk1jAgAeFpPWgFcwIJiIM1Jjl0+QQlECLtyhQGJCAWZn9XxK1mQAJCZbKCAQmIlhmV7gGJfoGApa6CG+4wA8KW35WLB2AGJCBwecWABMRrMibxCUogRgtOJo0ZkIAYmP2CAQmIlsnm72vgDkIgFumo5AQhEK2ZManZYUACIpJXnCAE4tWr+AQlEC3rUXT9mACIS6uQiTHfcAdi09olYCBaBAxEjICBiBEwEDECBsJlzk7fKuCDs4MEgEf536P3128TcO/b0Xfe1AI8OqysE/rrBdzb4rp+wCvzQZ5099YJ2H7lsuG0MOBN64d2yMgdsPvY0pAHXYAvX0qZFHy6RsBWv9LwvjTgifklE/VVe52A09tCJj7xf2jAj/RSnp1frBGwyY7l2ZDHWIAPdpv2WcHVA84KEd72ADz7WMrU4LH9uoBNf0umar76DvhhB2zPwe6A3R+Ab34nADywArbm4FUDzishYMA7O2BrDnYFrA9IBAxswrtC+erzagGnM/1K/TMB4IHVpuPeFGfA5raUl/4xIwF+mD8yo35srxKwyQqZ8ZUXOQBP5u8+GlsF6wG7bz9rLhIAfnS2ZNbgpr1swKan/DrvcQBe6NcPSvdm2YB7ldg4Tgh41rIeIitjkjPgvFJ+l0dYgEd5JWqFesDaAGzj8jPAr86laJd46wErVwfbhrwHDXhlP8iy52A9YPdfzwMuLwS86ysF37fVgF0DkgzuEwC+mexYibHtCtjsz0d/fsUDaGAD0ttCH5P0gPUBqb7iATSwEYej+UGou7c44I42IJ0mADbi8EGfg/WA8/mfls8MSMDG5MqYtH2iB5wq/Q7pF/DPPQefaAGnIwYkIDR9dQ6eDzjNlAGJr7kDG2UvQ/aYNBuw/mMMSIBP+pikpmkH/NQvAxIQImVMku71i4DVE4TbDEj/2bt/1qaiOI7Dl14uuLrUP6NQMJtYCn0BJSEZK0HcS5G7KRHEyToYHAsZXIVwhfMqRalNSk/bLAfOD55nzP4hyf1yz4EKHF3m5uDtgDNvEKZnHkBDFbpFumV6ugn4YJVumTiCAypxnHs7eJaurDPf0N4ghHpkTrkatqo1IEHNNk+ZcwxIULd2OUt3MSBB7bqLPu1oeKpfqMzRKu1oagCG6nSLlGFAghiOFzv1a0CCKl2PSQYkiKcd7RuQIKyta0Pz1h89gIZqdcvegARh3T8Hu8MM6tat7i54akCCyr1e9AYkCOtqTHIEJUTUjvYNSBBWO5rlBiT9QgiZS4AHdxBCFO1FbwCGsLrL/ka/BiSI5MaYNEwcIQuhbB/lPjEgQTCbR9FrbxBCNHvXAf/yBxii2XsuYAhLwBCYgCEwAUNgAobABAyBCRgCEzAEJmAITMAQmIAhMAFDYAKGwAQMgQkYAhMwBCZgCEzAEJiAITABQ2AChsAEDIEJGAITMAQmYAhMwBCYgKFCh/MHnL746+Dl5nKzb/P5v8/m93tz2AAldT8+nDxofH4+Phv36b+zk508fvLTPf5QULvsU0HD51cNUMq7WSrCVcJQXrdKhU39iIZSHs1SYeuvDVDG21TcpwYo43sq7n0DlPElFfe7Af6wb8cmAMJAFECFTGAluIY4iSu4gK0buIGtYKNTCsFG+ysS3tvhk3B3P0Tq73CHRRJkRQb4FGDIBBjwhYY6rHe4qwFe1kiAQw6ogFNKKFiKLzOYYcFHSXXCWZ0QfhT6gWzcljZMt08NECkNYTy/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwsAcHAgAAAABA/q+NoKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqoq7MGBAAAAAACQ/2sjqKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqoKe3AgAAAAAADk/9oIqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrCHhwIAAAAAAD5vzaCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0BwcCAAAAAIL8rQdYoQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJgY9IpL5FIVcAAAAAElFTkSuQmCC"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--tree"
+                />
+              </li>
+              <li class="game__memory-box" data-box="spider">
+                <img
+                  src="/portfolio/assets/spider-Photoroom-CAhNmUFs.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--spider"
+                />
+              </li>
+              <li class="game__memory-box" data-box="spider">
+                <img
+                  src="/portfolio/assets/spider-Photoroom-CAhNmUFs.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--spider"
+                />
+              </li>
+              <li class="game__memory-box" data-box="snowman">
+                <img
+                  src="/portfolio/assets/snowman-BD-J0KpZ.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--sm"
+                />
+              </li>
+              <li class="game__memory-box" data-box="snowman">
+                <img
+                  src="/portfolio/assets/snowman-BD-J0KpZ.png"
+                  alt=""
+                  class="game__memory-box-img game__memory-box-img--sm"
+                />
+              </li>
+              <li class="game__memory-box" data-box="cat-face">
+                <img
+                  src="/portfolio/assets/cat%20face-HxthBTM7.png"
+                  alt=""
+                  class="game__memory-box-img"
+                />
+              </li>
+              <li class="game__memory-box" data-box="cat-face">
+                <img
+                  src="/portfolio/assets/cat%20face-HxthBTM7.png"
+                  alt=""
+                  class="game__memory-box-img"
+                />
+              </li>
+            </ul>
+
+            <button type="button" class="game__container-button">
+              Reset Game
             </button>
-          </div> -->
-        <!-- End of CSS Art Memory Game -->
-        <!-- </section> -->
+          </div>
+          <!-- End of CSS Art Memory Game -->
+        </section>
         <!-- End of Game -->
 
         <!-- Showcase -->
-        <!-- spravit responsive design na TV, SR je to hotove  -->
         <section class="showcase">
           <div class="showcase__wrapper">
             <h2 class="showcase__title">
@@ -1999,8 +2230,8 @@
 
           <!-- Sr Only -->
           <p class="showcase__description-sr-only">
-            A cinematic storytelling reel combining CSS art, animations, 3D work
-            and interactive experiments.
+            A cinematic storytelling reels combining CSS art, animations, 3D
+            work and interactive experiments.
           </p>
           <!-- End of Sr Only -->
 
@@ -2013,12 +2244,16 @@
             </p>
             <!-- End of Sr Only -->
 
-            <div class="showcase__container-overlay" aria-hidden="true">
+            <div class="showcase__container-overlay">
               <h3 class="showcase__container-title">Old School TV</h3>
             </div>
 
-            <div class="showcase__tv" aria-hidden="true">
-              <svg class="showcase__lightning" viewBox="-50 169 300 200">
+            <div class="showcase__tv">
+              <svg
+                class="showcase__lightning"
+                viewBox="-50 169 300 200"
+                aria-hidden="true"
+              >
                 <path
                   d="M35 140 L45 132 L52 145 L60 128 L68 138 L75 122 L82 135 L90 118 L98 132 L106 120 L114 134 L122 116 L130 130 L138 120 L146 135 L154 125 L162 140"
                 />
@@ -2027,9 +2262,11 @@
               <audio
                 src="/portfolio/assets/Lightning%20spark-D6KRwubw.mp4"
                 class="showcase__lightning-spark"
+                preload="auto"
+                aria-hidden="true"
               ></audio>
 
-              <div class="showcase__antennas">
+              <div class="showcase__antennas" aria-hidden="true">
                 <div class="showcase__antennas-left"></div>
                 <div class="showcase__antennas-right"></div>
                 <div class="showcase__antennas-base"></div>
@@ -2041,7 +2278,7 @@
                     <div class="showcase__body-inner-screen-overlay">
                       <div class="showcase__body-inner-screen-gradient"></div>
 
-                      <svg>
+                      <svg aria-hidden="true">
                         <filter
                           id="displacement"
                           x="0%"
@@ -2066,7 +2303,8 @@
 
                     <video
                       class="showcase__body-inner-screen-video"
-                      src="/portfolio/assets/Css%20Arts%20-%2010%20Projects-CVPXt2Tm.mp4"
+                      src="/portfolio/assets/Css%20Arts-PLUdRBf3.mp4"
+                      aria-label="CSS Art showcase reel."
                       muted
                     ></video>
                   </div>
@@ -2076,27 +2314,38 @@
                       class="showcase__body-inner-wrapper showcase__body-inner-wrapper-01"
                     >
                       <button
+                        type="button"
                         class="showcase__body-inner-btn showcase__body-inner-btn-01"
+                        aria-label="Toggle TV sound."
+                        aria-pressed="false"
                       >
-                        <span class="showcase__body-inner-btn-span"></span>
+                        <span
+                          class="showcase__body-inner-btn-span"
+                          aria-hidden="true"
+                        ></span>
                       </button>
                     </div>
                     <div
                       class="showcase__body-inner-wrapper showcase__body-inner-wrapper-02"
                     >
                       <button
+                        type="button"
                         class="showcase__body-inner-btn showcase__body-inner-btn-02"
+                        aria-label="Start TV animation sequence."
                       ></button>
                     </div>
 
-                    <div class="showcase__body-inner-speaker"></div>
+                    <div
+                      class="showcase__body-inner-speaker"
+                      aria-hidden="true"
+                    ></div>
                   </div>
                 </div>
               </div>
 
-              <div class="showcase__body-bottom"></div>
+              <div class="showcase__body-bottom" aria-hidden="true"></div>
 
-              <div class="showcase__table">
+              <div class="showcase__table" aria-hidden="true">
                 <div class="showcase__table-body"></div>
                 <div class="showcase__table-body-helper"></div>
                 <div class="showcase__table-leg showcase__table-leg-left">
@@ -2121,25 +2370,25 @@
             <div class="showcase__wrapper-video">
               <video
                 id="video-0"
-                src="/portfolio/assets/Css%20Arts%20-%2010%20Projects-CVPXt2Tm.mp4"
+                src="/portfolio/assets/Css%20Arts-PLUdRBf3.mp4"
                 class="showcase__video active"
-                aria-label="CSS Arts - 10 Projects showcase reel"
+                aria-label="CSS Art showcase reel."
                 role="tabpanel"
                 aria-hidden="false"
               ></video>
               <video
                 id="video-1"
-                src="/portfolio/assets/Mix%20Projects%20Part%2001-NaKYSsx8.mp4"
+                src="/portfolio/assets/Mix%20Animations-BjnQUhbE.mp4"
                 class="showcase__video"
-                aria-label="CSS Arts - 10 Projects showcase reel"
+                aria-label="Animation showcase reel."
                 role="tabpanel"
                 aria-hidden="true"
               ></video>
               <video
                 id="video-2"
-                src="/portfolio/assets/Portfolio%20V1-H0cZ6-LK.mp4"
+                src="/portfolio/assets/Mix%20Work-l_1sKcIw.mp4"
                 class="showcase__video"
-                aria-label="CSS Arts - 10 Projects showcase reel"
+                aria-label="Mixed projects showcase reel."
                 role="tabpanel"
                 aria-hidden="true"
               ></video>
@@ -2197,26 +2446,32 @@
           <!-- Video Player Buttons -->
           <div class="showcase__video-switcher" role="tablist">
             <button
-              class="showcase__switcher-btn"
+              type="button"
+              class="showcase__switcher-btn active-video-button"
               role="tab"
               aria-selected="true"
               aria-controls="video-0"
+              tabindex="0"
             >
               CSS Art
             </button>
             <button
+              type="button"
               class="showcase__switcher-btn"
               role="tab"
               aria-selected="false"
               aria-controls="video-1"
+              tabindex="-1"
             >
               Animations
             </button>
             <button
+              type="button"
               class="showcase__switcher-btn"
               role="tab"
               aria-selected="false"
               aria-controls="video-2"
+              tabindex="-1"
             >
               Mix Work
             </button>
@@ -2251,13 +2506,13 @@
           <!-- My Story -->
           <section class="my-story">
             <div class="my-story__container">
-              <!-- Dragon -->
+              <!-- Dragon | Dragon Roar Audio -->
               <div class="my-story__dragon" aria-hidden="true"></div>
               <audio
                 src="/portfolio/assets/dragon-roar-pASbXM7Z.mp3"
                 class="my-story__dragon-roar"
               ></audio>
-              <!-- End of Dragon -->
+              <!-- End of Dragon | Dragon Roar Audio -->
 
               <!-- Characters -->
               <div class="my-story__characters">
@@ -2272,7 +2527,7 @@
 
                     <img
                       src="/portfolio/assets/rock-DT7EFRcj.png"
-                      alt="Cartoon rock"
+                      alt=""
                       class="my-story__character-img my-story__character-img-rock-woman"
                       aria-hidden="true"
                     />
@@ -2324,7 +2579,7 @@
 
                     <img
                       src="/portfolio/assets/rock-DT7EFRcj.png"
-                      alt="Cartoon rock"
+                      alt=""
                       class="my-story__character-img my-story__character-img-rock-man"
                       aria-hidden="true"
                     />
@@ -2394,12 +2649,6 @@
               </p>
 
               <p class="my-story__sr-only-05">
-                As the dragon disappears, the characters return to view and the
-                situation stabilizes. Their reaction shift from fear to relief,
-                continuing the narrative interaction between them.
-              </p>
-
-              <p class="my-story__sr-only-06">
                 The experience concludes with a transition into a final state
                 where the story settles, revealing the underlying structure of
                 the scene and completing the interaction loop.
@@ -2431,21 +2680,21 @@
 
             <div class="my-process__container">
               <!-- CSS Art book -->
-              <div class="my-process__book">
+              <div class="my-process__book" aria-hidden="true">
                 <div
                   class="my-process__book-cover my-process__book-cover--back"
                 >
                   <div class="my-process__book-cover-front">
-                    <h3>The End</h3>
-                    <h4>JK</h4>
+                    <h3 class="my-process__book-heading-01">The End</h3>
+                    <h4 class="my-process__book-heading-02">JK</h4>
                   </div>
 
                   <div class="my-process__book-cover-back"></div>
                 </div>
                 <div class="my-process__book-page my-process__book-page--01">
                   <div class="my-process__book-page-front">
-                    <p>
-                      <em>
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
                         Before the visuals, animations, and final experience,
                         there was only an idea, a blank screen, and a vision I
                         wanted to bring to life.
@@ -2454,46 +2703,62 @@
                   </div>
 
                   <div class="my-process__book-page-back">
-                    <h3>STAGE 01</h3>
+                    <h3 class="my-process__book-title">STAGE 01</h3>
                   </div>
                 </div>
                 <div class="my-process__book-page my-process__book-page--02">
                   <div class="my-process__book-page-front">
-                    <img src="/portfolio/assets/jojo-ixElOD0Q.jpg" alt="" />
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
+                        The scene started as an idea to turn a simple portfolio
+                        section intro a small interactive story.
+                      </em>
+                    </p>
                   </div>
                   <div class="my-process__book-page-back">
-                    <h3>STAGE 02</h3>
+                    <h3 class="my-process__book-title">STAGE 02</h3>
                   </div>
                 </div>
                 <div class="my-process__book-page my-process__book-page--03">
                   <div class="my-process__book-page-front">
-                    <img
-                      src="/portfolio/assets/CSS%20Art%20Anime%2002-CnsphVKA.jpg"
-                      alt=""
-                    />
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
+                        I then built the core of the scene - the dragon, both
+                        characters, and layered visual composition aroud them.
+                      </em>
+                    </p>
                   </div>
                   <div class="my-process__book-page-back">
-                    <h3>STAGE 03</h3>
+                    <h3 class="my-process__book-title">STAGE 03</h3>
                   </div>
                 </div>
                 <div class="my-process__book-page my-process__book-page--04">
                   <div class="my-process__book-page-front">
-                    <img
-                      src="/portfolio/assets/landing%20page%20gallery-DLprQ-fp.png"
-                      alt=""
-                    />
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
+                        Once the visuals were in place, I focused on movement,
+                        dialogue timing, and the sequence of character
+                        reactions.
+                      </em>
+                    </p>
                   </div>
                   <div class="my-process__book-page-back">
-                    <h3>STAGE 04</h3>
+                    <h3 class="my-process__book-title">STAGE 04</h3>
                   </div>
                 </div>
                 <div class="my-process__book-page my-process__book-page--05">
                   <div class="my-process__book-page-front">
-                    <img src="/portfolio/assets/CSS%20Art%20Gallery-BJPxXK2S.png" alt="" />
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
+                        The final step was refinement: balancing animation,
+                        soud, atmosphere, and storytelling into one cohesive
+                        experience.
+                      </em>
+                    </p>
                   </div>
                   <div class="my-process__book-page-back">
-                    <p>
-                      <em>
+                    <p class="my-process__book-description">
+                      <em class="my-process__book-description-em">
                         What started as an idea became a story told through
                         code, motion, and design.
                       </em>
@@ -2505,32 +2770,123 @@
                   class="my-process__book-cover my-process__book-cover--front"
                 >
                   <div class="my-process__book-cover-front">
-                    <h3>Behind the scene</h3>
-                    <h4>My Story</h4>
-                    <h4>JK</h4>
+                    <h3 class="my-process__book-heading-01">
+                      Behind the scene
+                    </h3>
+                    <h4 class="my-process__book-heading-02">My Story</h4>
+                    <h4 class="my-process__book-heading-02">JK</h4>
                   </div>
 
                   <div class="my-process__book-cover-back"></div>
                 </div>
               </div>
+
+              <!-- My Process - Sr Only -->
+              <article class="sr-class-process">
+                <h3 class="sr-class-title">Behind the Scene - My Story</h3>
+                <p class="sr-class-description">
+                  A behind-the-scenes look at how this interactive story was
+                  created. It follows the process from the initial idea and
+                  early concept, through building the scene, characters, and
+                  visual composition, to animation, timing, atmosphere, and
+                  final refinement into a complete storytelling experience.
+                </p>
+              </article>
+              <!-- End of My Process - Sr Only -->
               <!-- End of CSS Art book -->
 
-              <!-- napr takto to myslim pod tymto komentom -->
-              <div class="sr-class">
-                <!-- <h3>Behind The Scenes</h3> -->
-                <!-- a tu budu nejake p tagy s popisom tych stagov ale strucnejsie ..a cely div kontajner bude mat sr class tym padom sa to aplikuje aj na vnutri elementy nie? -->
+              <!-- Slider Component -->
+              <div class="my-process__slider active">
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--01"
+                >
+                  <h3 class="my-process__slider-title">Behind the scene</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      Before the visuals, animations, and final experience,
+                      there was only an idea, a blank screen, and a vision I
+                      wanted to bring to life.
+                    </em>
+                  </p>
+                  <p class="my-process__slider-helper">
+                    Pause on hover to read each stage at your own pace.
+                  </p>
+                </article>
+
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--02"
+                >
+                  <h3 class="my-process__slider-title">Stage 01</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      The scene started as an idea to turn a simple portfolio
+                      section intro a small interactive story.
+                    </em>
+                  </p>
+                </article>
+
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--03"
+                >
+                  <h3 class="my-process__slider-title">Stage 02</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      I then built the core of the scene - the dragon, both
+                      characters, and layered visual composition aroud them.
+                    </em>
+                  </p>
+                </article>
+
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--04"
+                >
+                  <h3 class="my-process__slider-title">Stage 03</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      Once the visuals were in place, I focused on movement,
+                      dialogue timing, and the sequence of character reactions.
+                    </em>
+                  </p>
+                </article>
+
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--05"
+                >
+                  <h3 class="my-process__slider-title">Stage 04</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      The final step was refinement: balancing animation, soud,
+                      atmosphere, and storytelling into one cohesive experience.
+                    </em>
+                  </p>
+                </article>
+
+                <article
+                  class="my-process__slider-slide my-process__slider-slide--06"
+                >
+                  <h3 class="my-process__slider-title">The End</h3>
+                  <p class="my-process__slider-description">
+                    <em class="my-process__slider-description-em">
+                      What started as an idea became a story told through code,
+                      motion, and design.
+                    </em>
+                  </p>
+                </article>
               </div>
+              <!-- End of Slider Component -->
             </div>
           </section>
           <!-- End of My Behind the scene -->
         </section>
         <!-- End of My Experience - Overlay | Story | Behind the scene -->
+
+        <!-- Post Scene Cinematic -->
+        <!-- <section class="post-scene"></section> -->
+        <!-- End of Post Scene Cinematic -->
       </main>
       <!-- End of Main -->
 
       <!-- Footer -->
-      <!--   zvazit odstranit autocomplete , pripadne na video nechat ale potom odstranit a doriesit defaultne browser styly autocomplete ked sa autocompletne meno,email - aspon sa oto pokusit :D 
-          doplnit ako v headery pri lightboxe aj tu na envelope vsetky aria spravne attr  -->
       <footer class="footer">
         <section class="footer__contact" id="contact">
           <!-- Content -->
@@ -2756,7 +3112,7 @@
           <a href="#top" class="footer__logo" aria-label="Back to top"
             >JozefKudrna</a
           >
-
+          <!-- Social Media Links -->
           <ul class="footer__menu">
             <li class="footer__item">
               <a
@@ -2814,21 +3170,32 @@
               </a>
             </li>
           </ul>
+          <!-- End of Social Media Links -->
         </nav>
         <!-- End of Navigation -->
 
         <!-- CSS Art - Envelope & Letter ( Popup Message ) -->
-        <div class="footer__overlay">
+        <div class="footer__overlay" role="dialog" aria-modal="true">
+          <!-- Close Button -->
+          <button
+            type="button"
+            class="footer__overlay-closebtn"
+            aria-label="Close Message"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <!-- End of Close Button -->
+
           <!-- Evenlope with heart -->
           <div class="footer__envelope">
-            <div class="footer__envelope-top-side"></div>
-            <div class="footer__envelope-left-side"></div>
-            <div class="footer__envelope-right-side"></div>
-            <div class="footer__envelope-bottom-side"></div>
+            <div class="footer__envelope-top-side" aria-hidden="true"></div>
+            <div class="footer__envelope-left-side" aria-hidden="true"></div>
+            <div class="footer__envelope-right-side" aria-hidden="true"></div>
+            <div class="footer__envelope-bottom-side" aria-hidden="true"></div>
 
             <!-- Letter - Popup message -->
             <article class="footer__envelope-letter">
-              <h5 class="footer__envelope-letter-title">Message Delivered!</h5>
+              <h3 class="footer__envelope-letter-title">Message Delivered!</h3>
 
               <p class="footer__envelope-letter-message">
                 <strong class="footer__envelope-letter-strong"
@@ -2838,27 +3205,31 @@
                 soon as possible.
               </p>
 
-              <h6 class="footer__envelope-letter-nickname">
+              <h4 class="footer__envelope-letter-nickname">
                 Web.Animations.And.Effects
-              </h6>
+              </h4>
 
               <div class="footer__envelope-letter-lines">
                 <div class="footer__envelope-letter-line-01">
-                  <p>Click everywhere</p>
+                  <p class="footer__envelope-description">Click everywhere</p>
                 </div>
                 <div class="footer__envelope-letter-line-02">
-                  <p>close nearby</p>
+                  <p class="footer__envelope-description">close nearby</p>
                 </div>
                 <div class="footer__envelope-letter-line-03">
-                  <p>popup</p>
+                  <p class="footer__envelope-description">popup</p>
                 </div>
               </div>
             </article>
             <!-- End of Letter - Popup message -->
 
             <!-- Heart -->
-            <button type="button" class="footer__envelope-button">
-              <div class="footer__envelope-heart"></div>
+            <button
+              type="button"
+              class="footer__envelope-button"
+              aria-label="Open envelope message."
+            >
+              <div class="footer__envelope-heart" aria-hidden="true"></div>
             </button>
             <!-- End of Heart -->
           </div>
@@ -2881,9 +3252,3 @@
     <!-- End of Container -->
   </body>
 </html>
-<!-- Pridat preloader : pozdrav, popis a animaciu lahku  -->
-<!--  Pridat sekciu certifikaty / learning , learning rozdelit na bloky, education | certifications | atd -->
-<!--  Pridat sekciu github activity -->
-<!--  Pridat sekciu showcase - video player rucny a ukaze bud cely projekt video alebo nejake ine videa -->
-<!-- Pridat sekciu GAME - memory/pexeso css art game -->
-<!-- Sekcia Behind the scenes v MY experience - css art book s stagmi napr stage 01 , na lavej popis na pravej strane img vs code  -->
