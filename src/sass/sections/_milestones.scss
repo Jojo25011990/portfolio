@@ -25,11 +25,9 @@
   &__item {
     padding: 2rem 5rem;
 
-    overflow: hidden;
-
     background-color: $dark-quaternary;
 
-    text-align: center;
+    overflow: hidden;
 
     @include dimension-settings(100%, 90rem, auto, 50vh);
     @include flex-settings($direction: column, $gap: 5rem);

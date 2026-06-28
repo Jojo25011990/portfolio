@@ -2,7 +2,10 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import myStory from './myStory';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function myStoryOverlay() {
   // *** Select Elements ***

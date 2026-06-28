@@ -35,22 +35,6 @@
       // *** End of Responsive Design ***
     }
     // *** End of Old School TV ***
-
-    // *** Overlay ***
-    &-overlay {
-      text-align: center;
-
-      background-color: $color-black;
-
-      @include dimension-settings(100%, $height: 100%);
-      @include position-settings(0, 0, $zIndex: 500);
-      @include flex-settings;
-
-      & .showcase__title {
-        color: $color-white;
-      }
-    }
-    // *** End of Overlay ***
   }
   // *** End of Container ***
 

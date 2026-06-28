@@ -1,8 +1,5 @@
 import gsap from 'gsap';
-import TextPlugin from 'gsap/TextPlugin';
 import detectBrowsers from './detectBrowsers';
-
-gsap.registerPlugin(TextPlugin);
 
 // *** Heading | Description ( in timeline - my story ) ***
 export function startMyProcess() {
@@ -12,23 +9,11 @@ export function startMyProcess() {
     '.my-process__title-span',
   );
 
-  const myProcessDescription = document.querySelector<HTMLParagraphElement>(
-    '.my-process__description',
-  );
-
   if (myProcessTitle) {
     gsap.to(myProcessTitle, {
       onStart: () => {
         myProcessTitleSpan?.classList.add('active');
       },
-    });
-  }
-
-  if (myProcessDescription) {
-    gsap.to(myProcessDescription, {
-      duration: 2,
-      text: 'Behind the scenes of how interactive experiences are shaped through code, motion, and design decisions.',
-      ease: 'none',
     });
   }
 }

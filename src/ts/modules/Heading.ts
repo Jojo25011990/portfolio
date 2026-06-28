@@ -16,7 +16,7 @@ export default function heading() {
       gsap.to(heading, {
         scrollTrigger: {
           trigger: heading,
-          start: 'top 70%',
+          start: 'top center',
         },
 
         onStart: () => {

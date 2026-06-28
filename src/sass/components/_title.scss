@@ -211,14 +211,8 @@
 
 // *** Evolution - h3 ***
 .evolution__phase-heading {
-  margin-top: 0;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-3rem);
-
   @include position-settings($position: relative, $left: -14.5rem, $zIndex: 15);
-  @include font-settings(4rem);
+  @include font-settings(4rem, null, 1);
 }
 
 // *** Mobile ***

@@ -1,9 +1,8 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import TextPlugin from 'gsap/TextPlugin';
 import detectBrowsers from './detectBrowsers';
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function game() {
   // *** Game Container | Fallback Message | Browsers Helper Function ***

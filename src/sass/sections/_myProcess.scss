@@ -31,7 +31,7 @@
 
   // *** Container ***
   &__container {
-    @include dimension-settings(100%, 110rem, 50rem);
+    @include dimension-settings(100%, 110rem, 40rem);
     @include flex-settings;
 
     // *** Responsive Design ***

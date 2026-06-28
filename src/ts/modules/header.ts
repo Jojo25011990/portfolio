@@ -1,8 +1,4 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import focusModalTrap from './focusModalTrap';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function header() {
   // *** Lightbox ***

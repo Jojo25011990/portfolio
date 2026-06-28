@@ -1,8 +1,5 @@
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { startMyProcess } from './myProcess';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function myStory() {
   const myProcessSlider = document.querySelector<HTMLDivElement>(

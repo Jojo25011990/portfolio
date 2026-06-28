@@ -15,15 +15,13 @@
 
   // *** Menu | Item ***
   &__menu {
-    padding: 4rem;
-
     border-radius: 0.5rem;
 
     backdrop-filter: blur(1rem);
 
     transition: all 0.3s ease-out;
 
-    @include dimension-settings(100%, 70rem);
+    @include dimension-settings(100%, 62rem);
     @include flex-settings(null, null, column, 2rem);
 
     // *** Responsive Design ***

@@ -143,7 +143,7 @@
       @include position-settings($position: relative);
       @include flex-settings;
 
-      // *** Overlay *** //
+      // *** Overlay ***
       &-overlay {
         transform: translate(-50%, -50%);
 

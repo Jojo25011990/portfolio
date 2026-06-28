@@ -24,13 +24,13 @@
   &__menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
+    column-gap: 4rem;
     row-gap: 6.9rem;
 
     @include dimension-settings(100%, 110rem);
 
     // *** Responsive Design ***
-    @include responsive-settings(desktop-small) {
+    @include responsive-settings(desktop) {
       place-items: center;
       grid-template-columns: 1fr;
     }
@@ -63,7 +63,7 @@
       @include position-settings($position: relative);
 
       // *** Responsive Design ***
-      @include responsive-settings(desktop-small) {
+      @include responsive-settings(desktop) {
         @include dimension-settings(100%, 66rem, 39.6rem);
       }
       // *** End of Responsive Design ***
@@ -112,7 +112,7 @@
       margin-top: 2rem;
 
       // *** Responsive Design ***
-      @include responsive-settings(desktop-small) {
+      @include responsive-settings(tablet-large) {
         @include flex-settings(null, $gap: 3rem);
       }
       @include responsive-settings(tablet-large) {

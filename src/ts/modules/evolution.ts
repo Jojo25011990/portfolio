@@ -1,8 +1,7 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import TextPlugin from 'gsap/TextPlugin';
 
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 export default function evolution() {
   // *** Desktop Version ***
@@ -10,28 +9,10 @@ export default function evolution() {
     '.evolution__timeline',
   );
 
-  const evolutionPhaseHeadings = document.querySelectorAll(
-    '.evolution__phase-heading',
-  );
-  const [phaseHeading01, phaseHeading02, phaseHeading03] =
-    evolutionPhaseHeadings;
-
-  const evolutionPhaseLine01 = document.querySelector<HTMLLIElement>(
-    '.evolution__line-01',
-  );
   const evolutionPhaseLine02 = document.querySelector<HTMLLIElement>(
     '.evolution__line-02',
   );
 
-  const evolutionPhaseWrapper01 = document.querySelectorAll<HTMLDivElement>(
-    '.evolution__phase-wrapper-01 .evolution__phase-sentence',
-  );
-  const evolutionPhaseWrapper02 = document.querySelectorAll<HTMLDivElement>(
-    '.evolution__phase-wrapper-02 .evolution__phase-sentence',
-  );
-  const evolutionPhaseWrapper03 = document.querySelectorAll<HTMLDivElement>(
-    '.evolution__phase-wrapper-03 .evolution__phase-sentence',
-  );
   // *** End of Desktop Version ***
 
   // *** Mobile Version ***
@@ -68,110 +49,21 @@ export default function evolution() {
   // *** End of Mobile Version ***
 
   // *** Desktop Version ***
-  const evolutionPhaseTimeline = gsap.timeline({
+
+  gsap.to(evolutionPhaseLine02, {
+    scaleY: 1,
+    ease: 'none',
+
     scrollTrigger: {
       trigger: evolutionContainer,
       start: 'top center',
+      end: 'bottom 65%',
+      scrub: 1.5,
     },
-  });
-
-  // *** Phase 01 ***
-  evolutionPhaseTimeline.to(
-    phaseHeading01,
-    {
-      autoAlpha: 1,
-      y: 0,
-    },
-    '+=1',
-  );
-  evolutionPhaseTimeline.to(evolutionPhaseLine01, {
-    delay: 0.2,
-    scaleY: '33.3%',
-    ease: 'power4.in',
-    duration: 1,
-  });
-
-  if (evolutionPhaseWrapper01.length) {
-    evolutionPhaseTimeline.to(evolutionPhaseWrapper01, {
-      delay: 0.2,
-      stagger: 0.15,
-      x: '60%',
-    });
-  }
-
-  evolutionPhaseTimeline.to(evolutionPhaseLine02, {
-    delay: 0.2,
-    scaleY: '33.3%',
-    ease: 'power4.in',
-    duration: 1,
   });
   // *** End of Phase 01 ***
 
-  // *** Phase 02 ***
-  evolutionPhaseTimeline.to(
-    phaseHeading02,
-    {
-      autoAlpha: 1,
-      y: 0,
-    },
-    '+=1',
-  );
-  evolutionPhaseTimeline.to(evolutionPhaseLine01, {
-    delay: 0.2,
-    scaleY: '66.6%',
-    ease: 'power4.in',
-    duration: 1,
-  });
-
-  if (evolutionPhaseWrapper02.length) {
-    evolutionPhaseTimeline.to(evolutionPhaseWrapper02, {
-      delay: 0.2,
-      stagger: 0.15,
-      x: '60%',
-    });
-  }
-
-  evolutionPhaseTimeline.to(evolutionPhaseLine02, {
-    delay: 0.2,
-    scaleY: '66.6%',
-    ease: 'power4.in',
-    duration: 1,
-  });
-  // *** End of Phase 02 ***
-
-  // *** Phase 03 ***
-  evolutionPhaseTimeline.to(
-    phaseHeading03,
-    {
-      autoAlpha: 1,
-      y: 0,
-    },
-    '+=1.2',
-  );
-  evolutionPhaseTimeline.to(evolutionPhaseLine01, {
-    delay: 0.2,
-    scaleY: '100%',
-    ease: 'power4.in',
-    duration: 1,
-  });
-
-  if (evolutionPhaseWrapper03.length) {
-    evolutionPhaseTimeline.to(evolutionPhaseWrapper03, {
-      delay: 0.2,
-      stagger: 0.15,
-      x: '60%',
-    });
-  }
-
-  evolutionPhaseTimeline.to(evolutionPhaseLine02, {
-    delay: 0.2,
-    scaleY: '100%',
-    ease: 'power4.in',
-    duration: 1,
-  });
-  // *** End of Phase 03 ***
-
-  if (window.innerWidth <= 850) evolutionPhaseTimeline.kill();
+  //   if (window.innerWidth <= 850) evolutionPhaseTimeline.kill();
   // *** End of Desktop Version ***
 
   // *** Mobile Version ***

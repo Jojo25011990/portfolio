@@ -21,6 +21,9 @@
   }
 
   &__item {
+    @include dimension-settings(100%, 53rem);
+    // @include dimension-settings(100%);
+
     //  *** Box ***
     &-box {
       transform: scale(1);
@@ -37,22 +40,10 @@
 
       transition: all 0.3s ease-out;
 
-      @include dimension-settings(100%, 50rem);
+      @include dimension-settings(100%);
+      min-height: 341px;
+
       @include flex-settings(center, center, column, 2rem);
-
-      &:hover {
-        transform: scale(1.05);
-
-        // *** Responsive Design ***
-        @include responsive-settings(tablet-small) {
-          transform: scale(1.03);
-        }
-
-        @include responsive-settings(mobile-large) {
-          transform: none;
-        }
-        // *** End of Responsive Design ***
-      }
     }
 
     //  *** End of Box ***

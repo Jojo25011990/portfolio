@@ -1,8 +1,4 @@
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import TextPlugin from 'gsap/TextPlugin';
-
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function showcase() {
   const showcaseVideos =
@@ -23,46 +19,6 @@ export default function showcase() {
   const showcaseTime = document.querySelector<HTMLSpanElement>(
     '.showcase__controls-time',
   );
-
-  const showcaseContainersOverlay = document.querySelectorAll<HTMLDivElement>(
-    '.showcase__container-overlay',
-  );
-
-  showcaseContainersOverlay.forEach(showcaseContainerOverlay => {
-    const showcaseContainerHeading = showcaseContainerOverlay.querySelectorAll(
-      '.showcase__container-title',
-    );
-
-    gsap.to(showcaseContainerOverlay, {
-      delay: 1.35,
-      yPercent: -100,
-      duration: 0.8,
-      ease: 'power2.out',
-      stagger: 0.12,
-      scrollTrigger: {
-        trigger: showcaseContainerOverlay,
-        start: 'top center',
-        once: true,
-      },
-      onComplete: () => {
-        if (showcaseContainerOverlay)
-          gsap.set(showcaseContainerOverlay, { display: 'none', delay: 0.25 });
-      },
-    });
-
-    gsap.to(showcaseContainerHeading, {
-      delay: 0.9,
-      autoAlpha: 0,
-      y: -200,
-      duration: 0.3,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: showcaseContainerOverlay,
-        start: 'top center',
-        once: true,
-      },
-    });
-  });
 
   // *** Video Player ***
   // *** Switcher Buttons ***

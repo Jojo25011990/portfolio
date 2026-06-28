@@ -1,9 +1,4 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import TextPlugin from 'gsap/TextPlugin';
 import focusModalTrap from './focusModalTrap';
-
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default function features() {
   const featuresMenu =
@@ -29,61 +24,6 @@ export default function features() {
   const featuresFunFactsCloseButton = document.querySelector<HTMLButtonElement>(
     '.features__fun-facts-closebtn',
   );
-
-  // *** Features Eight Mini Blocks ***
-  if (featuresItems.length) {
-    gsap.from(featuresItems, {
-      scrollTrigger: {
-        trigger: featuresItems[0],
-        start: 'top center',
-      },
-
-      stagger: 0.3,
-      autoAlpha: 0,
-      y: 100,
-      duration: 1,
-      ease: 'power2.out',
-    });
-  }
-  // *** End of Features Eight Mini Blocks ***
-
-  // *** Features Eight Mini blocks - Version 02 ***
-  //   if (featuresItems) {
-  //     featuresItems.forEach((featuresItem, index: number) => {
-  //       gsap.from(featuresItem, {
-  //         delay: index * 0.15,
-  //         y: 100,
-  //         autoAlpha: 0,
-  //         duration: 0.6,
-  //         ease: 'power2.out',
-
-  //         scrollTrigger: {
-  //           trigger: featuresItem,
-  //           start: 'top 80%',
-  //           toggleActions: 'play none none none',
-  //         },
-  //       });
-  //     });
-  //   }
-  // *** End of Features Eight Mini blocks - Version 02 ***
-
-  // *** Version 02 ***
-  //   if (featuresItems.length) {
-  //     gsap.from(featuresItems, {
-  //       scrollTrigger: {
-  //         trigger: featuresItems[0],
-  //         start: 'top 80%',
-  //         toggleActions: 'play none none none',
-  //       },
-
-  //       stagger: 0.3,
-  //       autoAlpha: 0,
-  //       y: 100,
-  //       duration: 1.5,
-  //       ease: 'power2.out',
-  //     });
-  //   }
-  // *** End of Version 02 ***
 
   // *** Random Animation Icon ***
   setInterval(() => {

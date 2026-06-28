@@ -2,17 +2,11 @@
 @use '../base' as *;
 
 // *** Sr Only ***
-.projects__description-sr-only,
-.services__description-sr-only,
-.features__description-sr-only,
-.evolution__description-sr-only,
-.future__description-sr-only,
-.milestones__description-sr-only,
-.faq__description-sr-only,
-.activity__description-sr-only,
-.game__description-sr-only,
+.intro-sr-only,
+.skills__title-sr-only,
 .showcase__description-sr-only,
-.my-process__description-sr-only,
+.my-overlay__sr-only,
+.my-story__sr-only,
 .sr-class-process {
   @extend %sr-only;
 }
@@ -45,17 +39,18 @@ p:not(
 .evolution__description,
 .future__description,
 .milestones__description,
+.milestones__item-description,
 .faq__description,
 .activity__description,
 .game__description,
 .showcase__description,
 .my-process__description {
   text-align: center;
-  @include dimension-settings(100%, 76rem, 5.6rem);
+  @include dimension-settings(100%, 76rem);
 
   // *** Responsive Design ***
   @include responsive-settings(mobile) {
-    @include font-settings(1.6rem, 500, 2.8rem, 0);
+    @include font-settings(1.6rem, 500);
   }
   // *** End of Responsive Design ***
 }
@@ -103,20 +98,6 @@ p:not(
   color: $grey-primary;
 }
 // *** End of Skills ***
-
-// *** Projects ***
-.projects__description {
-  // *** Responsive Design ***
-  @include responsive-settings(tablet-small) {
-    @include dimension-settings(100%, 76rem, 8.4rem);
-  }
-
-  @include responsive-settings(mobile-small) {
-    @include dimension-settings(100%, 76rem, 11.2rem);
-  }
-  // *** End of Responsive Design ***
-}
-// *** End of Projects ***
 
 // *** Features ***
 .features__item-description {
