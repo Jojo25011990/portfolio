@@ -12,7 +12,8 @@
 .activity__description-sr-only,
 .game__description-sr-only,
 .showcase__description-sr-only,
-.my-process__description-sr-only {
+.my-process__description-sr-only,
+.sr-class-process {
   @extend %sr-only;
 }
 // *** End of Sr Only ***

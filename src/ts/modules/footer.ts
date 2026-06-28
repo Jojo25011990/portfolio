@@ -1,7 +1,9 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
+
 export default function footer() {
   // *** Footer - General ***
   const footer = document.querySelector<HTMLElement>('.footer');
@@ -11,8 +13,6 @@ export default function footer() {
   );
 
   const footerLogo = document.querySelector<HTMLAnchorElement>('.footer__logo');
-
-  const overlay = document.querySelector<HTMLDivElement>('.footer__overlay');
 
   if (footer) {
     gsap.to(footer, {
@@ -63,9 +63,12 @@ export default function footer() {
   });
 
   // *** Overlay ***
+
   const footerOverlay =
     document.querySelector<HTMLDivElement>('.footer__overlay');
-  console.log(footerOverlay);
+  const footerOverlayCloseButton = document.querySelector<HTMLButtonElement>(
+    '.footer__overlay-closebtn',
+  );
 
   if (footerOverlay) {
     footerOverlay.addEventListener('click', function (e) {
@@ -75,6 +78,16 @@ export default function footer() {
       }
     });
   }
+
+  const footerOverlayEscapeKey = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') footerOverlay?.classList.remove('active');
+  };
+
+  window.addEventListener('keyup', footerOverlayEscapeKey);
+
+  footerOverlayCloseButton?.addEventListener('click', () => {
+    footerOverlay?.classList.remove('active');
+  });
   // *** End of Overlay ***
   // *** End of Envelope ***
 
@@ -120,19 +133,51 @@ export default function footer() {
 
       if (isInputsValid) {
         setTimeout(() => {
-          overlay?.classList.add('active');
+          footerOverlay?.classList.add('active');
           footerEnvelopeHeart?.classList.add('initial-state');
-
           setTimeout(() => {
             footerEnvelopeHeart?.classList.add('active');
-
             if (formInputName && formInputEmail && formTextarea) {
               formInputName.value = '';
               formInputEmail.value = '';
               formTextarea.value = '';
             }
           }, 250);
-        }, 1000);
+        }, 500);
+
+        // *** EmailJS | Popup Envelope Message ***
+        // emailjs
+        //   .send(
+        //     'service_687vb4p',
+        //     'template_a78ap3d',
+        //     {
+        //       name: formInputName?.value,
+        //       email: formInputEmail?.value,
+        //       message: formTextarea?.value,
+        //     },
+        //     '7v1sBU3diJGsXO7dM',
+        //   )
+        //   .then((response: EmailJSResponseStatus) => {
+        //     console.log('success:', response.status, response.text);
+
+        //     setTimeout(() => {
+        //       footerOverlay?.classList.add('active');
+        //       footerEnvelopeHeart?.classList.add('initial-state');
+        //       setTimeout(() => {
+        //         footerEnvelopeHeart?.classList.add('active');
+        //         if (formInputName && formInputEmail && formTextarea) {
+        //           formInputName.value = '';
+        //           formInputEmail.value = '';
+        //           formTextarea.value = '';
+        //         }
+        //       }, 250);
+        //     }, 500);
+        //   })
+        //   .catch(error => {
+        //     console.log('failed:', error);
+        //     alert('Oops! Something went wrong. Please try again.');
+        //   });
+        // *** End of EmailJS | Popup Envelope Message ***
       }
     });
   }
@@ -150,7 +195,7 @@ export default function footer() {
 
       // *** Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
 
-      //   const inputElement = oneInput!.value.trim().toLowerCase();
+      //  --> const inputElement = oneInput!.value.trim().toLowerCase(); <---
 
       // *** End of Without GUARD - oneInput! -> non assertion ts syntax, when inputs are READY in the DOM ***
 
@@ -176,8 +221,10 @@ export default function footer() {
       const removeSuccessDelay = 1500;
       //  *** End of Success Lines | Delay ***
 
+      // *** Email Regex ***
       const inputElementEmailRegex =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\\.,;:\s@\"]+\.)+[^<>()[\]\\.,;:\s@\"]{2,})$/i;
+      // *** End of Email Regex ***
 
       if (index === 0) {
         // *** Full Name ***

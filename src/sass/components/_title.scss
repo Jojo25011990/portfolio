@@ -289,7 +289,7 @@
 }
 // *** End of Faq - h4 ***
 
-// *** My Story ***
+// *** My Story - h4 ***
 .my-story__character-title {
   text-transform: uppercase;
   @include font-settings(1.6rem, $weight: 700);
@@ -300,9 +300,9 @@
   }
   // ***  End of Responsive Design ***
 }
-// *** End of My Story ***
+// *** End of My Story - h4 ***
 
-// *** My Process ***
+// *** My Process - h3 ***
 .my-process__slider-title {
   color: $color-white;
 
@@ -314,7 +314,7 @@
   }
   // *** End of Responsive Design ***
 }
-// *** End of My Process ***
+// *** End of My Process - h3 ***
 
 // *** Footer - H2 ***
 .footer__title {

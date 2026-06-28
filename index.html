@@ -28,18 +28,19 @@
       content="Explore Jozef Kudrna's portfolio featuring React/TypeScript projects, Three js, GSAP animations, CSS Art, and creative coding journey"
     />
     <meta property="og:type" content="website" />
+    <!-- Add correct url and preview image -->
     <meta
       property="og:url"
-      content="https://jojo25011990.github.io/single-page-portfolio-ak/"
+      content="https://jojo25011990.github.io/portfolio/"
     />
     <meta
       property="og:image"
-      content="https://jojo25011990.github.io/single-page-portfolio-ak/social-preview.png"
+      content="https://jojo25011990.github.io/portfolio/social-preview.png"
     />
     <!-- End of Open Graph -->
 
     <!-- Favicon -->
-    <!-- Sem dam potom svoj favicong, asi spravil svoju fotku alebo tak ... -->
+    <!-- Add custom favicon-->
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <!-- End of Favicon -->
 
@@ -78,7 +79,7 @@
     <link rel="stylesheet" href="/src/sass/main.scss" />
   </head>
   <body id="top">
-    <!-- Section Map -->
+    <!-- Section Map - 17/18 Sections -->
     <!-- Intro -->
     <!-- Header -->
     <!-- Skills -->
@@ -89,15 +90,15 @@
     <!-- Future -->
     <!-- Milestones -->
     <!-- Faq -->
-    <!-- Game -> OK / 90% -->
-    <!-- Showcase -> OK / 90% -->
-    <!-- MY Experience | Intro | My Story | Behind The Scenes -> OK | 90% -->
-    <!-- Footer | Form | Popup Message | EmailJS - OK | 85-90% -->
-    <!-- Post Scene - NOK -> Tough Fight -->
-    <!-- End of Section Map -->
+    <!-- Game -->
+    <!-- Showcase -->
+    <!-- MY Experience | My Overlay | My Story | My Process -->
+    <!-- Footer | Form | Popup Message | EmailJS -->
+    <!-- Post Scene - NOK - 90%. God help me please 🤣 -->
+    <!-- End of Section Map - 17/18 Sections -->
 
     <!-- Intro -->
-    <section class="intro hide">
+    <section class="intro">
       <!-- Jozef Kudrna - Portfolio V1 -->
       <div class="intro-imgbox">
         <img
@@ -291,7 +292,11 @@
           aria-describedby="lightbox-description"
           aria-hidden="true"
         >
-          <button class="header__lightbox-closebtn" aria-label="Close Lightbox">
+          <button
+            type="button"
+            class="header__lightbox-closebtn"
+            aria-label="Close Lightbox"
+          >
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           </button>
 
@@ -1797,11 +1802,10 @@
           <!-- Container -->
           <div
             class="milestones__container"
-            role="list"
             aria-label="Frontend milestones timeline"
           >
             <!-- CV Web App -->
-            <article class="milestones__item" role="listitem">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">CV Web App</h3>
               <p class="milestones__item-description">
                 First complex frontend project built with vanilla HTML, SCSS and
@@ -1814,7 +1818,7 @@
             <!-- End of CV Web App -->
 
             <!-- My Hope -->
-            <article class="milestones__item" role="listitem">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">My Hope</h3>
               <p class="milestones__item-description">
                 My first large-scale experimental project, built as a personal
@@ -1827,7 +1831,7 @@
             <!-- End of My Hope -->
 
             <!-- Ship, Shark and Fish CSS Art Scene  -->
-            <article class="milestones__item" role="listitem">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">CSS Scene Art</h3>
               <p class="milestones__item-description">
                 First deeper exploration into complex CSS Art scenes, focused on
@@ -1840,7 +1844,7 @@
             <!-- End of Ship, Shark and Fish CSS Art Scene  -->
 
             <!-- Ferb & Phineas -->
-            <article class="milestones__item" role="listitem">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">Phineas & Ferb</h3>
               <p class="milestones__item-description">
                 Most advanced CSS Art project I’ve built, focused on recreating
@@ -1854,7 +1858,7 @@
             <!-- End of Ferb & Phineas -->
 
             <!-- Portfolio V1 -->
-            <article class="milestones__item" role="listitem">
+            <article class="milestones__item">
               <h3 class="milestones__item-heading">Portfolio V1</h3>
               <p class="milestones__item-description">
                 My latest large-scale frontend project focused on building a
@@ -2257,6 +2261,8 @@
               <audio
                 src="./src/assets/audio/Lightning spark.mp4"
                 class="showcase__lightning-spark"
+                preload="auto"
+                aria-hidden="true"
               ></audio>
 
               <div class="showcase__antennas" aria-hidden="true">
@@ -2307,17 +2313,24 @@
                       class="showcase__body-inner-wrapper showcase__body-inner-wrapper-01"
                     >
                       <button
+                        type="button"
                         class="showcase__body-inner-btn showcase__body-inner-btn-01"
+                        aria-label="Toggle TV sound."
+                        aria-pressed="false"
                       >
-                        <span class="showcase__body-inner-btn-span"></span>
+                        <span
+                          class="showcase__body-inner-btn-span"
+                          aria-hidden="true"
+                        ></span>
                       </button>
                     </div>
                     <div
                       class="showcase__body-inner-wrapper showcase__body-inner-wrapper-02"
-                      aria-hidden="true"
                     >
                       <button
+                        type="button"
                         class="showcase__body-inner-btn showcase__body-inner-btn-02"
+                        aria-label="Start TV animation sequence."
                       ></button>
                     </div>
 
@@ -2432,26 +2445,32 @@
           <!-- Video Player Buttons -->
           <div class="showcase__video-switcher" role="tablist">
             <button
+              type="button"
               class="showcase__switcher-btn active-video-button"
               role="tab"
               aria-selected="true"
               aria-controls="video-0"
+              tabindex="0"
             >
               CSS Art
             </button>
             <button
+              type="button"
               class="showcase__switcher-btn"
               role="tab"
               aria-selected="false"
               aria-controls="video-1"
+              tabindex="-1"
             >
               Animations
             </button>
             <button
+              type="button"
               class="showcase__switcher-btn"
               role="tab"
               aria-selected="false"
               aria-controls="video-2"
+              tabindex="-1"
             >
               Mix Work
             </button>
@@ -2660,7 +2679,7 @@
 
             <div class="my-process__container">
               <!-- CSS Art book -->
-              <div class="my-process__book">
+              <div class="my-process__book" aria-hidden="true">
                 <div
                   class="my-process__book-cover my-process__book-cover--back"
                 >
@@ -2760,6 +2779,19 @@
                   <div class="my-process__book-cover-back"></div>
                 </div>
               </div>
+
+              <!-- My Process - Sr Only -->
+              <article class="sr-class-process">
+                <h3 class="sr-class-title">Behind the Scene - My Story</h3>
+                <p class="sr-class-description">
+                  A behind-the-scenes look at how this interactive story was
+                  created. It follows the process from the initial idea and
+                  early concept, through building the scene, characters, and
+                  visual composition, to animation, timing, atmosphere, and
+                  final refinement into a complete storytelling experience.
+                </p>
+              </article>
+              <!-- End of My Process - Sr Only -->
               <!-- End of CSS Art book -->
 
               <!-- Slider Component -->
@@ -2841,19 +2873,19 @@
                 </article>
               </div>
               <!-- End of Slider Component -->
-
-              <div class="sr-class"></div>
             </div>
           </section>
           <!-- End of My Behind the scene -->
         </section>
         <!-- End of My Experience - Overlay | Story | Behind the scene -->
+
+        <!-- Post Scene Cinematic -->
+        <!-- <section class="post-scene"></section> -->
+        <!-- End of Post Scene Cinematic -->
       </main>
       <!-- End of Main -->
 
       <!-- Footer -->
-      <!--   zvazit odstranit autocomplete , pripadne na video nechat ale potom odstranit a doriesit defaultne browser styly autocomplete ked sa autocompletne meno,email - aspon sa oto pokusit :D 
-          doplnit ako v headery pri lightboxe aj tu na envelope vsetky aria spravne attr  -->
       <footer class="footer">
         <section class="footer__contact" id="contact">
           <!-- Content -->
@@ -3079,7 +3111,7 @@
           <a href="#top" class="footer__logo" aria-label="Back to top"
             >JozefKudrna</a
           >
-
+          <!-- Social Media Links -->
           <ul class="footer__menu">
             <li class="footer__item">
               <a
@@ -3137,21 +3169,32 @@
               </a>
             </li>
           </ul>
+          <!-- End of Social Media Links -->
         </nav>
         <!-- End of Navigation -->
 
         <!-- CSS Art - Envelope & Letter ( Popup Message ) -->
         <div class="footer__overlay">
+          <!-- Close Button -->
+          <button
+            type="button"
+            class="footer__overlay-closebtn"
+            aria-label="Close Message"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <!-- End of Close Button -->
+
           <!-- Evenlope with heart -->
           <div class="footer__envelope">
-            <div class="footer__envelope-top-side"></div>
-            <div class="footer__envelope-left-side"></div>
-            <div class="footer__envelope-right-side"></div>
-            <div class="footer__envelope-bottom-side"></div>
+            <div class="footer__envelope-top-side" aria-hidden="true"></div>
+            <div class="footer__envelope-left-side" aria-hidden="true"></div>
+            <div class="footer__envelope-right-side" aria-hidden="true"></div>
+            <div class="footer__envelope-bottom-side" aria-hidden="true"></div>
 
             <!-- Letter - Popup message -->
             <article class="footer__envelope-letter">
-              <h5 class="footer__envelope-letter-title">Message Delivered!</h5>
+              <h3 class="footer__envelope-letter-title">Message Delivered!</h3>
 
               <p class="footer__envelope-letter-message">
                 <strong class="footer__envelope-letter-strong"
@@ -3161,9 +3204,9 @@
                 soon as possible.
               </p>
 
-              <h6 class="footer__envelope-letter-nickname">
+              <h4 class="footer__envelope-letter-nickname">
                 Web.Animations.And.Effects
-              </h6>
+              </h4>
 
               <div class="footer__envelope-letter-lines">
                 <div class="footer__envelope-letter-line-01">
@@ -3180,8 +3223,12 @@
             <!-- End of Letter - Popup message -->
 
             <!-- Heart -->
-            <button type="button" class="footer__envelope-button">
-              <div class="footer__envelope-heart"></div>
+            <button
+              type="button"
+              class="footer__envelope-button"
+              aria-label="Open envelope message."
+            >
+              <div class="footer__envelope-heart" aria-hidden="true"></div>
             </button>
             <!-- End of Heart -->
           </div>

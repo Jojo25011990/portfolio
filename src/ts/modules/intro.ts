@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import myStoryOverlay from './myStoryOverlay';
 
 export default function intro() {
   // *** Body | My Experience ***
@@ -122,7 +123,8 @@ export default function intro() {
       headerAuthorSpan?.classList.add('active');
       headerCircle?.classList.add('active');
       skillsMenu?.classList.add('active');
-    }, '-=1.4');
+    }, '-=1.4')
+    .add(() => myStoryOverlay());
 
   // *** End of Functionality ***
 }

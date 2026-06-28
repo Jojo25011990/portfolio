@@ -13,6 +13,8 @@
   @include position-settings(0, 0, 0, 0, 5000, fixed);
   @include dimension-settings(100vw, $height: 100dvh);
 
+  display: none !important;
+
   &.hide {
     display: none;
   }

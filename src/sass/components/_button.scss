@@ -63,9 +63,10 @@
 }
 // *** End of Secondary Button ***
 
-// *** Fun Facts Close Button ***
+// *** Close Button - Modal | Lightbox | Overlay ***
 .features__fun-facts-closebtn,
-.header__lightbox-closebtn {
+.header__lightbox-closebtn,
+.footer__overlay-closebtn {
   cursor: pointer;
 
   padding: 0.5rem;
@@ -87,7 +88,7 @@
     color: $success-primary;
   }
 }
-// *** End of Fun Facts Close Button ***
+// *** End of Close Button - Modal | Lightbox | Overlay ***
 
 // *** FAQ - Accordion ***
 .faq__item-question {

@@ -22,9 +22,8 @@ export default function game() {
   }
   // *** End of Game Container | Fallback Message | Browsers Helper Function ***
 
-  // *** CSS Art Memory Game - CHrome | Edge ***
+  // *** CSS Art Memory Game - Chrome | Edge ***
   // *** Select Elements ***
-  //   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const game = document.querySelector<HTMLUListElement>('.game__memory');
   const gameBoxes =
     document.querySelectorAll<HTMLLIElement>('.game__memory-box');
@@ -212,5 +211,5 @@ export default function game() {
   resetGameButton?.addEventListener('click', resetGame);
   resetGameButton?.addEventListener('click', shuffleGameBoxes);
   // *** End of Reset Game ***
-  // *** End of CSS Art Memory Game - CHrome | Edge ***
+  // *** End of CSS Art Memory Game - Chrome | Edge ***
 }

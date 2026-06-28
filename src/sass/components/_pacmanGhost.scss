@@ -2,21 +2,13 @@
 
 // *** Intro Pacman | Ghost ***
 .intro-scene-pacman {
-  //   filter: drop-shadow(0 0 1px $yellow-primary);
+  transform: translateX(-20rem);
 
   @include dimension-settings(6rem, $height: 6rem);
   @include position-settings($bottom: 1rem);
 
-  transform: translateX(-20rem);
-
   &.pacman-active {
     animation: move 5.5s linear forwards;
-  }
-
-  @keyframes move {
-    to {
-      transform: translateX(125rem);
-    }
   }
 
   // *** Eye ***
@@ -37,7 +29,7 @@
 
     display: block;
 
-    border: 3rem solid $yellow-primary; // 3 default
+    border: 3rem solid $yellow-primary;
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-radius: 50%;
@@ -61,18 +53,15 @@
 }
 
 .intro-scene-ghost {
+  transform: translateX(-50%) translateY(100%);
+
   background-color: $success-primary;
 
   border-top-left-radius: 7rem;
   border-top-right-radius: 7rem;
 
-  //   @include position-settings(null, 20rem, $bottom: 1rem);
   @include dimension-settings(6rem, $height: 7rem);
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
+  @include position-settings(50%, 50%);
 
   &.ghost-active {
     animation:
@@ -84,37 +73,6 @@
     animation:
       fade-in-ghost-03 1s ease-out forwards,
       fade-in-ghost-04 0.45s 3.5s ease-in forwards;
-  }
-
-  @keyframes fade-in-ghost-01 {
-    to {
-      transform: translateX(-50%) translateY(5%);
-    }
-  }
-  @keyframes fade-in-ghost-02 {
-    0% {
-      transform: translateX(-50%) translateY(5%);
-    }
-
-    50%,
-    90% {
-      transform: translateX(-50%) translateY(-18%);
-    }
-
-    100% {
-      transform: translateX(-50%) translateY(100%);
-    }
-  }
-
-  @keyframes fade-in-ghost-03 {
-    to {
-      transform: translateX(-50%) translateY(-60%);
-    }
-  }
-  @keyframes fade-in-ghost-04 {
-    to {
-      transform: translateX(-50%) translateY(100%);
-    }
   }
 
   // *** Eyes ***
@@ -139,15 +97,12 @@
     &::after {
       content: '';
 
-      position: absolute;
-      top: 25px;
-      left: 5px;
-      z-index: 99;
       background-color: $dark-overlay;
-      width: 10px;
-      height: 10px;
 
       border-radius: 50%;
+
+      @include position-settings(2.5rem, 0.5rem, $zIndex: 99);
+      @include dimension-settings(1rem, $height: 1rem);
     }
 
     &::after {
@@ -207,10 +162,8 @@
 
     transition: all 0.35s;
 
-    border-bottom: 5px solid $dark-overlay;
-    border-left: 5px solid $dark-overlay;
-    border-right: 5px solid $dark-overlay;
-    border-top: 5px solid transparent;
+    border: 0.5rem solid $dark-overlay;
+    border-top-color: transparent;
     border-radius: 50%;
 
     @include position-settings(73%, 40%);
@@ -221,11 +174,5 @@
     }
   }
   // *** End of Smile ***
-
-  @keyframes ghost-smile {
-    to {
-      transform: translateY(-73%) translateX(-40%) scale(1);
-    }
-  }
 }
 // *** End of Intro Pacman | Ghost ***

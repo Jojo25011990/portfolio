@@ -42,6 +42,5 @@ function init() {
   showcase();
   footer();
   backToTop();
-  myStoryOverlay();
   myProcess();
 }

@@ -16,6 +16,7 @@
     "vite": "^8.0.1"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "gsap": "^3.14.2",
     "sass": "^1.98.0",
     "three": "^0.183.2"

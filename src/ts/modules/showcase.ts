@@ -263,6 +263,11 @@ export default function showcase() {
   showcaseCSSArtButton01.addEventListener('click', function () {
     this.classList.toggle('active');
 
+    this.setAttribute(
+      'aria-pressed',
+      this.classList.contains('active') ? 'true' : 'false',
+    );
+
     if (showcaseCssArtVideo && this.classList.contains('active')) {
       showcaseCssArtVideo.muted = false;
     } else showcaseCssArtVideo!.muted = true;
@@ -271,6 +276,13 @@ export default function showcase() {
   showcaseCSSArtButton02.addEventListener(
     'click',
     () => {
+      showcaseCSSArtButton02.disabled = true;
+
+      showcaseCSSArtButton02.setAttribute(
+        'aria-label',
+        'TV animation sequence started.',
+      );
+
       triggerTvLightning();
       showcaseCSSArtLightningSparks?.play();
     },
