@@ -1,8 +1,4 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import detectBrowsers from './detectBrowsers';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function game() {
   // *** Game Container | Fallback Message | Browsers Helper Function ***
@@ -34,10 +30,6 @@ export default function game() {
   const gameOverlayWin =
     document.querySelector<HTMLLIElement>('.game__memory-win');
 
-  const gameOverlay = document.querySelector<HTMLLIElement>(
-    '.game__memory-overlay',
-  );
-  const gameOverlayLines = gameOverlay?.querySelectorAll<HTMLDivElement>('div');
   // *** End of Select Elements ***
 
   // *** First Box | Second Box | Match Count ***
@@ -55,23 +47,6 @@ export default function game() {
     secondBox = null;
   };
   // *** End of Reset State ***
-
-  // *** Overlay | Lines - Animation ***
-  const gameOverlayTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: gameOverlay,
-      start: 'top center',
-    },
-  });
-
-  gameOverlayTimeline.add(() => {
-    gameOverlay?.classList.add('active');
-
-    gameOverlayLines?.forEach(gameOverlayLine =>
-      gameOverlayLine.classList.add('active'),
-    );
-  }, '+=1.2');
-  // *** End of Overlay | Lines - Animation ***
 
   // *** Shuffle Boxes ***
   // *** Very good source -> https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle ***

@@ -1,12 +1,12 @@
 import gsap from 'gsap';
+import game from './game';
+import showcase from './showcase';
 import myStoryOverlay from './myStoryOverlay';
 
 export default function intro() {
-  // *** Body | My Experience ***
+  // *** Body ***
   const body = document.querySelector<HTMLBodyElement>('body');
-  const showcase = document.querySelector<HTMLElement>('.showcase');
-  const game = document.querySelector<HTMLElement>('.game');
-  // *** End of Body | My Experience ***
+  // *** End of Body ***
 
   // *** Header | Skills ***
   const headerLogo = document.querySelector<HTMLAnchorElement>('.header__logo');
@@ -114,16 +114,14 @@ export default function intro() {
       },
     })
     .add(() => {
-      game?.classList.remove('hide');
-      showcase?.classList.remove('hide');
-    })
-    .add(() => {
       headerAuthorImage?.classList.add('active');
       headerLogo?.classList.add('active');
       headerAuthorSpan?.classList.add('active');
       headerCircle?.classList.add('active');
       skillsMenu?.classList.add('active');
     }, '-=1.4')
+    .add(() => game())
+    .add(() => showcase())
     .add(() => myStoryOverlay());
 
   // *** End of Functionality ***
