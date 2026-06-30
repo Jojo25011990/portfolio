@@ -8,7 +8,5 @@
   @include dimension-settings(100%, $min-height: 100vh);
   @include position-settings($position: relative);
   @include flex-settings;
-
-  //   display: none;
 }
 // *** End of My Experience ***

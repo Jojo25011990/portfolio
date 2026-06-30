@@ -4,10 +4,12 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function skillsHeading() {
+  // *** Select Elements ***
   const skillsSection = document.querySelector<HTMLElement>('.skills');
   const skillsHeading =
     document.querySelector<HTMLHeadingElement>('.skills__title');
   const skillsMenu = document.querySelector<HTMLUListElement>('.skills__menu');
+  // *** End of Select Elements ***
 
   // *** Version 01 ***
   gsap.to([skillsSection, skillsHeading, skillsMenu], {

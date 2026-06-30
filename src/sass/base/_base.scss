@@ -14,8 +14,8 @@ body {
 
   font-family: $font-primary;
 
-  //   overflow: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
+  //   overflow-x: hidden;
   &.active {
     overflow-x: hidden;
     overflow-y: scroll;

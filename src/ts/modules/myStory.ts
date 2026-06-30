@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { startMyProcess } from './myProcess';
 
 export default function myStory() {
+  // *** Select Elements ***
   const myProcessSlider = document.querySelector<HTMLDivElement>(
     '.my-process__slider',
   );
@@ -38,12 +39,17 @@ export default function myStory() {
   const myStoryWomanRock = document.querySelector<HTMLImageElement>(
     '.my-story__character-img-rock-woman',
   );
+  // *** End of Select Elements ***
 
+  // *** Destructuring Man | Woman Bubbles ***
   const [myStoryManBubbles01, myStoryManBubbles02] = myStoryManBubbles;
   const [myStoryWomanBubbles01, myStoryWomanBubbles02] = myStoryWomanBubbles;
+  // *** End of Destructuring Man | Woman Bubbles ***
 
+  // *** Functionality ***
   const dragonTimeline = gsap.timeline().pause();
 
+  // *** Roar | Shake Container | Dragon ***
   dragonTimeline
     .to(myStoryDragonRoar, {
       delay: 2,
@@ -70,7 +76,9 @@ export default function myStory() {
     });
 
   dragonTimeline.add(() => myStoryDragon?.classList.add('active'));
+  // *** End of Roar | Shake Container | Dragon ***
 
+  // *** Phase 01 ***
   dragonTimeline
     .add(() => {
       myStoryManBubbles01.classList.add('active');
@@ -96,7 +104,9 @@ export default function myStory() {
       myStoryManRock?.classList.add('active');
       myStoryWomanRock?.classList.add('active');
     }, '+=0.1');
+  // *** End of Phase 01 ***
 
+  // *** Phase 02 ***
   dragonTimeline.add(() => {
     myStoryDragon?.addEventListener(
       'animationend',
@@ -138,8 +148,10 @@ export default function myStory() {
           .add(() => myProcessSlider?.classList.remove('active'), '+=2');
       },
       { once: true },
+      // *** End of Phase 02 ***
     );
   });
+  // *** End of Functionality ***
 
   return dragonTimeline;
 }

@@ -1,7 +1,9 @@
 export default function faq() {
+  // *** Select Element | Initialize Timeout ( state ) ***
   const faqItems = document.querySelectorAll<HTMLLIElement>('.faq__item');
 
   let faqTimeout: ReturnType<typeof setTimeout> | null = null;
+  // *** End of Select Element | Initialize Timeout ( state ) ***
 
   // *** FAQ - Accordion ***
   faqItems.forEach(oneFaqItem => {

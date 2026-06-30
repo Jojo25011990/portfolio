@@ -83,7 +83,6 @@
     @include responsive-settings(desktop) {
       @include position-settings($right: -6.4rem);
     }
-
     // *** End of Responsive Design ***
 
     &-circle {
@@ -101,7 +100,9 @@
         stroke-dasharray: 0;
         stroke-dashoffset: 0;
 
-        animation: none;
+        &.active {
+          animation: none;
+        }
       }
       // *** End of Responsive Design ***
     }

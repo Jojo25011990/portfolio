@@ -2,7 +2,7 @@ export default function focusModalTrap(
   event: KeyboardEvent,
   container: HTMLElement,
 ) {
-  // *** Header | Features | Footer ***
+  // *** Header | Footer ***
   if (event.key !== 'Tab') return;
 
   const focusableElements = Array.from(
@@ -20,7 +20,6 @@ export default function focusModalTrap(
     document.activeElement as HTMLElement,
   );
 
-  // *** Main Functionality ***
   if (event.shiftKey) {
     if (currentIndexElement <= 0) {
       event.preventDefault();
@@ -35,7 +34,5 @@ export default function focusModalTrap(
       firstElement.focus();
     }
   }
-  // *** End of Main Functionality ***
-
-  // *** End of Header | Features | Footer ***
+  // *** End of Header | Footer ***
 }

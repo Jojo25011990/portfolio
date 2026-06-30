@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function evolution() {
   // *** Desktop ***
+  // *** Select Elements ***
   const evolutionContainer = document.querySelector<HTMLOListElement>(
     '.evolution__timeline',
   );
@@ -12,7 +13,9 @@ export default function evolution() {
   const evolutionPhaseLine02 = document.querySelector<HTMLLIElement>(
     '.evolution__line-02',
   );
+  // *** End of Select Elements ***
 
+  // *** Match Media | Responsive Design ***
   const gsapMatchMedia = gsap.matchMedia();
 
   gsapMatchMedia.add('(min-width: 850px)', () => {
@@ -33,5 +36,6 @@ export default function evolution() {
     return () => evolutionDesktopLineContext.revert();
     // *** End of Cleanup ***
   });
+  // *** End of Match Media | Responsive Design ***
   // *** End of Desktop ***
 }

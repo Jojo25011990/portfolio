@@ -49,6 +49,7 @@ export default function myStoryOverlay() {
   const dirLight = new THREE.DirectionalLight(0xffffff, 1);
 
   dirLight.position.set(0, 10, 10);
+
   scene.add(ambientLight, dirLight);
   // *** End of Renderer | Lights ****
 

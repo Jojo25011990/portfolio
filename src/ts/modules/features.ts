@@ -1,6 +1,7 @@
 import focusModalTrap from './focusModalTrap';
 
 export default function features() {
+  // *** Select Elements | Initialize speed + index | normalize ( Array.from ) ***
   const featuresMenu =
     document.querySelector<HTMLUListElement>('.features__menu');
   const featuresItems =
@@ -24,6 +25,7 @@ export default function features() {
   const featuresFunFactsCloseButton = document.querySelector<HTMLButtonElement>(
     '.features__fun-facts-closebtn',
   );
+  // *** End of Select Elements | Initialize speed + index | normalize ( Array.from ) ***
 
   // *** Random Animation Icon ***
   setInterval(() => {

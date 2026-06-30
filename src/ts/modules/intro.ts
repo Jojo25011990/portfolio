@@ -123,6 +123,5 @@ export default function intro() {
     .add(() => game())
     .add(() => showcase())
     .add(() => myStoryOverlay());
-
   // *** End of Functionality ***
 }

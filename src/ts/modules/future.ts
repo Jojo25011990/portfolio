@@ -8,6 +8,7 @@ export default function future() {
   const futureBox = document.querySelector<HTMLDivElement>('.future__box');
   if (!futureBox) return;
 
+  // *** Match Media | Responsive Design ***
   const gsapMatchMedia = gsap.matchMedia();
 
   gsapMatchMedia.add('(min-width: 850px)', () => {
@@ -28,5 +29,6 @@ export default function future() {
     return () => futureBoxDesktopContext.revert();
     // *** End of Cleanup ***
   });
+  // *** Match Media | Responsive Design ***
   // *** End of Desktop ***
 }

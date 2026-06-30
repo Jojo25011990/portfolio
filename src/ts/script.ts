@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
-  //   intro();
+  intro();
   heading();
   header();
   skillsHeading();
@@ -26,6 +26,7 @@ function init() {
 
   faq();
   myProcess();
+
   footer();
   backToTop();
 }

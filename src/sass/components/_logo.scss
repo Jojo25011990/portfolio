@@ -21,18 +21,22 @@
   }
 }
 
+// *** Header Logo ***
 .header__logo.active {
   &:link,
   &:visited {
     animation: author-animate 1s 2.3s ease forwards;
   }
 }
+// *** End of Header Logo ***
 
+// *** Footer Logo ***
 .footer__logo.active {
   &:link,
   &:visited {
     animation: author-animate 1s 1s ease forwards;
   }
 }
+// *** End of Footer Logo ***
 
 // *** End of General ***

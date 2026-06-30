@@ -157,7 +157,9 @@
         @include dimension-settings(85%, $height: 82%);
         @include position-settings(50%, 50%, $zIndex: 999);
       }
+      // *** End of Overlay ***
 
+      // *** Gradient ***
       &-gradient {
         overflow: hidden;
 
@@ -183,8 +185,7 @@
         @include dimension-settings(120%, $height: 120%);
         @include position-settings(-1.7rem, -2.8rem);
       }
-
-      // *** End of Overlay ***
+      // *** End of Gradient ***
 
       // *** Video ***
       &-video {
@@ -210,6 +211,7 @@
       @include dimension-settings(30%, $height: 100%);
       @include flex-settings(start, center, column);
     }
+    // *** End of Controls ***
 
     // *** Wrapper | Buttons ***
     &-wrapper {
@@ -222,8 +224,9 @@
 
       @include dimension-settings(100%, 7rem, 7rem);
       @include flex-settings;
+      @include position-settings($position: relative);
 
-      position: relative;
+      // *** Inner Wrapper 01 ***
       &-01 {
         &::before {
           content: '';
@@ -239,12 +242,16 @@
           @include position-settings(0, 0, 0, 0);
         }
       }
+      // *** End of Inner Wrapper 01 ***
 
+      // *** Inner Wrapper 02 ***
       &-02 {
         margin-bottom: 1rem;
       }
+      // *** End of Inner Wrapper 02 ***
     }
 
+    // *** Button ***
     &-btn {
       cursor: pointer;
 
@@ -262,6 +269,7 @@
         @include dimension-settings(100%, 0.5rem, 120%);
       }
 
+      // *** Inner Button 01 ***
       &-01 {
         transform: rotate(0);
 
@@ -275,7 +283,9 @@
           transform: rotate(40deg);
         }
       }
+      // *** End of Inner Button 01 ***
 
+      // *** Inner Button 02 ***
       &-02 {
         backdrop-filter: blur(0.8rem);
 
@@ -295,8 +305,9 @@
           0 0.2rem 0.6rem rgba($color-black, 0.3),
           inset 0 0.3rem 0.6rem rgba($color-black, 0.35);
       }
+      // *** End of Inner Button 02 ***
     }
-
+    // *** End of Button ***
     // *** End of Wrapper | Buttons ***
 
     // *** Speaker ***

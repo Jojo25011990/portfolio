@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 
 export default function showcase() {
+  // *** Select Elements ***
   const showcaseVideos =
     document.querySelectorAll<HTMLVideoElement>('.showcase__video');
   const showcaseSwitcherBtns = document.querySelectorAll<HTMLButtonElement>(
@@ -19,6 +20,7 @@ export default function showcase() {
   const showcaseTime = document.querySelector<HTMLSpanElement>(
     '.showcase__controls-time',
   );
+  // *** End of Select Elements ***
 
   // *** Video Player ***
   // *** Switcher Buttons ***
@@ -186,12 +188,16 @@ export default function showcase() {
   // *** End of Video Player ***
 
   // *** Old School TV ***
+
+  // *** Match Media | Responsive Design ***
   const isTvDesktop = function () {
     return window.matchMedia('(min-width: 850px)').matches;
   };
 
   if (!isTvDesktop()) return;
+  // *** End of Match Media | Responsive Design ***
 
+  // *** Select Elements | Destructuring Buttons  ***
   const showcaseCSSArtVideoOverlay = document.querySelector<HTMLDivElement>(
     '.showcase__body-inner-screen-overlay',
   );
@@ -215,7 +221,9 @@ export default function showcase() {
     '.showcase__body-inner-btn',
   );
   const [showcaseCSSArtButton01, showcaseCSSArtButton02] = showcaseCSSArtBtns;
+  // *** End of Select Elements | Destructuring Buttons  ***
 
+  // *** Button 01 - Functionality ****
   showcaseCSSArtButton01.addEventListener('click', function () {
     this.classList.toggle('active');
 
@@ -228,7 +236,9 @@ export default function showcase() {
       showcaseCssArtVideo.muted = false;
     } else showcaseCssArtVideo!.muted = true;
   });
+  // *** End of Button 01 - Functionality ****
 
+  // *** Button 02 - Functionality ***
   showcaseCSSArtButton02.addEventListener(
     'click',
     () => {
@@ -244,7 +254,9 @@ export default function showcase() {
     },
     { once: true },
   );
+  // *** End of Button 02 - Functionality ***
 
+  // *** Button 01 - Animation | Sound ON ***
   const showcaseAutoSoundButton01 = () => {
     if (!showcaseCSSArtButton01.classList.contains('active')) {
       const activeDelay = 1000;
@@ -255,7 +267,9 @@ export default function showcase() {
       }, activeDelay);
     }
   };
+  // *** End of Button 01 - Animation | Sound ON ***
 
+  // *** Main Functionality | Timeline ***
   function triggerTvLightning() {
     const tl = gsap.timeline();
 
@@ -333,6 +347,7 @@ export default function showcase() {
       duration: 0.5,
     });
   });
+  // *** End of Main Functionality | Timeline ***
 
   // *** End of Old School TV ***
 }

@@ -2,6 +2,7 @@ import focusModalTrap from './focusModalTrap';
 
 export default function header() {
   // *** Lightbox ***
+  // *** Select Elements ***
   const lightbox = document.querySelector<HTMLDivElement>('.header__lightbox');
   const lightboxOpenButton = document.querySelector<HTMLImageElement>(
     '.header__author-button',
@@ -12,6 +13,7 @@ export default function header() {
   const circleSvg = document.querySelector<SVGCircleElement>(
     '.header__svg circle',
   )!;
+  // *** End of Select Elements ***
 
   // *** Mouse Enter | Mouse Leave ***
   if (lightboxOpenButton) {
