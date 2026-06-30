@@ -45,7 +45,6 @@ export default function features() {
     }
   }, randomSpeed);
   // *** End of Random Animation Icon ***
-  // *** End of Features Eight Mini blocks ***
 
   // *** Fun Facts - ADD | REMOVE | FOCUS ***
   const focusFunFactsModalTrap = (event: KeyboardEvent) => {
@@ -54,6 +53,7 @@ export default function features() {
     focusModalTrap(event, featuresFunFacts);
   };
 
+  // *** Open Modal | Classes | Aria Attr | Focus | Event Listeners ***
   const openFunFactsModal = () => {
     featuresFunFacts?.classList.add('active');
     featuresMenu?.classList.add('active');
@@ -61,12 +61,14 @@ export default function features() {
     featuresFunFacts?.setAttribute('aria-hidden', 'false');
     featuresFunFactsButton?.setAttribute('aria-expanded', 'true');
 
-    featuresFunFactsCloseButton?.focus();
+    featuresFunFactsCloseButton?.focus({ preventScroll: true });
 
     document.addEventListener('keydown', funFactsEscapeKey);
     document.addEventListener('keydown', focusFunFactsModalTrap);
   };
+  // *** End of Open Modal | Classes | Aria Attr | Focus | Event Listeners ***
 
+  // *** Close Modal | Classes | Aria Attr | Focus
   const closeFunFactsModal = () => {
     featuresFunFacts?.classList.remove('active');
     featuresMenu?.classList.remove('active');

@@ -109,7 +109,7 @@
     @include position-settings($position: relative);
 
     &.active::before {
-      animation: lineX 0.6s 2.6s forwards linear; //  2.6
+      animation: lineX 0.6s 2.6s forwards linear;
 
       // *** Responsive Design ***
       @include responsive-settings(mobile-large) {

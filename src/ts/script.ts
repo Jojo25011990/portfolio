@@ -15,19 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function init() {
-  intro();
-
+  //   intro();
   heading();
-
   header();
   skillsHeading();
-
   features();
+
   evolution();
   future();
 
   faq();
+  myProcess();
   footer();
   backToTop();
-  myProcess();
 }

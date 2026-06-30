@@ -116,17 +116,6 @@
   }
   // *** End of Eyes ***
 
-  @keyframes eye-animation {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-
-    50% {
-      transform: translateX(8px);
-    }
-  }
-
   // *** Body ***
   &-body {
     border: 1rem solid $color-black;

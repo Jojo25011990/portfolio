@@ -13,6 +13,7 @@ export default function header() {
     '.header__svg circle',
   )!;
 
+  // *** Mouse Enter | Mouse Leave ***
   if (lightboxOpenButton) {
     lightboxOpenButton.addEventListener('mouseenter', () => {
       circleSvg.style.stroke = '#4ee1a0';
@@ -22,13 +23,17 @@ export default function header() {
       circleSvg.style.stroke = '#fff';
     });
   }
-  // *** OPEN | CLOSE | FOCUS ***
+  // *** End of Mouse Enter | Mouse Leave ***
+
+  // *** Focus Trap ***
   const headerFocusModalTrap = (event: KeyboardEvent) => {
     if (!lightbox) return;
 
     focusModalTrap(event, lightbox);
   };
+  // *** End of Focus Trap ***
 
+  // *** Open Lightbox - Classes | Aria Attr | Focus | Event Listeners ***
   const openLightbox = () => {
     lightbox?.classList.add('show');
 
@@ -40,7 +45,9 @@ export default function header() {
     document.addEventListener('keydown', headerFocusModalTrap);
     document.addEventListener('keydown', lightboxEscapeKey);
   };
+  // *** End of Open Lightbox - Classes | Aria Attr | Focus | Event Listeners ***
 
+  // *** Close Lightbox - Classes | Aria Attr | Focus ( Prevent Scroll ) | Event Listeners ***
   const closeLightbox = () => {
     lightbox?.classList.remove('show');
 
@@ -52,7 +59,9 @@ export default function header() {
     document.removeEventListener('keydown', headerFocusModalTrap);
     document.removeEventListener('keydown', lightboxEscapeKey);
   };
+  // *** End of Close Lightbox - Classes | Aria Attr | Focus ( Prevent Scroll ) | Event Listeners ***
 
+  // *** Escape Key | Click | Event Listeners ***
   const lightboxEscapeKey = (event: KeyboardEvent) => {
     if (event.key === 'Escape') closeLightbox();
   };
@@ -63,4 +72,5 @@ export default function header() {
 
   lightboxOpenButton?.addEventListener('click', openLightbox);
   lightboxCloseButton?.addEventListener('click', closeLightbox);
+  // *** End of Escape Key | Click | Event Listeners ***
 }

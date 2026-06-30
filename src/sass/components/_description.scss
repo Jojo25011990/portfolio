@@ -162,6 +162,7 @@ p:not(
 // *** Game - Fallback Message ***
 .game__fallback-message {
   text-align: center;
+
   @include dimension-settings(100%, 76rem);
 
   &.hide {
@@ -260,7 +261,7 @@ p:not(
 
     opacity: 0;
 
-    transform: translate(-200px, -50px) rotate(-180deg) scale(3);
+    transform: translate(-20rem, -5rem) rotate(-180deg) scale(3);
 
     transition:
       transform 0.3s,
@@ -270,9 +271,11 @@ p:not(
     @include position-settings($position: relative);
     @include font-settings(1.2rem);
   }
+
   &.active .footer__form-message-span {
-    transform: translate(0) rotate(0) scale(1);
     opacity: 1;
+
+    transform: translate(0) rotate(0) scale(1);
   }
 }
 // *** End of Form - Error Mesagge ***
@@ -281,12 +284,12 @@ p:not(
 .footer__envelope .footer__envelope-letter-message {
   color: $dark-overlay;
 
-  @include font-settings(1rem, 500, 1.7rem);
+  @include font-settings(1rem !important, 500, 1.7rem);
 }
 
 .footer__envelope .footer__envelope-description {
   color: $dark-overlay;
-  @include font-settings(1.2rem, 500, 1.7rem);
+  @include font-settings(1.2rem !important, 500, 1.7rem);
 }
 
 .footer__envelope-letter-strong {

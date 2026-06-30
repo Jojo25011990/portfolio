@@ -87,8 +87,5 @@ export default function myProcess() {
     }, 700);
   });
   // *** End of CSS Art Book ****
-
-  // *** Slider Component ***
-  // *** End of Slider Component ***
 }
 // *** End of CSS Art Book | Slider Component ***

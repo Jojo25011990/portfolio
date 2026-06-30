@@ -43,6 +43,7 @@ export default function footer() {
     '.footer__envelope-top-side',
   );
 
+  // *** Add | Remove - Classes ***
   const addClasses = function () {
     footerEnvelopeHeart?.classList.add('is-open');
     footerEnvelopeLetter?.classList.add('is-open');
@@ -55,15 +56,17 @@ export default function footer() {
     footerEnvelopeTopSide?.classList.remove('is-open');
     footerEnvelopeHeart?.classList.remove('active');
   };
+  // *** End of Add | Remove - Classes ***
 
+  // *** Envelope Button Listener | Heart Remove Class | Add Classes Function ***
   footerEnvelopeButton?.addEventListener('click', () => {
     footerEnvelopeHeart?.classList.remove('initial-state');
 
     addClasses();
   });
+  // *** End of Envelope Button Listener | Heart Remove Class | Add Classes Function ***
 
   // *** Overlay ***
-
   const footerOverlay =
     document.querySelector<HTMLDivElement>('.footer__overlay');
   const footerOverlayCloseButton = document.querySelector<HTMLButtonElement>(
@@ -121,6 +124,7 @@ export default function footer() {
   );
   // *** End of Error Message && Error Lines | Success Lines***
 
+  // *** Form | Inputs Valid | Envelope Message | EmailJS ***
   if (form) {
     form.addEventListener('submit', event => {
       event.preventDefault();
@@ -135,8 +139,10 @@ export default function footer() {
         setTimeout(() => {
           footerOverlay?.classList.add('active');
           footerEnvelopeHeart?.classList.add('initial-state');
+
           setTimeout(() => {
             footerEnvelopeHeart?.classList.add('active');
+
             if (formInputName && formInputEmail && formTextarea) {
               formInputName.value = '';
               formInputEmail.value = '';
@@ -163,8 +169,10 @@ export default function footer() {
         //     setTimeout(() => {
         //       footerOverlay?.classList.add('active');
         //       footerEnvelopeHeart?.classList.add('initial-state');
+
         //       setTimeout(() => {
         //         footerEnvelopeHeart?.classList.add('active');
+
         //         if (formInputName && formInputEmail && formTextarea) {
         //           formInputName.value = '';
         //           formInputEmail.value = '';
@@ -181,6 +189,7 @@ export default function footer() {
       }
     });
   }
+  // *** End of Form | Inputs Valid | Envelope Message | EmailJS ***
 
   function checkInputValues(
     inputArray: (HTMLInputElement | HTMLTextAreaElement | null)[],

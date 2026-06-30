@@ -22,7 +22,6 @@
 
   &__item {
     @include dimension-settings(100%, 53rem);
-    // @include dimension-settings(100%);
 
     //  *** Box ***
     &-box {
@@ -40,8 +39,7 @@
 
       transition: all 0.3s ease-out;
 
-      @include dimension-settings(100%);
-      min-height: 341px;
+      @include dimension-settings(100%, $min-height: 34.1rem);
 
       @include flex-settings(center, center, column, 2rem);
     }
@@ -66,6 +64,7 @@
       // *** Responsive Design ***
       @include responsive-settings(mobile) {
         padding: 1rem;
+
         @include dimension-settings(6.5rem, $height: 6.5rem);
       }
       // *** End of Responsive Design ***
