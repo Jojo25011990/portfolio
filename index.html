@@ -76,8 +76,8 @@
         "description": "Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, CSS Art, React/TypeScript projects, and creative coding journey."
       }
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-B_Y6TrBD.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-dvNpqoJW.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-uwHOObfB.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-D78eN1nh.css">
   </head>
   <body id="top">
     <!-- Section Map - 17/18 Sections -->
@@ -1418,8 +1418,6 @@
             <aside
               class="features__fun-facts"
               id="fun-facts-modal"
-              role="dialog"
-              aria-modal="true"
               aria-labelledby="fun-facts-heading"
               aria-hidden="true"
             >
@@ -2127,7 +2125,7 @@
               <!-- Instagram Logo -->
               <li class="game__memory-box" data-box="instagram">
                 <img
-                  src="/portfolio/assets/instagram%20bg-Photoroom-ZRt1mk4C.png"
+                  src="/portfolio/assets/instagram%20bg-Photoroom-03-Ct1QGJ1W.png"
                   alt=""
                   class="game__memory-box-img game__memory-box-img--ig"
                 />
@@ -3193,8 +3191,15 @@
         </nav>
         <!-- End of Navigation -->
 
-        <!-- CSS Art - Envelope & Letter ( Popup Message ) role="dialog" aria-modal="true" -->
-        <div class="footer__overlay">
+        <!-- CSS Art - Envelope & Letter ( Popup Message ) -->
+        <div
+          class="footer__overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Popup Message"
+          aria-describedby="popup-message"
+          aria-hidden="true"
+        >
           <!-- Close Button -->
           <button
             type="button"
@@ -3216,7 +3221,7 @@
             <article class="footer__envelope-letter">
               <h3 class="footer__envelope-letter-title">Message Delivered!</h3>
 
-              <p class="footer__envelope-letter-message">
+              <p id="popup-message" class="footer__envelope-letter-message">
                 <strong class="footer__envelope-letter-strong"
                   >Thank you!</strong
                 >
