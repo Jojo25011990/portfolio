@@ -75,11 +75,11 @@ export default function footer() {
   );
 
   // *** Focus Trap ***
-  const footerFocusModalTrap = (event: KeyboardEvent) => {
-    if (!footerOverlay) return;
+  //   const footerFocusModalTrap = (event: KeyboardEvent) => {
+  //     if (!footerOverlay) return;
 
-    focusModalTrap(event, footerOverlay);
-  };
+  //     focusModalTrap(event, footerOverlay);
+  //   };
   // *** End of Focus Trap ***
 
   if (footerOverlay) {
