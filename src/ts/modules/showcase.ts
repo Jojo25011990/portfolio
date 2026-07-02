@@ -38,6 +38,8 @@ export default function showcase() {
         ariaAttrIndex === index ? 'true' : 'false',
       );
 
+      //   TU  doplnim tab prepinanie to mam ako todo ..lebo som neauditoval all
+
       // *** Active Button Class ***
       if (ariaAttrIndex === index) {
         showcaseSwitcherBtn.classList.add('active-video-button');
@@ -221,7 +223,7 @@ export default function showcase() {
     '.showcase__body-inner-btn',
   );
   const [showcaseCSSArtButton01, showcaseCSSArtButton02] = showcaseCSSArtBtns;
-  // *** End of Select Elements | Destructuring Buttons  ***
+  // *** End of Select Elements | Destructuring Buttons ***
 
   // *** Button 01 - Functionality ****
   showcaseCSSArtButton01.addEventListener('click', function () {

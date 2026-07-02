@@ -6,7 +6,7 @@ export default function focusModalTrap(
   if (event.key !== 'Tab') return;
 
   const focusableElements = Array.from(
-    container?.querySelectorAll<HTMLElement>(
+    container.querySelectorAll<HTMLElement>(
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     ),
   );

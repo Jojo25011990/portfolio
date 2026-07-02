@@ -1417,8 +1417,6 @@
             <aside
               class="features__fun-facts"
               id="fun-facts-modal"
-              role="dialog"
-              aria-modal="true"
               aria-labelledby="fun-facts-heading"
               aria-hidden="true"
             >
@@ -2126,7 +2124,7 @@
               <!-- Instagram Logo -->
               <li class="game__memory-box" data-box="instagram">
                 <img
-                  src="./src/assets/images/instagram bg-Photoroom.png"
+                  src="./src/assets/images/instagram bg-Photoroom-03.png"
                   alt=""
                   class="game__memory-box-img game__memory-box-img--ig"
                 />
@@ -2544,7 +2542,7 @@
                     <img
                       src="./src/assets/images/rock.png"
                       alt=""
-                      class="my-story__character-img my-story__character-img-rock-woman"
+                      class="my-story__character-img my-story__character-img-rock-woman active"
                       aria-hidden="true"
                     />
                     <figcaption class="my-story__character-title-box">
@@ -2596,7 +2594,7 @@
                     <img
                       src="./src/assets/images/rock.png"
                       alt=""
-                      class="my-story__character-img my-story__character-img-rock-man"
+                      class="my-story__character-img my-story__character-img-rock-man active"
                       aria-hidden="true"
                     />
                     <figcaption class="my-story__character-title-box">
@@ -3193,7 +3191,14 @@
         <!-- End of Navigation -->
 
         <!-- CSS Art - Envelope & Letter ( Popup Message ) -->
-        <div class="footer__overlay" role="dialog" aria-modal="true">
+        <div
+          class="footer__overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Popup Message"
+          aria-describedby="popup-message"
+          aria-hidden="true"
+        >
           <!-- Close Button -->
           <button
             type="button"
@@ -3215,7 +3220,7 @@
             <article class="footer__envelope-letter">
               <h3 class="footer__envelope-letter-title">Message Delivered!</h3>
 
-              <p class="footer__envelope-letter-message">
+              <p id="popup-message" class="footer__envelope-letter-message">
                 <strong class="footer__envelope-letter-strong"
                   >Thank you!</strong
                 >

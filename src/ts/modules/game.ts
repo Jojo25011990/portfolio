@@ -29,7 +29,6 @@ export default function game() {
 
   const gameOverlayWin =
     document.querySelector<HTMLLIElement>('.game__memory-win');
-
   // *** End of Select Elements ***
 
   // *** First Box | Second Box | Match Count ***
@@ -167,7 +166,6 @@ export default function game() {
   newGameBoxes.forEach(newGameBox => {
     newGameBox.addEventListener('click', () => memoryGame(newGameBox));
   });
-
   // *** End of Core Game ***
 
   // *** Reset Game ***

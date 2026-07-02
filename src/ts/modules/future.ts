@@ -13,16 +13,22 @@ export default function future() {
 
   gsapMatchMedia.add('(min-width: 850px)', () => {
     const futureBoxDesktopContext = gsap.context(() => {
-      gsap.to(futureBox, {
-        clipPath: 'circle(110% at 50% 50%)',
-
-        scrollTrigger: {
-          trigger: futureBox,
-          start: 'top center',
-          end: 'bottom center',
-          scrub: 2,
+      gsap.fromTo(
+        futureBox,
+        {
+          clipPath: 'circle(0% at center)',
         },
-      });
+        {
+          clipPath: 'circle(105% at center)',
+
+          scrollTrigger: {
+            trigger: futureBox,
+            start: 'top center',
+            end: 'bottom center',
+            scrub: 2,
+          },
+        },
+      );
     });
 
     //   // *** Cleanup ***

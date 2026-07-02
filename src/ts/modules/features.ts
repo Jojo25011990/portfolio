@@ -10,21 +10,20 @@ export default function features() {
   const featuresItemsIcon = document.querySelectorAll<HTMLElement>(
     '.features__item-icon',
   );
-  const newFeaturesItemsIcon = Array.from(featuresItemsIcon);
-
-  const randomSpeed = 2000;
-  let previousItemIndex: number | null = null;
-
   const featuresFunFacts = document.querySelector<HTMLElement>(
     '.features__fun-facts',
   );
   const featuresFunFactsButton = document.querySelector<HTMLButtonElement>(
     '.features__fun-facts-button',
   );
-
   const featuresFunFactsCloseButton = document.querySelector<HTMLButtonElement>(
     '.features__fun-facts-closebtn',
   );
+
+  const newFeaturesItemsIcon = Array.from(featuresItemsIcon);
+
+  const randomSpeed = 2000;
+  let previousItemIndex: number | null = null;
   // *** End of Select Elements | Initialize speed + index | normalize ( Array.from ) ***
 
   // *** Random Animation Icon ***

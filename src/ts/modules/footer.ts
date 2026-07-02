@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import focusModalTrap from './focusModalTrap';
 // import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -72,6 +73,14 @@ export default function footer() {
   const footerOverlayCloseButton = document.querySelector<HTMLButtonElement>(
     '.footer__overlay-closebtn',
   );
+
+  // *** Focus Trap ***
+  const footerFocusModalTrap = (event: KeyboardEvent) => {
+    if (!footerOverlay) return;
+
+    focusModalTrap(event, footerOverlay);
+  };
+  // *** End of Focus Trap ***
 
   if (footerOverlay) {
     footerOverlay.addEventListener('click', function (e) {
