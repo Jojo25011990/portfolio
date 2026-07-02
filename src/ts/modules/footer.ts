@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import focusModalTrap from './focusModalTrap';
+// import focusModalTrap from './focusModalTrap';
 // import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
