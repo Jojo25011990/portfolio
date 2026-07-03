@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-// import focusModalTrap from './focusModalTrap';
+import focusModalTrap from './focusModalTrap';
 // import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +30,7 @@ export default function footer() {
   }
   // *** End of Footer - General ***
 
-  // *** Envelope ***
+  // *** Envelope | Overlay ***
   const footerEnvelopeButton = document.querySelector<HTMLButtonElement>(
     '.footer__envelope-button',
   );
@@ -44,7 +44,22 @@ export default function footer() {
     '.footer__envelope-top-side',
   );
 
-  // *** Add | Remove - Classes ***
+  const footerOverlay =
+    document.querySelector<HTMLDivElement>('.footer__overlay');
+  const footerOverlayCloseButton = document.querySelector<HTMLButtonElement>(
+    '.footer__overlay-closebtn',
+  );
+  // *** End of Envelope | Overlay ***
+
+  // *** Focus Trap ***
+  const footerFocusModalTrap = (event: KeyboardEvent) => {
+    if (!footerOverlay) return;
+
+    focusModalTrap(event, footerOverlay);
+  };
+  // *** End of Focus Trap ***
+
+  // *** Add | Remove - Classes ( Envelope ) ***
   const addClasses = function () {
     footerEnvelopeHeart?.classList.add('is-open');
     footerEnvelopeLetter?.classList.add('is-open');
@@ -57,7 +72,35 @@ export default function footer() {
     footerEnvelopeTopSide?.classList.remove('is-open');
     footerEnvelopeHeart?.classList.remove('active');
   };
-  // *** End of Add | Remove - Classes ***
+  // *** End of Add | Remove - Classes ( Envelope ) ***
+
+  // *** Open | Close - Overlay ***
+  const openFooterOverlay = () => {
+    footerOverlay?.classList.add('active');
+
+    footerOverlay?.setAttribute('aria-hidden', 'false');
+
+    footerOverlayCloseButton?.focus();
+
+    document.addEventListener('keydown', footerFocusModalTrap);
+    document.addEventListener('keydown', footerOverlayEscapeKey);
+  };
+
+  const closeFooterOverlay = () => {
+    footerOverlay?.classList.remove('active');
+
+    footerOverlay?.setAttribute('aria-hidden', 'true');
+
+    document.removeEventListener('keydown', footerFocusModalTrap);
+    document.removeEventListener('keydown', footerOverlayEscapeKey);
+  };
+  // *** End of Open | Close - Overlay ***
+
+  // *** Escape Key Ovelay ***
+  const footerOverlayEscapeKey = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') closeFooterOverlay();
+  };
+  // *** End of Escape Key Ovelay ***
 
   // *** Envelope Button Listener | Heart Remove Class | Add Classes Function ***
   footerEnvelopeButton?.addEventListener('click', () => {
@@ -67,41 +110,23 @@ export default function footer() {
   });
   // *** End of Envelope Button Listener | Heart Remove Class | Add Classes Function ***
 
-  // *** Overlay ***
-  const footerOverlay =
-    document.querySelector<HTMLDivElement>('.footer__overlay');
-  const footerOverlayCloseButton = document.querySelector<HTMLButtonElement>(
-    '.footer__overlay-closebtn',
-  );
+  // *** Close Button - Remove Classes ( Envelope ) | Overlay ***
+  footerOverlayCloseButton?.addEventListener('click', () => {
+    removeClasses();
+    closeFooterOverlay();
+  });
+  // *** End of Close Button - Remove Classes ( Envelope ) | Overlay ***
 
-  // *** Focus Trap ***
-  //   const footerFocusModalTrap = (event: KeyboardEvent) => {
-  //     if (!footerOverlay) return;
-
-  //     focusModalTrap(event, footerOverlay);
-  //   };
-  // *** End of Focus Trap ***
-
+  // *** Remove Footer Ovelay | Remove Classes ( Envelope ) ***
   if (footerOverlay) {
     footerOverlay.addEventListener('click', function (e) {
       if (e.target === footerOverlay) {
         removeClasses();
-        footerOverlay.classList.remove('active');
+        closeFooterOverlay();
       }
     });
   }
-
-  const footerOverlayEscapeKey = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') footerOverlay?.classList.remove('active');
-  };
-
-  window.addEventListener('keyup', footerOverlayEscapeKey);
-
-  footerOverlayCloseButton?.addEventListener('click', () => {
-    footerOverlay?.classList.remove('active');
-  });
-  // *** End of Overlay ***
-  // *** End of Envelope ***
+  // *** End of Remove Footer Ovelay | Remove Classes ( Envelope ) ***
 
   // *** FORM ***
 
@@ -146,7 +171,8 @@ export default function footer() {
 
       if (isInputsValid) {
         setTimeout(() => {
-          footerOverlay?.classList.add('active');
+          openFooterOverlay();
+
           footerEnvelopeHeart?.classList.add('initial-state');
 
           setTimeout(() => {

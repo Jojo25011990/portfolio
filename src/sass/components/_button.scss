@@ -143,17 +143,14 @@
 
 .showcase__switcher-btn.active-video-button {
   color: $color-white;
-  background-color: $success-secondary;
-
-  background: #1f7a56;
-  color: #fff;
+  background-color: $success-quaternary;
 
   border-color: transparent;
 
   box-shadow:
-    0 0 0.8rem $success-primary,
-    0 0 2.4rem $success-primary,
-    0 0 4.8rem $success-primary;
+    0 0 0.8rem $success-quaternary,
+    0 0 2.4rem $success-quaternary,
+    0 0 4.8rem $success-quaternary;
 }
 
 .showcase__switcher-btn:nth-child(2) {

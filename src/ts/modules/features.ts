@@ -1,5 +1,3 @@
-import focusModalTrap from './focusModalTrap';
-
 export default function features() {
   // *** Select Elements | Initialize speed + index | normalize ( Array.from ) ***
   const featuresMenu =
@@ -47,13 +45,6 @@ export default function features() {
   }, randomSpeed);
   // *** End of Random Animation Icon ***
 
-  // *** Fun Facts - ADD | REMOVE | FOCUS ***
-  const focusFunFactsModalTrap = (event: KeyboardEvent) => {
-    if (!featuresFunFacts) return;
-
-    focusModalTrap(event, featuresFunFacts);
-  };
-
   // *** Open Modal | Classes | Aria Attr | Focus | Event Listeners ***
   const openFunFactsModal = () => {
     featuresFunFacts?.classList.add('active');
@@ -62,10 +53,9 @@ export default function features() {
     featuresFunFacts?.setAttribute('aria-hidden', 'false');
     featuresFunFactsButton?.setAttribute('aria-expanded', 'true');
 
-    featuresFunFactsCloseButton?.focus({ preventScroll: true });
+    featuresFunFactsCloseButton?.focus();
 
     document.addEventListener('keydown', funFactsEscapeKey);
-    document.addEventListener('keydown', focusFunFactsModalTrap);
   };
   // *** End of Open Modal | Classes | Aria Attr | Focus | Event Listeners ***
 
@@ -80,7 +70,6 @@ export default function features() {
     featuresFunFactsButton?.focus();
 
     document.removeEventListener('keydown', funFactsEscapeKey);
-    document.removeEventListener('keydown', focusFunFactsModalTrap);
   };
 
   const funFactsEscapeKey = (event: KeyboardEvent) => {
