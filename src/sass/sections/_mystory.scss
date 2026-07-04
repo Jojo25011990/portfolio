@@ -27,7 +27,7 @@
 
     background:
       linear-gradient(#151515d2, $dark-primary),
-      url('../../assets/images/my\ story\ bg.jpg') no-repeat;
+      url('../../assets/images/story/my\ story\ bg.jpg') no-repeat;
     background-size: cover;
 
     will-change: transform;
@@ -41,11 +41,12 @@
   // *** Dragon ***
   &__dragon {
     transform: translateX(100%);
+    // transform: translateX(-50%);
 
     backface-visibility: hidden;
 
     background: {
-      image: url('../../assets/images/red-dragon.png');
+      image: url('../../assets/images/story/red-dragon.png');
       repeat: no-repeat;
       size: cover;
     }
@@ -55,7 +56,7 @@
     will-change: transform;
 
     @include position-settings(0, $right: 0, $zIndex: 2);
-    @include dimension-settings(100%, 60rem, 60rem);
+    @include dimension-settings(100%, 70rem, $min-height: 60rem);
 
     &.active {
       animation: dragon-flight 9s ease-in forwards;
@@ -67,14 +68,13 @@
       @include responsive-settings(tablet-large) {
         animation: dragon-flight 12s ease-in forwards;
 
-        @include position-settings(5rem, $right: 0, $zIndex: 2);
-        @include dimension-settings(100%, 55rem, 55rem);
+        @include position-settings(-3rem, $right: 0, $zIndex: 2);
+        @include dimension-settings(100%, 63rem, 55rem);
       }
       @include responsive-settings(tablet) {
-        animation: dragon-flight 12.5s ease-in forwards;
+        animation: dragon-flight 13s ease-in forwards;
 
-        @include position-settings(10rem, $right: 0, $zIndex: 2);
-        @include dimension-settings(100%, 50rem, 50rem);
+        @include dimension-settings(63rem);
       }
       // *** End of Responsive Design ***
     }
@@ -106,7 +106,7 @@
     // ***  Responsive Design ***
     @include responsive-settings(tablet-large) {
       text-align: center;
-      @include flex-settings($direction: column);
+      @include flex-settings($direction: column, $gap: 1rem);
     }
     // ***  End of Responsive Design ***
 
@@ -258,7 +258,7 @@
         border-top: 2rem solid transparent;
         border-left: 4rem solid $color-white;
 
-        @include position-settings(3rem, $right: 0.06rem);
+        @include position-settings(3rem, $right: 0.06rem, $zIndex: 1);
       }
     }
 
@@ -266,6 +266,7 @@
       color: $grey-secondary;
 
       @include font-settings(1.4rem, 700);
+      @include position-settings($position: static, $zIndex: 5);
 
       // ***  Responsive Design ***
       @include responsive-settings(mobile-large) {

@@ -70,7 +70,7 @@ export default function game() {
   // *** End of Shuffle Boxes ***
 
   // *** Core Game ***
-  // *** misMatch | ADD | REMOVE ***
+  // *** ADD | REMOVE ***
   const misMatchBoxAdd = function (
     newGameBox01: HTMLLIElement,
     newGameBox02: HTMLLIElement,
@@ -83,10 +83,19 @@ export default function game() {
     newGameBox01: HTMLLIElement,
     newGameBox02: HTMLLIElement,
   ) {
-    newGameBox01?.classList.remove('boxMisMatch');
-    newGameBox02?.classList.remove('boxMisMatch');
+    newGameBox01?.classList.remove('boxOpen', 'boxMisMatch');
+    newGameBox02?.classList.remove('boxOpen', 'boxMisMatch');
   };
-  // *** End of misMatch | ADD | REMOVE ***
+
+  const matchBoxAdd = function (
+    newGameBox01: HTMLLIElement,
+    newGameBox02: HTMLLIElement,
+  ) {
+    newGameBox01?.classList.add('boxMatch', 'boxLock');
+    newGameBox02?.classList.add('boxMatch', 'boxLock');
+  };
+
+  // *** End of  ADD | REMOVE ***
 
   // *** Memory Game Handle ***
   const handleMemoryGame = function (newGameBox: HTMLLIElement) {
@@ -111,15 +120,9 @@ export default function game() {
 
     // *** Match | MisMatch State ***
     if (isMatch) {
-      firstBox?.classList.add('boxMatch');
-      secondBox?.classList.add('boxMatch');
+      matchBoxAdd(firstBox, secondBox);
 
       matchCount++;
-
-      requestAnimationFrame(() => {
-        firstBox?.classList.add('scale');
-        secondBox?.classList.add('scale');
-      });
 
       resetState();
     } else {
@@ -128,15 +131,7 @@ export default function game() {
       const gameBoxDelay = 1050;
 
       setTimeout(() => {
-        firstBox?.classList.remove('boxOpen');
-        secondBox?.classList.remove('boxOpen');
-
         misMatchBoxRemove(firstBox!, secondBox!);
-
-        requestAnimationFrame(() => {
-          firstBox?.classList.add('shake');
-          secondBox?.classList.add('shake');
-        });
 
         resetState();
       }, gameBoxDelay);
@@ -144,7 +139,9 @@ export default function game() {
     // *** End of Match | MisMatch State ***
 
     //  *** Win State ***
-    if (matchCount === gameBoxes.length / 2) {
+    const winGame = matchCount === gameBoxes.length / 2;
+
+    if (winGame) {
       const gameWinDelay = 2500;
 
       setTimeout(() => {
@@ -177,6 +174,7 @@ export default function game() {
     newGameBoxes.forEach(newGameBox => {
       newGameBox.classList.remove('boxOpen');
       newGameBox.classList.remove('boxMatch');
+      newGameBox.classList.remove('boxLock');
     });
   }
 

@@ -10,6 +10,8 @@
 
   // *** Responsive Design ***
   @include responsive-settings(tablet) {
+    pointer-events: none;
+
     min-width: 34rem;
 
     @include position-settings(0, $position: relative);

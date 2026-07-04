@@ -2,6 +2,7 @@ import focusModalTrap from './focusModalTrap';
 
 export default function header() {
   // *** Lightbox ***
+
   // *** Select Elements ***
   const lightbox = document.querySelector<HTMLDivElement>('.header__lightbox');
   const lightboxOpenButton = document.querySelector<HTMLImageElement>(
