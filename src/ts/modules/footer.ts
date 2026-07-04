@@ -19,7 +19,7 @@ export default function footer() {
     gsap.to(footer, {
       scrollTrigger: {
         trigger: footer,
-        start: '70% 85%',
+        start: 'top center',
       },
 
       onStart: () => {
