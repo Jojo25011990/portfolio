@@ -202,7 +202,8 @@ export default function footer() {
             console.log('success:', response.status, response.text);
 
             setTimeout(() => {
-              footerOverlay?.classList.add('active');
+              openFooterOverlay();
+
               footerEnvelopeHeart?.classList.add('initial-state');
 
               setTimeout(() => {
