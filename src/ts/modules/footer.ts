@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import focusModalTrap from './focusModalTrap';
-// import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -170,56 +170,56 @@ export default function footer() {
       ]);
 
       if (isInputsValid) {
-        setTimeout(() => {
-          openFooterOverlay();
+        // setTimeout(() => {
+        //   openFooterOverlay();
 
-          footerEnvelopeHeart?.classList.add('initial-state');
+        //   footerEnvelopeHeart?.classList.add('initial-state');
 
-          setTimeout(() => {
-            footerEnvelopeHeart?.classList.add('active');
+        //   setTimeout(() => {
+        //     footerEnvelopeHeart?.classList.add('active');
 
-            if (formInputName && formInputEmail && formTextarea) {
-              formInputName.value = '';
-              formInputEmail.value = '';
-              formTextarea.value = '';
-            }
-          }, 250);
-        }, 500);
+        //     if (formInputName && formInputEmail && formTextarea) {
+        //       formInputName.value = '';
+        //       formInputEmail.value = '';
+        //       formTextarea.value = '';
+        //     }
+        //   }, 250);
+        // }, 500);
 
         // *** EmailJS | Popup Envelope Message ***
-        // emailjs
-        //   .send(
-        //     'service_687vb4p',
-        //     'template_a78ap3d',
-        //     {
-        //       name: formInputName?.value,
-        //       email: formInputEmail?.value,
-        //       message: formTextarea?.value,
-        //     },
-        //     '7v1sBU3diJGsXO7dM',
-        //   )
-        //   .then((response: EmailJSResponseStatus) => {
-        //     console.log('success:', response.status, response.text);
+        emailjs
+          .send(
+            'service_687vb4p',
+            'template_a78ap3d',
+            {
+              name: formInputName?.value,
+              email: formInputEmail?.value,
+              message: formTextarea?.value,
+            },
+            '7v1sBU3diJGsXO7dM',
+          )
+          .then((response: EmailJSResponseStatus) => {
+            console.log('success:', response.status, response.text);
 
-        //     setTimeout(() => {
-        //       footerOverlay?.classList.add('active');
-        //       footerEnvelopeHeart?.classList.add('initial-state');
+            setTimeout(() => {
+              footerOverlay?.classList.add('active');
+              footerEnvelopeHeart?.classList.add('initial-state');
 
-        //       setTimeout(() => {
-        //         footerEnvelopeHeart?.classList.add('active');
+              setTimeout(() => {
+                footerEnvelopeHeart?.classList.add('active');
 
-        //         if (formInputName && formInputEmail && formTextarea) {
-        //           formInputName.value = '';
-        //           formInputEmail.value = '';
-        //           formTextarea.value = '';
-        //         }
-        //       }, 250);
-        //     }, 500);
-        //   })
-        //   .catch(error => {
-        //     console.log('failed:', error);
-        //     alert('Oops! Something went wrong. Please try again.');
-        //   });
+                if (formInputName && formInputEmail && formTextarea) {
+                  formInputName.value = '';
+                  formInputEmail.value = '';
+                  formTextarea.value = '';
+                }
+              }, 250);
+            }, 500);
+          })
+          .catch(error => {
+            console.log('failed:', error);
+            alert('Oops! Something went wrong. Please try again.');
+          });
         // *** End of EmailJS | Popup Envelope Message ***
       }
     });
