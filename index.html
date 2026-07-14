@@ -71,7 +71,16 @@
           "https://github.com/jojo25011990"
         ],
         "jobTitle": "Frontend Developer",
-        "description": "Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, CSS Art, React/TypeScript projects, and creative coding journey."
+        "description": "Portfolio of Jozef Kudrna - showcasing frontend development, animations, GSAP, Three.js, CSS Art, React and TypeScript projects, and creative coding journey.",
+        "knowsAbout": [
+          "Frontend Development",
+          "React",
+          "TypeScript",
+          "Three.js",
+          "GSAP",
+          "Creative Coding",
+          "CSS Art"
+        ]
       }
     </script>
     <link rel="stylesheet" href="/src/sass/main.scss" />
@@ -80,7 +89,7 @@
     <!-- Todo
      
         pridat text do videii , track .
-        pridat dodatocne informacie pre script app/ld+json
+        
         
 
     -->
@@ -2388,30 +2397,44 @@
           <!-- Video Player -->
           <div class="showcase__container showcase__container-02">
             <div class="showcase__wrapper-video">
-              <video
+              <div
+                class="showcase__panel"
                 id="video-0"
-                src="./src/assets/video/Css Art.mp4"
-                class="showcase__video active"
-                aria-label="CSS Art showcase reel."
                 role="tabpanel"
                 aria-hidden="false"
-              ></video>
-              <video
+              >
+                <video
+                  src="./src/assets/video/Css Art.mp4"
+                  class="showcase__video active"
+                  aria-label="CSS Art showcase reel."
+                ></video>
+              </div>
+
+              <div
+                class="showcase__panel"
                 id="video-1"
-                src="./src/assets/video/Mix Animations.mp4"
-                class="showcase__video"
-                aria-label="Animation showcase reel."
                 role="tabpanel"
                 aria-hidden="true"
-              ></video>
-              <video
+              >
+                <video
+                  src="./src/assets/video/Mix Animations.mp4"
+                  class="showcase__video"
+                  aria-label="Animation showcase reel."
+                ></video>
+              </div>
+
+              <div
+                class="showcase__panel"
                 id="video-2"
-                src="./src/assets/video/Mix Work.mp4"
-                class="showcase__video"
-                aria-label="Mixed projects showcase reel."
                 role="tabpanel"
                 aria-hidden="true"
-              ></video>
+              >
+                <video
+                  src="./src/assets/video/Mix Work.mp4"
+                  class="showcase__video"
+                  aria-label="Mixed projects showcase reel."
+                ></video>
+              </div>
             </div>
 
             <div
@@ -2796,6 +2819,7 @@
                   <div class="my-process__book-cover-back"></div>
                 </div>
               </div>
+              <!-- End of CSS Art book -->
 
               <!-- My Process - Sr Only -->
               <article class="sr-class-process">
@@ -2808,8 +2832,8 @@
                   final refinement into a complete storytelling experience.
                 </p>
               </article>
+
               <!-- End of My Process - Sr Only -->
-              <!-- End of CSS Art book -->
 
               <!-- Slider Component -->
               <div class="my-process__slider active">

@@ -4,6 +4,10 @@ export default function showcase() {
   // *** Select Elements ***
   const showcaseVideos =
     document.querySelectorAll<HTMLVideoElement>('.showcase__video');
+
+  const showcaseVideoPanels =
+    document.querySelectorAll<HTMLDivElement>('.showcase__panel');
+
   const showcaseSwitcherBtns = document.querySelectorAll<HTMLButtonElement>(
     '.showcase__switcher-btn',
   );
@@ -38,7 +42,10 @@ export default function showcase() {
         ariaAttrIndex === index ? 'true' : 'false',
       );
 
-      //   TU  doplnim tab prepinanie to mam ako todo ..lebo som neauditoval all
+      showcaseSwitcherBtn.setAttribute(
+        'tabindex',
+        ariaAttrIndex === index ? '0' : '-1',
+      );
 
       // *** Active Button Class ***
       if (ariaAttrIndex === index) {
@@ -49,8 +56,8 @@ export default function showcase() {
       // *** End of  Active Button Class ***
     });
 
-    showcaseVideos.forEach((showcaseVideo, ariaAttrIndex) => {
-      showcaseVideo.setAttribute(
+    showcaseVideoPanels.forEach((showcaseVideoPanel, ariaAttrIndex) => {
+      showcaseVideoPanel.setAttribute(
         'aria-hidden',
         ariaAttrIndex === index ? 'false' : 'true',
       );

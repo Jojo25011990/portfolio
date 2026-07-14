@@ -170,6 +170,7 @@ export default function footer() {
       ]);
 
       if (isInputsValid) {
+        // *** Without EmailJS Functionality ***
         // setTimeout(() => {
         //   openFooterOverlay();
 
@@ -185,6 +186,7 @@ export default function footer() {
         //     }
         //   }, 250);
         // }, 500);
+        // *** End of Without EmailJS Functionality ***
 
         // *** EmailJS | Popup Envelope Message ***
         emailjs
