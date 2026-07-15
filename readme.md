@@ -2,13 +2,36 @@
 
 - My personal portfolio website focused on creative frontend development, animations, CSS Art, interactive web experiences and storytelling.
 
-## Screenshot
+## Screenshots
 
 - Desktop
+- Full Page
+
+![](./Screenshots/Portfolio%20V1%20-%20%20Desktop.png)
+
+- Lighthouse Score
 
 ![](./Screenshots/Portfolio%20V1%20-%20Lighthouse%20Score%20Update.png)
 
-![](./Screenshots/Portfolio%20V1%20-%20%20Desktop.png)
+- Intro Section
+
+![](./Screenshots/Portfolio%20V1%20-%20Intro%20Section.png)
+
+- My Story
+  ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2001.png)
+  ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2002.png)
+  ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2003.png)
+
+- My Process
+  ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2001.png)
+  ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2002.png)
+  ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2003.png)
+
+- Footer ( Envelope Popup Message )
+
+![](./Screenshots/Portfolio%20V1%20-%20Envelope%2001.png)
+![](./Screenshots/Portfolio%20V1%20-%20Envelope%2002.png)
+![](./Screenshots/Portfolio%20V1%20-%20Envelope%2003.png)
 
 ## About the project
 
@@ -50,7 +73,7 @@
 - Animated storytelling section with custom characters, sound effects and GSAP timelines. ( Gate Overlay, My Story and My Process Sections )
 - CSS Art illustrations and custom visual experiments. ( Oldschool TV, Envelope, Pacman, Ghost )
 - Custom video player with accessibility support. ( Showcase Section )
-- Full Screen Reader description for interactive storytelling sections. ( Intro, My Story, etc.)
+- Full Screen Reader descriptions for interactive storytelling sections. ( Intro, My Story, etc.)
 - Responsive and adaptive design for different devices and browsers.
 
 ## Links
