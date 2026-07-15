@@ -18,11 +18,13 @@
 ![](./Screenshots/Portfolio%20V1%20-%20Intro%20Section.png)
 
 - My Story
+
   ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2001.png)
   ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2002.png)
   ![](./Screenshots/Portfolio%20V1%20-%20My%20Story%2003.png)
 
 - My Process
+
   ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2001.png)
   ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2002.png)
   ![](./Screenshots/Portfolio%20V1%20-%20CSS%20Art%20Book%2003.png)
