@@ -25,8 +25,11 @@ function init() {
   future();
 
   faq();
-  myProcess();
 
   footer();
   backToTop();
+
+  if (window.matchMedia('(min-width: 1300px)').matches) {
+    myProcess();
+  }
 }

@@ -122,6 +122,10 @@ export default function intro() {
     }, '-=1.4')
     .add(() => game())
     .add(() => showcase())
-    .add(() => myStoryOverlay());
+    .add(() => {
+      if (window.matchMedia('(min-width: 1300px)').matches) {
+        myStoryOverlay();
+      }
+    });
   // *** End of Functionality ***
 }

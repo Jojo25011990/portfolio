@@ -6,6 +6,12 @@
 .showcase {
   @extend .projects;
 
+  // *** Responsive Design ***
+  @include responsive-settings(desktop-large) {
+    margin-bottom: 14rem;
+  }
+  // *** End of Responsive Design ***
+
   // *** Wrapper ***
   &__wrapper {
     @extend .projects__wrapper;

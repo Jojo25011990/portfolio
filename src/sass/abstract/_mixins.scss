@@ -95,6 +95,12 @@
 
 // *** Responsive Settings ***
 @mixin responsive-settings($breakpoint) {
+  @if $breakpoint == desktop-large {
+    @media (max-width: 1300px) {
+      @content;
+    }
+  }
+
   @if $breakpoint == desktop {
     @media (max-width: 1150px) {
       @content;

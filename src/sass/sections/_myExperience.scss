@@ -8,5 +8,11 @@
   @include dimension-settings(100%, $min-height: 100vh);
   @include position-settings($position: relative);
   @include flex-settings;
+
+  // *** Responsive Design ***
+  @include responsive-settings(desktop-large) {
+    display: none;
+  }
+  // *** End of Responsive Design ***
 }
 // *** End of My Experience ***
