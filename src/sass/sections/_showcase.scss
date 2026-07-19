@@ -10,6 +10,15 @@
   @include responsive-settings(desktop-large) {
     margin-bottom: 14rem;
   }
+
+  // *** Responsive Design ***
+  @include responsive-settings(desktop-small) {
+    margin-bottom: 10rem;
+  }
+
+  @include responsive-settings(mobile) {
+    margin-bottom: 8rem;
+  }
   // *** End of Responsive Design ***
 
   // *** Wrapper ***
